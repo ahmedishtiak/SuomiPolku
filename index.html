@@ -1946,7 +1946,161 @@ const GRAMMAR = [{
     e: "Type 3: to come → I come (type 3 adds -e-)"
   }],
   mf: "Katso infinitiivin loppu → tunnista tyyppi → ota oikea vartalo.",
-  me: "Read the infinitive ending → name the type → take the right stem."
+  me: "Read the infinitive ending → name the type → take the right stem.",
+  rich: {
+    df: "Jokainen tyyppi kolmella esimerkkiverbillä. hän-muoto on korostettu, koska se paljastaa vartalon (pidennys tai vahva aste).",
+    de: "Each type with three example verbs. The hän form is highlighted because it reveals the stem (lengthening or the strong grade).",
+    types: [{
+      n: "Tyyppi 1",
+      sig: "-a / -ä",
+      rf: "Poista infinitiivin -a/-ä ja lisää persoonapääte. hän-muodossa loppuvokaali pidentyy (asuu). Astevaihtelu: minä/sinä/me/te heikko, hän/he vahva.",
+      re: "Drop the -a/-ä and add the person ending. In the hän form the final vowel lengthens (asuu). Gradation: minä/sinä/me/te weak, hän/he strong.",
+      verbs: [{
+        inf: "asua",
+        gloss: "to live",
+        p6: ["asun", "asut", "asuu", "asumme", "asutte", "asuvat"],
+        exf: "asun Espoossa",
+        exe: "I live in Espoo"
+      }, {
+        inf: "lukea",
+        gloss: "to read",
+        note: "k→∅",
+        p6: ["luen", "luet", "lukee", "luemme", "luette", "lukevat"],
+        exf: "luen suomea joka päivä",
+        exe: "I read Finnish every day"
+      }, {
+        inf: "kirjoittaa",
+        gloss: "to write",
+        note: "tt→t",
+        p6: ["kirjoitan", "kirjoitat", "kirjoittaa", "kirjoitamme", "kirjoitatte", "kirjoittavat"],
+        exf: "kirjoitan kirjaa suomeksi",
+        exe: "I'm writing a book in Finnish"
+      }]
+    }, {
+      n: "Tyyppi 2",
+      sig: "-da / -dä",
+      rf: "Poista -da/-dä. Vartalo päättyy pitkään vokaaliin tai diftongiin, joten hän-muoto ei pidenny (juo, syö, saa). Ei astevaihtelua.",
+      re: "Drop -da/-dä. The stem ends in a long vowel or diphthong, so the hän form does not lengthen (juo, syö, saa). No gradation.",
+      verbs: [{
+        inf: "juoda",
+        gloss: "to drink",
+        p6: ["juon", "juot", "juo", "juomme", "juotte", "juovat"],
+        exf: "juon kahvia aamulla",
+        exe: "I drink coffee in the morning"
+      }, {
+        inf: "syödä",
+        gloss: "to eat",
+        p6: ["syön", "syöt", "syö", "syömme", "syötte", "syövät"],
+        exf: "syön lounasta töissä",
+        exe: "I eat lunch at work"
+      }, {
+        inf: "saada",
+        gloss: "to get / receive",
+        p6: ["saan", "saat", "saa", "saamme", "saatte", "saavat"],
+        exf: "toivon, että saan työpaikan",
+        exe: "I hope I get a job"
+      }]
+    }, {
+      n: "Tyyppi 3",
+      sig: "-la / -na / -ra / -sta",
+      rf: "Poista kaksi viimeistä kirjainta ja lisää -e- ennen päätettä. hän-muoto saa -ee (tulee, menee).",
+      re: "Drop the last two letters and add -e- before the ending. The hän form takes -ee (tulee, menee).",
+      verbs: [{
+        inf: "tulla",
+        gloss: "to come",
+        p6: ["tulen", "tulet", "tulee", "tulemme", "tulette", "tulevat"],
+        exf: "tulen Bangladeshista",
+        exe: "I come from Bangladesh"
+      }, {
+        inf: "mennä",
+        gloss: "to go",
+        p6: ["menen", "menet", "menee", "menemme", "menette", "menevät"],
+        exf: "menen TE-toimistoon",
+        exe: "I go to the TE office"
+      }, {
+        inf: "opiskella",
+        gloss: "to study",
+        p6: ["opiskelen", "opiskelet", "opiskelee", "opiskelemme", "opiskelette", "opiskelevat"],
+        exf: "opiskelen suomea joka viikko",
+        exe: "I study Finnish every week"
+      }]
+    }, {
+      n: "Tyyppi 4",
+      sig: "-ata / -ätä",
+      rf: "Poista -ta ja lisää -a-: vartalo saa pitkän vokaalin (halua-, tapaa-). minä haluan, hän haluaa. Usein vahva aste (tavata → tapaa-).",
+      re: "Drop -ta and add -a-: the stem gets a long vowel (halua-, tapaa-). minä haluan, hän haluaa. Often the strong grade appears (tavata → tapaa-).",
+      verbs: [{
+        inf: "haluta",
+        gloss: "to want",
+        p6: ["haluan", "haluat", "haluaa", "haluamme", "haluatte", "haluavat"],
+        exf: "haluan oppia suomea",
+        exe: "I want to learn Finnish"
+      }, {
+        inf: "tavata",
+        gloss: "to meet",
+        note: "v→p",
+        p6: ["tapaan", "tapaat", "tapaa", "tapaamme", "tapaatte", "tapaavat"],
+        exf: "tapaan uusia ihmisiä",
+        exe: "I meet new people"
+      }, {
+        inf: "osata",
+        gloss: "to know how",
+        p6: ["osaan", "osaat", "osaa", "osaamme", "osaatte", "osaavat"],
+        exf: "osaan englantia ja bengalia",
+        exe: "I know English and Bengali"
+      }]
+    }, {
+      n: "Tyyppi 5",
+      sig: "-ita / -itä",
+      rf: "Poista -ta ja lisää -tse-: vartalo päättyy -tse- (tarvitse-, valitse-). Ei astevaihtelua. Melko harvinainen tyyppi.",
+      re: "Drop -ta and add -tse-: the stem ends in -tse- (tarvitse-, valitse-). No gradation. A fairly rare type.",
+      verbs: [{
+        inf: "tarvita",
+        gloss: "to need",
+        p6: ["tarvitsen", "tarvitset", "tarvitsee", "tarvitsemme", "tarvitsette", "tarvitsevat"],
+        exf: "tarvitsen vakituisen työn",
+        exe: "I need a permanent job"
+      }, {
+        inf: "valita",
+        gloss: "to choose",
+        p6: ["valitsen", "valitset", "valitsee", "valitsemme", "valitsette", "valitsevat"],
+        exf: "valitsen seuraavan kurssin",
+        exe: "I choose the next course"
+      }, {
+        inf: "mainita",
+        gloss: "to mention",
+        p6: ["mainitsen", "mainitset", "mainitsee", "mainitsemme", "mainitsette", "mainitsevat"],
+        exf: "mainitsen 21 vuoden kokemukseni",
+        exe: "I mention my 21 years of experience"
+      }]
+    }, {
+      n: "Tyyppi 6",
+      sig: "-eta / -etä",
+      rf: "Poista -ta ja lisää -ne-: vartalo päättyy -ne- (vanhene-, lämpene-). Merkitys usein 'tulla jonkinlaisemmaksi'. Harvinaisempi, B1+.",
+      re: "Drop -ta and add -ne-: the stem ends in -ne- (vanhene-, lämpene-). The meaning is often 'to become more X'. Rarer, B1+.",
+      verbs: [{
+        inf: "vanheta",
+        gloss: "to grow old",
+        p6: ["vanhenen", "vanhenet", "vanhenee", "vanhenemme", "vanhenette", "vanhenevat"],
+        exf: "en vanhene, vaan opin",
+        exe: "I don't grow old — I learn"
+      }, {
+        inf: "lämmetä",
+        gloss: "to warm up",
+        note: "m→mp",
+        p6: ["lämpenen", "lämpenet", "lämpenee", "lämpenemme", "lämpenette", "lämpenevät"],
+        exf: "kesällä sää lämpenee",
+        exe: "in summer the weather warms up"
+      }, {
+        inf: "paeta",
+        gloss: "to flee / escape",
+        note: "k appears",
+        p6: ["pakenen", "pakenet", "pakenee", "pakenemme", "pakenette", "pakenevat"],
+        exf: "aika pakenee nopeasti",
+        exe: "time flies quickly"
+      }]
+    }]
+  }
 }, {
   id: "negative",
   cat: "verb",
@@ -1987,7 +2141,122 @@ const GRAMMAR = [{
     e: "shop → in the shop (kpt: pp→p)"
   }],
   mf: "-ssa = 'inSSAide' — sisällä.",
-  me: "-ssa = inSSAide — within."
+  me: "-ssa = inSSAide — within.",
+  rich: {
+    df: "Inessiivi = missä? (sisällä). Pääte -ssa/-ssä valitaan vokaalisoinnun mukaan. Astevaihtelu osuu tähän (pankki→pankissa).",
+    de: "Inessive = missä? (inside). The ending -ssa/-ssä is chosen by vowel harmony. Gradation lands here (pankki→pankissa).",
+    sections: [{
+      hf: "-ssa · takavokaalit (a, o, u)",
+      he: "-ssa · back vowels (a, o, u)",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "-ssa",
+        te: "-ssa",
+        rows: [{
+          l: "talo",
+          form: "talossa",
+          s: true
+        }, {
+          l: "Suomi",
+          form: "Suomessa",
+          s: true
+        }, {
+          l: "auto",
+          form: "autossa",
+          s: true
+        }],
+        exf: "asun talossa Espoossa",
+        exe: "I live in a house in Espoo"
+      }]
+    }, {
+      hf: "-ssä · etuvokaalit (ä, ö, y)",
+      he: "-ssä · front vowels (ä, ö, y)",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "-ssä",
+        te: "-ssä",
+        rows: [{
+          l: "kylä",
+          form: "kylässä",
+          s: true
+        }, {
+          l: "keittiö",
+          form: "keittiössä",
+          s: true
+        }, {
+          l: "Jyväskylä",
+          form: "Jyväskylässä",
+          s: true
+        }],
+        exf: "opiskelin Jyväskylässä (Jamk)",
+        exe: "I studied in Jyväskylä (Jamk)"
+      }]
+    }, {
+      hf: "Astevaihtelu — heikko aste",
+      he: "Consonant gradation — weak grade",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "kpt → heikko",
+        te: "kpt → weak",
+        rows: [{
+          l: "pankki (kk→k)",
+          form: "pankissa",
+          s: true
+        }, {
+          l: "Helsinki (nk→ng)",
+          form: "Helsingissä",
+          s: true
+        }, {
+          l: "kauppa (pp→p)",
+          form: "kaupassa",
+          s: true
+        }],
+        exf: "työskentelin pankissa 21 vuotta",
+        exe: "I worked in a bank for 21 years"
+      }]
+    }, {
+      hf: "Erikoiskäyttö — aika ja tila",
+      he: "Special use — time and state",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "missä ajassa / tilassa",
+        te: "in what time / state",
+        rows: [{
+          l: "aika",
+          form: "kahdessa vuodessa",
+          s: false
+        }, {
+          l: "tila",
+          form: "hyvässä kunnossa",
+          s: false
+        }, {
+          l: "kieli",
+          form: "suomen kielessä",
+          s: false
+        }],
+        exf: "opin paljon kahdessa vuodessa",
+        exe: "I learned a lot in two years"
+      }]
+    }],
+    crosscase: {
+      word: "Espoo",
+      wordEn: "a place name — inside series",
+      forms: [{
+        id: "inessive",
+        q: "missä?",
+        form: "Espoossa"
+      }, {
+        id: "elative",
+        q: "mistä?",
+        form: "Espoosta"
+      }, {
+        id: "illative",
+        q: "mihin?",
+        form: "Espooseen"
+      }]
+    },
+    seealso: ["adessive", "ablative", "allative", "local-grid"]
+  }
 }, {
   id: "elative",
   cat: "case",
@@ -2008,7 +2277,122 @@ const GRAMMAR = [{
     e: "I'm talking about the weather."
   }],
   mf: "-sta = 'out of the inSTAide'.",
-  me: "-sta = out of the inSTAide."
+  me: "-sta = out of the inSTAide.",
+  rich: {
+    df: "Elatiivi = mistä? (sisältä ulos). Pääte -sta/-stä. Käytetään myös aiheesta ('puhua jostakin') ja tunteesta ('pitää jostakin' — EI partitiivi).",
+    de: "Elative = mistä? (out of the inside). Ending -sta/-stä. Also used for topics ('talk about') and liking ('pitää jostakin' — NOT partitive).",
+    sections: [{
+      hf: "-sta · takavokaalit",
+      he: "-sta · back vowels",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "-sta",
+        te: "-sta",
+        rows: [{
+          l: "talo",
+          form: "talosta",
+          s: true
+        }, {
+          l: "Suomi",
+          form: "Suomesta",
+          s: true
+        }, {
+          l: "Bangladesh",
+          form: "Bangladeshista",
+          s: true
+        }],
+        exf: "tulen Bangladeshista",
+        exe: "I come from Bangladesh"
+      }]
+    }, {
+      hf: "-stä · etuvokaalit",
+      he: "-stä · front vowels",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "-stä",
+        te: "-stä",
+        rows: [{
+          l: "kylä",
+          form: "kylästä",
+          s: true
+        }, {
+          l: "työ",
+          form: "työstä",
+          s: true
+        }, {
+          l: "yliopisto",
+          form: "yliopistosta",
+          s: false
+        }],
+        exf: "valmistuin yliopistosta 2025",
+        exe: "I graduated from university in 2025"
+      }]
+    }, {
+      hf: "Astevaihtelu — heikko aste",
+      he: "Consonant gradation — weak grade",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "kpt → heikko",
+        te: "kpt → weak",
+        rows: [{
+          l: "pankki (kk→k)",
+          form: "pankista",
+          s: true
+        }, {
+          l: "Helsinki (nk→ng)",
+          form: "Helsingistä",
+          s: true
+        }, {
+          l: "tutkinto (nt→nn)",
+          form: "tutkinnosta",
+          s: true
+        }],
+        exf: "kerron tutkinnostani haastattelussa",
+        exe: "I talk about my degree in the interview"
+      }]
+    }, {
+      hf: "Erikoiskäyttö — aihe, mielipide, materiaali",
+      he: "Special use — topic, opinion, material",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "jostakin",
+        te: "about / of something",
+        rows: [{
+          l: "puhua",
+          form: "puhun säästä",
+          s: false
+        }, {
+          l: "pitää (like)",
+          form: "pidän suomen kielestä",
+          s: false
+        }, {
+          l: "materiaali",
+          form: "tehty puusta",
+          s: false
+        }],
+        exf: "pidän suomen kielestä ja kirjoittamisesta",
+        exe: "I like Finnish and writing (pitää + elative)"
+      }]
+    }],
+    crosscase: {
+      word: "Espoo",
+      wordEn: "a place name — inside series",
+      forms: [{
+        id: "inessive",
+        q: "missä?",
+        form: "Espoossa"
+      }, {
+        id: "elative",
+        q: "mistä?",
+        form: "Espoosta"
+      }, {
+        id: "illative",
+        q: "mihin?",
+        form: "Espooseen"
+      }]
+    },
+    seealso: ["adessive", "ablative", "allative", "local-grid"]
+  }
 }, {
   id: "illative",
   cat: "case",
@@ -2029,7 +2413,99 @@ const GRAMMAR = [{
     e: "Espoo → to Espoo (2 syllables, long -oo → -seen)"
   }],
   mf: "Pitkä vokaali + pitkä sana → -seen.",
-  me: "Long vowel + long word → -seen."
+  me: "Long vowel + long word → -seen.",
+  rich: {
+    df: "Illatiivi = mihin? (sisään). Kolme päätettä sanan muodon mukaan: -Vn (kahdenna vokaali), -hVn (yksitavuinen pitkä vokaali), -seen (kaksitavuinen+ pitkä loppuvokaali). Illatiivi säilyttää vahvan asteen.",
+    de: "Illative = mihin? (into). Three endings by word shape: -Vn (double the vowel), -hVn (one-syllable long vowel), -seen (two+ syllables ending in a long vowel). The illative keeps the strong grade.",
+    sections: [{
+      hf: "-Vn · lyhyt vokaali (kahdenna + n)",
+      he: "-Vn · short vowel (double + n)",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "-Vn",
+        te: "-Vn",
+        rows: [{
+          l: "talo",
+          form: "taloon",
+          s: true
+        }, {
+          l: "Helsinki",
+          form: "Helsinkiin",
+          s: true
+        }, {
+          l: "koti",
+          form: "kotiin",
+          s: true
+        }],
+        exf: "menen kotiin töiden jälkeen",
+        exe: "I go home after work"
+      }]
+    }, {
+      hf: "-hVn · yksitavuinen pitkä vokaali",
+      he: "-hVn · one-syllable long vowel",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "-hVn",
+        te: "-hVn",
+        rows: [{
+          l: "maa",
+          form: "maahan",
+          s: true
+        }, {
+          l: "työ",
+          form: "työhön",
+          s: true
+        }, {
+          l: "puu",
+          form: "puuhun",
+          s: true
+        }],
+        exf: "haluan päästä työhön pian",
+        exe: "I want to get into work soon"
+      }]
+    }, {
+      hf: "-seen · kaksitavuinen+ pitkä loppuvokaali",
+      he: "-seen · two+ syllables, long final vowel",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "-seen",
+        te: "-seen",
+        rows: [{
+          l: "Espoo",
+          form: "Espooseen",
+          s: true
+        }, {
+          l: "Porvoo",
+          form: "Porvooseen",
+          s: true
+        }, {
+          l: "huone",
+          form: "huoneeseen",
+          s: true
+        }],
+        exf: "muutin Espooseen vuonna 2024",
+        exe: "I moved to Espoo in 2024"
+      }]
+    }],
+    crosscase: {
+      word: "Espoo",
+      wordEn: "a place name — inside series",
+      forms: [{
+        id: "inessive",
+        q: "missä?",
+        form: "Espoossa"
+      }, {
+        id: "elative",
+        q: "mistä?",
+        form: "Espoosta"
+      }, {
+        id: "illative",
+        q: "mihin?",
+        form: "Espooseen"
+      }]
+    },
+    seealso: ["adessive", "ablative", "allative", "local-grid"]
+  }
 }, {
   id: "adessive",
   cat: "case",
@@ -2050,7 +2526,124 @@ const GRAMMAR = [{
     e: "I have a car (lit. on me is a car)."
   }],
   mf: "-lla = pinnalla, välineellä, omistus.",
-  me: "-lla = on a surface, by a means, and 'have'."
+  me: "-lla = on a surface, by a means, and 'have'.",
+  rich: {
+    df: "Adessiivi -lla/-llä on monikäyttöinen: paikka pinnalla (missä?), väline (millä?), omistus (kenellä on) ja aika (milloin?).",
+    de: "The adessive -lla/-llä is versatile: location on a surface (missä?), instrument (millä?), possession (kenellä on = who has), and time (milloin?).",
+    sections: [{
+      hf: "Pinnalla — missä?",
+      he: "On a surface — where?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "paikka",
+        te: "location",
+        strong: "pöytä → pöydällä (t→d)",
+        weak: "astevaihtelu",
+        rows: [{
+          l: "pöytä (t→d)",
+          form: "pöydällä",
+          s: true
+        }, {
+          l: "katu (t→d)",
+          form: "kadulla",
+          s: true
+        }, {
+          l: "tori",
+          form: "torilla",
+          s: true
+        }],
+        exf: "kirja on pöydällä",
+        exe: "the book is on the table"
+      }]
+    }, {
+      hf: "Väline — millä?",
+      he: "Instrument — by what?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "väline",
+        te: "means",
+        rows: [{
+          l: "bussi",
+          form: "bussilla",
+          s: false
+        }, {
+          l: "juna",
+          form: "junalla",
+          s: false
+        }, {
+          l: "kynä",
+          form: "kynällä",
+          s: false
+        }],
+        exf: "menen töihin bussilla",
+        exe: "I go to work by bus"
+      }]
+    }, {
+      hf: "Omistus — kenellä on?",
+      he: "Possession — who has?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "minulla on…",
+        te: "have",
+        rows: [{
+          l: "minulla",
+          form: "minulla on",
+          s: true
+        }, {
+          l: "hänellä",
+          form: "hänellä on",
+          s: false
+        }, {
+          l: "kielto",
+          form: "minulla ei ole",
+          s: false
+        }],
+        exf: "minulla on 21 vuoden kokemus",
+        exe: "I have 21 years of experience"
+      }]
+    }, {
+      hf: "Aika — milloin?",
+      he: "Time — when?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "aika",
+        te: "time",
+        rows: [{
+          l: "aamu",
+          form: "aamulla",
+          s: false
+        }, {
+          l: "ilta",
+          form: "illalla",
+          s: false
+        }, {
+          l: "kesä",
+          form: "kesällä",
+          s: false
+        }],
+        exf: "aamulla luen suomea",
+        exe: "in the morning I read Finnish"
+      }]
+    }],
+    crosscase: {
+      word: "pöytä",
+      wordEn: "table — surface series (t→d)",
+      forms: [{
+        id: "adessive",
+        q: "missä? millä?",
+        form: "pöydällä"
+      }, {
+        id: "ablative",
+        q: "mistä? keneltä?",
+        form: "pöydältä"
+      }, {
+        id: "allative",
+        q: "mihin? kenelle?",
+        form: "pöydälle"
+      }]
+    },
+    seealso: ["inessive", "elative", "illative", "local-grid"]
+  }
 }, {
   id: "ablative",
   cat: "case",
@@ -2071,7 +2664,101 @@ const GRAMMAR = [{
     e: "from the train station"
   }],
   mf: "-lta = pois pinnalta tai ihmiseltä.",
-  me: "-lta = off a surface, or from a person."
+  me: "-lta = off a surface, or from a person.",
+  rich: {
+    df: "Ablatiivi -lta/-ltä = mistä? / keneltä? Liike pois pinnalta tai ihmisen luota. Myös aisti- ja tunneverbien kanssa: tuntuu, näyttää, kuulostaa jltakin.",
+    de: "Ablative -lta/-ltä = mistä? / keneltä? Motion off a surface or away from a person. Also with sense/feeling verbs: feels/looks/sounds like something.",
+    sections: [{
+      hf: "Pois pinnalta — mistä?",
+      he: "Off a surface — from where?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "paikka",
+        te: "location",
+        strong: "pöytä → pöydältä (t→d)",
+        weak: "astevaihtelu",
+        rows: [{
+          l: "pöytä (t→d)",
+          form: "pöydältä",
+          s: true
+        }, {
+          l: "katu (t→d)",
+          form: "kadulta",
+          s: true
+        }, {
+          l: "tori",
+          form: "torilta",
+          s: true
+        }],
+        exf: "otan kirjan pöydältä",
+        exe: "I take the book off the table"
+      }]
+    }, {
+      hf: "Ihmiseltä — keneltä?",
+      he: "From a person — from whom?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "henkilö",
+        te: "person",
+        rows: [{
+          l: "ystävä",
+          form: "ystävältä",
+          s: false
+        }, {
+          l: "työnantaja",
+          form: "työnantajalta",
+          s: false
+        }, {
+          l: "opettaja",
+          form: "opettajalta",
+          s: false
+        }],
+        exf: "sain palautetta opettajalta",
+        exe: "I got feedback from the teacher"
+      }]
+    }, {
+      hf: "Aisti ja tunne — miltä?",
+      he: "Sense & feeling — how does it seem?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "tuntuu / näyttää / kuulostaa",
+        te: "feels / looks / sounds",
+        rows: [{
+          l: "tuntua",
+          form: "tuntuu hyvältä",
+          s: false
+        }, {
+          l: "näyttää",
+          form: "näyttää hyvältä",
+          s: false
+        }, {
+          l: "kuulostaa",
+          form: "kuulostaa hyvältä",
+          s: false
+        }],
+        exf: "suomen kieli kuulostaa kauniilta",
+        exe: "Finnish sounds beautiful"
+      }]
+    }],
+    crosscase: {
+      word: "pöytä",
+      wordEn: "table — surface series (t→d)",
+      forms: [{
+        id: "adessive",
+        q: "missä? millä?",
+        form: "pöydällä"
+      }, {
+        id: "ablative",
+        q: "mistä? keneltä?",
+        form: "pöydältä"
+      }, {
+        id: "allative",
+        q: "mihin? kenelle?",
+        form: "pöydälle"
+      }]
+    },
+    seealso: ["inessive", "elative", "illative", "local-grid"]
+  }
 }, {
   id: "allative",
   cat: "case",
@@ -2092,7 +2779,101 @@ const GRAMMAR = [{
     e: "I go to the market square."
   }],
   mf: "-lle = aina -lle, pinnalle tai ihmiselle.",
-  me: "-lle = always -lle, onto a surface or to a person."
+  me: "-lle = always -lle, onto a surface or to a person.",
+  rich: {
+    df: "Allatiivi -lle = mihin? / kenelle? Liike pinnalle tai jollekulle (vastaanottaja). Pääte on AINA -lle — ei vokaalisointua.",
+    de: "Allative -lle = mihin? / kenelle? Motion onto a surface or to someone (the recipient). The ending is ALWAYS -lle — no vowel-harmony variant.",
+    sections: [{
+      hf: "Pinnalle — mihin?",
+      he: "Onto a surface — to where?",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "paikka",
+        te: "location",
+        strong: "pöytä → pöydälle (t→d)",
+        weak: "astevaihtelu",
+        rows: [{
+          l: "pöytä (t→d)",
+          form: "pöydälle",
+          s: true
+        }, {
+          l: "katu (t→d)",
+          form: "kadulle",
+          s: true
+        }, {
+          l: "tori",
+          form: "torille",
+          s: true
+        }],
+        exf: "panen kirjan pöydälle",
+        exe: "I put the book on the table"
+      }]
+    }, {
+      hf: "Ihmiselle — kenelle? (vastaanottaja)",
+      he: "To a person — to whom? (recipient)",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "henkilö",
+        te: "person",
+        rows: [{
+          l: "työnantaja",
+          form: "työnantajalle",
+          s: false
+        }, {
+          l: "ystävä",
+          form: "ystävälle",
+          s: false
+        }, {
+          l: "sinä",
+          form: "sinulle",
+          s: false
+        }],
+        exf: "lähetän hakemuksen työnantajalle",
+        exe: "I send the application to the employer"
+      }]
+    }, {
+      hf: "Aina -lle — ei vokaalisointua",
+      he: "Always -lle — no harmony variant",
+      items: [{
+        w: "kolme esimerkkiä",
+        tf: "sama pääte",
+        te: "same ending",
+        rows: [{
+          l: "talo (taka)",
+          form: "talolle",
+          s: false
+        }, {
+          l: "päivä (etu)",
+          form: "päivälle",
+          s: false
+        }, {
+          l: "työ (etu)",
+          form: "työlle",
+          s: false
+        }],
+        exf: "-lle ei muutu koskaan",
+        exe: "-lle never changes (no -llä)"
+      }]
+    }],
+    crosscase: {
+      word: "pöytä",
+      wordEn: "table — surface series (t→d)",
+      forms: [{
+        id: "adessive",
+        q: "missä? millä?",
+        form: "pöydällä"
+      }, {
+        id: "ablative",
+        q: "mistä? keneltä?",
+        form: "pöydältä"
+      }, {
+        id: "allative",
+        q: "mihin? kenelle?",
+        form: "pöydälle"
+      }]
+    },
+    seealso: ["inessive", "elative", "illative", "local-grid"]
+  }
 }, {
   id: "local-grid",
   cat: "case",
@@ -2112,7 +2893,180 @@ const GRAMMAR = [{
     e: "To where? into / onto"
   }],
   mf: "S-rivi = sisällä; L-rivi = pinnalla. -ssa/-sta/-Vn vs. -lla/-lta/-lle.",
-  me: "S-row = inside; L-row = on a surface. -ssa/-sta/-Vn vs. -lla/-lta/-lle."
+  me: "S-row = inside; L-row = on a surface. -ssa/-sta/-Vn vs. -lla/-lta/-lle.",
+  rich: {
+    df: "Yksi sana kaikissa kuudessa sijassa. Ylärivi = sisäsarja (sisällä), alarivi = ulkosarja (pinnalla). Sarakkeet: missä (paikka) · mistä (pois) · mihin (kohti).",
+    de: "One word across all six cases. Top row = inside series, bottom row = surface series. Columns: where (location) · from where (away) · to where (toward).",
+    sections: [{
+      hf: "Sisäsarja — 'sisällä' (talo)",
+      he: "Inside series — 'inside' (talo = house)",
+      items: [{
+        w: "talo",
+        tf: "sisäsarja",
+        te: "inside",
+        strong: "talossa · talosta · taloon",
+        weak: "-ssa · -sta · -Vn",
+        rows: [{
+          l: "Missä? (inessiivi)",
+          form: "talossa",
+          s: false
+        }, {
+          l: "Mistä? (elatiivi)",
+          form: "talosta",
+          s: false
+        }, {
+          l: "Mihin? (illatiivi)",
+          form: "taloon",
+          s: true
+        }],
+        exf: "asun talossa Espoossa",
+        exe: "I live in a house in Espoo"
+      }]
+    }, {
+      hf: "Ulkosarja — 'pinnalla' (pöytä)",
+      he: "Surface series — 'on a surface' (pöytä = table)",
+      items: [{
+        w: "pöytä",
+        tf: "ulkosarja",
+        te: "surface",
+        strong: "pöydällä · pöydältä · pöydälle",
+        weak: "t→d — astevaihtelu",
+        rows: [{
+          l: "Missä? (adessiivi)",
+          form: "pöydällä",
+          s: false
+        }, {
+          l: "Mistä? (ablatiivi)",
+          form: "pöydältä",
+          s: false
+        }, {
+          l: "Mihin? (allatiivi)",
+          form: "pöydälle",
+          s: true
+        }],
+        exf: "kirja on pöydällä",
+        exe: "the book is on the table (t→d gradation)"
+      }]
+    }, {
+      hf: "Paikannimet — sama sana, kolme suuntaa",
+      he: "Place names — one word, three directions",
+      items: [{
+        w: "Espoo",
+        tf: "illatiivi -seen",
+        te: "illative -seen",
+        strong: "Espoossa · Espoosta · Espooseen",
+        weak: "pitkä vokaali → -seen",
+        rows: [{
+          l: "Missä?",
+          form: "Espoossa",
+          s: false
+        }, {
+          l: "Mistä?",
+          form: "Espoosta",
+          s: false
+        }, {
+          l: "Mihin?",
+          form: "Espooseen",
+          s: true
+        }],
+        exf: "muutin Espooseen ja asun Espoossa",
+        exe: "I moved to Espoo and live in Espoo"
+      }, {
+        w: "Suomi",
+        tf: "maa",
+        te: "country",
+        strong: "Suomessa · Suomesta · Suomeen",
+        weak: "m-vartalo",
+        rows: [{
+          l: "Missä?",
+          form: "Suomessa",
+          s: false
+        }, {
+          l: "Mistä?",
+          form: "Suomesta",
+          s: false
+        }, {
+          l: "Mihin?",
+          form: "Suomeen",
+          s: true
+        }],
+        exf: "tulin Suomeen 21.8.2024",
+        exe: "I came to Finland on 21 Aug 2024"
+      }]
+    }, {
+      hf: "Erikoiskäytöt — opettele ulkoa",
+      he: "Special uses — learn by heart",
+      items: [{
+        w: "Omistus: minulla on",
+        tf: "adessiivi",
+        te: "adessive = 'have'",
+        strong: "minulla on…",
+        weak: "kenellä? → -lla/-llä",
+        rows: [{
+          l: "minulla on",
+          form: "I have",
+          s: true
+        }, {
+          l: "minulla ei ole",
+          form: "I don't have",
+          s: false
+        }],
+        exf: "minulla on 21 vuoden kokemus pankkialalta",
+        exe: "I have 21 years of banking experience"
+      }, {
+        w: "Ihmiset: -lta / -lle",
+        tf: "ablatiivi & allatiivi",
+        te: "from / to a person",
+        strong: "keneltä? · kenelle?",
+        weak: "ihmiseen ei -Vn",
+        rows: [{
+          l: "Keneltä?",
+          form: "työnantajalta",
+          s: false
+        }, {
+          l: "Kenelle?",
+          form: "työnantajalle",
+          s: true
+        }],
+        exf: "lähetän hakemuksen työnantajalle",
+        exe: "I send the application to the employer"
+      }, {
+        w: "Puhua + elatiivi",
+        tf: "aihe: -sta/-stä",
+        te: "talk about: -sta/-stä",
+        strong: "puhua jostakin",
+        weak: "aihe = elatiivi",
+        rows: [{
+          l: "puhun",
+          form: "kokemuksestani",
+          s: false
+        }, {
+          l: "kerron",
+          form: "Suomesta",
+          s: false
+        }],
+        exf: "puhun kokemuksestani työhaastattelussa",
+        exe: "I talk about my experience in the interview"
+      }, {
+        w: "Pitää + elatiivi",
+        tf: "tykätä: -sta/-stä",
+        te: "like: -sta/-stä",
+        strong: "pitää jostakin",
+        weak: "EI partitiivi",
+        rows: [{
+          l: "pidän",
+          form: "suomen kielestä",
+          s: false
+        }, {
+          l: "pidän",
+          form: "kirjoittamisesta",
+          s: false
+        }],
+        exf: "pidän suomen kielestä ja kirjoittamisesta",
+        exe: "I like the Finnish language and writing"
+      }]
+    }]
+  }
 }, {
   id: "partitive",
   cat: "case",
@@ -2133,7 +3087,129 @@ const GRAMMAR = [{
     e: "three apples (after a number → partitive)"
   }],
   mf: "Osa, kielto, luku, määrä → partitiivi.",
-  me: "Part, negation, number, amount → partitive."
+  me: "Part, negation, number, amount → partitive.",
+  rich: {
+    df: "Pääte valitaan sanan lopun mukaan. Kolme ryhmää: -a/-ä, -ta/-tä, -tta/-ttä. Vaikeimmat ovat -i-loppuiset sanat, jotka muuttuvat (vesi → vettä).",
+    de: "The ending is chosen by how the word ends. Three groups: -a/-ä, -ta/-tä, -tta/-ttä. The trickiest are words ending in -i, which change (vesi → vettä).",
+    sections: [{
+      hf: "Miten pääte valitaan",
+      he: "How the ending is chosen",
+      items: [{
+        w: "-a / -ä",
+        tf: "yksi loppuvokaali",
+        te: "single final vowel",
+        strong: "talo → taloa",
+        weak: "lisää -a/-ä vartaloon",
+        rows: [{
+          l: "talo",
+          form: "taloa",
+          s: true
+        }, {
+          l: "koira",
+          form: "koiraa",
+          s: false
+        }, {
+          l: "pankki",
+          form: "pankkia",
+          s: false
+        }],
+        exf: "juon kahvia aamulla",
+        exe: "words ending in one vowel just add -a/-ä"
+      }, {
+        w: "-ta / -tä",
+        tf: "kaksi vokaalia / konsonantti",
+        te: "two vowels / consonant end",
+        strong: "maa → maata",
+        weak: "pitkä vokaali, diftongi, -e",
+        rows: [{
+          l: "maa",
+          form: "maata",
+          s: true
+        }, {
+          l: "työ",
+          form: "työtä",
+          s: false
+        }, {
+          l: "huone",
+          form: "huonetta",
+          s: false
+        }],
+        exf: "rakastan Suomea ja suomen kieltä",
+        exe: "long vowels and diphthongs take -ta/-tä"
+      }, {
+        w: "-tta / -ttä",
+        tf: "vanhat -i → -e",
+        te: "old -i words",
+        strong: "vesi → vettä",
+        weak: "i muuttuu, tt tulee",
+        rows: [{
+          l: "vesi",
+          form: "vettä",
+          s: true
+        }, {
+          l: "uusi",
+          form: "uutta",
+          s: true
+        }, {
+          l: "käsi",
+          form: "kättä",
+          s: true
+        }],
+        exf: "juon vettä, en mehua",
+        exe: "a small set of -i words: i → e, then -ttä"
+      }]
+    }, {
+      hf: "Petolliset -i-sanat — kaksi ryhmää",
+      he: "Tricky -i words — two groups",
+      items: [{
+        w: "vanhat sanat (i→e)",
+        tf: "suomalaiset",
+        te: "native",
+        strong: "-i → -e- → partitiivi",
+        weak: "vesi, käsi, uusi, susi",
+        rows: [{
+          l: "vesi",
+          form: "vettä",
+          s: true
+        }, {
+          l: "käsi",
+          form: "kättä",
+          s: true
+        }, {
+          l: "uusi",
+          form: "uutta",
+          s: true
+        }, {
+          l: "suuri",
+          form: "suurta",
+          s: false
+        }],
+        exf: "nostan käteni — pesen kädet",
+        exe: "old -i words shift i→e before the ending"
+      }, {
+        w: "uudet lainasanat (i pysyy)",
+        tf: "vieraat",
+        te: "loanwords",
+        strong: "-i pysyy → -a/-ä",
+        weak: "pankki, posti, kahvi",
+        rows: [{
+          l: "pankki",
+          form: "pankkia",
+          s: true
+        }, {
+          l: "posti",
+          form: "postia",
+          s: true
+        }, {
+          l: "kahvi",
+          form: "kahvia",
+          s: true
+        }],
+        exf: "työskentelin pankissa 21 vuotta",
+        exe: "loanwords keep the -i and just add -a/-ä"
+      }]
+    }]
+  }
 }, {
   id: "genitive",
   cat: "case",
@@ -2154,7 +3230,112 @@ const GRAMMAR = [{
     e: "in front of the house"
   }],
   mf: "-n lopussa = 'kenen?' omistus.",
-  me: "-n at the end = 'whose?' possession."
+  me: "-n at the end = 'whose?' possession.",
+  rich: {
+    df: "Genetiivi (-n) ilmaisee omistusta ja toimii monen muun sijan vartalona. Astevaihtelu osuu usein juuri genetiiviin (pankki→pankin).",
+    de: "The genitive (-n) shows possession and serves as the stem for many other cases. Gradation often lands right on the genitive (pankki→pankin).",
+    sections: [{
+      hf: "Genetiivin muodostus",
+      he: "Forming the genitive",
+      items: [{
+        w: "talo → talon",
+        tf: "lisää -n",
+        te: "add -n",
+        strong: "talo → talon",
+        weak: "perusmuoto + n",
+        rows: [{
+          l: "talo",
+          form: "talon",
+          s: false
+        }, {
+          l: "Suomi",
+          form: "Suomen",
+          s: false
+        }, {
+          l: "työ",
+          form: "työn",
+          s: false
+        }],
+        exf: "Suomen kieli on kaunis",
+        exe: "the Finnish language is beautiful"
+      }, {
+        w: "pankki → pankin",
+        tf: "astevaihtelu kk→k",
+        te: "gradation kk→k",
+        strong: "pankki → pankin",
+        weak: "kk→k, nt→nn, t→d",
+        rows: [{
+          l: "pankki",
+          form: "pankin",
+          s: true
+        }, {
+          l: "koti",
+          form: "kodin",
+          s: true
+        }, {
+          l: "tutkinto",
+          form: "tutkinnon",
+          s: true
+        }],
+        exf: "tutkinnon suorittaminen kesti vuoden",
+        exe: "completing the degree took a year"
+      }]
+    }, {
+      hf: "Genetiivi = muiden sijojen vartalo",
+      he: "Genitive = the stem other cases build on",
+      items: [{
+        w: "pankki",
+        tf: "vartalo kulkee mukana",
+        te: "the stem carries",
+        strong: "pankin- → pankissa…",
+        weak: "heikko aste jää useimpiin",
+        rows: [{
+          l: "genetiivi",
+          form: "pankin",
+          s: true
+        }, {
+          l: "inessiivi",
+          form: "pankissa",
+          s: false
+        }, {
+          l: "elatiivi",
+          form: "pankista",
+          s: false
+        }, {
+          l: "illatiivi",
+          form: "pankkiin",
+          s: true
+        }],
+        exf: "työskentelin pankissa 21 vuotta",
+        exe: "I worked in a bank for 21 years"
+      }]
+    }, {
+      hf: "Postpositiot vaativat genetiivin",
+      he: "Postpositions require the genitive",
+      items: [{
+        w: "talon edessä",
+        tf: "genetiivi + postpositio",
+        te: "genitive + postposition",
+        strong: "työn takia, minun mielestäni",
+        weak: "kenen/minkä? → -n",
+        rows: [{
+          l: "talon",
+          form: "edessä",
+          s: false
+        }, {
+          l: "opiskelun",
+          form: "takia",
+          s: false
+        }, {
+          l: "minun",
+          form: "mielestäni",
+          s: false
+        }],
+        exf: "tulin Suomeen opiskelun takia",
+        exe: "I came to Finland for the sake of studies"
+      }]
+    }]
+  }
 }, {
   id: "accusative",
   cat: "obj",
@@ -2175,7 +3356,83 @@ const GRAMMAR = [{
     e: "Do you know him/her? (pronoun → -t)"
   }],
   mf: "Valmis + kokonainen → -n.",
-  me: "Complete + whole → -n."
+  me: "Complete + whole → -n.",
+  rich: {
+    df: "Akkusatiivi-objektilla on kolme muotoa. Yksikössä -n (näyttää genetiiviltä), monikossa -t, ja persoonapronomineilla oma -t-muoto (minut, sinut, hänet).",
+    de: "The accusative object has three shapes. Singular -n (looks like the genitive), plural -t, and personal pronouns have their own -t forms (minut, sinut, hänet).",
+    sections: [{
+      hf: "Kolme muotoa",
+      he: "Three forms",
+      items: [{
+        w: "Yksikkö",
+        tf: "-n",
+        te: "singular -n",
+        strong: "auto → auton",
+        weak: "= genetiivin näköinen",
+        rows: [{
+          l: "perusmuoto",
+          form: "auto",
+          s: false
+        }, {
+          l: "objekti",
+          form: "ostan auton",
+          s: true
+        }, {
+          l: "tutkinto",
+          form: "suoritin tutkinnon",
+          s: true
+        }],
+        exf: "avaan ikkunan aamulla",
+        exe: "whole singular object → -n"
+      }, {
+        w: "Monikko",
+        tf: "-t",
+        te: "plural -t",
+        strong: "autot",
+        weak: "kokonaiset kohteet",
+        rows: [{
+          l: "perusmuoto",
+          form: "ikkunat",
+          s: false
+        }, {
+          l: "objekti",
+          form: "avaan ikkunat",
+          s: true
+        }, {
+          l: "kengät",
+          form: "ostan uudet kengät",
+          s: true
+        }],
+        exf: "lähetän hakemukset työnantajille",
+        exe: "whole plural object → -t"
+      }, {
+        w: "Pronominit",
+        tf: "oma -t-muoto",
+        te: "own -t forms",
+        strong: "minut, sinut, hänet",
+        weak: "meidät, teidät, heidät",
+        rows: [{
+          l: "minä →",
+          form: "minut",
+          s: true
+        }, {
+          l: "sinä →",
+          form: "sinut",
+          s: true
+        }, {
+          l: "hän →",
+          form: "hänet",
+          s: true
+        }, {
+          l: "he →",
+          form: "heidät",
+          s: true
+        }],
+        exf: "tunnetko hänet? — työnantaja tapasi minut",
+        exe: "pronoun objects take special -t forms"
+      }]
+    }]
+  }
 }, {
   id: "object-rule",
   cat: "obj",
@@ -2195,7 +3452,130 @@ const GRAMMAR = [{
     e: "I'm eating an apple (some of it) / I eat the (whole) apple."
   }],
   mf: "Kielto–keskeneräinen–epämääräinen → P. Muuten → -n.",
-  me: "Negative–ongoing–indefinite → P. Otherwise → -n."
+  me: "Negative–ongoing–indefinite → P. Otherwise → -n.",
+  rich: {
+    df: "Kysy kolme kysymystä järjestyksessä. Ensimmäinen 'kyllä' ratkaisee: partitiivi. Jos kaikki ovat 'ei', objekti on akkusatiivi (-n yksikössä, -t monikossa ja pronomineissa).",
+    de: "Ask three questions in order. The first 'yes' decides it: partitive. If all are 'no', the object is accusative (-n singular, -t plural and pronouns).",
+    sections: [{
+      hf: "Päätöspuu — kysy järjestyksessä",
+      he: "Decision tree — ask in order",
+      items: [{
+        w: "1 · Kielteinen?",
+        tf: "aina partitiivi",
+        te: "always partitive",
+        strong: "→ partitiivi",
+        weak: "negatiivi voittaa aina",
+        rows: [{
+          l: "Myönteinen",
+          form: "Ostan auton.",
+          s: false
+        }, {
+          l: "Kielteinen",
+          form: "En osta autoa.",
+          s: true
+        }],
+        exf: "en hae vakituista työtä vielä → haen vakituista työtä",
+        exe: "negation forces partitive, no matter what"
+      }, {
+        w: "2 · Keskeneräinen / jatkuva?",
+        tf: "partitiivi",
+        te: "partitive",
+        strong: "→ partitiivi",
+        weak: "prosessi, ei tulosta",
+        rows: [{
+          l: "Prosessi",
+          form: "Luen kirjaa.",
+          s: true
+        }, {
+          l: "Valmis",
+          form: "Luen kirjan.",
+          s: false
+        }],
+        exf: "kirjoitan kirjaa (Bangla theke Suomi)",
+        exe: "I'm writing a book — ongoing, so partitive"
+      }, {
+        w: "3 · Epämääräinen määrä / ainesana?",
+        tf: "partitiivi",
+        te: "partitive",
+        strong: "→ partitiivi",
+        weak: "osa, ei kokonaisuutta",
+        rows: [{
+          l: "Osa / ainetta",
+          form: "Juon kahvia.",
+          s: true
+        }, {
+          l: "Luvun jälkeen",
+          form: "kolme omenaa",
+          s: true
+        }, {
+          l: "Kokonainen",
+          form: "Juon kahvin.",
+          s: false
+        }],
+        exf: "opiskelen suomea joka päivä",
+        exe: "studying Finnish — an unbounded amount, partitive"
+      }, {
+        w: "Muuten → Akkusatiivi",
+        tf: "valmis + kokonainen",
+        te: "complete + whole",
+        strong: "-n / -t",
+        weak: "tulos saavutettu",
+        rows: [{
+          l: "Yksikkö",
+          form: "Avaan ikkunan.",
+          s: true
+        }, {
+          l: "Monikko",
+          form: "Avaan ikkunat.",
+          s: true
+        }, {
+          l: "Pronomini",
+          form: "Tunnetko hänet?",
+          s: true
+        }],
+        exf: "suoritin tutkinnon 31.5.2025",
+        exe: "I completed the degree — done and whole, accusative -n"
+      }]
+    }, {
+      hf: "Sama verbi, kaksi objektia — merkitys muuttuu",
+      he: "Same verb, two objects — the meaning shifts",
+      items: [{
+        w: "lukea",
+        tf: "partitiivi vs. akkusatiivi",
+        te: "partitive vs. accusative",
+        strong: "Luen kirjan.",
+        weak: "Luen kirjaa.",
+        rows: [{
+          l: "Luen kirjaa.",
+          form: "I'm reading (in progress)",
+          s: false
+        }, {
+          l: "Luen kirjan.",
+          form: "I'll read it to the end",
+          s: true
+        }],
+        exf: "illalla luen kirjaa; viikonloppuna luen kirjan",
+        exe: "process vs. completed result"
+      }, {
+        w: "syödä",
+        tf: "partitiivi vs. akkusatiivi",
+        te: "partitive vs. accusative",
+        strong: "Syön omenan.",
+        weak: "Syön omenaa.",
+        rows: [{
+          l: "Syön omenaa.",
+          form: "I'm eating (some of) an apple",
+          s: false
+        }, {
+          l: "Syön omenan.",
+          form: "I eat the whole apple",
+          s: true
+        }],
+        exf: "syön lounasta töissä",
+        exe: "eating lunch — ongoing/partial, partitive"
+      }]
+    }]
+  }
 }, {
   id: "kpt",
   cat: "found",
@@ -2215,7 +3595,243 @@ const GRAMMAR = [{
     e: "Helsinki → in Helsinki (nk→ng)"
   }],
   mf: "Pääte sulkee tavun → heikko aste.",
-  me: "An ending closes the syllable → weak grade."
+  me: "An ending closes the syllable → weak grade.",
+  rich: {
+    df: "Astevaihtelu käytännössä — sama sääntö substantiiveissa, adjektiiveissa, numeraaleissa ja verbeissä. Vahva muoto on korostettu.",
+    de: "Gradation in practice — the one rule at work across nouns, adjectives, numerals and verbs. The strong form is highlighted.",
+    sections: [{
+      hf: "Nominit — genetiivi / partitiivi / paikallissijat",
+      he: "Nominals — genitive / partitive / local cases",
+      items: [{
+        w: "pankki",
+        tf: "substantiivi",
+        te: "noun",
+        strong: "pankki-",
+        weak: "panki-",
+        rows: [{
+          l: "Genetiivi",
+          form: "pankin",
+          s: false
+        }, {
+          l: "Partitiivi",
+          form: "pankkia",
+          s: true
+        }, {
+          l: "Mihin",
+          form: "pankkiin",
+          s: true
+        }, {
+          l: "Missä",
+          form: "pankissa",
+          s: false
+        }, {
+          l: "Mistä",
+          form: "pankista",
+          s: false
+        }],
+        exf: "työskentelin pankissa",
+        exe: "I worked in a bank"
+      }, {
+        w: "tutkinto",
+        tf: "substantiivi",
+        te: "noun",
+        strong: "tutkinto-",
+        weak: "tutkinno-",
+        rows: [{
+          l: "Genetiivi",
+          form: "tutkinnon",
+          s: false
+        }, {
+          l: "Partitiivi",
+          form: "tutkintoa",
+          s: true
+        }, {
+          l: "Mihin",
+          form: "tutkintoon",
+          s: true
+        }, {
+          l: "Missä",
+          form: "tutkinnossa",
+          s: false
+        }, {
+          l: "Mistä",
+          form: "tutkinnosta",
+          s: false
+        }],
+        exf: "suoritin tutkinnon 31.5.2025",
+        exe: "I completed the degree"
+      }, {
+        w: "pitkä",
+        tf: "adjektiivi",
+        te: "adjective",
+        strong: "pitkä-",
+        weak: "pitkän- (k katoaa)",
+        rows: [{
+          l: "Genetiivi",
+          form: "pitkän",
+          s: false
+        }, {
+          l: "Partitiivi",
+          form: "pitkää",
+          s: true
+        }, {
+          l: "Mihin",
+          form: "pitkään",
+          s: true
+        }, {
+          l: "Missä",
+          form: "pitkässä",
+          s: false
+        }, {
+          l: "Mistä",
+          form: "pitkästä",
+          s: false
+        }],
+        exf: "pitkän kokemuksen ansiosta",
+        exe: "thanks to (my) long experience"
+      }, {
+        w: "kaksikymmentäyksi",
+        tf: "numeraali",
+        te: "numeral",
+        strong: "-kaksi",
+        weak: "-kahde- (ks→hd)",
+        rows: [{
+          l: "Genetiivi",
+          form: "kahdenkymmenenyhden",
+          s: false
+        }, {
+          l: "Missä",
+          form: "kahdessakymmenessäyhdessä",
+          s: false
+        }],
+        exf: "21 vuoden kokemus → kahdenkymmenenyhden vuoden kokemus",
+        exe: "21 years of experience"
+      }]
+    }, {
+      hf: "Verbit — minä vs. hän eri tyypeissä",
+      he: "Verbs — minä vs. hän across types",
+      items: [{
+        w: "muuttaa",
+        tf: "tyyppi 1",
+        te: "type 1",
+        strong: "muutta-",
+        weak: "muuta- (tt→t)",
+        rows: [{
+          l: "Minä",
+          form: "muutan",
+          s: false
+        }, {
+          l: "Hän",
+          form: "muuttaa",
+          s: true
+        }],
+        exf: "muutin Suomeen 21.8.2024",
+        exe: "I moved to Finland"
+      }, {
+        w: "syntyä",
+        tf: "tyyppi 1",
+        te: "type 1",
+        strong: "synty-",
+        weak: "synny- (nt→nn)",
+        rows: [{
+          l: "Minä",
+          form: "synnyin",
+          s: false
+        }, {
+          l: "Hän",
+          form: "syntyi",
+          s: true
+        }],
+        exf: "synnyin Bangladeshissa 31.7.1976",
+        exe: "I was born in Bangladesh"
+      }, {
+        w: "saada",
+        tf: "tyyppi 2",
+        te: "type 2",
+        strong: "saa-",
+        weak: "saa- (ei vaihtelua)",
+        rows: [{
+          l: "Minä",
+          form: "saan",
+          s: false
+        }, {
+          l: "Hän",
+          form: "saa",
+          s: true
+        }],
+        exf: "toivon saavani työpaikan",
+        exe: "I hope to get a job"
+      }, {
+        w: "tulla",
+        tf: "tyyppi 3",
+        te: "type 3",
+        strong: "tule-",
+        weak: "tul- (ll→l)",
+        rows: [{
+          l: "Minä",
+          form: "tulen",
+          s: false
+        }, {
+          l: "Hän",
+          form: "tulee",
+          s: true
+        }],
+        exf: "tulen Bangladeshista",
+        exe: "I come from Bangladesh"
+      }, {
+        w: "tavata",
+        tf: "tyyppi 4",
+        te: "type 4",
+        strong: "tapaa-",
+        weak: "tapa- (v↔p)",
+        rows: [{
+          l: "Minä",
+          form: "tapaan",
+          s: false
+        }, {
+          l: "Hän",
+          form: "tapaa",
+          s: true
+        }],
+        exf: "tapaan työnantajia",
+        exe: "I meet employers"
+      }, {
+        w: "tarvita",
+        tf: "tyyppi 5",
+        te: "type 5",
+        strong: "tarvitse-",
+        weak: "tarvitse- (ei vaihtelua)",
+        rows: [{
+          l: "Minä",
+          form: "tarvitsen",
+          s: false
+        }, {
+          l: "Hän",
+          form: "tarvitsee",
+          s: true
+        }],
+        exf: "tarvitsen työpaikan",
+        exe: "I need a job"
+      }, {
+        w: "vanheta",
+        tf: "tyyppi 6",
+        te: "type 6",
+        strong: "vanhene-",
+        weak: "vanhene- (ei vaihtelua)",
+        rows: [{
+          l: "Minä",
+          form: "vanhenen",
+          s: false
+        }, {
+          l: "Hän",
+          form: "vanhenee",
+          s: true
+        }],
+        exf: "en vanhene, opin",
+        exe: "I don't grow old, I learn"
+      }]
+    }]
+  }
 }, {
   id: "adj-agree",
   cat: "case",
@@ -2235,7 +3851,83 @@ const GRAMMAR = [{
     e: "new shoes (plural agrees too)"
   }],
   mf: "Adjektiivi matkii pääsanan päätettä.",
-  me: "The adjective copies the noun's ending."
+  me: "The adjective copies the noun's ending.",
+  rich: {
+    df: "Adjektiivi saa saman sijan ja luvun kuin pääsana — molemmissa sama pääte. Sama koskee monikkoa. Astevaihtelu voi osua molempiin.",
+    de: "The adjective takes the same case and number as its noun — the same ending on both. This holds in the plural too. Gradation can hit both words.",
+    sections: [{
+      hf: "Sama sija koko taivutuksessa",
+      he: "The same case right through the paradigm",
+      items: [{
+        w: "iso talo",
+        tf: "molemmat taipuvat",
+        te: "both decline",
+        strong: "isossa talossa",
+        weak: "sama pääte molemmissa",
+        rows: [{
+          l: "nominatiivi",
+          form: "iso talo",
+          s: false
+        }, {
+          l: "genetiivi",
+          form: "ison talon",
+          s: false
+        }, {
+          l: "inessiivi",
+          form: "isossa talossa",
+          s: true
+        }, {
+          l: "illatiivi",
+          form: "isoon taloon",
+          s: false
+        }, {
+          l: "partitiivi",
+          form: "isoa taloa",
+          s: false
+        }],
+        exf: "asun isossa talossa",
+        exe: "I live in a big house"
+      }, {
+        w: "pitkä kokemus",
+        tf: "astevaihtelu k→∅",
+        te: "gradation k→∅",
+        strong: "pitkän kokemuksen",
+        weak: "molemmat: genetiivi",
+        rows: [{
+          l: "nominatiivi",
+          form: "pitkä kokemus",
+          s: false
+        }, {
+          l: "genetiivi",
+          form: "pitkän kokemuksen",
+          s: true
+        }, {
+          l: "elatiivi",
+          form: "pitkästä kokemuksesta",
+          s: false
+        }],
+        exf: "pitkän kokemuksen ansiosta sain haastattelun",
+        exe: "thanks to long experience I got an interview"
+      }, {
+        w: "uudet kengät",
+        tf: "monikko myös",
+        te: "plural too",
+        strong: "uudet kengät",
+        weak: "monikossa -t molemmissa",
+        rows: [{
+          l: "nominatiivi mon.",
+          form: "uudet kengät",
+          s: false
+        }, {
+          l: "inessiivi mon.",
+          form: "uusissa kengissä",
+          s: false
+        }],
+        exf: "ostin uudet kengät talveksi",
+        exe: "I bought new shoes for the winter"
+      }]
+    }]
+  }
 }, {
   id: "comparison",
   cat: "case",
@@ -2255,7 +3947,146 @@ const GRAMMAR = [{
     e: "best / better / good (irregular)"
   }],
   mf: "-mpi = enemmän; -in = eniten.",
-  me: "-mpi = more; -in = most."
+  me: "-mpi = more; -in = most.",
+  rich: {
+    df: "Komparatiivi -mpi (isompi), superlatiivi -in (isoin). 'Kuin' yhdistää vertailtavat. Muutamat ovat epäsäännöllisiä, ja vertailumuoto taipuu sijoissa.",
+    de: "Comparative -mpi (isompi), superlative -in (isoin). 'Kuin' links the compared items. A few are irregular, and the comparison form still declines in cases.",
+    sections: [{
+      hf: "Säännöllinen -mpi / -in",
+      he: "Regular -mpi / -in",
+      items: [{
+        w: "iso",
+        tf: "säännöllinen",
+        te: "regular",
+        strong: "iso → isompi → isoin",
+        weak: "-mpi / -in",
+        rows: [{
+          l: "perusmuoto",
+          form: "iso",
+          s: false
+        }, {
+          l: "komparatiivi",
+          form: "isompi",
+          s: true
+        }, {
+          l: "superlatiivi",
+          form: "isoin",
+          s: true
+        }],
+        exf: "Helsinki on isompi kuin Espoo",
+        exe: "Helsinki is bigger than Espoo"
+      }, {
+        w: "suuri",
+        tf: "säännöllinen",
+        te: "regular",
+        strong: "suuri → suurempi → suurin",
+        weak: "kuin = than",
+        rows: [{
+          l: "perusmuoto",
+          form: "suuri",
+          s: false
+        }, {
+          l: "komparatiivi",
+          form: "suurempi",
+          s: true
+        }, {
+          l: "superlatiivi",
+          form: "suurin",
+          s: true
+        }],
+        exf: "minulla on suurempi kokemus kuin monella",
+        exe: "I have greater experience than many"
+      }]
+    }, {
+      hf: "Epäsäännölliset — opettele ulkoa",
+      he: "Irregulars — learn by heart",
+      items: [{
+        w: "hyvä",
+        tf: "epäsäännöllinen",
+        te: "irregular",
+        strong: "hyvä → parempi → paras",
+        weak: "good / better / best",
+        rows: [{
+          l: "hyvä",
+          form: "good",
+          s: false
+        }, {
+          l: "parempi",
+          form: "better",
+          s: true
+        }, {
+          l: "paras",
+          form: "best",
+          s: true
+        }],
+        exf: "paras aika oppia on nyt",
+        exe: "the best time to learn is now"
+      }, {
+        w: "paljon",
+        tf: "epäsäännöllinen",
+        te: "irregular",
+        strong: "paljon → enemmän → eniten",
+        weak: "much / more / most",
+        rows: [{
+          l: "paljon",
+          form: "much",
+          s: false
+        }, {
+          l: "enemmän",
+          form: "more",
+          s: true
+        }, {
+          l: "eniten",
+          form: "most",
+          s: true
+        }],
+        exf: "harjoittelen enemmän kuin ennen",
+        exe: "I practise more than before"
+      }, {
+        w: "pitkä",
+        tf: "astevaihtelu",
+        te: "gradation",
+        strong: "pitkä → pidempi → pisin",
+        weak: "k→d / k→∅",
+        rows: [{
+          l: "pitkä",
+          form: "long",
+          s: false
+        }, {
+          l: "pidempi",
+          form: "longer",
+          s: true
+        }, {
+          l: "pisin",
+          form: "longest",
+          s: true
+        }],
+        exf: "minulla on tiimin pisin kokemus",
+        exe: "I have the longest experience on the team"
+      }]
+    }, {
+      hf: "Vertailumuoto taipuu sijoissa",
+      he: "Comparison forms still decline",
+      items: [{
+        w: "suuremmassa",
+        tf: "komparatiivi + sija",
+        te: "comparative + case",
+        strong: "suurempi → suuremmassa",
+        weak: "-mpi → -mmA-",
+        rows: [{
+          l: "inessiivi",
+          form: "suuremmassa yrityksessä",
+          s: false
+        }, {
+          l: "illatiivi",
+          form: "parhaaseen kouluun",
+          s: false
+        }],
+        exf: "haluan parhaaseen mahdolliseen työhön",
+        exe: "I want the best possible job"
+      }]
+    }]
+  }
 }, {
   id: "possessive",
   cat: "case",
@@ -2275,7 +4106,99 @@ const GRAMMAR = [{
     e: "my name is…"
   }],
   mf: "Liite kertoo omistajan ilman erillistä sanaa.",
-  me: "The suffix names the owner with no separate word."
+  me: "The suffix names the owner with no separate word.",
+  rich: {
+    df: "Omistusliite kiinnittyy sanan loppuun ja kertoo omistajan. Genetiivipronomini (minun, sinun…) on usein mukana. Liite tulee aina sijapäätteen jälkeen, viimeiseksi.",
+    de: "The possessive suffix attaches to the end of the word and names the owner. The genitive pronoun (minun, sinun…) often comes with it. The suffix always comes after the case ending, last.",
+    sections: [{
+      hf: "Kuusi omistusliitettä",
+      he: "The six possessive suffixes",
+      items: [{
+        w: "auto",
+        tf: "kaikki persoonat",
+        te: "all persons",
+        strong: "autoni, autosi, autonsa…",
+        weak: "-ni -si -nsa -mme -nne -nsa",
+        rows: [{
+          l: "minun",
+          form: "autoni",
+          s: true
+        }, {
+          l: "sinun",
+          form: "autosi",
+          s: true
+        }, {
+          l: "hänen",
+          form: "autonsa",
+          s: true
+        }, {
+          l: "meidän",
+          form: "automme",
+          s: false
+        }, {
+          l: "teidän",
+          form: "autonne",
+          s: false
+        }, {
+          l: "heidän",
+          form: "autonsa",
+          s: false
+        }],
+        exf: "autoni on vanha mutta toimii",
+        exe: "my car is old but works"
+      }]
+    }, {
+      hf: "Genetiivipronomini + liite yhdessä",
+      he: "Genitive pronoun + suffix together",
+      items: [{
+        w: "minun nimeni",
+        tf: "molemmat osat",
+        te: "both parts",
+        strong: "minun nimeni on…",
+        weak: "pronomini + -ni",
+        rows: [{
+          l: "nimi",
+          form: "minun nimeni",
+          s: true
+        }, {
+          l: "kotimaa",
+          form: "minun kotimaani",
+          s: false
+        }, {
+          l: "äidinkieli",
+          form: "minun äidinkieleni",
+          s: false
+        }],
+        exf: "nimeni on Ishtiak ja kotimaani on Bangladesh",
+        exe: "my name is Ishtiak and my home country is Bangladesh"
+      }]
+    }, {
+      hf: "Liite sijapäätteen päälle",
+      he: "Suffix on top of a case ending",
+      items: [{
+        w: "kokemukseni",
+        tf: "sija ensin, liite viimeiseksi",
+        te: "case first, suffix last",
+        strong: "työssäni, maahani",
+        weak: "vartalo + sija + liite",
+        rows: [{
+          l: "nominatiivi",
+          form: "kokemukseni",
+          s: false
+        }, {
+          l: "inessiivi",
+          form: "työssäni",
+          s: false
+        }, {
+          l: "illatiivi",
+          form: "maahani",
+          s: false
+        }],
+        exf: "kerron kokemuksestani ja koulutuksestani",
+        exe: "I talk about my experience and my education"
+      }]
+    }]
+  }
 }, {
   id: "past",
   cat: "verb",
@@ -2295,7 +4218,145 @@ const GRAMMAR = [{
     e: "I didn't speak"
   }],
   mf: "-i- = mennyt aika; kielto + -nut/-nyt.",
-  me: "-i- = past; negative + -nut/-nyt."
+  me: "-i- = past; negative + -nut/-nyt.",
+  rich: {
+    df: "Imperfektin tunnus on -i-. Se osuu vartaloon eri tavoin eri tyypeissä — joskus vokaali katoaa tai muuttuu. Kielto käyttää NUT-partisiippia.",
+    de: "The past marker is -i-. It hits the stem differently across types — sometimes a vowel drops or changes. The negative uses the NUT-participle.",
+    types: [{
+      n: "Tyyppi 1",
+      sig: "-i-",
+      rf: "-i- lisätään vartaloon. Yksi loppuvokaali a/ä katoaa usein (ostaa→ostin); u, o, y säilyvät. lukea→luin: e katoaa ja k pehmenee.",
+      re: "-i- is added to the stem. A single final a/ä often drops (ostaa→ostin); u, o, y stay. lukea→luin: e drops and k softens.",
+      verbs: [{
+        inf: "asua",
+        gloss: "lived",
+        p6: ["asuin", "asuit", "asui", "asuimme", "asuitte", "asuivat"],
+        exf: "asuin Bangladeshissa yli 40 vuotta",
+        exe: "I lived in Bangladesh for 40+ years"
+      }, {
+        inf: "ostaa",
+        gloss: "bought",
+        note: "a→∅",
+        p6: ["ostin", "ostit", "osti", "ostimme", "ostitte", "ostivat"],
+        exf: "ostin junalipun",
+        exe: "I bought a train ticket"
+      }, {
+        inf: "lukea",
+        gloss: "read",
+        note: "k→∅",
+        p6: ["luin", "luit", "luki", "luimme", "luitte", "lukivat"],
+        exf: "luin suomea joka ilta",
+        exe: "I read Finnish every evening"
+      }]
+    }, {
+      n: "Tyyppi 2",
+      sig: "-i- sulautuu",
+      rf: "Pitkä vokaali tai diftongi + i sulautuu: saada→sain, juoda→join, syödä→söin (yö→öi).",
+      re: "A long vowel or diphthong + i merges: saada→sain, juoda→join, syödä→söin (yö→öi).",
+      verbs: [{
+        inf: "saada",
+        gloss: "got",
+        note: "saa→sai",
+        p6: ["sain", "sait", "sai", "saimme", "saitte", "saivat"],
+        exf: "sain maisterin tutkinnon 31.5.2025",
+        exe: "I got my master's degree"
+      }, {
+        inf: "juoda",
+        gloss: "drank",
+        note: "juo→joi",
+        p6: ["join", "joit", "joi", "joimme", "joitte", "joivat"],
+        exf: "join kahvia aamulla",
+        exe: "I drank coffee in the morning"
+      }, {
+        inf: "syödä",
+        gloss: "ate",
+        note: "syö→söi",
+        p6: ["söin", "söit", "söi", "söimme", "söitte", "söivät"],
+        exf: "söin lounaan töissä",
+        exe: "I ate lunch at work"
+      }]
+    }, {
+      n: "Tyyppi 3",
+      sig: "-e- katoaa",
+      rf: "Vartalon -e- katoaa -i-:n edestä: tulla→tulin, mennä→menin.",
+      re: "The stem -e- drops before -i-: tulla→tulin, mennä→menin.",
+      verbs: [{
+        inf: "tulla",
+        gloss: "came",
+        p6: ["tulin", "tulit", "tuli", "tulimme", "tulitte", "tulivat"],
+        exf: "tulin Suomeen 21.8.2024",
+        exe: "I came to Finland on 21 Aug 2024"
+      }, {
+        inf: "mennä",
+        gloss: "went",
+        p6: ["menin", "menit", "meni", "menimme", "menitte", "menivät"],
+        exf: "menin TE-toimistoon",
+        exe: "I went to the TE office"
+      }, {
+        inf: "opiskella",
+        gloss: "studied",
+        p6: ["opiskelin", "opiskelit", "opiskeli", "opiskelimme", "opiskelitte", "opiskelivat"],
+        exf: "opiskelin suomea Jamkissa",
+        exe: "I studied Finnish at Jamk"
+      }]
+    }, {
+      n: "Tyyppi 4",
+      sig: "-ta → -si-",
+      rf: "-ata/-ätä muuttuu -si-:ksi imperfektissä: haluta→halusin, tavata→tapasin, osata→osasin.",
+      re: "-ata/-ätä becomes -si- in the past: haluta→halusin, tavata→tapasin, osata→osasin.",
+      verbs: [{
+        inf: "haluta",
+        gloss: "wanted",
+        note: "-ta→-si-",
+        p6: ["halusin", "halusit", "halusi", "halusimme", "halusitte", "halusivat"],
+        exf: "halusin oppia suomea",
+        exe: "I wanted to learn Finnish"
+      }, {
+        inf: "tavata",
+        gloss: "met",
+        note: "v→p",
+        p6: ["tapasin", "tapasit", "tapasi", "tapasimme", "tapasitte", "tapasivat"],
+        exf: "tapasin uusia ihmisiä",
+        exe: "I met new people"
+      }, {
+        inf: "osata",
+        gloss: "knew how",
+        p6: ["osasin", "osasit", "osasi", "osasimme", "osasitte", "osasivat"],
+        exf: "osasin jo englantia",
+        exe: "I already knew English"
+      }]
+    }, {
+      n: "Tyyppi 5",
+      sig: "-ita → -tsi-",
+      rf: "-ita/-itä → -tsi- imperfektissä: tarvita→tarvitsin, valita→valitsin.",
+      re: "-ita/-itä → -tsi- in the past: tarvita→tarvitsin, valita→valitsin.",
+      verbs: [{
+        inf: "tarvita",
+        gloss: "needed",
+        p6: ["tarvitsin", "tarvitsit", "tarvitsi", "tarvitsimme", "tarvitsitte", "tarvitsivat"],
+        exf: "tarvitsin lisää harjoitusta",
+        exe: "I needed more practice"
+      }, {
+        inf: "valita",
+        gloss: "chose",
+        p6: ["valitsin", "valitsit", "valitsi", "valitsimme", "valitsitte", "valitsivat"],
+        exf: "valitsin verkkokurssin",
+        exe: "I chose an online course"
+      }]
+    }, {
+      n: "Kielto",
+      sig: "-nut / -nyt",
+      rf: "Kielteinen imperfekti: kieltoverbi + NUT-partisiippi (yksikkö -nut/-nyt, monikko -neet). Vartalo EI saa -i-:tä.",
+      re: "Negative past: the negative verb + the NUT-participle (singular -nut/-nyt, plural -neet). The stem takes NO -i-.",
+      verbs: [{
+        inf: "puhua",
+        gloss: "didn't speak",
+        p6: ["en puhunut", "et puhunut", "ei puhunut", "emme puhuneet", "ette puhuneet", "eivät puhuneet"],
+        exf: "en puhunut suomea vielä vuonna 2024",
+        exe: "I didn't speak Finnish yet in 2024"
+      }]
+    }]
+  }
 }, {
   id: "conditional",
   cat: "verb",
@@ -2315,7 +4376,60 @@ const GRAMMAR = [{
     e: "Would you go with me?"
   }],
   mf: "-isi- = 'would'.",
-  me: "-isi- = 'would'."
+  me: "-isi- = 'would'.",
+  rich: {
+    df: "Tunnus -isi- tulee vartalon ja persoonapäätteen väliin. Vartalo voi muuttua kuten imperfektissä. Käyttö: kohtelias pyyntö, toive tai ehto (jos-lause).",
+    de: "The marker -isi- goes between the stem and the person ending. The stem can change as in the past. Use: polite request, wish, or condition (jos-clause).",
+    types: [{
+      n: "Muodostus",
+      sig: "-isi-",
+      rf: "Ota vartalo, lisää -isi-, sitten persoonapääte. Vartalonmuutokset: saada→saisin, juoda→joisin, tulla→tulisin, haluta→haluaisin.",
+      re: "Take the stem, add -isi-, then the person ending. Stem changes: saada→saisin, juoda→joisin, tulla→tulisin, haluta→haluaisin.",
+      verbs: [{
+        inf: "puhua",
+        gloss: "would speak",
+        p6: ["puhuisin", "puhuisit", "puhuisi", "puhuisimme", "puhuisitte", "puhuisivat"],
+        exf: "puhuisin mielelläni suomea",
+        exe: "I would gladly speak Finnish"
+      }, {
+        inf: "saada",
+        gloss: "would get",
+        p6: ["saisin", "saisit", "saisi", "saisimme", "saisitte", "saisivat"],
+        exf: "saisin toivottavasti työpaikan",
+        exe: "I would hopefully get a job"
+      }, {
+        inf: "tulla",
+        gloss: "would come",
+        p6: ["tulisin", "tulisit", "tulisi", "tulisimme", "tulisitte", "tulisivat"],
+        exf: "tulisin heti, jos voisin",
+        exe: "I would come at once if I could"
+      }, {
+        inf: "haluta",
+        gloss: "would want",
+        p6: ["haluaisin", "haluaisit", "haluaisi", "haluaisimme", "haluaisitte", "haluaisivat"],
+        exf: "haluaisin vakituisen työn",
+        exe: "I would like a permanent job"
+      }]
+    }, {
+      n: "Käyttö",
+      sig: "pyyntö · toive · ehto",
+      rf: "Konditionaali pehmentää: kohtelias pyyntö (saisinko?, voisitko?), toive (haluaisin), ja ehto jos-lauseessa (jos minulla olisi…).",
+      re: "The conditional softens: polite request (saisinko?, voisitko?), a wish (haluaisin), and a condition in a jos-clause (jos minulla olisi… = if I had…).",
+      verbs: [{
+        inf: "olla",
+        gloss: "would be / had",
+        p6: ["olisin", "olisit", "olisi", "olisimme", "olisitte", "olisivat"],
+        exf: "jos minulla olisi enemmän aikaa, opiskelisin lisää",
+        exe: "if I had more time, I'd study more"
+      }, {
+        inf: "voida",
+        gloss: "could",
+        p6: ["voisin", "voisit", "voisi", "voisimme", "voisitte", "voisivat"],
+        exf: "voisitko auttaa minua suomen kanssa?",
+        exe: "could you help me with Finnish?"
+      }]
+    }]
+  }
 }, {
   id: "questions",
   cat: "sent",
@@ -2355,7 +4469,130 @@ const GRAMMAR = [{
     e: "Complex: They are home because it's raining."
   }],
   mf: "Yksi = 1 verbi. Rinnasteinen = pää+pää. Alisteinen = pää+sivu.",
-  me: "Simple = 1 verb. Compound = main+main. Complex = main+subordinate."
+  me: "Simple = 1 verb. Compound = main+main. Complex = main+subordinate.",
+  rich: {
+    df: "Rinnasteinen lause yhdistää kaksi itsenäistä päälausetta. Alisteinen liittää päälauseeseen sivulauseen, joka ei toimi yksin. Sidesana kertoo suhteen: syy, aika, ehto, referointi.",
+    de: "A compound sentence joins two independent main clauses. A complex sentence attaches a subordinate clause that can't stand alone. The connector signals the relationship: cause, time, condition, reporting.",
+    sections: [{
+      hf: "Rinnasteinen — kaksi päälausetta",
+      he: "Compound — two main clauses",
+      items: [{
+        w: "ja · mutta · tai · vai · vaan",
+        tf: "rinnastuskonjunktiot",
+        te: "coordinating",
+        strong: "pää + pää",
+        weak: "molemmat itsenäisiä",
+        rows: [{
+          l: "ja",
+          form: "lisää",
+          s: false
+        }, {
+          l: "mutta",
+          form: "vastakohta",
+          s: false
+        }, {
+          l: "tai",
+          form: "vaihtoehto",
+          s: false
+        }, {
+          l: "vai?",
+          form: "kysymyksessä",
+          s: false
+        }],
+        exf: "asun Espoossa, mutta etsin työtä koko Suomesta",
+        exe: "I live in Espoo, but I'm looking for work across Finland"
+      }]
+    }, {
+      hf: "Alisteinen — pää + sivulause",
+      he: "Complex — main + subordinate clause",
+      items: [{
+        w: "koska",
+        tf: "syy",
+        te: "cause",
+        strong: "…koska…",
+        weak: "miksi?",
+        rows: [{
+          l: "päälause",
+          form: "opiskelen suomea",
+          s: false
+        }, {
+          l: "sivulause",
+          form: "koska haluan YKI-todistuksen",
+          s: true
+        }],
+        exf: "opiskelen suomea, koska haluan YKI-todistuksen",
+        exe: "I study Finnish because I want a YKI certificate"
+      }, {
+        w: "jos",
+        tf: "ehto",
+        te: "condition",
+        strong: "…jos…",
+        weak: "millä ehdolla?",
+        rows: [{
+          l: "päälause",
+          form: "saisin työn helpommin",
+          s: false
+        }, {
+          l: "sivulause",
+          form: "jos puhuisin paremmin suomea",
+          s: true
+        }],
+        exf: "saisin työn helpommin, jos puhuisin paremmin suomea",
+        exe: "I'd get a job more easily if I spoke better Finnish"
+      }, {
+        w: "kun",
+        tf: "aika",
+        te: "time",
+        strong: "…kun…",
+        weak: "milloin?",
+        rows: [{
+          l: "sivulause",
+          form: "kun sain tutkinnon 2025",
+          s: true
+        }, {
+          l: "päälause",
+          form: "aloin etsiä työtä",
+          s: false
+        }],
+        exf: "kun sain tutkinnon 2025, aloin etsiä työtä",
+        exe: "when I got my degree in 2025, I started looking for work"
+      }, {
+        w: "joka",
+        tf: "relatiivipronomini",
+        te: "relative",
+        strong: "…joka…",
+        weak: "viittaa sanaan",
+        rows: [{
+          l: "päälause",
+          form: "kirjoitan kirjaa",
+          s: false
+        }, {
+          l: "sivulause",
+          form: "joka auttaa bengalinkielisiä",
+          s: true
+        }],
+        exf: "kirjoitan kirjaa, joka auttaa bengalinkielisiä oppijoita",
+        exe: "I'm writing a book that helps Bengali-speaking learners"
+      }, {
+        w: "että",
+        tf: "referointi",
+        te: "reporting",
+        strong: "…että…",
+        weak: "toteamus, toive",
+        rows: [{
+          l: "päälause",
+          form: "toivon",
+          s: false
+        }, {
+          l: "sivulause",
+          form: "että saan pian oman alani työn",
+          s: true
+        }],
+        exf: "toivon, että saan pian oman alani työn",
+        exe: "I hope that I'll soon get a job in my field"
+      }]
+    }]
+  }
 }];
 const GCATS = {
   found: "Perusasiat · Foundations",
@@ -3475,6 +5712,31 @@ body{background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemF
 .ex .f{font-weight:700}.ex .e{color:${C.sub};font-size:13px}
 .mn{background:${C.ink};color:#fff;border-radius:11px;padding:11px 13px;font-size:13.5px;margin-top:8px}
 .mn b{color:${C.amber2}}
+.gsec{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;border-bottom:2px solid;padding-bottom:5px;margin-bottom:9px}
+.gword{background:${C.bg};border:1px solid ${C.line};border-radius:11px;padding:11px 13px;margin-bottom:9px}
+.growhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.gw{font-size:16px;font-weight:800}
+.gtype{font-size:10.5px;color:${C.sub};text-transform:uppercase;letter-spacing:.05em;border:1px solid ${C.line};border-radius:6px;padding:2px 7px;background:#fff;white-space:nowrap;margin-left:8px}
+.gstems{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:${C.sub};margin-bottom:8px}
+.gstems b{color:${C.ink};font-weight:700}
+.gtab{width:100%;border-collapse:collapse;font-size:13.5px}
+.gtab td{padding:5px 4px;border-top:1px solid ${C.line}}
+.gtl{color:${C.sub};width:38%;font-size:12px}
+.kptbanner{background:${C.bg};border:1px dashed ${C.grammar};color:${C.grammar};border-radius:10px;padding:8px 11px;margin:2px 0 4px;font-size:12.5px;font-weight:700;cursor:pointer}
+.ccrow{display:flex;flex-wrap:wrap;gap:8px}
+.ccchip{background:${C.bg};border:1px solid ${C.line};border-radius:10px;padding:8px 11px;min-width:92px;cursor:pointer}
+.ccchip.cchere{background:${C.grammar};border-color:${C.grammar};cursor:default}
+.ccchip.cchere .ccq,.ccchip.cchere .ccf{color:#fff}
+.ccq{font-size:10.5px;color:${C.sub};text-transform:uppercase;letter-spacing:.04em}
+.ccf{font-size:15px;font-weight:800;color:${C.ink};margin-top:1px}
+.ccgo{font-size:11px;color:${C.grammar};font-weight:700;margin-top:2px}
+.seechip{display:inline-block;background:${C.bg};border:1px solid ${C.grammar};color:${C.grammar};border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer}
+.kptnote{color:${C.grammar};cursor:pointer;text-decoration:underline;text-decoration-style:dotted;font-weight:700}
+.kptlink{color:${C.grammar};cursor:pointer;text-decoration:underline;text-decoration-style:dotted;font-weight:700}
+.gconj{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;margin-bottom:2px}
+.gc{white-space:nowrap;color:#333}
+.gex{font-size:12.5px;color:${C.sub};font-style:italic;border-left:2px solid;padding-left:9px;margin-top:9px}
+.gex i{color:${C.ink};font-style:italic}
 .analy{border:1px solid currentColor;border-radius:13px;padding:13px;margin:10px 0}
 .analy .ttl{font-weight:800;font-size:15px}
 .bar{height:8px;background:${C.line};border-radius:999px;overflow:hidden}
@@ -3788,10 +6050,17 @@ function GCard({
   setLang,
   card,
   go,
-  back
+  back,
+  openCard
 }) {
   const F = lang === "fi";
   const c = card;
+  const mentionsKpt = card.id !== "kpt" && /kpt|astevaihtelu|gradation|→d\b|→v\b|k→|p→|t→|nk→|nt→|mp→|ll→l|ks→hd/i.test(JSON.stringify(card));
+  const kptChip = openCard && mentionsKpt ? /*#__PURE__*/React.createElement("div", {
+    className: "kptbanner",
+    onClick: () => openCard("kpt"),
+    title: F ? "Avaa astevaihtelu-kortti" : "Open the consonant-gradation card"
+  }, "🔁 ", F ? "Tässä on astevaihtelua — avaa KPT-kortti" : "This involves consonant gradation — open the KPT card", " →") : null;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       color: C.grammar
@@ -3828,7 +6097,7 @@ function GCard({
       fontSize: 14.5,
       lineHeight: 1.5
     }
-  }, F ? c.rf : c.re)), /*#__PURE__*/React.createElement("div", {
+  }, F ? c.rf : c.re)), kptChip, /*#__PURE__*/React.createElement("div", {
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab",
@@ -3850,7 +6119,191 @@ function GCard({
     className: "e"
   }, e.e)))), /*#__PURE__*/React.createElement("div", {
     className: "mn"
-  }, "💡 ", F ? c.mf : c.me)));
+  }, "💡 ", F ? c.mf : c.me)), c.rich && c.rich.sections && /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink,
+      marginTop: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: C.grammar
+    }
+  }, F ? "Syvennys" : "Deep dive"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      lineHeight: 1.5,
+      color: "#555",
+      marginBottom: 6
+    }
+  }, F ? c.rich.df : c.rich.de), c.rich.sections.map((sec, si) => /*#__PURE__*/React.createElement("div", {
+    key: si,
+    style: {
+      marginTop: 14
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gsec",
+    style: {
+      color: C.grammar,
+      borderColor: C.grammar
+    }
+  }, F ? sec.hf : sec.he), sec.items.map((it, ii) => /*#__PURE__*/React.createElement("div", {
+    key: ii,
+    className: "gword"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "growhead"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "gw"
+  }, it.w), /*#__PURE__*/React.createElement("span", {
+    className: "gtype"
+  }, F ? it.tf : it.te)), (it.strong || it.weak) && /*#__PURE__*/React.createElement("div", {
+    className: "gstems"
+  }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, F ? "Vahva" : "Strong", ":"), " ", it.strong), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, F ? "Heikko" : "Weak", ":"), " ", it.weak)), /*#__PURE__*/React.createElement("table", {
+    className: "gtab"
+  }, /*#__PURE__*/React.createElement("tbody", null, it.rows.map((r, ri) => /*#__PURE__*/React.createElement("tr", {
+    key: ri
+  }, /*#__PURE__*/React.createElement("td", {
+    className: "gtl"
+  }, r.l), /*#__PURE__*/React.createElement("td", {
+    className: r.s ? "gts" : "",
+    style: r.s ? {
+      color: C.grammar,
+      fontWeight: 600
+    } : {}
+  }, r.form))))), /*#__PURE__*/React.createElement("div", {
+    className: "gex",
+    style: {
+      borderColor: C.grammar
+    }
+  }, /*#__PURE__*/React.createElement("i", null, it.exf), " — ", it.exe))))), c.rich.crosscase && /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gsec",
+    style: {
+      color: C.grammar,
+      borderColor: C.grammar
+    }
+  }, F ? "Sama sana, kaikki muodot" : "Same word, every form"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: "#444",
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("b", null, c.rich.crosscase.word), c.rich.crosscase.wordEn ? " — " + c.rich.crosscase.wordEn : ""), /*#__PURE__*/React.createElement("div", {
+    className: "ccrow"
+  }, c.rich.crosscase.forms.map((fm, fi) => {
+    const here = fm.id === c.id;
+    return /*#__PURE__*/React.createElement("div", {
+      key: fi,
+      className: "ccchip" + (here ? " cchere" : ""),
+      onClick: () => !here && openCard && openCard(fm.id),
+      title: here ? F ? "tämä sija" : "this case" : F ? "avaa kortti" : "open card"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "ccq"
+    }, fm.q), /*#__PURE__*/React.createElement("div", {
+      className: "ccf"
+    }, fm.form), !here && /*#__PURE__*/React.createElement("div", {
+      className: "ccgo"
+    }, "→"));
+  }))), c.rich.seealso && openCard && /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 14
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: C.grammar,
+      marginBottom: 6
+    }
+  }, F ? "Katso myös" : "See also"), /*#__PURE__*/React.createElement("div", {
+    className: "row wrap",
+    style: {
+      gap: 6
+    }
+  }, c.rich.seealso.map((sid, xi) => {
+    const sc = GRAMMAR.find(g => g.id === sid);
+    if (!sc) return null;
+    return /*#__PURE__*/React.createElement("span", {
+      key: xi,
+      className: "seechip",
+      onClick: () => openCard(sid)
+    }, F ? sc.tf : sc.te, " →");
+  })))), c.rich && c.rich.types && /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink,
+      marginTop: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: C.grammar
+    }
+  }, F ? "Syvennys · verbityypit" : "Deep dive · verb types"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      lineHeight: 1.5,
+      color: "#555",
+      marginBottom: 6
+    }
+  }, F ? c.rich.df : c.rich.de), c.rich.types.map((t, ti) => /*#__PURE__*/React.createElement("div", {
+    key: ti,
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gsec",
+    style: {
+      color: C.grammar,
+      borderColor: C.grammar
+    }
+  }, t.n, " ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontWeight: 600,
+      textTransform: "none",
+      letterSpacing: 0
+    }
+  }, "· ", t.sig)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: "#444",
+      margin: "0 0 10px"
+    }
+  }, F ? t.rf : t.re), t.verbs.map((v, vi) => /*#__PURE__*/React.createElement("div", {
+    key: vi,
+    className: "gword"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "growhead"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "gw"
+  }, v.inf), /*#__PURE__*/React.createElement("span", {
+    className: "gtype"
+  }, v.gloss, v.note ? /*#__PURE__*/React.createElement("span", {
+    className: "kptnote",
+    onClick: e => {
+      e.stopPropagation();
+      openCard && openCard("kpt");
+    },
+    title: F ? "Astevaihtelu — katso KPT-kortti" : "Consonant gradation — see KPT card"
+  }, " · ", v.note, " ↗") : "")), /*#__PURE__*/React.createElement("div", {
+    className: "gconj"
+  }, ["minä", "sinä", "hän", "me", "te", "he"].map((p, pi) => /*#__PURE__*/React.createElement("span", {
+    key: pi,
+    className: "gc",
+    style: pi === 2 ? {
+      color: C.grammar,
+      fontWeight: 700
+    } : {}
+  }, p, "\xA0", v.p6[pi]))), /*#__PURE__*/React.createElement("div", {
+    className: "gex",
+    style: {
+      borderColor: C.grammar
+    }
+  }, /*#__PURE__*/React.createElement("i", null, v.exf), " — ", v.exe)))))));
 }
 
 // ---------- VOCABULARY ----------
@@ -4634,7 +7087,13 @@ function App() {
     lang: lang,
     setLang: setLang,
     card: run.card,
-    back: () => setView("grammar")
+    back: () => setView("grammar"),
+    openCard: id => {
+      setRun({
+        card: GRAMMAR.find(g => g.id === id)
+      });
+      setView("gcard");
+    }
   }));
   // vocab
   if (view === "vocab") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(VocabHome, {
