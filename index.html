@@ -1891,6 +1891,7 @@ const GRAMMAR = [{
   id: "vowel-harmony",
   cat: "found",
   lvl: "A1",
+  seealso: ["inessive", "partitive", "verbtypes"],
   tf: "Vokaalisointu",
   te: "Vowel harmony",
   rf: "Sanan vokaalit ovat joko takavokaaleja (a, o, u) tai etuvokaaleja (ä, ö, y). Samassa sanassa ne eivät sekoitu. Siksi useimmilla päätteillä on kaksi muotoa: -ssa / -ssä. Vokaalit e ja i ovat neutraaleja ja sopivat kumpaankin.",
@@ -1911,6 +1912,7 @@ const GRAMMAR = [{
   id: "verb-present",
   cat: "verb",
   lvl: "A1",
+  seealso: ["verbtypes", "past", "conditional", "negative"],
   tf: "Preesens & persoonapäätteet",
   te: "Present tense & person endings",
   rf: "Suomen verbi taipuu kuuden persoonan mukaan. Päätteet: minä -n, sinä -t, hän - (vokaalin pidennys), me -mme, te -tte, he -vat/-vät. Otat vartalon ja lisäät päätteen.",
@@ -1931,6 +1933,7 @@ const GRAMMAR = [{
   id: "verbtypes",
   cat: "verb",
   lvl: "A2",
+  seealso: ["verb-present", "past", "conditional", "kpt"],
   tf: "Verbityypit 1–6",
   te: "Verb types 1–6",
   rf: "Verbit jaetaan kuuteen tyyppiin sen mukaan, miten infinitiivi päättyy: 1 -a/-ä (puhua), 2 -da/-dä (juoda), 3 -la/-na/-ra/-ta (tulla, mennä), 4 -ata (haluta), 5 -ita (tarvita), 6 -eta (vanheta). Tyyppi kertoo, mikä vartalo otetaan ennen persoonapäätettä.",
@@ -2105,6 +2108,7 @@ const GRAMMAR = [{
   id: "negative",
   cat: "verb",
   lvl: "A1",
+  seealso: ["verb-present", "object-rule", "questions"],
   tf: "Kieltoverbi (en, et, ei…)",
   te: "The negative verb",
   rf: "Kielto tehdään erillisellä kieltoverbillä, joka taipuu: en, et, ei, emme, ette, eivät. Pääverbi jää kieltomuodossa lyhyeen vartaloon ilman persoonapäätettä.",
@@ -2878,6 +2882,7 @@ const GRAMMAR = [{
   id: "local-grid",
   cat: "case",
   lvl: "A1",
+  seealso: ["inessive", "elative", "illative", "adessive", "ablative", "allative"],
   tf: "Paikallissijat: 3 × 2 -ruudukko",
   te: "The six local cases: a 3 × 2 grid",
   rf: "Kuusi paikallissijaa muodostavat ruudukon. Pystysuunta = suunta (missä / mistä / mihin). Vaakasuunta = sisä vai ulko. Sisäsarja: -ssa, -sta, -Vn. Ulkosarja: -lla, -lta, -lle.",
@@ -3072,6 +3077,7 @@ const GRAMMAR = [{
   cat: "case",
   lvl: "A1",
   key: "partitive",
+  seealso: ["accusative", "object-rule", "genitive"],
   tf: "Partitiivi -a/-ä, -ta/-tä, -tta/-ttä",
   te: "Partitive -a/-ä, -ta/-tä, -tta/-ttä",
   rf: "Partitiivi ilmaisee osaa, määräämätöntä määrää tai keskeneräistä tekemistä. Se tulee myös kielteisen lauseen objektiksi, lukusanan jälkeen ja monien verbien kanssa. Pääte: -a/-ä (talo→taloa), -ta/-tä (maa→maata), -tta/-ttä (osa sanoista, vesi→vettä).",
@@ -3215,6 +3221,7 @@ const GRAMMAR = [{
   cat: "case",
   lvl: "A2",
   key: "genitive",
+  seealso: ["accusative", "possessive", "partitive", "local-grid"],
   tf: "Genetiivi -n (omistus)",
   te: "Genitive -n (possession)",
   rf: "Genetiivi päättyy -n ja ilmaisee omistusta ('jonkin'). Se on myös monen postposition edellä: talon edessä. Genetiivivartalo on usein sama, jota muut sijat käyttävät.",
@@ -3341,6 +3348,7 @@ const GRAMMAR = [{
   cat: "obj",
   lvl: "A2",
   key: "accusative",
+  seealso: ["partitive", "object-rule", "genitive"],
   tf: "Akkusatiivi-objekti -n (kokonainen)",
   te: "Accusative object -n (whole/complete)",
   rf: "Kun tekeminen on valmis ja kohde kokonainen, yksikön objekti saa -n-päätteen (näyttää genetiiviltä). Monikossa objektin pääte on -t, ja persoonapronominit saavat -t (minut, sinut, hänet).",
@@ -3437,6 +3445,7 @@ const GRAMMAR = [{
   id: "object-rule",
   cat: "obj",
   lvl: "B1",
+  seealso: ["accusative", "partitive", "negative"],
   tf: "Objektin valinta: partitiivi vai akkusatiivi",
   te: "Choosing the object: partitive vs. accusative",
   rf: "Päätöspuu: 1) Onko lause kielteinen? → partitiivi. 2) Onko tekeminen keskeneräistä tai jatkuvaa? → partitiivi. 3) Onko määrä epämääräinen / ainesana? → partitiivi. Muuten, kun tulos on valmis ja kokonainen → akkusatiivi (-n / -t).",
@@ -3580,6 +3589,7 @@ const GRAMMAR = [{
   id: "kpt",
   cat: "found",
   lvl: "A2",
+  seealso: ["verbtypes", "genitive", "partitive", "inessive"],
   tf: "Astevaihtelu (KPT)",
   te: "Consonant gradation (k, p, t)",
   rf: "k, p ja t vaihtelevat vahvan ja heikon asteen välillä, kun pääte sulkee tavun. Yleisiä pareja: kk→k, pp→p, tt→t, t→d, p→v, k→(katoaa), nk→ng, nt→nn, mp→mm, lt→ll, rt→rr.",
@@ -3836,6 +3846,7 @@ const GRAMMAR = [{
   id: "adj-agree",
   cat: "case",
   lvl: "A2",
+  seealso: ["comparison", "inessive", "genitive"],
   tf: "Adjektiivin kongruenssi",
   te: "Adjective agreement",
   rf: "Adjektiivi saa saman sijan ja luvun kuin pääsana. 'Isossa talossa' — sekä adjektiivi että substantiivi saavat -ssa. Tämä koskee kaikkia sijoja.",
@@ -3932,6 +3943,7 @@ const GRAMMAR = [{
   id: "comparison",
   cat: "case",
   lvl: "B1",
+  seealso: ["adj-agree"],
   tf: "Komparatiivi & superlatiivi",
   te: "Comparative & superlative",
   rf: "Vertailu: komparatiivi -mpi (suurempi), superlatiivi -in (suurin). 'Kuin' yhdistää vertailtavat: isompi kuin. Myös adjektiivi taipuu sijoissa: suuremmassa.",
@@ -4091,6 +4103,7 @@ const GRAMMAR = [{
   id: "possessive",
   cat: "case",
   lvl: "A2",
+  seealso: ["genitive"],
   tf: "Omistusliite (-ni, -si, -nsa…)",
   te: "Possessive suffix (-ni, -si, -nsa…)",
   rf: "Omistus voidaan ilmaista liitteellä sanan lopussa: -ni (minun), -si (sinun), -nsa/-nsä (hänen), -mme (meidän), -nne (teidän), -nsa (heidän). Usein genetiivipronomini on mukana: minun autoni.",
@@ -4203,6 +4216,7 @@ const GRAMMAR = [{
   id: "past",
   cat: "verb",
   lvl: "A2",
+  seealso: ["verb-present", "verbtypes", "conditional"],
   tf: "Imperfekti (mennyt aika)",
   te: "Past tense (imperfect)",
   rf: "Mennyt aika tehdään tunnuksella -i- vartalon ja persoonapäätteen välissä: puhu-i-n. Joskus -i- muuttaa vartalon vokaalia (osta → ostin, mutta saada → sain). Kielto: en puhunut (NUT-partisiippi).",
@@ -4361,6 +4375,7 @@ const GRAMMAR = [{
   id: "conditional",
   cat: "verb",
   lvl: "B1",
+  seealso: ["verb-present", "past", "sentence-types"],
   tf: "Konditionaali (-isi-)",
   te: "Conditional (-isi-)",
   rf: "Konditionaali ilmaisee ehtoa, toivetta tai kohteliaisuutta. Tunnus -isi- tulee vartalon ja persoonapäätteen väliin: puhu-isi-n = puhuisin. Usein jos-lauseen kanssa.",
@@ -4434,6 +4449,7 @@ const GRAMMAR = [{
   id: "questions",
   cat: "sent",
   lvl: "A1",
+  seealso: ["negative", "sentence-types"],
   tf: "Kysymykset: -ko/-kö ja kysymyssanat",
   te: "Questions: -ko/-kö and question words",
   rf: "Vaihtoehtokysymys (kyllä/ei) tehdään liitteellä -ko/-kö kysyttävän sanan perään, ja se nostetaan lauseen alkuun: Puhutko suomea? Hakukysymys alkaa kysymyssanalla: mikä, kuka, missä, milloin, miksi, miten.",
@@ -4454,6 +4470,7 @@ const GRAMMAR = [{
   id: "sentence-types",
   cat: "sent",
   lvl: "B1",
+  seealso: ["conditional", "questions"],
   tf: "Lausetyypit: yksinkertainen, rinnasteinen, alisteinen",
   te: "Sentence types: simple, compound, complex",
   rf: "Yksinkertaisessa lauseessa on yksi predikaatti. Rinnasteinen (compound) yhdistää kaksi päälausetta rinnastuskonjunktiolla: ja, mutta, tai, vai, vaan. Monimutkainen (complex) liittää päälauseeseen sivulauseen alistuskonjunktiolla tai pronominilla: että, koska, jos, kun, joka.",
@@ -6208,29 +6225,6 @@ function GCard({
     }, fm.form), !here && /*#__PURE__*/React.createElement("div", {
       className: "ccgo"
     }, "→"));
-  }))), c.rich.seealso && openCard && /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 14
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "lab",
-    style: {
-      color: C.grammar,
-      marginBottom: 6
-    }
-  }, F ? "Katso myös" : "See also"), /*#__PURE__*/React.createElement("div", {
-    className: "row wrap",
-    style: {
-      gap: 6
-    }
-  }, c.rich.seealso.map((sid, xi) => {
-    const sc = GRAMMAR.find(g => g.id === sid);
-    if (!sc) return null;
-    return /*#__PURE__*/React.createElement("span", {
-      key: xi,
-      className: "seechip",
-      onClick: () => openCard(sid)
-    }, F ? sc.tf : sc.te, " →");
   })))), c.rich && c.rich.types && /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
@@ -6303,7 +6297,37 @@ function GCard({
     style: {
       borderColor: C.grammar
     }
-  }, /*#__PURE__*/React.createElement("i", null, v.exf), " — ", v.exe)))))));
+  }, /*#__PURE__*/React.createElement("i", null, v.exf), " — ", v.exe)))))), (() => {
+    const seeIds = card.seealso || card.rich && card.rich.seealso;
+    if (!seeIds || !openCard) return null;
+    return /*#__PURE__*/React.createElement("div", {
+      className: "card",
+      style: {
+        color: C.ink,
+        marginTop: 12,
+        paddingTop: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "lab",
+      style: {
+        color: C.grammar,
+        marginBottom: 8
+      }
+    }, F ? "Katso myös" : "See also"), /*#__PURE__*/React.createElement("div", {
+      className: "row wrap",
+      style: {
+        gap: 6
+      }
+    }, seeIds.map((sid, xi) => {
+      const sc = GRAMMAR.find(g => g.id === sid);
+      if (!sc) return null;
+      return /*#__PURE__*/React.createElement("span", {
+        key: xi,
+        className: "seechip",
+        onClick: () => openCard(sid)
+      }, F ? sc.tf : sc.te, " →");
+    })));
+  })());
 }
 
 // ---------- VOCABULARY ----------
