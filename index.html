@@ -9337,6 +9337,26 @@ const VERBS = [{
   cond: "olisin",
   note: "irregular (hän on)"
 }, {
+  w: "tehdä",
+  en: "to do/make",
+  ty: "irr",
+  stem: "teke-",
+  mina: "teen",
+  han: "tekee",
+  past: "tein",
+  cond: "tekisin",
+  note: "irregular"
+}, {
+  w: "nähdä",
+  en: "to see",
+  ty: "irr",
+  stem: "näke-",
+  mina: "näen",
+  han: "näkee",
+  past: "näin",
+  cond: "näkisin",
+  note: "irregular"
+}, {
   w: "puhua",
   en: "to speak",
   ty: "1",
@@ -9357,6 +9377,26 @@ const VERBS = [{
   cond: "asuisin",
   note: "—"
 }, {
+  w: "sanoa",
+  en: "to say",
+  ty: "1",
+  stem: "sano-",
+  mina: "sanon",
+  han: "sanoo",
+  past: "sanoin",
+  cond: "sanoisin",
+  note: "—"
+}, {
+  w: "kysyä",
+  en: "to ask",
+  ty: "1",
+  stem: "kysy-",
+  mina: "kysyn",
+  han: "kysyy",
+  past: "kysyin",
+  cond: "kysyisin",
+  note: "—"
+}, {
   w: "lukea",
   en: "to read",
   ty: "1",
@@ -9367,6 +9407,86 @@ const VERBS = [{
   cond: "lukisin",
   note: "KPT k→∅"
 }, {
+  w: "katsoa",
+  en: "to watch",
+  ty: "1",
+  stem: "katso-",
+  mina: "katson",
+  han: "katsoo",
+  past: "katsoin",
+  cond: "katsoisin",
+  note: "—"
+}, {
+  w: "muistaa",
+  en: "to remember",
+  ty: "1",
+  stem: "muista-",
+  mina: "muistan",
+  han: "muistaa",
+  past: "muistin",
+  cond: "muistaisin",
+  note: "—"
+}, {
+  w: "antaa",
+  en: "to give",
+  ty: "1",
+  stem: "anta-",
+  mina: "annan",
+  han: "antaa",
+  past: "annoin",
+  cond: "antaisin",
+  note: "KPT nt→nn; past a→o"
+}, {
+  w: "ottaa",
+  en: "to take",
+  ty: "1",
+  stem: "otta-",
+  mina: "otan",
+  han: "ottaa",
+  past: "otin",
+  cond: "ottaisin",
+  note: "KPT tt→t"
+}, {
+  w: "alkaa",
+  en: "to begin",
+  ty: "1",
+  stem: "alka-",
+  mina: "alan",
+  han: "alkaa",
+  past: "aloin",
+  cond: "alkaisin",
+  note: "KPT lk→l; past a→o"
+}, {
+  w: "auttaa",
+  en: "to help",
+  ty: "1",
+  stem: "autta-",
+  mina: "autan",
+  han: "auttaa",
+  past: "autoin",
+  cond: "auttaisin",
+  note: "KPT tt→t; past a→o"
+}, {
+  w: "ostaa",
+  en: "to buy",
+  ty: "1",
+  stem: "osta-",
+  mina: "ostan",
+  han: "ostaa",
+  past: "ostin",
+  cond: "ostaisin",
+  note: "—"
+}, {
+  w: "maksaa",
+  en: "to pay/cost",
+  ty: "1",
+  stem: "maksa-",
+  mina: "maksan",
+  han: "maksaa",
+  past: "maksoin",
+  cond: "maksaisin",
+  note: "past a→o"
+}, {
   w: "ymmärtää",
   en: "to understand",
   ty: "1",
@@ -9375,7 +9495,457 @@ const VERBS = [{
   han: "ymmärtää",
   past: "ymmärsin",
   cond: "ymmärtäisin",
-  note: "rt→rr; past -si"
+  note: "rt→rr; past →si"
+}, {
+  w: "tietää",
+  en: "to know",
+  ty: "1",
+  stem: "tietä-",
+  mina: "tiedän",
+  han: "tietää",
+  past: "tiesin",
+  cond: "tietäisin",
+  note: "KPT t→d; past →si"
+}, {
+  w: "pitää",
+  en: "to hold/like",
+  ty: "1",
+  stem: "pitä-",
+  mina: "pidän",
+  han: "pitää",
+  past: "pidin",
+  cond: "pitäisin",
+  note: "KPT t→d"
+}, {
+  w: "löytää",
+  en: "to find",
+  ty: "1",
+  stem: "löytä-",
+  mina: "löydän",
+  han: "löytää",
+  past: "löysin",
+  cond: "löytäisin",
+  note: "KPT t→d; past →si"
+}, {
+  w: "näyttää",
+  en: "to show",
+  ty: "1",
+  stem: "näyttä-",
+  mina: "näytän",
+  han: "näyttää",
+  past: "näytin",
+  cond: "näyttäisin",
+  note: "KPT tt→t"
+}, {
+  w: "käyttää",
+  en: "to use",
+  ty: "1",
+  stem: "käyttä-",
+  mina: "käytän",
+  han: "käyttää",
+  past: "käytin",
+  cond: "käyttäisin",
+  note: "KPT tt→t"
+}, {
+  w: "lähettää",
+  en: "to send",
+  ty: "1",
+  stem: "lähettä-",
+  mina: "lähetän",
+  han: "lähettää",
+  past: "lähetin",
+  cond: "lähettäisin",
+  note: "KPT tt→t"
+}, {
+  w: "päättää",
+  en: "to decide",
+  ty: "1",
+  stem: "päättä-",
+  mina: "päätän",
+  han: "päättää",
+  past: "päätin",
+  cond: "päättäisin",
+  note: "KPT tt→t"
+}, {
+  w: "kirjoittaa",
+  en: "to write",
+  ty: "1",
+  stem: "kirjoitta-",
+  mina: "kirjoitan",
+  han: "kirjoittaa",
+  past: "kirjoitin",
+  cond: "kirjoittaisin",
+  note: "KPT tt→t"
+}, {
+  w: "soittaa",
+  en: "to call/play",
+  ty: "1",
+  stem: "soitta-",
+  mina: "soitan",
+  han: "soittaa",
+  past: "soitin",
+  cond: "soittaisin",
+  note: "KPT tt→t"
+}, {
+  w: "odottaa",
+  en: "to wait",
+  ty: "1",
+  stem: "odotta-",
+  mina: "odotan",
+  han: "odottaa",
+  past: "odotin",
+  cond: "odottaisin",
+  note: "KPT tt→t"
+}, {
+  w: "tarkoittaa",
+  en: "to mean",
+  ty: "1",
+  stem: "tarkoitta-",
+  mina: "tarkoitan",
+  han: "tarkoittaa",
+  past: "tarkoitin",
+  cond: "tarkoittaisin",
+  note: "KPT tt→t"
+}, {
+  w: "laittaa",
+  en: "to put",
+  ty: "1",
+  stem: "laitta-",
+  mina: "laitan",
+  han: "laittaa",
+  past: "laitoin",
+  cond: "laittaisin",
+  note: "KPT tt→t; past a→o"
+}, {
+  w: "keittää",
+  en: "to cook",
+  ty: "1",
+  stem: "keittä-",
+  mina: "keitän",
+  han: "keittää",
+  past: "keitin",
+  cond: "keittäisin",
+  note: "KPT tt→t"
+}, {
+  w: "rakastaa",
+  en: "to love",
+  ty: "1",
+  stem: "rakasta-",
+  mina: "rakastan",
+  han: "rakastaa",
+  past: "rakastin",
+  cond: "rakastaisin",
+  note: "+ partitive object"
+}, {
+  w: "tuntea",
+  en: "to feel/know",
+  ty: "1",
+  stem: "tunte-",
+  mina: "tunnen",
+  han: "tuntee",
+  past: "tunsin",
+  cond: "tuntisin",
+  note: "nt→nn; past →si"
+}, {
+  w: "lentää",
+  en: "to fly",
+  ty: "1",
+  stem: "lentä-",
+  mina: "lennän",
+  han: "lentää",
+  past: "lensin",
+  cond: "lentäisin",
+  note: "nt→nn; past →si"
+}, {
+  w: "muuttaa",
+  en: "to move/change",
+  ty: "1",
+  stem: "muutta-",
+  mina: "muutan",
+  han: "muuttaa",
+  past: "muutin",
+  cond: "muuttaisin",
+  note: "KPT tt→t"
+}, {
+  w: "hakea",
+  en: "to apply/fetch",
+  ty: "1",
+  stem: "hake-",
+  mina: "haen",
+  han: "hakee",
+  past: "hain",
+  cond: "hakisin",
+  note: "KPT k→∅"
+}, {
+  w: "kertoa",
+  en: "to tell",
+  ty: "1",
+  stem: "kerto-",
+  mina: "kerron",
+  han: "kertoo",
+  past: "kerroin",
+  cond: "kertoisin",
+  note: "rt→rr"
+}, {
+  w: "toivoa",
+  en: "to hope",
+  ty: "1",
+  stem: "toivo-",
+  mina: "toivon",
+  han: "toivoo",
+  past: "toivoin",
+  cond: "toivoisin",
+  note: "—"
+}, {
+  w: "uskoa",
+  en: "to believe",
+  ty: "1",
+  stem: "usko-",
+  mina: "uskon",
+  han: "uskoo",
+  past: "uskoin",
+  cond: "uskoisin",
+  note: "—"
+}, {
+  w: "selittää",
+  en: "to explain",
+  ty: "1",
+  stem: "selittä-",
+  mina: "selitän",
+  han: "selittää",
+  past: "selitin",
+  cond: "selittäisin",
+  note: "KPT tt→t"
+}, {
+  w: "oppia",
+  en: "to learn",
+  ty: "1",
+  stem: "oppi-",
+  mina: "opin",
+  han: "oppii",
+  past: "opin",
+  cond: "oppisin",
+  note: "KPT pp→p"
+}, {
+  w: "istua",
+  en: "to sit",
+  ty: "1",
+  stem: "istu-",
+  mina: "istun",
+  han: "istuu",
+  past: "istuin",
+  cond: "istuisin",
+  note: "—"
+}, {
+  w: "nukkua",
+  en: "to sleep",
+  ty: "1",
+  stem: "nukku-",
+  mina: "nukun",
+  han: "nukkuu",
+  past: "nukuin",
+  cond: "nukkuisin",
+  note: "KPT kk→k"
+}, {
+  w: "laulaa",
+  en: "to sing",
+  ty: "1",
+  stem: "laula-",
+  mina: "laulan",
+  han: "laulaa",
+  past: "lauloin",
+  cond: "laulaisin",
+  note: "past a→o"
+}, {
+  w: "ajaa",
+  en: "to drive",
+  ty: "1",
+  stem: "aja-",
+  mina: "ajan",
+  han: "ajaa",
+  past: "ajoin",
+  cond: "ajaisin",
+  note: "past a→o"
+}, {
+  w: "matkustaa",
+  en: "to travel",
+  ty: "1",
+  stem: "matkusta-",
+  mina: "matkustan",
+  han: "matkustaa",
+  past: "matkustin",
+  cond: "matkustaisin",
+  note: "—"
+}, {
+  w: "valmistua",
+  en: "to graduate",
+  ty: "1",
+  stem: "valmistu-",
+  mina: "valmistun",
+  han: "valmistuu",
+  past: "valmistuin",
+  cond: "valmistuisin",
+  note: "—"
+}, {
+  w: "rakentaa",
+  en: "to build",
+  ty: "1",
+  stem: "rakenta-",
+  mina: "rakennan",
+  han: "rakentaa",
+  past: "rakensin",
+  cond: "rakentaisin",
+  note: "nt→nn; past →si"
+}, {
+  w: "kääntää",
+  en: "to translate/turn",
+  ty: "1",
+  stem: "kääntä-",
+  mina: "käännän",
+  han: "kääntää",
+  past: "käänsin",
+  cond: "kääntäisin",
+  note: "nt→nn; past →si"
+}, {
+  w: "huutaa",
+  en: "to shout",
+  ty: "1",
+  stem: "huuta-",
+  mina: "huudan",
+  han: "huutaa",
+  past: "huusin",
+  cond: "huutaisin",
+  note: "KPT t→d; past →si"
+}, {
+  w: "pyytää",
+  en: "to ask for",
+  ty: "1",
+  stem: "pyytä-",
+  mina: "pyydän",
+  han: "pyytää",
+  past: "pyysin",
+  cond: "pyytäisin",
+  note: "KPT t→d; past →si"
+}, {
+  w: "saapua",
+  en: "to arrive",
+  ty: "1",
+  stem: "saapu-",
+  mina: "saavun",
+  han: "saapuu",
+  past: "saavuin",
+  cond: "saapuisin",
+  note: "KPT p→v"
+}, {
+  w: "laskea",
+  en: "to count/lower",
+  ty: "1",
+  stem: "laske-",
+  mina: "lasken",
+  han: "laskee",
+  past: "laskin",
+  cond: "laskisin",
+  note: "—"
+}, {
+  w: "nostaa",
+  en: "to lift/raise",
+  ty: "1",
+  stem: "nosta-",
+  mina: "nostan",
+  han: "nostaa",
+  past: "nostin",
+  cond: "nostaisin",
+  note: "—"
+}, {
+  w: "jatkaa",
+  en: "to continue",
+  ty: "1",
+  stem: "jatka-",
+  mina: "jatkan",
+  han: "jatkaa",
+  past: "jatkoin",
+  cond: "jatkaisin",
+  note: "past a→o"
+}, {
+  w: "lopettaa",
+  en: "to stop",
+  ty: "1",
+  stem: "lopetta-",
+  mina: "lopetan",
+  han: "lopettaa",
+  past: "lopetin",
+  cond: "lopettaisin",
+  note: "KPT tt→t"
+}, {
+  w: "aloittaa",
+  en: "to start",
+  ty: "1",
+  stem: "aloitta-",
+  mina: "aloitan",
+  han: "aloittaa",
+  past: "aloitin",
+  cond: "aloittaisin",
+  note: "KPT tt→t"
+}, {
+  w: "kehittää",
+  en: "to develop",
+  ty: "1",
+  stem: "kehittä-",
+  mina: "kehitän",
+  han: "kehittää",
+  past: "kehitin",
+  cond: "kehittäisin",
+  note: "KPT tt→t"
+}, {
+  w: "parantaa",
+  en: "to improve",
+  ty: "1",
+  stem: "paranta-",
+  mina: "parannan",
+  han: "parantaa",
+  past: "paransin",
+  cond: "parantaisin",
+  note: "nt→nn; past →si"
+}, {
+  w: "yrittää",
+  en: "to try",
+  ty: "1",
+  stem: "yrittä-",
+  mina: "yritän",
+  han: "yrittää",
+  past: "yritin",
+  cond: "yrittäisin",
+  note: "KPT tt→t"
+}, {
+  w: "etsiä",
+  en: "to search",
+  ty: "1",
+  stem: "etsi-",
+  mina: "etsin",
+  han: "etsii",
+  past: "etsin",
+  cond: "etsisin",
+  note: "—"
+}, {
+  w: "sulkea",
+  en: "to close",
+  ty: "1",
+  stem: "sulke-",
+  mina: "suljen",
+  han: "sulkee",
+  past: "suljin",
+  cond: "sulkisin",
+  note: "KPT lk→lj"
+}, {
+  w: "saada",
+  en: "to get",
+  ty: "2",
+  stem: "saa-",
+  mina: "saan",
+  han: "saa",
+  past: "sain",
+  cond: "saisin",
+  note: "saa→sai"
 }, {
   w: "juoda",
   en: "to drink",
@@ -9397,15 +9967,75 @@ const VERBS = [{
   cond: "söisin",
   note: "syö→söi"
 }, {
-  w: "saada",
-  en: "to get",
+  w: "viedä",
+  en: "to take away",
   ty: "2",
-  stem: "saa-",
-  mina: "saan",
-  han: "saa",
-  past: "sain",
-  cond: "saisin",
-  note: "saa→sai"
+  stem: "vie-",
+  mina: "vien",
+  han: "vie",
+  past: "vein",
+  cond: "veisin",
+  note: "vie→vei"
+}, {
+  w: "tuoda",
+  en: "to bring",
+  ty: "2",
+  stem: "tuo-",
+  mina: "tuon",
+  han: "tuo",
+  past: "toin",
+  cond: "toisin",
+  note: "tuo→toi"
+}, {
+  w: "voida",
+  en: "to be able",
+  ty: "2",
+  stem: "voi-",
+  mina: "voin",
+  han: "voi",
+  past: "voin",
+  cond: "voisin",
+  note: "—"
+}, {
+  w: "jäädä",
+  en: "to stay",
+  ty: "2",
+  stem: "jää-",
+  mina: "jään",
+  han: "jää",
+  past: "jäin",
+  cond: "jäisin",
+  note: "jää→jäi"
+}, {
+  w: "käydä",
+  en: "to visit",
+  ty: "2",
+  stem: "käy-",
+  mina: "käyn",
+  han: "käy",
+  past: "kävin",
+  cond: "kävisin",
+  note: "käy→kävi"
+}, {
+  w: "myydä",
+  en: "to sell",
+  ty: "2",
+  stem: "myy-",
+  mina: "myyn",
+  han: "myy",
+  past: "myin",
+  cond: "myisin",
+  note: "myy→myi"
+}, {
+  w: "uida",
+  en: "to swim",
+  ty: "2",
+  stem: "ui-",
+  mina: "uin",
+  han: "ui",
+  past: "uin",
+  cond: "uisin",
+  note: "—"
 }, {
   w: "tulla",
   en: "to come",
@@ -9427,6 +10057,56 @@ const VERBS = [{
   cond: "menisin",
   note: "-e- stem"
 }, {
+  w: "panna",
+  en: "to put",
+  ty: "3",
+  stem: "pane-",
+  mina: "panen",
+  han: "panee",
+  past: "panin",
+  cond: "panisin",
+  note: "-e- stem"
+}, {
+  w: "pestä",
+  en: "to wash",
+  ty: "3",
+  stem: "pese-",
+  mina: "pesen",
+  han: "pesee",
+  past: "pesin",
+  cond: "pesisin",
+  note: "-e- stem"
+}, {
+  w: "nousta",
+  en: "to rise",
+  ty: "3",
+  stem: "nouse-",
+  mina: "nousen",
+  han: "nousee",
+  past: "nousin",
+  cond: "nousisin",
+  note: "-e- stem"
+}, {
+  w: "juosta",
+  en: "to run",
+  ty: "3",
+  stem: "juokse-",
+  mina: "juoksen",
+  han: "juoksee",
+  past: "juoksin",
+  cond: "juoksisin",
+  note: "s→kse"
+}, {
+  w: "purra",
+  en: "to bite",
+  ty: "3",
+  stem: "pure-",
+  mina: "puren",
+  han: "puree",
+  past: "purin",
+  cond: "purisin",
+  note: "-e- stem"
+}, {
   w: "opiskella",
   en: "to study",
   ty: "3",
@@ -9435,6 +10115,46 @@ const VERBS = [{
   han: "opiskelee",
   past: "opiskelin",
   cond: "opiskelisin",
+  note: "-e- stem"
+}, {
+  w: "ajatella",
+  en: "to think",
+  ty: "3",
+  stem: "ajattele-",
+  mina: "ajattelen",
+  han: "ajattelee",
+  past: "ajattelin",
+  cond: "ajattelisin",
+  note: "-e- stem"
+}, {
+  w: "kuunnella",
+  en: "to listen",
+  ty: "3",
+  stem: "kuuntele-",
+  mina: "kuuntelen",
+  han: "kuuntelee",
+  past: "kuuntelin",
+  cond: "kuuntelisin",
+  note: "-e- stem"
+}, {
+  w: "kävellä",
+  en: "to walk",
+  ty: "3",
+  stem: "kävele-",
+  mina: "kävelen",
+  han: "kävelee",
+  past: "kävelin",
+  cond: "kävelisin",
+  note: "-e- stem"
+}, {
+  w: "työskennellä",
+  en: "to work",
+  ty: "3",
+  stem: "työskentele-",
+  mina: "työskentelen",
+  han: "työskentelee",
+  past: "työskentelin",
+  cond: "työskentelisin",
   note: "-e- stem"
 }, {
   w: "haluta",
@@ -9457,6 +10177,106 @@ const VERBS = [{
   cond: "tapaisin",
   note: "KPT v→p"
 }, {
+  w: "osata",
+  en: "to know how",
+  ty: "4",
+  stem: "osaa-",
+  mina: "osaan",
+  han: "osaa",
+  past: "osasin",
+  cond: "osaisin",
+  note: "—"
+}, {
+  w: "vastata",
+  en: "to answer",
+  ty: "4",
+  stem: "vastaa-",
+  mina: "vastaan",
+  han: "vastaa",
+  past: "vastasin",
+  cond: "vastaisin",
+  note: "—"
+}, {
+  w: "pelata",
+  en: "to play",
+  ty: "4",
+  stem: "pelaa-",
+  mina: "pelaan",
+  han: "pelaa",
+  past: "pelasin",
+  cond: "pelaisin",
+  note: "—"
+}, {
+  w: "korjata",
+  en: "to fix",
+  ty: "4",
+  stem: "korjaa-",
+  mina: "korjaan",
+  han: "korjaa",
+  past: "korjasin",
+  cond: "korjaisin",
+  note: "—"
+}, {
+  w: "hypätä",
+  en: "to jump",
+  ty: "4",
+  stem: "hyppää-",
+  mina: "hyppään",
+  han: "hyppää",
+  past: "hyppäsin",
+  cond: "hyppäisin",
+  note: "KPT p→pp"
+}, {
+  w: "luvata",
+  en: "to promise",
+  ty: "4",
+  stem: "lupaa-",
+  mina: "lupaan",
+  han: "lupaa",
+  past: "lupasin",
+  cond: "lupaisin",
+  note: "KPT v→p"
+}, {
+  w: "tarjota",
+  en: "to offer",
+  ty: "4",
+  stem: "tarjoa-",
+  mina: "tarjoan",
+  han: "tarjoaa",
+  past: "tarjosin",
+  cond: "tarjoaisin",
+  note: "—"
+}, {
+  w: "siivota",
+  en: "to clean",
+  ty: "4",
+  stem: "siivoa-",
+  mina: "siivoan",
+  han: "siivoaa",
+  past: "siivosin",
+  cond: "siivoaisin",
+  note: "—"
+}, {
+  w: "avata",
+  en: "to open",
+  ty: "4",
+  stem: "avaa-",
+  mina: "avaan",
+  han: "avaa",
+  past: "avasin",
+  cond: "avaisin",
+  note: "—"
+}, {
+  w: "pelätä",
+  en: "to fear",
+  ty: "4",
+  stem: "pelkää-",
+  mina: "pelkään",
+  han: "pelkää",
+  past: "pelkäsin",
+  cond: "pelkäisin",
+  note: "KPT ∅→k"
+}, {
   w: "tarvita",
   en: "to need",
   ty: "5",
@@ -9467,25 +10287,75 @@ const VERBS = [{
   cond: "tarvitsisin",
   note: "-tse- stem"
 }, {
-  w: "tehdä",
-  en: "to do/make",
-  ty: "irr",
-  stem: "teke-",
-  mina: "teen",
-  han: "tekee",
-  past: "tein",
-  cond: "tekisin",
-  note: "irregular"
+  w: "valita",
+  en: "to choose",
+  ty: "5",
+  stem: "valitse-",
+  mina: "valitsen",
+  han: "valitsee",
+  past: "valitsin",
+  cond: "valitsisin",
+  note: "-tse- stem"
 }, {
-  w: "nähdä",
-  en: "to see",
-  ty: "irr",
-  stem: "näke-",
-  mina: "näen",
-  han: "näkee",
-  past: "näin",
-  cond: "näkisin",
-  note: "irregular"
+  w: "mainita",
+  en: "to mention",
+  ty: "5",
+  stem: "mainitse-",
+  mina: "mainitsen",
+  han: "mainitsee",
+  past: "mainitsin",
+  cond: "mainitsisin",
+  note: "-tse- stem"
+}, {
+  w: "häiritä",
+  en: "to disturb",
+  ty: "5",
+  stem: "häiritse-",
+  mina: "häiritsen",
+  han: "häiritsee",
+  past: "häiritsin",
+  cond: "häiritsisin",
+  note: "-tse- stem"
+}, {
+  w: "vanheta",
+  en: "to grow old",
+  ty: "6",
+  stem: "vanhene-",
+  mina: "vanhenen",
+  han: "vanhenee",
+  past: "vanhenin",
+  cond: "vanhenisin",
+  note: "-ne- stem"
+}, {
+  w: "paeta",
+  en: "to flee",
+  ty: "6",
+  stem: "pakene-",
+  mina: "pakenen",
+  han: "pakenee",
+  past: "pakenin",
+  cond: "pakenisin",
+  note: "KPT k appears"
+}, {
+  w: "lämmetä",
+  en: "to warm up",
+  ty: "6",
+  stem: "lämpene-",
+  mina: "lämpenen",
+  han: "lämpenee",
+  past: "lämpenin",
+  cond: "lämpenisin",
+  note: "KPT m→mp"
+}, {
+  w: "kylmetä",
+  en: "to get cold",
+  ty: "6",
+  stem: "kylmene-",
+  mina: "kylmenen",
+  han: "kylmenee",
+  past: "kylmenin",
+  cond: "kylmenisin",
+  note: "-ne- stem"
 }];
 const SENTENCES = [{
   "id": 0,
@@ -10767,6 +11637,131 @@ const SENTENCES = [{
   "blank": 0
 }];
 
+// ===== YKI mock exam data =====
+// Reading passages (YKI text types: notice, email, ad, SMS) + MCQs.
+// Questions bilingual for the app's toggle; the real YKI is Finnish-only.
+const YKI_READING = [{
+  id: "r1",
+  tyF: "Ilmoitus",
+  tyE: "Notice",
+  text: "TE-toimisto tiedottaa: Työnhakijan on päivitettävä työnhakutietonsa verkossa kolmen kuukauden välein. Jos tietoja ei päivitetä, työnhaku voi katketa. Neuvontaa saa puhelimitse arkisin klo 9–16 tai varaamalla ajan verkossa.",
+  qs: [{
+    qf: "Kuinka usein tiedot on päivitettävä?",
+    qe: "How often must the details be updated?",
+    of: ["Joka viikko", "Kerran kuussa", "Kolmen kuukauden välein", "Kerran vuodessa"],
+    oe: ["Every week", "Once a month", "Every three months", "Once a year"],
+    a: 2
+  }, {
+    qf: "Mitä tapahtuu, jos tietoja ei päivitä?",
+    qe: "What happens if you don't update?",
+    of: ["Saa sakon", "Työnhaku voi katketa", "Ei mitään", "Saa kirjeen kotiin"],
+    oe: ["You get a fine", "Your job search may lapse", "Nothing", "You get a letter"],
+    a: 1
+  }, {
+    qf: "Milloin neuvontaa saa puhelimitse?",
+    qe: "When is phone advice available?",
+    of: ["Viikonloppuisin", "Arkisin klo 9–16", "Joka päivä klo 8–20", "Vain verkossa"],
+    oe: ["On weekends", "Weekdays 9–16", "Daily 8–20", "Online only"],
+    a: 1
+  }]
+}, {
+  id: "r2",
+  tyF: "Sähköposti",
+  tyE: "Email",
+  text: "Hei Ishtiak! Kiitos hakemuksestasi. Kutsumme sinut työhaastatteluun tiistaina 14.7. klo 10.00 toimistollemme Espoon Keilaniemeen. Varaa mukaan henkilöllisyystodistus ja tutkintotodistukset. Ilmoitathan viimeistään perjantaina, sopiiko aika. Ystävällisin terveisin, HR-tiimi",
+  qs: [{
+    qf: "Miksi viesti on lähetetty?",
+    qe: "Why was the message sent?",
+    of: ["Työtarjous on peruttu", "Kutsu työhaastatteluun", "Lasku on maksamatta", "Kurssi alkaa"],
+    oe: ["A job offer was cancelled", "An interview invitation", "An unpaid bill", "A course begins"],
+    a: 1
+  }, {
+    qf: "Mitä pitää ottaa mukaan?",
+    qe: "What must you bring?",
+    of: ["Vain kynä", "CV ja valokuva", "Henkilöllisyystodistus ja tutkintotodistukset", "Työtodistus"],
+    oe: ["Only a pen", "CV and a photo", "ID and degree certificates", "A work certificate"],
+    a: 2
+  }, {
+    qf: "Mihin mennessä pitää vastata?",
+    qe: "By when must you reply?",
+    of: ["Tiistaina", "Heti", "Viimeistään perjantaina", "Ei tarvitse vastata"],
+    oe: ["On Tuesday", "Immediately", "By Friday at the latest", "No reply needed"],
+    a: 2
+  }]
+}, {
+  id: "r3",
+  tyF: "Ilmoitus (asunto)",
+  tyE: "Ad (apartment)",
+  text: "Vuokrataan: kaksio 45 m², Espoon keskus. Vuokra 950 €/kk + vesi 20 €/hlö. Hyvät kulkuyhteydet: juna-asemalle 5 min kävellen. Vapautuu 1.9. Ei tupakointia. Näytöt sopimuksen mukaan, soita illalla klo 17 jälkeen.",
+  qs: [{
+    qf: "Paljonko vuokra on yhteensä yhdelle henkilölle?",
+    qe: "What is the total rent for one person?",
+    of: ["950 €", "970 €", "930 €", "1000 €"],
+    oe: ["€950", "€970", "€930", "€1000"],
+    a: 1
+  }, {
+    qf: "Milloin asunto vapautuu?",
+    qe: "When does the apartment become available?",
+    of: ["Heti", "1.9.", "1.8.", "Sopimuksen mukaan"],
+    oe: ["Immediately", "1 Sept", "1 Aug", "By agreement"],
+    a: 1
+  }, {
+    qf: "Milloin näytöstä voi soittaa?",
+    qe: "When can you call about a viewing?",
+    of: ["Aamulla", "Klo 17 jälkeen", "Vain viikonloppuna", "Milloin vain"],
+    oe: ["In the morning", "After 5 pm", "Weekends only", "Any time"],
+    a: 1
+  }]
+}, {
+  id: "r4",
+  tyF: "Tekstiviesti",
+  tyE: "SMS",
+  text: "Muistutus: Aikasi hammaslääkärille on huomenna klo 14.30, Espoon terveysasema, 2. kerros. Jos et pääse, peru aika viimeistään 24 tuntia ennen, muuten perimme 50 euron maksun. Saavu 10 minuuttia etuajassa.",
+  qs: [{
+    qf: "Mitä tapahtuu, jos aikaa ei peru ajoissa?",
+    qe: "What happens if you don't cancel in time?",
+    of: ["Ei mitään", "Saa uuden ajan", "Peritään 50 euron maksu", "Aika siirtyy"],
+    oe: ["Nothing", "You get a new time", "A €50 fee is charged", "The time moves"],
+    a: 2
+  }, {
+    qf: "Milloin pitää saapua?",
+    qe: "When should you arrive?",
+    of: ["Täsmälleen klo 14.30", "10 minuuttia etuajassa", "Puoli tuntia ennen", "Klo 14.00"],
+    oe: ["Exactly at 14.30", "10 minutes early", "Half an hour before", "At 14.00"],
+    a: 1
+  }]
+}];
+
+// Writing tasks — real YKI keskitaso task types, with model answers.
+const YKI_WRITING = [{
+  id: "w1",
+  tyF: "Epävirallinen viesti",
+  tyE: "Informal message",
+  min: 40,
+  taskF: "Ystäväsi kutsui sinut illalliselle lauantaina, mutta et pääse. Kirjoita viesti: kiitä kutsusta, kerro miksi et pääse ja ehdota uutta aikaa.",
+  taskE: "A friend invited you to dinner on Saturday, but you can't make it. Write a message: thank them, say why you can't come, and suggest a new time.",
+  modelF: "Hei Sami! Kiitos paljon kutsusta. Valitettavasti en pääse lauantaina, koska olen töissä koko illan. Sopisiko sinulle ensi viikon perjantai? Voisin tuoda jälkiruoan. Nähdään pian! Terveisin Ishtiak",
+  tips: [["Tervehdys ja kiitos", "Greeting and thanks"], ["Syy, miksi et pääse (koska…)", "Reason you can't come (koska…)"], ["Ehdotus: konditionaali (sopisiko, voisin)", "Suggestion: conditional (sopisiko, voisin)"], ["Lopetus ja allekirjoitus", "Closing and signature"]]
+}, {
+  id: "w2",
+  tyF: "Muodollinen viesti",
+  tyE: "Formal message",
+  min: 50,
+  taskF: "Vuokra-asuntosi pesukone on rikki. Kirjoita viesti vuokranantajalle: kerro ongelmasta, milloin se alkoi ja pyydä korjausta.",
+  taskE: "The washing machine in your rented flat is broken. Write to the landlord: describe the problem, when it began, and ask for a repair.",
+  modelF: "Hyvä vuokranantaja, asuntoni pesukone meni rikki maanantaina. Kone ei enää käynnisty, vaikka sähköt ovat kunnossa. Pyydän, että kone korjataan tai vaihdetaan mahdollisimman pian. Minulle sopii, että huoltomies käy arkisin klo 16 jälkeen. Ystävällisin terveisin, Ishtiak",
+  tips: [["Muodollinen aloitus (Hyvä…)", "Formal opening (Hyvä…)"], ["Ongelma ja milloin se alkoi", "The problem and when it began"], ["Kohtelias pyyntö (Pyydän, että…)", "Polite request (Pyydän, että…)"], ["Muodollinen lopetus", "Formal closing"]]
+}, {
+  id: "w3",
+  tyF: "Mielipideteksti",
+  tyE: "Opinion text",
+  min: 60,
+  taskF: "Kirjoita lyhyt mielipideteksti: Pitääkö maahanmuuttajan oppia suomea? Kerro mielipiteesi ja perustele se vähintään kahdella syyllä.",
+  taskE: "Write a short opinion text: Should an immigrant learn Finnish? State your opinion and support it with at least two reasons.",
+  modelF: "Mielestäni maahanmuuttajan kannattaa oppia suomea. Ensinnäkin kieli auttaa saamaan työtä: moni työnantaja vaatii suomen taitoa. Toiseksi kielen avulla ymmärtää yhteiskuntaa ja tutustuu ihmisiin. Opiskelen itse suomea joka päivä, koska haluan rakentaa elämäni Suomessa. Siksi kielen oppiminen on tärkeää.",
+  tips: [["Mielipide heti alkuun (Mielestäni…)", "Opinion first (Mielestäni…)"], ["Perustelut: ensinnäkin, toiseksi", "Reasons: ensinnäkin, toiseksi"], ["Oma esimerkki", "A personal example"], ["Yhteenveto (Siksi…)", "A conclusion (Siksi…)"]]
+}];
+
 // ===== engine.jsx — palette, styles, storage, i18n, analyzer, shared atoms =====
 
 const C = {
@@ -11289,16 +12284,20 @@ function Styles() {
 html,body,#root{margin:0;height:100%}
 body{background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{width:100%;max-width:720px;margin:0 auto;padding:16px 14px 60px;box-sizing:border-box}
-@media(min-width:1024px){ .wrap{max-width:980px;padding:28px 26px 72px} }
-@media(min-width:1440px){ .wrap{max-width:1160px} }
+.btnrow>.btn.block{margin:8px 0}
 @media(min-width:1024px){
+  .wrap{max-width:94vw;padding:30px 3vw 80px}
+  .grid{grid-template-columns:repeat(4,1fr)}
+  .list.grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .btnrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .btnrow>.btn.block{margin:0}
   .dtscroll{width:94vw;margin-left:calc(-47vw + 50%)}
   .dtab{font-size:14px}
-  .homegrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .list.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .searchbox{max-width:900px}
 }
-@media(min-width:1440px){
-  .list.grid2{grid-template-columns:1fr 1fr 1fr}
+@media(min-width:1600px){
+  .wrap{max-width:1800px}
+  .list.grid2{grid-template-columns:repeat(4,1fr)}
 }
 .appbar{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:14px}
 .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;font-size:19px}
@@ -11381,12 +12380,12 @@ body{background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemF
 .guidehd{font-size:12.5px;font-weight:800;letter-spacing:.03em;margin-bottom:6px}
 .vseechip{border-color:${C.vocab};color:${C.vocab}}
 .sseechip{border-color:${C.sent};color:${C.sent}}
-.dtscroll{overflow-x:auto;margin-top:10px;border:1px solid ${C.line};border-radius:12px;-webkit-overflow-scrolling:touch}
+.dtscroll{overflow:auto;max-height:70vh;margin-top:10px;border:1px solid ${C.line};border-radius:12px;-webkit-overflow-scrolling:touch}
 .dtab{border-collapse:separate;border-spacing:0;font-size:13px;white-space:nowrap;min-width:100%}
-.dth{background:${C.grammar};color:#fff;font-weight:700;font-size:11.5px;text-align:left;padding:9px 10px;position:sticky;top:0;letter-spacing:.02em}
+.dth{background:${C.grammar};color:#fff;font-weight:700;font-size:11.5px;text-align:left;padding:9px 10px;position:sticky;top:0;z-index:2;letter-spacing:.02em}
 .dthlink{cursor:pointer;text-decoration:underline;text-decoration-style:dotted}
-.dtab td{padding:8px 10px;border-top:1px solid ${C.line};vertical-align:top}
-.dsticky{position:sticky;left:0;z-index:2}
+.dtab td{padding:8px 10px;border-top:1px solid ${C.line};vertical-align:top;background:${C.card}}
+.dsticky{position:sticky;left:0;z-index:1}
 .dth.dsticky{z-index:3}
 .dword{background:${C.bg};min-width:120px}
 .dword b{display:block;font-size:14px;color:${C.ink}}
@@ -11397,6 +12396,20 @@ body{background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemF
 .dform.hot{color:${C.grammar};font-weight:700}
 .dnote{color:${C.sub};font-size:11.5px;white-space:normal;min-width:150px}
 .dtcount{text-align:right;font-size:12px;color:${C.sub};margin-top:6px}
+.trailbtn{display:block;width:100%;text-align:left;background:#fffbe8;border:1px dashed #d9b23a;color:#8a6d00;border-radius:10px;padding:8px 12px;margin:2px 0 8px;font-size:12.5px;font-weight:700;cursor:pointer}
+.srgroup{margin-top:12px;padding-top:10px;border-top:1px dashed ${C.line}}
+.srrow{font-size:13.5px;color:${C.ink};padding:4px 0;display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.srchip{margin-left:4px;font-size:11px;padding:3px 9px}
+.timer{font-weight:800;font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.timer.red{color:${C.bad};animation:tblink 1s step-end infinite}
+@keyframes tblink{50%{opacity:.45}}
+.passage{font-size:14.5px;line-height:1.65;background:#fffdf6;border:1px solid #eee2c0}
+.ykirow{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed ${C.line};font-size:13.5px;color:${C.ink}}
+.ykirow:last-of-type{border-bottom:0}
+.ykirow span{color:${C.sub}}
+.ykita{width:100%;box-sizing:border-box;min-height:170px;border:1px solid ${C.line};border-radius:12px;padding:12px;font-size:14.5px;line-height:1.55;font-family:inherit;resize:vertical;background:${C.card};color:${C.ink}}
+.ykitip{font-size:13.5px;padding:4px 0;color:${C.ink}}
+.btn.eghost{background:#fff;color:${C.exam};border:1px solid ${C.exam}}
 .kptnote{color:${C.grammar};cursor:pointer;text-decoration:underline;text-decoration-style:dotted;font-weight:700}
 .kptlink{color:${C.grammar};cursor:pointer;text-decoration:underline;text-decoration-style:dotted;font-weight:700}
 .gconj{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;margin-bottom:2px}
@@ -11625,17 +12638,37 @@ function GrammarHome({
   lang,
   setLang,
   go,
-  openCard
+  openCard,
+  openTable
 }) {
   const F = lang === "fi";
   const [qy, setQy] = useState("");
   const [res, setRes] = useState(undefined);
   function run() {
-    setRes(analyze(qy));
+    const q = qy.trim();
+    if (!q) {
+      setRes(undefined);
+      return;
+    }
+    const ql = q.toLowerCase();
+    const ana = analyze(q);
+    const chaps = GRAMMAR.filter(c => JSON.stringify(c).toLowerCase().includes(ql)).slice(0, 10);
+    const noms = NOMINALS.filter(r => (r.w + " " + r.en + " " + r.gen + " " + r.part + " " + r.iness + " " + r.elat + " " + r.illat + " " + r.plur).toLowerCase().includes(ql)).slice(0, 5);
+    const vbs = VERBS.filter(r => (r.w + " " + r.en + " " + r.mina + " " + r.han + " " + r.past + " " + r.cond).toLowerCase().includes(ql)).slice(0, 5);
+    const voc = VOCAB.filter(v => (v.fi + " " + v.en).toLowerCase().includes(ql)).slice(0, 8);
+    const sents = SENTENCES.filter(x => (x.fi + " " + x.en).toLowerCase().includes(ql)).slice(0, 4);
+    setRes({
+      ana,
+      chaps,
+      noms,
+      vbs,
+      voc,
+      sents,
+      q
+    });
   }
   const chapters = orderedChapters();
-  const ql = qy.trim().toLowerCase();
-  const textHits = ql.length > 1 ? GRAMMAR.filter(c => (c.tf + c.te + c.id).toLowerCase().includes(ql)) : null;
+  const empty = res && !res.ana && !res.chaps.length && !res.noms.length && !res.vbs.length && !res.voc.length && !res.sents.length;
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "topbar"
   }, /*#__PURE__*/React.createElement("button", {
@@ -11656,7 +12689,7 @@ function GrammarHome({
   }, /*#__PURE__*/React.createElement("input", {
     value: qy,
     onChange: e => setQy(e.target.value),
-    placeholder: L(lang, "search"),
+    placeholder: F ? "Hae mitä tahansa: sana, muoto, sääntö…" : "Search anything: a word, a form, a rule…",
     onKeyDown: e => {
       if (e.key === "Enter") run();
     }
@@ -11666,48 +12699,92 @@ function GrammarHome({
       background: C.grammar
     },
     onClick: run
-  }, L(lang, "whatCase"))), /*#__PURE__*/React.createElement("button", {
+  }, F ? "Hae" : "Search")), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C.grammar,
       marginTop: 2
     },
-    onClick: () => go("declension")
-  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table"), res !== undefined && (res ? /*#__PURE__*/React.createElement("div", {
+    onClick: () => openTable("")
+  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table"), res !== undefined && (empty ? /*#__PURE__*/React.createElement("div", {
+    className: "note"
+  }, L(lang, "noMatch")) : /*#__PURE__*/React.createElement("div", {
     className: "analy",
     style: {
       color: C.grammar
     }
+  }, res.ana && /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 6
+    }
   }, /*#__PURE__*/React.createElement("div", {
     className: "ttl"
-  }, F ? res.caseFi : res.caseEn, " ", /*#__PURE__*/React.createElement("span", {
+  }, F ? res.ana.caseFi : res.ana.caseEn, " ", /*#__PURE__*/React.createElement("span", {
     className: "dim",
     style: {
       fontWeight: 600
     }
-  }, "· ", res.q)), /*#__PURE__*/React.createElement("div", {
+  }, "· ", res.ana.q)), /*#__PURE__*/React.createElement("div", {
     style: {
       color: C.ink,
       margin: "6px 0",
       fontSize: 14
     }
-  }, F ? res.whyFi : res.whyEn), /*#__PURE__*/React.createElement("button", {
+  }, F ? res.ana.whyFi : res.ana.whyEn), /*#__PURE__*/React.createElement("button", {
     className: "btn",
     style: {
       background: C.grammar
     },
-    onClick: () => openCard(res.cardId)
-  }, L(lang, "openCard"), " →")) : /*#__PURE__*/React.createElement("div", {
-    className: "note"
-  }, L(lang, "noMatch"))), textHits && textHits.length > 0 && /*#__PURE__*/React.createElement("div", {
-    className: "list"
-  }, textHits.map(c => /*#__PURE__*/React.createElement("div", {
+    onClick: () => openCard(res.ana.cardId)
+  }, L(lang, "openCard"), " →")), res.chaps.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Kielioppiluvut" : "Grammar chapters"), /*#__PURE__*/React.createElement("div", {
+    className: "row wrap",
+    style: {
+      gap: 6
+    }
+  }, res.chaps.map(c => /*#__PURE__*/React.createElement("span", {
     key: c.id,
-    className: "it",
+    className: "seechip",
     onClick: () => openCard(c.id)
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "ttl"
-  }, F ? c.tf : c.te))))), /*#__PURE__*/React.createElement("div", {
+  }, F ? c.tf : c.te, " →")))), (res.noms.length > 0 || res.vbs.length > 0) && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Taivutustaulukko" : "Inflection table"), [...res.noms, ...res.vbs].slice(0, 6).map((r, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "srrow"
+  }, /*#__PURE__*/React.createElement("b", null, r.w), " · ", r.en)), /*#__PURE__*/React.createElement("button", {
+    className: "btn",
+    style: {
+      background: C.grammar,
+      marginTop: 6
+    },
+    onClick: () => openTable(res.q)
+  }, F ? "Avaa taulukossa" : "Open in table", " →")), res.voc.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Sanasto" : "Vocabulary"), res.voc.map((v, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "srrow"
+  }, /*#__PURE__*/React.createElement("b", null, v.fi), " — ", v.en, VGUIDE[v.t] && VGUIDE[v.t].g.slice(0, 2).map(gid => {
+    const gc = GRAMMAR.find(x => x.id === gid);
+    return gc ? /*#__PURE__*/React.createElement("span", {
+      key: gid,
+      className: "seechip srchip",
+      onClick: () => openCard(gid)
+    }, F ? gc.tf : gc.te, " →") : null;
+  })))), res.sents.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Lausepankki" : "Sentence bank"), res.sents.map((x, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "srrow"
+  }, /*#__PURE__*/React.createElement("i", null, x.fi), " — ", x.en))))), /*#__PURE__*/React.createElement("div", {
     className: "kv",
     style: {
       marginTop: 14
@@ -11734,7 +12811,10 @@ function GCard({
   card,
   go,
   back,
-  openCard
+  openCard,
+  openSeq,
+  trailTop,
+  backTrail
 }) {
   const F = lang === "fi";
   const c = card;
@@ -11743,6 +12823,14 @@ function GCard({
   const chNo = idx + 1;
   const prev = idx > 0 ? seq[idx - 1] : null;
   const next = idx < seq.length - 1 ? seq[idx + 1] : null;
+  const goSeq = openSeq || openCard;
+  let trailLabel = null;
+  if (trailTop && backTrail) {
+    if (trailTop === "__vocab") trailLabel = F ? "Sanasto" : "Vocabulary";else if (trailTop === "__sent") trailLabel = F ? "Lauseet" : "Sentences";else if (trailTop === "__declension") trailLabel = F ? "Taivutustaulukko" : "Inflection table";else {
+      const ti = seq.findIndex(x => x.id === trailTop);
+      if (ti >= 0) trailLabel = (F ? "Luku " : "Ch ") + (ti + 1) + " · " + (F ? seq[ti].tf : seq[ti].te);
+    }
+  }
   const mentionsKpt = card.id !== "kpt" && /kpt|astevaihtelu|gradation|→d\b|→v\b|k→|p→|t→|nk→|nt→|mp→|ll→l|ks→hd/i.test(JSON.stringify(card));
   const kptChip = openCard && mentionsKpt ? /*#__PURE__*/React.createElement("div", {
     className: "kptbanner",
@@ -11761,7 +12849,10 @@ function GCard({
   }, "🏠 ", L(lang, "chapters")), /*#__PURE__*/React.createElement(LangToggle, {
     lang: lang,
     setLang: setLang
-  })), /*#__PURE__*/React.createElement("div", {
+  })), trailLabel && /*#__PURE__*/React.createElement("button", {
+    className: "trailbtn",
+    onClick: backTrail
+  }, "↩ ", F ? "Takaisin:" : "Back to:", " ", trailLabel), /*#__PURE__*/React.createElement("div", {
     className: "chlabel"
   }, F ? "Luku" : "Chapter", " ", chNo), /*#__PURE__*/React.createElement("div", {
     className: "h",
@@ -12032,14 +13123,14 @@ function GCard({
   }, /*#__PURE__*/React.createElement("button", {
     className: "chbtn",
     disabled: !prev,
-    onClick: () => prev && openCard(prev.id)
+    onClick: () => prev && goSeq(prev.id)
   }, prev ? "← " + (F ? "Luku " : "Ch ") + idx : F ? "—" : "—"), /*#__PURE__*/React.createElement("button", {
     className: "chbtn home",
     onClick: back
   }, "🏠 ", F ? "Luvut" : "Chapters"), /*#__PURE__*/React.createElement("button", {
     className: "chbtn",
     disabled: !next,
-    onClick: () => next && openCard(next.id)
+    onClick: () => next && goSeq(next.id)
   }, next ? (F ? "Luku " : "Ch ") + (idx + 2) + " →" : F ? "—" : "—")), (prev || next) && /*#__PURE__*/React.createElement("div", {
     className: "chnavlabel"
   }, next ? F ? "Seuraava: " + next.tf : "Next: " + next.te : F ? "Viimeinen luku" : "Last chapter"));
@@ -12220,7 +13311,7 @@ function VocabHome({
   }, /*#__PURE__*/React.createElement("button", {
     className: "linkback",
     onClick: () => go("home")
-  }, "← ", L(lang, "back")), /*#__PURE__*/React.createElement(LangToggle, {
+  }, "🏠 ", L(lang, "home")), /*#__PURE__*/React.createElement(LangToggle, {
     lang: lang,
     setLang: setLang
   })), /*#__PURE__*/React.createElement("div", {
@@ -12306,7 +13397,9 @@ function VocabHome({
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Harjoitustapa" : "Practice mode"), modes.map(([m]) => /*#__PURE__*/React.createElement("button", {
+  }, F ? "Harjoitustapa" : "Practice mode"), /*#__PURE__*/React.createElement("div", {
+    className: "btnrow"
+  }, modes.map(([m]) => /*#__PURE__*/React.createElement("button", {
     key: m,
     className: "btn block",
     style: {
@@ -12316,7 +13409,7 @@ function VocabHome({
   }, L(lang, m))), /*#__PURE__*/React.createElement("button", {
     className: "btn block ghost",
     onClick: () => start("mcq", "all", "all", true)
-  }, "🔀 ", L(lang, "rnd30"), " · ", L(lang, "mcq"))));
+  }, "🔀 ", L(lang, "rnd30"), " · ", L(lang, "mcq")))));
 }
 function deckOf(field, lvl, rnd) {
   let d = VOCAB.filter(v => (field === "all" || v.t === field) && (lvl === "all" || v.lvl === lvl));
@@ -12507,7 +13600,7 @@ function SentHome({
   }, /*#__PURE__*/React.createElement("button", {
     className: "linkback",
     onClick: () => go("home")
-  }, "← ", L(lang, "back")), /*#__PURE__*/React.createElement(LangToggle, {
+  }, "🏠 ", L(lang, "home")), /*#__PURE__*/React.createElement(LangToggle, {
     lang: lang,
     setLang: setLang
   })), /*#__PURE__*/React.createElement("div", {
@@ -12588,7 +13681,9 @@ function SentHome({
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Harjoitustapa" : "Practice mode"), /*#__PURE__*/React.createElement("button", {
+  }, F ? "Harjoitustapa" : "Practice mode"), /*#__PURE__*/React.createElement("div", {
+    className: "btnrow"
+  }, /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C2
@@ -12609,7 +13704,7 @@ function SentHome({
   }, L(lang, "translate")), /*#__PURE__*/React.createElement("button", {
     className: "btn block ghost",
     onClick: () => start("fill", "any", "any", true)
-  }, "🔀 ", L(lang, "rnd30"), " · ", L(lang, "fill"))));
+  }, "🔀 ", L(lang, "rnd30"), " · ", L(lang, "fill")))));
 }
 function sentDeck(st, ty, rnd) {
   let d = SENTENCES.filter(s => (st === "any" || s.struct === st) && (ty === "any" || s.type === ty));
@@ -12955,15 +14050,22 @@ function ExamHome({
   lang,
   setLang,
   go,
-  start
+  start,
+  startYki,
+  history
 }) {
   const F = lang === "fi";
+  const hist = (history || []).slice().reverse();
+  const best = hist.length ? Math.max(...hist.map(h => h.pct)) : null;
+  const last = hist[0],
+    prev = hist[1];
+  const trend = last && prev ? last.pct - prev.pct : null;
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "topbar"
   }, /*#__PURE__*/React.createElement("button", {
     className: "linkback",
     onClick: () => go("home")
-  }, "← ", L(lang, "back")), /*#__PURE__*/React.createElement(LangToggle, {
+  }, "🏠 ", L(lang, "home")), /*#__PURE__*/React.createElement(LangToggle, {
     lang: lang,
     setLang: setLang
   })), /*#__PURE__*/React.createElement("div", {
@@ -12980,16 +14082,60 @@ function ExamHome({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, L(lang, "level")), [["A1", F ? "Alkeet" : "Beginner"], ["A2", F ? "Perustaso" : "Elementary"], ["B1", F ? "Keskitaso (YKI)" : "Intermediate (YKI)"]].map(([lv, t]) => /*#__PURE__*/React.createElement("button", {
-    key: lv,
+  }, F ? "YKI-simulaatio" : "YKI simulation"), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C.exam
     },
+    onClick: startYki
+  }, "🕒 ", F ? "YKI-harjoituskoe · 3 osaa · ajastettu" : "YKI mock exam · 3 parts · timed"), /*#__PURE__*/React.createElement("div", {
+    className: "note"
+  }, F ? "Kuten oikea keskitason koe: luetun ymmärtäminen, rakenteet ja kirjoittaminen — jokaisella osalla oma aika." : "Like the real intermediate test: reading, structures and writing — each part on its own clock.")), hist.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kv"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: C.exam
+    }
+  }, F ? "Kokeesi" : "Your mocks", " · ", hist.length)), /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, F ? "Paras tulos" : "Best score"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: best >= 60 ? C.good : C.bad,
+      fontWeight: 800
+    }
+  }, best, " %")), trend != null && /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, F ? "Kehitys" : "Trend"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: trend >= 0 ? C.good : C.bad,
+      fontWeight: 800
+    }
+  }, trend >= 0 ? "+" : "", trend, " %")), hist.slice(0, 8).map((h, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("span", null, h.d, " · ", F ? "luku" : "read", " ", h.r, "/", h.rm, " · ", F ? "rakenteet" : "struct", " ", h.s, "/", h.sm), /*#__PURE__*/React.createElement("b", {
+    style: {
+      color: h.pass ? C.good : C.bad
+    }
+  }, h.pct, " % ", h.pass ? "✓" : "✗")))), /*#__PURE__*/React.createElement("div", {
+    className: "kv"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Pikaharjoitus" : "Quick practice"), /*#__PURE__*/React.createElement("div", {
+    className: "btnrow"
+  }, [["A1", F ? "Alkeet" : "Beginner"], ["A2", F ? "Perustaso" : "Elementary"], ["B1", F ? "Keskitaso" : "Intermediate"]].map(([lv, t]) => /*#__PURE__*/React.createElement("button", {
+    key: lv,
+    className: "btn block eghost",
     onClick: () => start(lv)
   }, t, " · ", lv))), /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "25 sekakysymystä (sanasto + lauseet). Läpäisyraja 60 %." : "25 mixed questions (vocabulary + sentences). Pass line 60%."));
+  }, F ? "25 sekakysymystä ilman ajastusta. Läpäisyraja 60 %." : "25 mixed questions, untimed. Pass line 60%.")));
 }
 
 // ---------- APP ----------
@@ -12997,11 +14143,12 @@ function DeclensionTable({
   lang,
   setLang,
   back,
-  openGrammar
+  openGrammar,
+  initialQuery
 }) {
   const F = lang === "fi";
   const [tab, setTab] = useState("nom");
-  const [qy, setQy] = useState("");
+  const [qy, setQy] = useState(initialQuery || "");
   const ql = qy.trim().toLowerCase();
   const TCODE = {
     N: {
@@ -13043,6 +14190,10 @@ function DeclensionTable({
     "5": {
       f: "Verbi t5",
       e: "Verb t5"
+    },
+    "6": {
+      f: "Verbi t6",
+      e: "Verb t6"
     },
     irr: {
       f: "Verbi (epäs.)",
@@ -13187,6 +14338,397 @@ function DeclensionTable({
     className: "dtcount"
   }, rows.length, " ", F ? "sanaa" : "words"));
 }
+// ===== YKI mock exam =====
+function Timer({
+  secs,
+  onEnd,
+  accent
+}) {
+  const [t, setT] = useState(secs);
+  useEffect(() => {
+    if (t <= 0) {
+      onEnd && onEnd();
+      return;
+    }
+    const id = setTimeout(() => setT(t - 1), 1000);
+    return () => clearTimeout(id);
+  }, [t]);
+  const mm = Math.floor(t / 60),
+    ss = ("" + t % 60).padStart(2, "0");
+  return /*#__PURE__*/React.createElement("span", {
+    className: "timer" + (t < 60 ? " red" : ""),
+    style: t >= 60 ? {
+      color: accent
+    } : {}
+  }, "⏱ ", mm, ":", ss);
+}
+function ykiStructs(n) {
+  const pool = SENTENCES.filter(s => s.blank != null && s.words && s.words.length > 2);
+  const pick = shuffle([...pool]).slice(0, n);
+  return pick.map(s => {
+    const correct = s.words[s.blank];
+    const others = shuffle(pool.filter(x => x !== s).map(x => x.words[x.blank])).filter(w => w && w.toLowerCase() !== correct.toLowerCase()).slice(0, 3);
+    const opts = shuffle([correct, ...others]);
+    return {
+      fi: s.words.map((w, i) => i === s.blank ? "_____" : w).join(" "),
+      en: s.en,
+      opts,
+      a: opts.indexOf(correct)
+    };
+  });
+}
+function YkiRun({
+  lang,
+  setLang,
+  onHome,
+  onFinish
+}) {
+  const F = lang === "fi";
+  const A = C.exam;
+  const [stage, setStage] = useState("intro"); // intro → read → struct → write → model → done
+  const [rIdx, setRIdx] = useState(0);
+  const [rAns, setRAns] = useState({}); // "p-q" -> chosen index
+  const [structs] = useState(() => ykiStructs(10));
+  const [sIdx, setSIdx] = useState(0);
+  const [sAns, setSAns] = useState({});
+  const [task] = useState(() => YKI_WRITING[Math.floor(Math.random() * YKI_WRITING.length)]);
+  const [txt, setTxt] = useState("");
+  const passages = YKI_READING;
+  const rTotal = passages.reduce((n, p) => n + p.qs.length, 0);
+  const words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
+  const rScore = passages.reduce((n, p, pi) => n + p.qs.reduce((m, q, qi) => m + (rAns[pi + "-" + qi] === q.a ? 1 : 0), 0), 0);
+  const sScore = structs.reduce((n, q, i) => n + (sAns[i] === q.a ? 1 : 0), 0);
+  const total = rScore + sScore,
+    max = rTotal + structs.length,
+    pct = Math.round(100 * total / max),
+    pass = pct >= 60;
+  const Top = ({
+    children
+  }) => /*#__PURE__*/React.createElement("div", {
+    className: "topbar"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "linkback",
+    onClick: onHome
+  }, "🏠 ", L(lang, "exam")), children, /*#__PURE__*/React.createElement(LangToggle, {
+    lang: lang,
+    setLang: setLang
+  }));
+  if (stage === "intro") return /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: A
+    }
+  }, /*#__PURE__*/React.createElement(Top, null), /*#__PURE__*/React.createElement("div", {
+    className: "h",
+    style: {
+      color: A
+    }
+  }, "YKI · ", F ? "harjoituskoe" : "mock exam"), /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kv"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: A
+    }
+  }, F ? "Kokeen rakenne" : "Exam structure")), /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, "1 · ", F ? "Luetun ymmärtäminen" : "Reading comprehension"), /*#__PURE__*/React.createElement("span", null, passages.length, " ", F ? "tekstiä" : "texts", " · ", rTotal, " ", F ? "kysymystä" : "questions", " · 10 min")), /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, "2 · ", F ? "Rakenteet ja sanasto" : "Structures & vocabulary"), /*#__PURE__*/React.createElement("span", null, structs.length, " ", F ? "kysymystä" : "questions", " · 8 min")), /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, "3 · ", F ? "Kirjoittaminen" : "Writing"), /*#__PURE__*/React.createElement("span", null, "1 ", F ? "tehtävä" : "task", " · 15 min · ", F ? "itsearviointi mallivastauksella" : "self-assessed with a model answer")), /*#__PURE__*/React.createElement("div", {
+    className: "note",
+    style: {
+      marginTop: 10
+    }
+  }, F ? "Osat 1–2 pisteytetään automaattisesti (läpäisyraja 60 %). Kuullun ymmärtämistä ei voi harjoitella ilman ääntä. Aika loppuu → osa sulkeutuu automaattisesti." : "Parts 1–2 are auto-scored (pass line 60%). Listening can't be simulated without audio. When time runs out, the section closes automatically.")), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: A
+    },
+    onClick: () => setStage("read")
+  }, F ? "Aloita koe" : "Start the exam", " →"));
+  if (stage === "read") {
+    const p = passages[rIdx];
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        color: A
+      }
+    }, /*#__PURE__*/React.createElement(Top, null, /*#__PURE__*/React.createElement(Timer, {
+      secs: 600,
+      accent: A,
+      onEnd: () => setStage("struct")
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "chlabel",
+      style: {
+        color: A
+      }
+    }, F ? "Osa 1 · Luetun ymmärtäminen" : "Part 1 · Reading", " · ", rIdx + 1, "/", passages.length), /*#__PURE__*/React.createElement("div", {
+      className: "h",
+      style: {
+        color: A
+      }
+    }, F ? p.tyF : p.tyE), /*#__PURE__*/React.createElement("div", {
+      className: "card passage",
+      style: {
+        color: C.ink
+      }
+    }, p.text), p.qs.map((q, qi) => /*#__PURE__*/React.createElement("div", {
+      key: qi,
+      className: "card",
+      style: {
+        color: C.ink
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "q",
+      style: {
+        fontSize: 15
+      }
+    }, F ? q.qf : q.qe), (F ? q.of : q.oe).map((o, oi) => {
+      const k = rIdx + "-" + qi;
+      const chosen = rAns[k];
+      const cls = "opt" + (chosen === oi ? oi === q.a ? " good" : " bad" : "") + (chosen != null && oi === q.a ? " good" : "");
+      return /*#__PURE__*/React.createElement("div", {
+        key: oi,
+        className: cls,
+        onClick: () => {
+          if (rAns[k] == null) setRAns(_objectSpread(_objectSpread({}, rAns), {}, {
+            [k]: oi
+          }));
+        }
+      }, o);
+    }))), /*#__PURE__*/React.createElement("button", {
+      className: "btn block",
+      style: {
+        background: A
+      },
+      onClick: () => {
+        rIdx < passages.length - 1 ? setRIdx(rIdx + 1) : setStage("struct");
+      }
+    }, rIdx < passages.length - 1 ? (F ? "Seuraava teksti" : "Next text") + " →" : (F ? "Osaan 2" : "To Part 2") + " →"));
+  }
+  if (stage === "struct") {
+    const q = structs[sIdx];
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        color: A
+      }
+    }, /*#__PURE__*/React.createElement(Top, null, /*#__PURE__*/React.createElement(Timer, {
+      secs: 480,
+      accent: A,
+      onEnd: () => setStage("write")
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "chlabel",
+      style: {
+        color: A
+      }
+    }, F ? "Osa 2 · Rakenteet ja sanasto" : "Part 2 · Structures & vocabulary", " · ", sIdx + 1, "/", structs.length), /*#__PURE__*/React.createElement("div", {
+      className: "card",
+      style: {
+        color: C.ink
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "q"
+    }, q.fi), /*#__PURE__*/React.createElement("div", {
+      className: "dim",
+      style: {
+        fontSize: 13,
+        marginBottom: 8
+      }
+    }, q.en), q.opts.map((o, oi) => {
+      const chosen = sAns[sIdx];
+      const cls = "opt" + (chosen === oi ? oi === q.a ? " good" : " bad" : "") + (chosen != null && oi === q.a ? " good" : "");
+      return /*#__PURE__*/React.createElement("div", {
+        key: oi,
+        className: cls,
+        onClick: () => {
+          if (sAns[sIdx] == null) setSAns(_objectSpread(_objectSpread({}, sAns), {}, {
+            [sIdx]: oi
+          }));
+        }
+      }, o);
+    })), /*#__PURE__*/React.createElement("button", {
+      className: "btn block",
+      style: {
+        background: A
+      },
+      onClick: () => {
+        sIdx < structs.length - 1 ? setSIdx(sIdx + 1) : setStage("write");
+      }
+    }, sIdx < structs.length - 1 ? (F ? "Seuraava" : "Next") + " →" : (F ? "Osaan 3" : "To Part 3") + " →"));
+  }
+  if (stage === "write") return /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: A
+    }
+  }, /*#__PURE__*/React.createElement(Top, null, /*#__PURE__*/React.createElement(Timer, {
+    secs: 900,
+    accent: A,
+    onEnd: () => setStage("model")
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "chlabel",
+    style: {
+      color: A
+    }
+  }, F ? "Osa 3 · Kirjoittaminen" : "Part 3 · Writing"), /*#__PURE__*/React.createElement("div", {
+    className: "h",
+    style: {
+      color: A
+    }
+  }, F ? task.tyF : task.tyE), /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14.5,
+      lineHeight: 1.55
+    }
+  }, F ? task.taskF : task.taskE), /*#__PURE__*/React.createElement("div", {
+    className: "dim",
+    style: {
+      fontSize: 12.5,
+      marginTop: 6
+    }
+  }, F ? "Vähintään" : "At least", " ", task.min, " ", F ? "sanaa" : "words")), /*#__PURE__*/React.createElement("textarea", {
+    className: "ykita",
+    value: txt,
+    onChange: e => setTxt(e.target.value),
+    placeholder: F ? "Kirjoita tähän suomeksi…" : "Write here in Finnish…"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "dim",
+    style: {
+      textAlign: "right",
+      fontSize: 12.5
+    }
+  }, words, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: A
+    },
+    onClick: () => setStage("model")
+  }, F ? "Valmis — näytä mallivastaus" : "Done — show model answer", " →"));
+  if (stage === "model") return /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: A
+    }
+  }, /*#__PURE__*/React.createElement(Top, null), /*#__PURE__*/React.createElement("div", {
+    className: "chlabel",
+    style: {
+      color: A
+    }
+  }, F ? "Kirjoittaminen · itsearviointi" : "Writing · self-assessment"), txt.trim() && /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: A
+    }
+  }, F ? "Oma tekstisi" : "Your text", " · ", words, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      whiteSpace: "pre-wrap",
+      fontSize: 14
+    }
+  }, txt)), /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: A
+    }
+  }, F ? "Mallivastaus" : "Model answer"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      lineHeight: 1.55,
+      fontStyle: "italic"
+    }
+  }, task.modelF)), /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: A
+    }
+  }, F ? "Tarkista, että tekstissäsi on:" : "Check that your text has:"), task.tips.map((t, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "ykitip"
+  }, "☐ ", F ? t[0] : t[1]))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: A
+    },
+    onClick: () => {
+      onFinish && onFinish({
+        d: new Date().toISOString().slice(0, 10),
+        r: rScore,
+        rm: rTotal,
+        s: sScore,
+        sm: structs.length,
+        pct,
+        pass
+      });
+      setStage("done");
+    }
+  }, F ? "Näytä tulos" : "Show result", " →"));
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: A
+    }
+  }, /*#__PURE__*/React.createElement(Top, null), /*#__PURE__*/React.createElement("div", {
+    className: "h",
+    style: {
+      color: A
+    }
+  }, F ? "Tulos" : "Result"), /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      color: C.ink
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, F ? "Luetun ymmärtäminen" : "Reading"), /*#__PURE__*/React.createElement("span", null, rScore, " / ", rTotal)), /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, F ? "Rakenteet ja sanasto" : "Structures"), /*#__PURE__*/React.createElement("span", null, sScore, " / ", structs.length)), /*#__PURE__*/React.createElement("div", {
+    className: "ykirow"
+  }, /*#__PURE__*/React.createElement("b", null, F ? "Yhteensä" : "Total"), /*#__PURE__*/React.createElement("span", null, total, " / ", max, " · ", pct, " %")), /*#__PURE__*/React.createElement("div", {
+    className: "h",
+    style: {
+      color: pass ? C.good : C.bad,
+      marginTop: 8
+    }
+  }, pass ? F ? "Hyväksytty ✓" : "Pass ✓" : F ? "Hylätty ✗" : "Fail ✗", " ", /*#__PURE__*/React.createElement("span", {
+    className: "dim",
+    style: {
+      fontSize: 13,
+      fontWeight: 600
+    }
+  }, "(", F ? "raja" : "line", " 60 %)")), /*#__PURE__*/React.createElement("div", {
+    className: "note",
+    style: {
+      marginTop: 8
+    }
+  }, F ? "Kirjoittaminen arvioidaan itse mallivastauksen avulla — oikeassa YKI-kokeessa sen arvioi ihminen." : "Writing is self-assessed against the model — in the real YKI a human grades it.")), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: A
+    },
+    onClick: onHome
+  }, "🏠 ", L(lang, "exam")));
+}
 function App() {
   const [lang, setLang] = usePersist("suomi_lang", "fi");
   const [prog, setProg] = usePersist("suomi_prog", {
@@ -13195,6 +14737,8 @@ function App() {
     e: {}
   });
   const [view, setView] = useState("home");
+  const [trail, setTrail] = useState([]);
+  const [declQ, setDeclQ] = useState("");
   const [run, setRun] = useState(null); // {kind, ...}
   const F = lang === "fi";
   function recVocab(fi, ok) {
@@ -13232,6 +14776,11 @@ function App() {
       });
     });
   }
+  function recYki(entry) {
+    setProg(p => _objectSpread(_objectSpread({}, p), {}, {
+      yki: [...(p.yki || []), entry].slice(-30)
+    }));
+  }
   function go(v) {
     setView(v);
   }
@@ -13241,29 +14790,67 @@ function App() {
     setLang: setLang,
     go: go,
     openCard: id => {
+      setTrail([]);
       setRun({
         card: GRAMMAR.find(g => g.id === id)
       });
       setView("gcard");
+    },
+    openTable: q => {
+      setDeclQ(q || "");
+      setView("declension");
     }
   }));
   if (view === "gcard" && run !== null && run !== void 0 && run.card) return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(GCard, {
     lang: lang,
     setLang: setLang,
     card: run.card,
-    back: () => setView("grammar"),
+    back: () => {
+      setTrail([]);
+      setView("grammar");
+    },
     openCard: id => {
+      const cur = run.card.id;
+      setTrail(t => [...t, cur]);
       setRun({
         card: GRAMMAR.find(g => g.id === id)
       });
       setView("gcard");
+    },
+    openSeq: id => {
+      setRun({
+        card: GRAMMAR.find(g => g.id === id)
+      });
+    },
+    trailTop: trail.length ? trail[trail.length - 1] : null,
+    backTrail: () => {
+      if (!trail.length) return;
+      const last = trail[trail.length - 1];
+      setTrail(trail.slice(0, -1));
+      if (last === "__vocab") {
+        setView("vocab");
+        return;
+      }
+      if (last === "__sent") {
+        setView("sent");
+        return;
+      }
+      if (last === "__declension") {
+        setView("declension");
+        return;
+      }
+      setRun({
+        card: GRAMMAR.find(g => g.id === last)
+      });
     }
   }));
   if (view === "declension") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(DeclensionTable, {
     lang: lang,
     setLang: setLang,
     back: () => setView("grammar"),
+    initialQuery: declQ,
     openGrammar: id => {
+      setTrail(["__declension"]);
       setRun({
         card: GRAMMAR.find(g => g.id === id)
       });
@@ -13276,6 +14863,7 @@ function App() {
     setLang: setLang,
     go: go,
     openGrammar: id => {
+      setTrail(["__vocab"]);
       setRun({
         card: GRAMMAR.find(g => g.id === id)
       });
@@ -13337,6 +14925,7 @@ function App() {
     setLang: setLang,
     go: go,
     openGrammar: id => {
+      setTrail(["__sent"]);
       setRun({
         card: GRAMMAR.find(g => g.id === id)
       });
@@ -13384,6 +14973,8 @@ function App() {
     lang: lang,
     setLang: setLang,
     go: go,
+    history: prog.yki || [],
+    startYki: () => setView("yki"),
     start: lv => {
       setRun({
         kind: "e",
@@ -13392,6 +14983,12 @@ function App() {
       });
       setView("erun");
     }
+  }));
+  if (view === "yki") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(YkiRun, {
+    lang: lang,
+    setLang: setLang,
+    onHome: () => setView("exam"),
+    onFinish: recYki
   }));
   if (view === "erun" && run) return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(Quiz, {
     lang: lang,
