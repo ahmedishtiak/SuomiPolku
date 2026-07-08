@@ -4025,9 +4025,106 @@ const GRAMMAR = [{
   mf: "Ei artikkeleita, ei sukua — kaikki on päätteissä.",
   me: "No articles, no gender — it's all in the endings.",
   rich: {
-    df: "Kuusi isoa asiaa, jotka kannattaa ymmärtää heti alussa. Jokaiseen on oma lukunsa myöhemmin.",
-    de: "Six big ideas worth grasping right at the start. Each one has its own chapter later.",
+    df: "Kuusi isoa asiaa, jotka kannattaa ymmärtää heti alussa. Jokaiseen on oma lukunsa myöhemmin. Ajattele suomen sanaa LEGO-alustana: vartalo on alusta (se voi muuttaa muotoaan — KPT), päätteet ovat palikoita, ja niiden \"värin\" on sovittava alustaan (vokaalisointu).",
+    de: "Six big ideas worth grasping right at the start. Each one has its own chapter later. Picture a Finnish word as a LEGO baseplate: the stem is the plate (it can change shape — KPT), the endings are bricks, and their \"colour\" must match the plate (vowel harmony).",
     sections: [{
+      hf: "Persoonat ja \"olla\" (to be)",
+      he: "Personal pronouns & \"olla\" (to be)",
+      items: [{
+        w: "olla",
+        tf: "\"olla\" = olla; epäsäännöllinen",
+        te: "\"olla\" = to be; irregular",
+        rows: [{
+          l: "minä (I)",
+          form: "olen",
+          s: true
+        }, {
+          l: "sinä (you)",
+          form: "olet",
+          s: true
+        }, {
+          l: "hän (he/she)",
+          form: "on",
+          s: true
+        }, {
+          l: "me (we)",
+          form: "olemme",
+          s: true
+        }, {
+          l: "te (you, pl./polite)",
+          form: "olette",
+          s: true
+        }, {
+          l: "he (they)",
+          form: "ovat",
+          s: true
+        }],
+        exf: "minä olen Sara, olen Espanjasta ja asun Helsingissä",
+        exe: "I am Sara, I'm from Spain and I live in Helsinki"
+      }]
+    }, {
+      hf: "Ääntäminen: lyhyt vs. pitkä äänne",
+      he: "Pronunciation: short vs. long sounds",
+      items: [{
+        w: "tuli / tuuli",
+        tf: "kaksoiskirjain = pitkä äänne",
+        te: "a double letter = a long sound",
+        rows: [{
+          l: "tuli",
+          form: "fire",
+          s: false
+        }, {
+          l: "tuuli",
+          form: "wind (long u)",
+          s: true
+        }, {
+          l: "tapan",
+          form: "I kill",
+          s: false
+        }, {
+          l: "tapaan",
+          form: "I meet (long a)",
+          s: true
+        }, {
+          l: "kuka",
+          form: "who",
+          s: false
+        }, {
+          l: "kukka",
+          form: "flower (long k)",
+          s: true
+        }],
+        exf: "suomi kirjoitetaan kuten se lausutaan — pituus voi vaihtaa merkityksen",
+        exe: "Finnish is written as it is spoken — length alone can change the meaning"
+      }]
+    }, {
+      hf: "Paino ja intonaatio: lue kuin koodia",
+      he: "Stress & intonation: read it like code",
+      items: [{
+        w: "SUO-mi",
+        tf: "paino aina 1. tavulla",
+        te: "stress always on the 1st syllable",
+        rows: [{
+          l: "yksi kirjain = yksi äänne / one letter = one sound",
+          form: "'a' aina [aa], 'k' aina [koo]",
+          s: false
+        }, {
+          l: "ei mykkiä kirjaimia / no silent letters",
+          form: "kissa = k-i-s-s-a; h kuuluu: pihvi",
+          s: false
+        }, {
+          l: "paino / stress",
+          form: "SUO-mi, ES-poo, O-pis-ke-len",
+          s: true
+        }, {
+          l: "intonaatio / intonation",
+          form: "laskee — myös kysymyksessä",
+          s: true
+        }],
+        exf: "englannissa kysymys nousee lopussa; suomessa \"Mitä kello on?\" laskee",
+        exe: "English questions rise at the end; in Finnish \"Mitä kello on?\" falls"
+      }]
+    }, {
       hf: "1 · Ei artikkeleita, ei sukua",
       he: "1 · No articles, no gender",
       items: [{
@@ -4343,8 +4440,8 @@ const GRAMMAR = [{
         inf: "tulla",
         gloss: "to come",
         p6: ["tulen", "tulet", "tulee", "tulemme", "tulette", "tulevat"],
-        exf: "tulen Bangladeshista",
-        exe: "I come from Bangladesh"
+        exf: "tulen Espanjasta",
+        exe: "I come from Spain"
       }, {
         inf: "mennä",
         gloss: "to go",
@@ -4557,8 +4654,8 @@ const GRAMMAR = [{
           form: "Jyväskylässä",
           s: true
         }],
-        exf: "opiskelin Jyväskylässä (Jamk)",
-        exe: "I studied in Jyväskylä (Jamk)"
+        exf: "opiskelin Jyväskylässä",
+        exe: "I studied in Jyväskylä"
       }]
     }, {
       hf: "Astevaihtelu — heikko aste",
@@ -4580,8 +4677,8 @@ const GRAMMAR = [{
           form: "kaupassa",
           s: true
         }],
-        exf: "työskentelin pankissa 21 vuotta",
-        exe: "I worked in a bank for 21 years"
+        exf: "hän työskenteli pankissa monta vuotta",
+        exe: "he worked in a bank for many years"
       }]
     }, {
       hf: "Erikoiskäyttö — aika ja tila",
@@ -4681,12 +4778,12 @@ const GRAMMAR = [{
           form: "Suomesta",
           s: true
         }, {
-          l: "Bangladesh",
-          form: "Bangladeshista",
+          l: "Espanja",
+          form: "Espanjasta",
           s: true
         }],
-        exf: "tulen Bangladeshista",
-        exe: "I come from Bangladesh"
+        exf: "tulen Espanjasta",
+        exe: "I come from Spain"
       }]
     }, {
       hf: "-stä · etuvokaalit",
@@ -5458,8 +5555,8 @@ const GRAMMAR = [{
           form: "Suomeen",
           s: true
         }],
-        exf: "tulin Suomeen 21.8.2024",
-        exe: "I came to Finland on 21 Aug 2024"
+        exf: "tulin Suomeen viime vuonna",
+        exe: "I came to Finland last year"
       }]
     }, {
       hf: "Erikoiskäytöt — opettele ulkoa",
@@ -5697,7 +5794,7 @@ const GRAMMAR = [{
           form: "kahvia",
           s: true
         }],
-        exf: "työskentelin pankissa 21 vuotta",
+        exf: "hän työskenteli pankissa monta vuotta",
         exe: "loanwords keep the -i and just add -a/-ä"
       }]
     }]
@@ -5822,8 +5919,8 @@ const GRAMMAR = [{
           form: "pankkiin",
           s: true
         }],
-        exf: "työskentelin pankissa 21 vuotta",
-        exe: "I worked in a bank for 21 years"
+        exf: "hän työskenteli pankissa monta vuotta",
+        exe: "he worked in a bank for many years"
       }]
     }, {
       hf: "Postpositiot vaativat genetiivin",
@@ -6047,7 +6144,7 @@ const GRAMMAR = [{
           form: "Luen kirjan.",
           s: false
         }],
-        exf: "kirjoitan kirjaa (Bangla theke Suomi)",
+        exf: "kirjoitan kirjaa",
         exe: "I'm writing a book — ongoing, so partitive"
       }, {
         w: "3 · Epämääräinen määrä / ainesana?",
@@ -6089,7 +6186,7 @@ const GRAMMAR = [{
           form: "Tunnetko hänet?",
           s: true
         }],
-        exf: "suoritin tutkinnon 31.5.2025",
+        exf: "suoritin tutkinnon keväällä",
         exe: "I completed the degree — done and whole, accusative -n"
       }]
     }, {
@@ -6238,7 +6335,7 @@ const GRAMMAR = [{
           form: "tutkinnosta",
           s: false
         }],
-        exf: "suoritin tutkinnon 31.5.2025",
+        exf: "suoritin tutkinnon keväällä",
         exe: "I completed the degree"
       }, {
         w: "pitkä",
@@ -6305,7 +6402,7 @@ const GRAMMAR = [{
           form: "muuttaa",
           s: true
         }],
-        exf: "muutin Suomeen 21.8.2024",
+        exf: "muutin Suomeen viime vuonna",
         exe: "I moved to Finland"
       }, {
         w: "syntyä",
@@ -6322,8 +6419,8 @@ const GRAMMAR = [{
           form: "syntyi",
           s: true
         }],
-        exf: "synnyin Bangladeshissa 31.7.1976",
-        exe: "I was born in Bangladesh"
+        exf: "synnyin Espanjassa",
+        exe: "I was born in Spain"
       }, {
         w: "saada",
         tf: "tyyppi 2",
@@ -6356,8 +6453,8 @@ const GRAMMAR = [{
           form: "tulee",
           s: true
         }],
-        exf: "tulen Bangladeshista",
-        exe: "I come from Bangladesh"
+        exf: "tulen Espanjasta",
+        exe: "I come from Spain"
       }, {
         w: "tavata",
         tf: "tyyppi 4",
@@ -6805,8 +6902,8 @@ const GRAMMAR = [{
           form: "minun äidinkieleni",
           s: false
         }],
-        exf: "nimeni on Ishtiak ja kotimaani on Bangladesh",
-        exe: "my name is Ishtiak and my home country is Bangladesh"
+        exf: "nimeni on Sara ja kotimaani on Espanja",
+        exe: "my name is Sara and my home country is Spain"
       }]
     }, {
       hf: "Liite sijapäätteen päälle",
@@ -6891,8 +6988,8 @@ const GRAMMAR = [{
         inf: "asua",
         gloss: "lived",
         p6: ["asuin", "asuit", "asui", "asuimme", "asuitte", "asuivat"],
-        exf: "asuin Bangladeshissa yli 40 vuotta",
-        exe: "I lived in Bangladesh for 40+ years"
+        exf: "asuin Espanjassa monta vuotta",
+        exe: "I lived in Spain for many years"
       }, {
         inf: "ostaa",
         gloss: "bought",
@@ -6918,7 +7015,7 @@ const GRAMMAR = [{
         gloss: "got",
         note: "saa→sai",
         p6: ["sain", "sait", "sai", "saimme", "saitte", "saivat"],
-        exf: "sain maisterin tutkinnon 31.5.2025",
+        exf: "sain maisterin tutkinnon keväällä",
         exe: "I got my master's degree"
       }, {
         inf: "juoda",
@@ -6944,8 +7041,8 @@ const GRAMMAR = [{
         inf: "tulla",
         gloss: "came",
         p6: ["tulin", "tulit", "tuli", "tulimme", "tulitte", "tulivat"],
-        exf: "tulin Suomeen 21.8.2024",
-        exe: "I came to Finland on 21 Aug 2024"
+        exf: "tulin Suomeen viime vuonna",
+        exe: "I came to Finland last year"
       }, {
         inf: "mennä",
         gloss: "went",
@@ -6956,8 +7053,8 @@ const GRAMMAR = [{
         inf: "opiskella",
         gloss: "studied",
         p6: ["opiskelin", "opiskelit", "opiskeli", "opiskelimme", "opiskelitte", "opiskelivat"],
-        exf: "opiskelin suomea Jamkissa",
-        exe: "I studied Finnish at Jamk"
+        exf: "opiskelin suomea yliopistossa",
+        exe: "I studied Finnish at university"
       }]
     }, {
       n: "Tyyppi 4",
@@ -7288,11 +7385,11 @@ const GRAMMAR = [{
           s: false
         }, {
           l: "sivulause",
-          form: "joka auttaa bengalinkielisiä",
+          form: "joka auttaa opiskelijoita",
           s: true
         }],
-        exf: "kirjoitan kirjaa, joka auttaa bengalinkielisiä oppijoita",
-        exe: "I'm writing a book that helps Bengali-speaking learners"
+        exf: "kirjoitan kirjaa, joka auttaa opiskelijoita",
+        exe: "I'm writing a book that helps students"
       }, {
         w: "että",
         tf: "referointi",
@@ -7612,7 +7709,7 @@ const GRAMMAR = [{
           s: false
         }],
         exf: "aamulla opiskelen ja illalla kirjoitan kirjaa",
-        exe: "in the morning I study, in the evening I write my book"
+        exe: "in the morning I study, in the evening I write a book"
       }]
     }, {
       hf: "Kesto — partitiivi ja -sta…-hin",
@@ -8022,8 +8119,8 @@ const GRAMMAR = [{
     f: "maanantaina minulla on kurssi",
     e: "on Monday I have a course"
   }, {
-    f: "lapsena asuin Bangladeshissa",
-    e: "as a child I lived in Bangladesh"
+    f: "lapsena asuin Espanjassa",
+    e: "as a child I lived in Spain"
   }],
   mf: "-na/-nä = 'jonakin' (rooli, päivä, tila).",
   me: "-na/-nä = 'as' (role, day, state).",
@@ -8727,8 +8824,8 @@ const GRAMMAR = [{
   mf: "YKI = kirjakieli; katu = puhekieli; virasto = virkakieli.",
   me: "YKI = written; street = spoken; office = officialese.",
   note: {
-    remF: "YKI-kirjoittaminen ja -puhuminen arvioidaan kirjakielellä. Opettele standardimuodot aktiivisesti, tunnista puhekieli passiivisesti. Sama jako kuin bengalin সাধু/চলিত.",
-    remE: "YKI writing and speaking are graded on the written standard. Learn standard forms actively, recognize spoken forms passively. The same split as Bangla sadhu/cholito.",
+    remF: "YKI-kirjoittaminen ja -puhuminen arvioidaan kirjakielellä. Opettele standardimuodot aktiivisesti, tunnista puhekieli passiivisesti. Monessa kielessä on sama jako muodolliseen ja arkiseen tyyliin.",
+    remE: "YKI writing and speaking are graded on the written standard. Learn standard forms actively, recognize spoken forms passively. Many languages have the same formal-vs-everyday split.",
     misF: "Puhekieli YKI-kokeessa: 'mä oon' → minä olen; 'ne meni' → he menivät; 'tuu' → tule.",
     misE: "Spoken forms in the YKI exam: 'mä oon' → minä olen; 'ne meni' → he menivät; 'tuu' → tule."
   },
@@ -8770,6 +8867,356 @@ const GRAMMAR = [{
         }],
         exf: "YKI-kokeessa kirjoitan kirjakieltä",
         exe: "in the YKI exam I write the standard language"
+      }]
+    }]
+  }
+}, {
+  id: "wordorder",
+  cat: "sent",
+  seealso: ["sentence-types", "existential", "questions"],
+  tf: "Sanajärjestys",
+  te: "Word order",
+  rf: "Neutraali järjestys on SVO: \"Minä luen kirjan.\" Suomi on kuitenkin joustava, koska sijapäätteet kertovat roolit — sanoja voi siirtää painotusta varten. Tunnettu asia (teema) tulee alkuun, uusi/tärkein tieto loppuun. Kun lause alkaa muulla kuin subjektilla, verbi tulee toiseksi: \"Eilen kävin kaupassa.\"",
+  re: "The neutral order is SVO: \"Minä luen kirjan\" (I read the book). But Finnish is flexible, because case endings mark the roles — you can move words for emphasis. The known thing (topic) comes first, the new/most important info last. When the clause starts with something other than the subject, the verb comes second: \"Eilen kävin kaupassa.\"",
+  ex: [{
+    f: "minä luen kirjan",
+    e: "I read the book (neutral SVO)"
+  }, {
+    f: "kirjan minä luen, en lehteä",
+    e: "the book I'll read, not the paper (fronted object)"
+  }, {
+    f: "eilen kävin kaupassa",
+    e: "yesterday I went to the shop (verb second)"
+  }],
+  mf: "SVO on neutraali; sijat sallivat muutkin järjestykset.",
+  me: "SVO is neutral; the cases allow other orders.",
+  note: {
+    remF: "Koska sijat merkitsevät subjektin ja objektin, sanajärjestys ei muuta perusmerkitystä vaan painotusta. Lauseen loppu on \"painava\" uuden tiedon paikka.",
+    remE: "Because cases mark subject and object, word order changes emphasis, not the basic meaning. The end of the clause is the \"weighty\" new-information slot.",
+    misF: "Englannin jäykkä järjestys: kun lause alkaa ajalla tai paikalla, verbi tulee heti perään (Eilen KÄVIN, ei \"Eilen minä kävin\" väkisin).",
+    misE: "English rigidity: when a clause starts with a time or place, the verb comes right after (Eilen kävin…)."
+  },
+  exc: [{
+    ex: "Luetko sinä?",
+    f: "kyllä/ei-kysymys: verbi + -ko ensin",
+    e: "yes/no question: verb + -ko first"
+  }, {
+    ex: "Pöydällä on kirja",
+    f: "eksistentiaalilause: paikka ensin",
+    e: "existential: place first"
+  }, {
+    ex: "Missä sinä asut?",
+    f: "kysymyssana ensin",
+    e: "question word first"
+  }]
+}, {
+  id: "existential",
+  cat: "sent",
+  seealso: ["partitive", "wordorder", "inessive"],
+  tf: "Eksistentiaalilause (on olemassa)",
+  te: "Existential clause (there is/are)",
+  rf: "Eksistentiaalilause kertoo, että jotakin on jossakin. Paikka tulee ensin, verbi on aina yksikössä (on), ja subjekti viimeiseksi: \"Pöydällä on kirja.\" Kiellossa ja määrää ilmaistaessa subjekti on PARTITIIVISSA: \"Kahvia ei ole\", \"Pöydällä on kirjoja.\"",
+  re: "An existential clause says something exists somewhere. The place comes first, the verb is always singular (on), and the subject comes last: \"Pöydällä on kirja\" (there's a book on the table). With a negative or a quantity the subject is in the PARTITIVE: \"Kahvia ei ole\" (there's no coffee), \"Pöydällä on kirjoja.\"",
+  ex: [{
+    f: "pöydällä on kirja",
+    e: "there is a book on the table"
+  }, {
+    f: "Helsingissä on paljon ihmisiä",
+    e: "there are many people in Helsinki"
+  }, {
+    f: "jääkaapissa ei ole maitoa",
+    e: "there's no milk in the fridge"
+  }],
+  mf: "Paikka + on + subjekti (viimeiseksi).",
+  me: "Place + on + subject (last).",
+  note: {
+    remF: "Verbi pysyy yksikön 3. persoonassa, vaikka subjekti olisi monikko tai partitiivi: \"Pöydällä ON kirjoja\" (ei ovat). Vertaa: \"Kirja on pöydällä\" (tietty kirja) vs. \"Pöydällä on kirja\" (on olemassa).",
+    remE: "The verb stays 3rd person singular even with a plural/partitive subject: \"Pöydällä ON kirjoja\" (not ovat). Compare: \"Kirja on pöydällä\" (a specific book) vs. \"Pöydällä on kirja\" (there exists).",
+    misF: "Monikon verbi: \"Pöydällä ovat kirjoja\" → on kirjoja.",
+    misE: "Plural verb: \"Pöydällä ovat kirjoja\" → on kirjoja."
+  },
+  exc: [{
+    ex: "Kahvia ei ole",
+    f: "kielto → subjekti partitiiviin",
+    e: "negative → subject to partitive"
+  }, {
+    ex: "Pöydällä on kirjoja",
+    f: "määrä → partitiivi",
+    e: "quantity → partitive"
+  }, {
+    ex: "Kirja on pöydällä",
+    f: "tietty subjekti → tavallinen järjestys",
+    e: "definite subject → normal order"
+  }],
+  rich: {
+    df: "Sama sisältö kahdessa järjestyksessä ja kiellossa.",
+    de: "The same content in two orders and in the negative.",
+    sections: [{
+      hf: "Eksistentiaali vs. tavallinen",
+      he: "Existential vs. normal",
+      items: [{
+        w: "kirja / pöytä",
+        tf: "on olemassa vs. tietty",
+        te: "exists vs. definite",
+        rows: [{
+          l: "there is a book",
+          form: "Pöydällä on kirja",
+          s: true
+        }, {
+          l: "there are books",
+          form: "Pöydällä on kirjoja",
+          s: true
+        }, {
+          l: "there's no coffee",
+          form: "Kahvia ei ole",
+          s: false
+        }, {
+          l: "the book is on the table",
+          form: "Kirja on pöydällä",
+          s: false
+        }],
+        exf: "kaupungissa on paljon kahviloita",
+        exe: "there are many cafés in the city"
+      }]
+    }]
+  }
+}, {
+  id: "possessive-clause",
+  cat: "sent",
+  seealso: ["adessive", "partitive", "negative"],
+  tf: "Omistuslause (minulla on)",
+  te: "Possessive clause (I have)",
+  rf: "Suomessa ei ole arkista \"omistaa\"-verbiä; omistus ilmaistaan adessiivilla (-lla/-llä) + olla: \"Minulla on auto\" (= I have a car). Kiellossa omistettava menee PARTITIIVIIN: \"Minulla ei ole autoa.\" Määrä/monikko: \"Minulla on kirjoja.\"",
+  re: "Finnish has no everyday verb \"to have\"; possession uses the adessive (-lla/-llä) + olla: \"Minulla on auto\" (I have a car). In the negative the thing owned goes to the PARTITIVE: \"Minulla ei ole autoa.\" Quantity/plural: \"Minulla on kirjoja.\"",
+  ex: [{
+    f: "minulla on koira",
+    e: "I have a dog"
+  }, {
+    f: "hänellä ei ole aikaa",
+    e: "he doesn't have time"
+  }, {
+    f: "meillä on kaksi lasta",
+    e: "we have two children"
+  }],
+  mf: "Omistaja adessiivissa (-lla) + on.",
+  me: "Owner in the adessive (-lla) + on.",
+  note: {
+    remF: "Omistaja saa -lla/-llä ja verbi on aina \"on\". Kiellossa omistettava partitiiviin (ei ole autoa). Abstraktit ovat usein partitiivissa myös myönteisenä: minulla on aikaa.",
+    remE: "The owner takes -lla/-llä and the verb is always \"on\". In the negative the owned thing goes to the partitive (ei ole autoa). Abstract nouns are often partitive even in the affirmative: minulla on aikaa.",
+    misF: "Nominatiivi kiellossa: \"minulla ei ole auto\" → autoa.",
+    misE: "Nominative in the negative: \"minulla ei ole auto\" → autoa."
+  },
+  exc: [{
+    ex: "minulla on aikaa",
+    f: "abstrakti/ainesana → partitiivi",
+    e: "abstract/mass → partitive"
+  }, {
+    ex: "minulla, sinulla, hänellä…",
+    f: "pronominit adessiivissa",
+    e: "pronouns in the adessive"
+  }],
+  rich: {
+    df: "Omistuslause: myönteinen, kielteinen ja monikko.",
+    de: "Possessive clause: affirmative, negative and plural.",
+    sections: [{
+      hf: "minulla on …",
+      he: "I have …",
+      items: [{
+        w: "auto / aika",
+        tf: "-lla + on",
+        te: "-lla + on",
+        rows: [{
+          l: "I have a car",
+          form: "minulla on auto",
+          s: true
+        }, {
+          l: "I don't have a car",
+          form: "minulla ei ole autoa",
+          s: true
+        }, {
+          l: "I have time",
+          form: "minulla on aikaa",
+          s: false
+        }, {
+          l: "we have two children",
+          form: "meillä on kaksi lasta",
+          s: false
+        }],
+        exf: "hänellä ei ole vielä työtä",
+        exe: "he doesn't have a job yet"
+      }]
+    }]
+  }
+}, {
+  id: "predicative",
+  cat: "case",
+  seealso: ["partitive", "adj-agree", "essive"],
+  tf: "Predikatiivi (olla + millainen)",
+  te: "Predicative (olla + what kind)",
+  rf: "Predikatiivi on olla-verbin jälkeinen täydennys. Se on yleensä NOMINATIIVISSA: \"Talo on iso.\" Mutta ainesanasta tai jakamattomasta ominaisuudesta se on PARTITIIVISSA: \"Vesi on kylmää\", \"Kahvi on hyvää.\" Monikollinen laji on usein partitiivissa: \"He ovat opiskelijoita.\"",
+  re: "The predicative is the complement after \"olla\". It's usually NOMINATIVE: \"Talo on iso\" (the house is big). But for a mass noun or an uncountable quality it's PARTITIVE: \"Vesi on kylmää\" (water is cold), \"Kahvi on hyvää.\" Plural kinds are often partitive: \"He ovat opiskelijoita.\"",
+  ex: [{
+    f: "talo on iso",
+    e: "the house is big (nominative)"
+  }, {
+    f: "vesi on kylmää",
+    e: "the water is cold (partitive — mass noun)"
+  }, {
+    f: "he ovat opiskelijoita",
+    e: "they are students (plural partitive)"
+  }],
+  mf: "Laskettava → nominatiivi; ainesana/abstrakti → partitiivi.",
+  me: "Countable → nominative; mass/abstract → partitive.",
+  note: {
+    remF: "Ainesanat ja abstraktit ominaisuudet saavat partitiivipredikatiivin (maito on hyvää, sää on kaunista). Yksi laskettava esine → nominatiivi (auto on uusi).",
+    remE: "Mass nouns and abstract qualities take a partitive predicative (maito on hyvää, sää on kaunista). A single countable thing → nominative (auto on uusi).",
+    misF: "\"Vesi on kylmä\" → kylmää; \"kahvi on hyvä\" (= itse kahvi) vs. \"hyvää\" (= maku/ominaisuus).",
+    misE: "\"Vesi on kylmä\" → kylmää; \"kahvi on hyvä\" (the coffee-item) vs. \"hyvää\" (the quality)."
+  },
+  exc: [{
+    ex: "on totta / on selvää",
+    f: "kiteytyneet partitiivit",
+    e: "fixed partitive predicatives"
+  }, {
+    ex: "he ovat suomalaisia",
+    f: "monikon laji → partitiivi",
+    e: "plural kind → partitive"
+  }],
+  rich: {
+    df: "Nominatiivi vai partitiivi olla-verbin jälkeen?",
+    de: "Nominative or partitive after \"olla\"?",
+    sections: [{
+      hf: "Predikatiivin sija",
+      he: "Case of the predicative",
+      items: [{
+        w: "iso / kylmää",
+        tf: "laskettava vs. ainesana",
+        te: "countable vs. mass",
+        rows: [{
+          l: "the house is big",
+          form: "talo on iso",
+          s: false
+        }, {
+          l: "the water is cold",
+          form: "vesi on kylmää",
+          s: true
+        }, {
+          l: "the weather is nice",
+          form: "sää on kaunista",
+          s: true
+        }, {
+          l: "they are Finns",
+          form: "he ovat suomalaisia",
+          s: true
+        }],
+        exf: "suomen kieli on kaunista mutta vaikeaa",
+        exe: "the Finnish language is beautiful but difficult"
+      }]
+    }]
+  }
+}, {
+  id: "modal-construction",
+  cat: "verb",
+  seealso: ["infinitives", "temporal", "adessive"],
+  tf: "Modaalirakenne (-en: juosten)",
+  te: "Modal construction (-en: juosten)",
+  rf: "Modaalirakenne kertoo, MITEN tai millä tavalla päätoiminta tapahtuu. Se on 2. infinitiivin instruktiivi -en: \"Hän tuli juosten\" (= juoksemalla). Muita: nauraen, itkien, laulaen, hymyillen. Vastaa kysymykseen \"miten?\". Sävy on kirjallinen; puheessa käytetään usein -malla-muotoa.",
+  re: "The modal construction says HOW the main action happens. It's the 2nd infinitive instructive -en: \"Hän tuli juosten\" (he came running, = juoksemalla). Others: nauraen (laughing), itkien (crying), laulaen (singing). It answers \"how?\". The tone is literary; speech often uses the -malla form instead.",
+  ex: [{
+    f: "lapsi tuli juosten",
+    e: "the child came running"
+  }, {
+    f: "hän vastasi hymyillen",
+    e: "she answered smiling"
+  }, {
+    f: "he kävelivät laulaen",
+    e: "they walked along singing"
+  }],
+  mf: "-en = 'miten' (2. infinitiivin instruktiivi).",
+  me: "-en = 'how' (2nd infinitive instructive).",
+  note: {
+    remF: "-en kuvaa päätoimintaa säestävää tapaa, ja sen voi usein korvata -malla-muodolla (juosten ≈ juoksemalla).",
+    remE: "-en describes the manner accompanying the main action, and can often be replaced with -malla (juosten ≈ juoksemalla).",
+    misF: "Sekaannus -essa-muotoon: \"tehden\" (miten) vs. \"tehdessä\" (silloin kun). -en on tapa, -essa on aika.",
+    misE: "Confusing it with -essa: \"tehden\" (how) vs. \"tehdessä\" (while). -en is manner, -essa is time."
+  },
+  exc: [{
+    ex: "tehdä → tehden",
+    f: "2. infinitiivin vartalo",
+    e: "2nd-infinitive stem"
+  }, {
+    ex: "nähdä → nähden",
+    f: "epäsäännöllinen",
+    e: "irregular"
+  }, {
+    ex: "huutaen, salaa",
+    f: "kiteytyneet tavan ilmaukset",
+    e: "lexicalized manner expressions"
+  }]
+}, {
+  id: "generic",
+  cat: "sent",
+  seealso: ["passive", "rection", "sentence-types"],
+  tf: "Geneerinen lause ja nollapersoona",
+  te: "Generic clause & the zero person",
+  rf: "Geneerinen lause kertoo yleisen totuuden ilman tiettyä tekijää. Kaksi keinoa: (1) PASSIIVI — \"Suomessa syödään paljon kalaa.\" (2) NOLLAPERSOONA — yksikön 3. persoona ilman subjektia; tarkoittaa \"kuka tahansa / ihminen yleensä\": \"Täällä ei saa tupakoida\", \"Ikkunasta näkee merelle\", \"Jos tekee töitä, oppii.\"",
+  re: "A generic clause states a general truth with no specific doer. Two devices: (1) the PASSIVE — \"Suomessa syödään paljon kalaa\" (in Finland people eat a lot of fish). (2) the ZERO PERSON — a 3rd-person singular verb with no subject; it means \"anyone / people in general\": \"Täällä ei saa tupakoida\" (one may not smoke here), \"Ikkunasta näkee merelle\" (from the window you can see the sea), \"Jos tekee töitä, oppii\" (if one works, one learns).",
+  ex: [{
+    f: "Suomessa syödään ruisleipää",
+    e: "in Finland people eat rye bread (passive)"
+  }, {
+    f: "täällä ei saa pysäköidä",
+    e: "one may not park here (zero person)"
+  }, {
+    f: "kahvilassa voi lukea lehtiä",
+    e: "in a café you can read newspapers (zero person)"
+  }],
+  mf: "Passiivi = 'tehdään'; nollapersoona = 3. p. ilman tekijää.",
+  me: "Passive = 'one does'; zero person = 3rd person, no subject.",
+  note: {
+    remF: "Nollapersoona käyttää hän-muotoista verbiä ILMAN pronominia ja tarkoittaa ketä tahansa. Yleinen modaalien kanssa: voi, saa, pitää, täytyy, sekä aistiverbien (näkee, kuulee).",
+    remE: "The zero person uses a hän-form verb WITHOUT a pronoun and means anyone. Common with modals: voi, saa, pitää, täytyy, and perception verbs (näkee, kuulee).",
+    misF: "Pronominin lisääminen: \"sinä voit lukea\" on tietty 'sinä'; nollapersoona jättää sen pois yleisessä merkityksessä.",
+    misE: "Adding a pronoun: \"sinä voit lukea\" is a specific 'you'; the zero person drops it for the general sense."
+  },
+  exc: [{
+    ex: "Jos tekee töitä, oppii",
+    f: "ehtolause nollapersoonassa",
+    e: "conditional in the zero person"
+  }, {
+    ex: "ei saa / voi / pitää",
+    f: "tavallisin modaalien kanssa",
+    e: "most common with modals"
+  }],
+  rich: {
+    df: "Kaksi tapaa sanoa yleinen totuus.",
+    de: "Two ways to state a general truth.",
+    sections: [{
+      hf: "Passiivi vs. nollapersoona",
+      he: "Passive vs. zero person",
+      items: [{
+        w: "—",
+        tf: "yleinen tekijä",
+        te: "generic doer",
+        rows: [{
+          l: "passive (one does)",
+          form: "Suomessa juodaan kahvia",
+          s: true
+        }, {
+          l: "zero person (one can)",
+          form: "täältä näkee kauas",
+          s: true
+        }, {
+          l: "zero person (one must)",
+          form: "tässä pitää olla tarkka",
+          s: false
+        }, {
+          l: "zero person + if",
+          form: "jos lukee paljon, oppii",
+          s: false
+        }],
+        exf: "Suomessa arvostetaan täsmällisyyttä",
+        exe: "in Finland punctuality is valued"
       }]
     }]
   }
@@ -9157,15 +9604,15 @@ const NOMINALS = [{
   plur: "—",
   note: "-i → -e- stem"
 }, {
-  w: "Bangladesh",
-  en: "Bangladesh",
+  w: "Japani",
+  en: "Japan",
   ty: "N",
-  stem: "Bangladeshi-",
-  gen: "Bangladeshin",
-  part: "Bangladeshia",
-  iness: "Bangladeshissa",
-  elat: "Bangladeshista",
-  illat: "Bangladeshiin",
+  stem: "Japani-",
+  gen: "Japanin",
+  part: "Japania",
+  iness: "Japanissa",
+  elat: "Japanista",
+  illat: "Japaniin",
   plur: "—",
   note: "loanword, -i keeps"
 }, {
@@ -10920,9 +11367,9 @@ const SENTENCES = [{
   "struct": "simple",
   "type": "aff",
   "lvl": "A1",
-  "fi": "Minä tulen Bangladeshista.",
-  "en": "I come from Bangladesh.",
-  "words": ["Minä", "tulen", "Bangladeshista."],
+  "fi": "Minä tulen Espanjasta.",
+  "en": "I come from Spain.",
+  "words": ["Minä", "tulen", "Espanjasta."],
   "blank": 2
 }, {
   "id": 63,
@@ -10983,9 +11430,9 @@ const SENTENCES = [{
   "struct": "simple",
   "type": "neg",
   "lvl": "A2",
-  "fi": "En asu enää Bangladeshissa.",
-  "en": "I no longer live in Bangladesh.",
-  "words": ["En", "asu", "enää", "Bangladeshissa."],
+  "fi": "En asu enää Espanjassa.",
+  "en": "I no longer live in Spain.",
+  "words": ["En", "asu", "enää", "Espanjassa."],
   "blank": 3
 }, {
   "id": 70,
@@ -11262,9 +11709,9 @@ const SENTENCES = [{
   "struct": "complex",
   "type": "aff",
   "lvl": "B1",
-  "fi": "Kirjoitan kirjaa, joka auttaa bengalinkielisiä.",
-  "en": "I'm writing a book that helps Bengali speakers.",
-  "words": ["Kirjoitan", "kirjaa,", "joka", "auttaa", "bengalinkielisiä."],
+  "fi": "Kirjoitan kirjaa, joka auttaa opiskelijoita.",
+  "en": "I'm writing a book that helps students.",
+  "words": ["Kirjoitan", "kirjaa,", "joka", "auttaa", "opiskelijoita."],
   "blank": 3
 }, {
   "id": 101,
@@ -11397,9 +11844,9 @@ const SENTENCES = [{
   "struct": "simple",
   "type": "aff",
   "lvl": "B1",
-  "fi": "Työskentelin pankissa yli 21 vuotta.",
-  "en": "I worked in a bank for over 21 years.",
-  "words": ["Työskentelin", "pankissa", "yli", "21", "vuotta."],
+  "fi": "Hän työskenteli pankissa monta vuotta.",
+  "en": "He/she worked in a bank for many years.",
+  "words": ["Hän", "työskenteli", "pankissa", "monta", "vuotta."],
   "blank": 1
 }, {
   "id": 116,
@@ -11451,9 +11898,9 @@ const SENTENCES = [{
   "struct": "compound",
   "type": "aff",
   "lvl": "B1",
-  "fi": "Tein töitä pankissa, mutta nyt vaihdan alaa.",
-  "en": "I worked in a bank, but now I'm changing fields.",
-  "words": ["Tein", "töitä", "pankissa,", "mutta", "nyt", "vaihdan", "alaa."],
+  "fi": "Hän teki töitä pankissa, mutta nyt hän vaihtaa alaa.",
+  "en": "He worked in a bank, but now he's changing fields.",
+  "words": ["Hän", "teki", "töitä", "pankissa,", "mutta", "nyt", "hän", "vaihtaa", "alaa."],
   "blank": 4
 }, {
   "id": 122,
@@ -11559,9 +12006,9 @@ const SENTENCES = [{
   "struct": "complex",
   "type": "aff",
   "lvl": "B1",
-  "fi": "Kirjoitan kirjaa auttaakseni bengalinkielisiä oppijoita.",
-  "en": "I'm writing a book in order to help Bengali-speaking learners.",
-  "words": ["Kirjoitan", "kirjaa", "auttaakseni", "bengalinkielisiä", "oppijoita."],
+  "fi": "Kirjoitan kirjaa auttaakseni opiskelijoita.",
+  "en": "I'm writing a book in order to help students.",
+  "words": ["Kirjoitan", "kirjaa", "auttaakseni", "opiskelijoita."],
   "blank": 2
 }, {
   "id": 134,
@@ -11668,7 +12115,7 @@ const YKI_READING = [{
   id: "r2",
   tyF: "Sähköposti",
   tyE: "Email",
-  text: "Hei Ishtiak! Kiitos hakemuksestasi. Kutsumme sinut työhaastatteluun tiistaina 14.7. klo 10.00 toimistollemme Espoon Keilaniemeen. Varaa mukaan henkilöllisyystodistus ja tutkintotodistukset. Ilmoitathan viimeistään perjantaina, sopiiko aika. Ystävällisin terveisin, HR-tiimi",
+  text: "Hei Sara! Kiitos hakemuksestasi. Kutsumme sinut työhaastatteluun tiistaina 14.7. klo 10.00 toimistollemme Espoon Keilaniemeen. Varaa mukaan henkilöllisyystodistus ja tutkintotodistukset. Ilmoitathan viimeistään perjantaina, sopiiko aika. Ystävällisin terveisin, HR-tiimi",
   qs: [{
     qf: "Miksi viesti on lähetetty?",
     qe: "Why was the message sent?",
@@ -11740,7 +12187,7 @@ const YKI_WRITING = [{
   min: 40,
   taskF: "Ystäväsi kutsui sinut illalliselle lauantaina, mutta et pääse. Kirjoita viesti: kiitä kutsusta, kerro miksi et pääse ja ehdota uutta aikaa.",
   taskE: "A friend invited you to dinner on Saturday, but you can't make it. Write a message: thank them, say why you can't come, and suggest a new time.",
-  modelF: "Hei Sami! Kiitos paljon kutsusta. Valitettavasti en pääse lauantaina, koska olen töissä koko illan. Sopisiko sinulle ensi viikon perjantai? Voisin tuoda jälkiruoan. Nähdään pian! Terveisin Ishtiak",
+  modelF: "Hei Sami! Kiitos paljon kutsusta. Valitettavasti en pääse lauantaina, koska olen töissä koko illan. Sopisiko sinulle ensi viikon perjantai? Voisin tuoda jälkiruoan. Nähdään pian! Terveisin Sara",
   tips: [["Tervehdys ja kiitos", "Greeting and thanks"], ["Syy, miksi et pääse (koska…)", "Reason you can't come (koska…)"], ["Ehdotus: konditionaali (sopisiko, voisin)", "Suggestion: conditional (sopisiko, voisin)"], ["Lopetus ja allekirjoitus", "Closing and signature"]]
 }, {
   id: "w2",
@@ -11749,7 +12196,7 @@ const YKI_WRITING = [{
   min: 50,
   taskF: "Vuokra-asuntosi pesukone on rikki. Kirjoita viesti vuokranantajalle: kerro ongelmasta, milloin se alkoi ja pyydä korjausta.",
   taskE: "The washing machine in your rented flat is broken. Write to the landlord: describe the problem, when it began, and ask for a repair.",
-  modelF: "Hyvä vuokranantaja, asuntoni pesukone meni rikki maanantaina. Kone ei enää käynnisty, vaikka sähköt ovat kunnossa. Pyydän, että kone korjataan tai vaihdetaan mahdollisimman pian. Minulle sopii, että huoltomies käy arkisin klo 16 jälkeen. Ystävällisin terveisin, Ishtiak",
+  modelF: "Hyvä vuokranantaja, asuntoni pesukone meni rikki maanantaina. Kone ei enää käynnisty, vaikka sähköt ovat kunnossa. Pyydän, että kone korjataan tai vaihdetaan mahdollisimman pian. Minulle sopii, että huoltomies käy arkisin klo 16 jälkeen. Ystävällisin terveisin, Sara",
   tips: [["Muodollinen aloitus (Hyvä…)", "Formal opening (Hyvä…)"], ["Ongelma ja milloin se alkoi", "The problem and when it began"], ["Kohtelias pyyntö (Pyydän, että…)", "Polite request (Pyydän, että…)"], ["Muodollinen lopetus", "Formal closing"]]
 }, {
   id: "w3",
@@ -12282,174 +12729,199 @@ function Styles() {
   return /*#__PURE__*/React.createElement("style", null, `
 *{box-sizing:border-box} 
 html,body,#root{margin:0;height:100%}
-body{background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{width:100%;max-width:720px;margin:0 auto;padding:16px 14px 60px;box-sizing:border-box}
+body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.layout{display:flex;align-items:flex-start;min-height:100vh}
+.sidebar{width:280px;flex-shrink:0;background:#fff;border-right:1px solid ${C.line};height:100vh;position:sticky;top:0;overflow-y:auto;z-index:50}
+.sbinner{padding:14px 10px 40px}
+.sbrand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;font-size:19px;padding:6px 8px 12px;cursor:pointer;color:${C.ink}}
+.sbsec{margin-bottom:2px}
+.sbhead{display:block;width:100%;text-align:left;background:none;border:0;font-size:15.5px;font-weight:800;color:${C.ink};padding:10px 10px;border-radius:9px;cursor:pointer}
+.sbhead:hover{background:${C.bg}}
+.sbhead.on{background:${C.bg};color:${C.grammar}}
+.sbsub{margin:2px 0 8px;border-left:2px solid ${C.line};padding-left:6px}
+.sbitem{display:flex;align-items:baseline;gap:7px;width:100%;text-align:left;background:none;border:0;font-size:13.5px;color:${C.sub};padding:7px 9px;border-radius:8px;cursor:pointer;line-height:1.35}
+.sbitem:hover{background:${C.bg};color:${C.ink}}
+.sbitem.cur{background:${C.grammar};color:#fff;font-weight:700}
+.sbitem.cur .sbn{color:#fff}
+.sbn{font-size:11.5px;font-weight:800;color:${C.grammar};min-width:20px;flex-shrink:0}
+.sbt{flex:1}
+.content{flex:1;min-width:0}
+.sbtoggle{display:none}
+.sbscrim{display:none}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:18px 18px 70px;box-sizing:border-box}
 .btnrow>.btn.block{margin:8px 0}
-@media(min-width:1024px){
-  .wrap{max-width:94vw;padding:30px 3vw 80px}
+@media(min-width:1100px){
   .grid{grid-template-columns:repeat(4,1fr)}
-  .list.grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .btnrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .list.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .btnrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
   .btnrow>.btn.block{margin:0}
-  .dtscroll{width:94vw;margin-left:calc(-47vw + 50%)}
-  .dtab{font-size:14px}
   .searchbox{max-width:900px}
 }
-@media(min-width:1600px){
-  .wrap{max-width:1800px}
-  .list.grid2{grid-template-columns:repeat(4,1fr)}
+@media(min-width:1500px){
+  .wrap{max-width:1240px}
+  .list.grid2{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:899px){
+  .sidebar{position:fixed;left:0;top:0;transform:translateX(-100%);transition:transform .22s ease;box-shadow:0 0 40px rgba(0,0,0,.18)}
+  .sidebar.open{transform:translateX(0)}
+  .sbscrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:45}
+  .sbtoggle{display:flex;align-items:center;justify-content:center;position:fixed;top:10px;left:10px;z-index:40;width:42px;height:42px;border-radius:11px;border:1px solid ${C.line};background:#fff;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .content .wrap{padding-top:62px}
 }
 .appbar{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:14px}
-.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;font-size:19px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;font-size:21px}
 .brand .dot{width:13px;height:13px;border-radius:3px;background:linear-gradient(135deg,${C.fi},${C.sent})}
-.tag{color:${C.sub};font-size:13px;margin:-6px 0 16px 2px}
+.tag{color:${C.sub};font-size:15px;margin:-6px 0 16px 2px}
 .langtog{display:flex;gap:5px}
-.lt{border:1px solid ${C.line};background:#fff;border-radius:999px;padding:6px 10px;font-size:12.5px;cursor:pointer;color:${C.sub};font-weight:600}
+.lt{border:1px solid ${C.line};background:#fff;border-radius:999px;padding:6px 10px;font-size:16px;cursor:pointer;color:${C.sub};font-weight:600}
 .lt.on{background:${C.fi};border-color:${C.fi};color:#fff}
 .lt.dim{opacity:.45;cursor:default}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 @media(max-width:520px){.grid{grid-template-columns:1fr}}
 .sec{border:1px solid ${C.line};background:${C.card};border-radius:16px;padding:15px 15px 14px;cursor:pointer;text-align:left;transition:transform .08s,box-shadow .12s;display:block;width:100%}
 .sec:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(20,40,70,.08)}
-.sec .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;color:#fff;margin-bottom:9px}
-.sec h3{margin:0 0 3px;font-size:16px}
-.sec p{margin:0;color:${C.sub};font-size:12.5px;line-height:1.35}
+.sec .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:21px;color:#fff;margin-bottom:9px}
+.sec h3{margin:0 0 3px;font-size:17px}
+.sec p{margin:0;color:${C.sub};font-size:16px;line-height:1.35}
 .card{border:1px solid ${C.line};background:${C.card};border-radius:14px;padding:14px;margin:10px 0}
-.h{font-size:18px;font-weight:800;margin:2px 0 2px;letter-spacing:-.01em}
-.sub{color:${C.sub};font-size:13px}
-.btn{border:0;background:${C.fi};color:#fff;border-radius:11px;padding:11px 14px;font-size:14px;font-weight:700;cursor:pointer}
+.h{font-size:20px;font-weight:800;margin:2px 0 2px;letter-spacing:-.01em}
+.sub{color:${C.sub};font-size:15px}
+.btn{border:0;background:${C.fi};color:#fff;border-radius:11px;padding:11px 14px;font-size:16px;font-weight:700;cursor:pointer}
 .btn.ghost{background:#fff;color:${C.ink};border:1px solid ${C.line}}
 .btn.block{width:100%;display:block;margin:8px 0}
 .btn:disabled{opacity:.5;cursor:default}
 .row{display:flex;gap:9px;margin-top:12px}
 .row.wrap{flex-wrap:wrap}
-.chip{border:1px solid ${C.line};background:#fff;border-radius:999px;padding:8px 13px;font-size:13px;cursor:pointer;font-weight:600;color:${C.ink}}
+.chip{border:1px solid ${C.line};background:#fff;border-radius:999px;padding:8px 13px;font-size:15px;cursor:pointer;font-weight:600;color:${C.ink}}
 .chip.on{color:#fff}
 .list .it{border:1px solid ${C.line};background:#fff;border-radius:12px;padding:12px 13px;margin:8px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:10px}
 .list .it:hover{border-color:${C.sub}}
-.it .ttl{font-weight:700;font-size:14.5px}
-.it .meta{font-size:12px;color:${C.sub}}
+.it .ttl{font-weight:700;font-size:17px}
+.it .meta{font-size:13.5px;color:${C.sub}}
 .searchbox{display:flex;gap:8px;margin:10px 0}
-.searchbox input{flex:1;border:1px solid ${C.line};border-radius:11px;padding:11px 12px;font-size:14px}
-.pill{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;display:inline-block}
+.searchbox input{flex:1;border:1px solid ${C.line};border-radius:11px;padding:11px 12px;font-size:16px}
+.pill{font-size:13px;font-weight:700;border-radius:999px;padding:2px 8px;display:inline-block}
 .kv{margin:9px 0}
-.kv .lab{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:${C.sub};margin-bottom:4px}
+.kv .lab{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:${C.sub};margin-bottom:4px}
 .ex{border-left:3px solid currentColor;padding:5px 0 5px 11px;margin:7px 0}
-.ex .f{font-weight:700}.ex .e{color:${C.sub};font-size:13px}
-.mn{background:${C.ink};color:#fff;border-radius:11px;padding:11px 13px;font-size:13.5px;margin-top:8px}
+.ex .f{font-weight:700}.ex .e{color:${C.sub};font-size:15px}
+.mn{background:${C.ink};color:#fff;border-radius:11px;padding:11px 13px;font-size:16.5px;margin-top:8px}
 .mn b{color:${C.amber2}}
-.gsec{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;border-bottom:2px solid;padding-bottom:5px;margin-bottom:9px}
+.gsec{font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;border-bottom:2px solid;padding-bottom:5px;margin-bottom:9px}
 .gword{background:${C.bg};border:1px solid ${C.line};border-radius:11px;padding:11px 13px;margin-bottom:9px}
 .growhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-.gw{font-size:16px;font-weight:800}
-.gtype{font-size:10.5px;color:${C.sub};text-transform:uppercase;letter-spacing:.05em;border:1px solid ${C.line};border-radius:6px;padding:2px 7px;background:#fff;white-space:nowrap;margin-left:8px}
-.gstems{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:${C.sub};margin-bottom:8px}
+.gw{font-size:17px;font-weight:800}
+.gtype{font-size:13.5px;color:${C.sub};text-transform:uppercase;letter-spacing:.05em;border:1px solid ${C.line};border-radius:6px;padding:2px 7px;background:#fff;white-space:nowrap;margin-left:8px}
+.gstems{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:16px;color:${C.sub};margin-bottom:8px}
 .gstems b{color:${C.ink};font-weight:700}
-.gtab{width:100%;border-collapse:collapse;font-size:13.5px}
+.gtab{width:100%;border-collapse:collapse;font-size:16.5px}
 .gtab td{padding:5px 4px;border-top:1px solid ${C.line}}
-.gtl{color:${C.sub};width:38%;font-size:12px}
-.kptbanner{background:${C.bg};border:1px dashed ${C.grammar};color:${C.grammar};border-radius:10px;padding:8px 11px;margin:2px 0 4px;font-size:12.5px;font-weight:700;cursor:pointer}
+.gtl{color:${C.sub};width:38%;font-size:13.5px}
+.kptbanner{background:${C.bg};border:1px dashed ${C.grammar};color:${C.grammar};border-radius:10px;padding:8px 11px;margin:2px 0 4px;font-size:16px;font-weight:700;cursor:pointer}
 .ccrow{display:flex;flex-wrap:wrap;gap:8px}
 .ccchip{background:${C.bg};border:1px solid ${C.line};border-radius:10px;padding:8px 11px;min-width:92px;cursor:pointer}
 .ccchip.cchere{background:${C.grammar};border-color:${C.grammar};cursor:default}
 .ccchip.cchere .ccq,.ccchip.cchere .ccf{color:#fff}
-.ccq{font-size:10.5px;color:${C.sub};text-transform:uppercase;letter-spacing:.04em}
-.ccf{font-size:15px;font-weight:800;color:${C.ink};margin-top:1px}
-.ccgo{font-size:11px;color:${C.grammar};font-weight:700;margin-top:2px}
-.seechip{display:inline-block;background:${C.bg};border:1px solid ${C.grammar};color:${C.grammar};border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer}
+.ccq{font-size:13.5px;color:${C.sub};text-transform:uppercase;letter-spacing:.04em}
+.ccf{font-size:16.5px;font-weight:800;color:${C.ink};margin-top:1px}
+.ccgo{font-size:13px;color:${C.grammar};font-weight:700;margin-top:2px}
+.seechip{display:inline-block;background:${C.bg};border:1px solid ${C.grammar};color:${C.grammar};border-radius:999px;padding:5px 11px;font-size:13.5px;font-weight:700;cursor:pointer}
 .chit{display:flex;align-items:center;gap:11px}
-.chnum{flex:0 0 auto;width:28px;height:28px;border-radius:8px;background:${C.grammar};color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.chnum{flex:0 0 auto;width:28px;height:28px;border-radius:8px;background:${C.grammar};color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
 .chttl{flex:1 1 auto;min-width:0}
-.chlabel{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:${C.grammar};margin:2px 0 -2px}
+.chlabel{font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:${C.grammar};margin:2px 0 -2px}
 .notecard{background:#fff7ed;border:1px solid #f3d9b8}
-.notehd{font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#9a6a1a;margin-bottom:4px}
+.notehd{font-size:15px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#9a6a1a;margin-bottom:4px}
 .notehd.warn{color:#b23b2e;margin-top:11px}
-.notebody{font-size:13.5px;line-height:1.5;color:${C.ink}}
+.notebody{font-size:16.5px;line-height:1.5;color:${C.ink}}
 .chnav{display:flex;gap:8px;margin-top:16px}
-.chbtn{flex:1;background:#fff;border:1px solid ${C.line};color:${C.grammar};border-radius:11px;padding:11px 8px;font-size:12.5px;font-weight:700;cursor:pointer}
+.chbtn{flex:1;background:#fff;border:1px solid ${C.line};color:${C.grammar};border-radius:11px;padding:11px 8px;font-size:16px;font-weight:700;cursor:pointer}
 .chbtn.home{flex:0 0 auto;background:${C.grammar};color:#fff;border-color:${C.grammar}}
 .chbtn:disabled{opacity:.4;cursor:default}
-.chnavlabel{text-align:center;font-size:12px;color:${C.sub};margin-top:8px}
+.chnavlabel{text-align:center;font-size:13.5px;color:${C.sub};margin-top:8px}
 .exccard{background:#f2f9f4;border:1px solid #cfe8d6}
-.exchd{font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#1f7a46;margin-bottom:3px}
-.excsub{font-size:12px;color:${C.sub};margin-bottom:8px}
+.exchd{font-size:15px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#1f7a46;margin-bottom:3px}
+.excsub{font-size:13.5px;color:${C.sub};margin-bottom:8px}
 .excrow{display:flex;flex-wrap:wrap;gap:2px 10px;padding:6px 0;border-top:1px solid #dcefe1}
-.excex{font-weight:800;font-size:14px;color:${C.ink}}
-.excgl{font-size:12.5px;color:${C.sub};flex:1 1 60%}
+.excex{font-weight:800;font-size:16px;color:${C.ink}}
+.excgl{font-size:16px;color:${C.sub};flex:1 1 60%}
 .guidecard{background:#fbfcfe;border:1px solid ${C.line}}
-.guidehd{font-size:12.5px;font-weight:800;letter-spacing:.03em;margin-bottom:6px}
+.guidehd{font-size:16px;font-weight:800;letter-spacing:.03em;margin-bottom:6px}
 .vseechip{border-color:${C.vocab};color:${C.vocab}}
 .sseechip{border-color:${C.sent};color:${C.sent}}
 .dtscroll{overflow:auto;max-height:70vh;margin-top:10px;border:1px solid ${C.line};border-radius:12px;-webkit-overflow-scrolling:touch}
-.dtab{border-collapse:separate;border-spacing:0;font-size:13px;white-space:nowrap;min-width:100%}
-.dth{background:${C.grammar};color:#fff;font-weight:700;font-size:11.5px;text-align:left;padding:9px 10px;position:sticky;top:0;z-index:2;letter-spacing:.02em}
+.dtab{border-collapse:separate;border-spacing:0;font-size:15px;white-space:nowrap;min-width:100%}
+.dth{background:${C.grammar};color:#fff;font-weight:700;font-size:15px;text-align:left;padding:9px 10px;position:sticky;top:0;z-index:2;letter-spacing:.02em}
 .dthlink{cursor:pointer;text-decoration:underline;text-decoration-style:dotted}
 .dtab td{padding:8px 10px;border-top:1px solid ${C.line};vertical-align:top;background:${C.card}}
 .dsticky{position:sticky;left:0;z-index:1}
 .dth.dsticky{z-index:3}
 .dword{background:${C.bg};min-width:120px}
-.dword b{display:block;font-size:14px;color:${C.ink}}
-.den{display:block;font-size:11px;color:${C.sub}}
-.dtype{color:${C.sub};font-size:11.5px}
-.dstem{font-family:ui-monospace,monospace;font-size:12.5px;color:${C.grammar}}
+.dword b{display:block;font-size:16px;color:${C.ink}}
+.den{display:block;font-size:13px;color:${C.sub}}
+.dtype{color:${C.sub};font-size:15px}
+.dstem{font-family:ui-monospace,monospace;font-size:16px;color:${C.grammar}}
 .dform{color:${C.ink}}
 .dform.hot{color:${C.grammar};font-weight:700}
-.dnote{color:${C.sub};font-size:11.5px;white-space:normal;min-width:150px}
-.dtcount{text-align:right;font-size:12px;color:${C.sub};margin-top:6px}
-.trailbtn{display:block;width:100%;text-align:left;background:#fffbe8;border:1px dashed #d9b23a;color:#8a6d00;border-radius:10px;padding:8px 12px;margin:2px 0 8px;font-size:12.5px;font-weight:700;cursor:pointer}
+.dnote{color:${C.sub};font-size:15px;white-space:normal;min-width:150px}
+.dtcount{text-align:right;font-size:13.5px;color:${C.sub};margin-top:6px}
+.trailbtn{display:block;width:100%;text-align:left;background:#fffbe8;border:1px dashed #d9b23a;color:#8a6d00;border-radius:10px;padding:8px 12px;margin:2px 0 8px;font-size:16px;font-weight:700;cursor:pointer}
 .srgroup{margin-top:12px;padding-top:10px;border-top:1px dashed ${C.line}}
-.srrow{font-size:13.5px;color:${C.ink};padding:4px 0;display:flex;flex-wrap:wrap;align-items:center;gap:4px}
-.srchip{margin-left:4px;font-size:11px;padding:3px 9px}
-.timer{font-weight:800;font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.srrow{font-size:16.5px;color:${C.ink};padding:4px 0;display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.srchip{margin-left:4px;font-size:13px;padding:3px 9px}
+.timer{font-weight:800;font-size:16.5px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .timer.red{color:${C.bad};animation:tblink 1s step-end infinite}
 @keyframes tblink{50%{opacity:.45}}
-.passage{font-size:14.5px;line-height:1.65;background:#fffdf6;border:1px solid #eee2c0}
-.ykirow{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed ${C.line};font-size:13.5px;color:${C.ink}}
+.passage{font-size:17px;line-height:1.65;background:#fffdf6;border:1px solid #eee2c0}
+.ykirow{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed ${C.line};font-size:16.5px;color:${C.ink}}
 .ykirow:last-of-type{border-bottom:0}
 .ykirow span{color:${C.sub}}
-.ykita{width:100%;box-sizing:border-box;min-height:170px;border:1px solid ${C.line};border-radius:12px;padding:12px;font-size:14.5px;line-height:1.55;font-family:inherit;resize:vertical;background:${C.card};color:${C.ink}}
-.ykitip{font-size:13.5px;padding:4px 0;color:${C.ink}}
+.ykita{width:100%;box-sizing:border-box;min-height:170px;border:1px solid ${C.line};border-radius:12px;padding:12px;font-size:17px;line-height:1.55;font-family:inherit;resize:vertical;background:${C.card};color:${C.ink}}
+.ykitip{font-size:16.5px;padding:4px 0;color:${C.ink}}
 .btn.eghost{background:#fff;color:${C.exam};border:1px solid ${C.exam}}
+.pageend{display:flex;gap:8px;margin-top:22px;padding-top:14px;border-top:1px solid ${C.line}}
+.pebtn{flex:1;background:#fff;border:1px solid ${C.line};color:${C.ink};border-radius:11px;padding:12px 8px;font-size:15px;font-weight:700;cursor:pointer}
+.pebtn.ph{background:${C.ink};color:#fff;border-color:${C.ink}}
 .kptnote{color:${C.grammar};cursor:pointer;text-decoration:underline;text-decoration-style:dotted;font-weight:700}
 .kptlink{color:${C.grammar};cursor:pointer;text-decoration:underline;text-decoration-style:dotted;font-weight:700}
-.gconj{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;margin-bottom:2px}
+.gconj{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:15px;margin-bottom:2px}
 .gc{white-space:nowrap;color:#333}
-.gex{font-size:12.5px;color:${C.sub};font-style:italic;border-left:2px solid;padding-left:9px;margin-top:9px}
+.gex{font-size:16px;color:${C.sub};font-style:italic;border-left:2px solid;padding-left:9px;margin-top:9px}
 .gex i{color:${C.ink};font-style:italic}
 .analy{border:1px solid currentColor;border-radius:13px;padding:13px;margin:10px 0}
-.analy .ttl{font-weight:800;font-size:15px}
+.analy .ttl{font-weight:800;font-size:16.5px}
 .bar{height:8px;background:${C.line};border-radius:999px;overflow:hidden}
 .bar>span{display:block;height:100%;background:linear-gradient(90deg,${C.amber1},${C.amber2})}
-.q{font-size:17px;font-weight:700;line-height:1.35;margin:6px 0 12px}
-.opt{display:flex;align-items:center;gap:11px;border:1px solid ${C.line};background:#fff;border-radius:12px;padding:12px;margin:8px 0;cursor:pointer;font-size:14.5px;width:100%;text-align:left}
-.opt .box{width:22px;height:22px;border-radius:7px;border:2px solid ${C.line};flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.q{font-size:19px;font-weight:700;line-height:1.35;margin:6px 0 12px}
+.opt{display:flex;align-items:center;gap:11px;border:1px solid ${C.line};background:#fff;border-radius:12px;padding:12px;margin:8px 0;cursor:pointer;font-size:17px;width:100%;text-align:left}
+.opt .box{width:22px;height:22px;border-radius:7px;border:2px solid ${C.line};flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}
 .opt.ok{border-color:${C.good};background:${C.good}11}.opt.ok .box{border-color:${C.good};background:${C.good};color:#fff}
 .opt.no{border-color:${C.bad};background:${C.bad}11}.opt.no .box{border-color:${C.bad};background:${C.bad};color:#fff}
 .opt:disabled{cursor:default}
 .flash{border:1px solid ${C.line};border-radius:16px;background:#fff;padding:34px 18px;text-align:center;cursor:pointer;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.flash .big{font-size:27px;font-weight:800}
-.flash .small{color:${C.sub};font-size:13px}
+.flash .big{font-size:30px;font-weight:800}
+.flash .small{color:${C.sub};font-size:15px}
 .tokens{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;min-height:46px;border:1px dashed ${C.line};border-radius:12px;padding:9px}
-.tok{border:1px solid ${C.line};background:#fff;border-radius:10px;padding:8px 11px;font-size:14.5px;cursor:pointer;font-weight:600}
+.tok{border:1px solid ${C.line};background:#fff;border-radius:10px;padding:8px 11px;font-size:17px;cursor:pointer;font-weight:600}
 .tok.used{opacity:.3;pointer-events:none}
 .built{display:flex;flex-wrap:wrap;gap:7px;min-height:46px;border:1px solid ${C.line};border-radius:12px;padding:9px;background:#fff;margin:6px 0}
 .built .tok{cursor:pointer}
-.inp{width:100%;border:1px solid ${C.line};border-radius:11px;padding:11px 12px;font-size:15px;margin:6px 0}
-.fb{border-radius:11px;padding:11px 13px;margin:9px 0;font-size:14px;font-weight:600}
+.inp{width:100%;border:1px solid ${C.line};border-radius:11px;padding:11px 12px;font-size:16.5px;margin:6px 0}
+.fb{border-radius:11px;padding:11px 13px;margin:9px 0;font-size:16px;font-weight:600}
 .fb.ok{background:${C.good}14;color:${C.good}}.fb.no{background:${C.bad}12;color:${C.bad}}
 .fb .model{display:block;color:${C.ink};font-weight:700;margin-top:4px}
-.prog{font-size:12px;color:${C.sub};margin-left:auto}
+.prog{font-size:13.5px;color:${C.sub};margin-left:auto}
 .score{text-align:center;padding:22px 0}
-.score .big{font-size:44px;font-weight:800}.score .dim2{color:${C.sub};font-weight:600}
-.score .pctline{font-size:15px;color:${C.sub};margin-top:2px}
-.score .verdict{font-weight:800;margin:10px 0;font-size:17px}
+.score .big{font-size:46px;font-weight:800}.score .dim2{color:${C.sub};font-weight:600}
+.score .pctline{font-size:16.5px;color:${C.sub};margin-top:2px}
+.score .verdict{font-weight:800;margin:10px 0;font-size:19px}
 .score .verdict.ok{color:${C.good}}.score .verdict.no{color:${C.bad}}
-.score .thr{color:${C.sub};font-weight:600;font-size:13px}
+.score .thr{color:${C.sub};font-weight:600;font-size:15px}
 .score .row{justify-content:center}
-.note{font-size:12px;color:${C.sub};background:#fff;border:1px dashed ${C.line};border-radius:10px;padding:9px 11px;margin:10px 0}
+.note{font-size:13.5px;color:${C.sub};background:#fff;border:1px dashed ${C.line};border-radius:10px;padding:9px 11px;margin:10px 0}
 .topbar{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.linkback{background:none;border:0;color:${C.sub};font-size:14px;cursor:pointer;padding:4px 0;font-weight:600}
-.counter{font-size:13px;color:${C.sub};margin-left:auto}
+.linkback{background:none;border:0;color:${C.sub};font-size:16px;cursor:pointer;padding:4px 0;font-weight:600}
+.counter{font-size:15px;color:${C.sub};margin-left:auto}
 .dim{color:${C.sub}}
 .center{text-align:center}
 `);
@@ -12469,7 +12941,8 @@ function Quiz({
   passPct,
   title,
   sub,
-  onHome
+  onHome,
+  rec
 }) {
   const [i, setI] = useState(0);
   const [sel, setSel] = useState(null);
@@ -12495,7 +12968,9 @@ function Quiz({
   function choose(k) {
     if (sel != null) return;
     setSel(k);
-    if (k === it.a) setScore(score + 1);
+    const ok = k === it.a;
+    if (ok) setScore(score + 1);
+    rec && rec(it, ok);
   }
   function next() {
     if (i + 1 >= items.length) {
@@ -12518,7 +12993,7 @@ function Quiz({
   }, i + 1, " / ", items.length)), title && /*#__PURE__*/React.createElement("div", {
     className: "h",
     style: {
-      fontSize: 16
+      fontSize: 17
     }
   }, title), it.sub && /*#__PURE__*/React.createElement("div", {
     className: "sub",
@@ -12618,7 +13093,7 @@ function Home({
 
 // ---------- GRAMMAR ----------
 // Pedagogical chapter order (intro first). Any card not listed is appended.
-const CHAPTER_ORDER = ["intro", "vowel-harmony", "kpt", "verbtypes", "verb-present", "negative", "past", "perfect", "conditional", "imperative", "passive", "potential", "participles", "infinitives", "local-grid", "inessive", "elative", "illative", "adessive", "ablative", "allative", "essive", "translative", "marginal-cases", "partitive", "genitive", "accusative", "object-rule", "rection", "plural", "adj-agree", "comparison", "possessive", "numbers", "time-expr", "clitics", "questions", "sentence-types", "nominalization", "referative", "temporal", "final", "necessive", "register"];
+const CHAPTER_ORDER = ["intro", "vowel-harmony", "kpt", "verbtypes", "verb-present", "negative", "past", "perfect", "conditional", "imperative", "passive", "potential", "participles", "infinitives", "modal-construction", "local-grid", "inessive", "elative", "illative", "adessive", "ablative", "allative", "essive", "translative", "marginal-cases", "partitive", "genitive", "accusative", "object-rule", "rection", "plural", "adj-agree", "comparison", "possessive", "predicative", "numbers", "time-expr", "clitics", "questions", "sentence-types", "wordorder", "existential", "possessive-clause", "generic", "nominalization", "referative", "temporal", "final", "necessive", "register"];
 function orderedChapters() {
   const byId = {};
   GRAMMAR.forEach(c => byId[c.id] = c);
@@ -12728,7 +13203,7 @@ function GrammarHome({
     style: {
       color: C.ink,
       margin: "6px 0",
-      fontSize: 14
+      fontSize: 16
     }
   }, F ? res.ana.whyFi : res.ana.whyEn), /*#__PURE__*/React.createElement("button", {
     className: "btn",
@@ -12803,7 +13278,10 @@ function GrammarHome({
     className: "chttl"
   }, /*#__PURE__*/React.createElement("div", {
     className: "ttl"
-  }, F ? c.tf : c.te))))));
+  }, F ? c.tf : c.te))))), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    home: () => go("home")
+  }));
 }
 function GCard({
   lang,
@@ -12873,7 +13351,7 @@ function GCard({
     }
   }, L(lang, "rule")), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 14.5,
+      fontSize: 17,
       lineHeight: 1.5
     }
   }, F ? c.rf : c.re)), kptChip, /*#__PURE__*/React.createElement("div", {
@@ -12911,7 +13389,7 @@ function GCard({
     }
   }, F ? "Syvennys" : "Deep dive"), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 13.5,
+      fontSize: 16.5,
       lineHeight: 1.5,
       color: "#555",
       marginBottom: 6
@@ -12967,7 +13445,7 @@ function GCard({
     }
   }, F ? "Sama sana, kaikki muodot" : "Same word, every form"), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 13,
+      fontSize: 15,
       color: "#444",
       marginBottom: 8
     }
@@ -13000,7 +13478,7 @@ function GCard({
     }
   }, F ? "Syvennys · verbityypit" : "Deep dive · verb types"), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 13.5,
+      fontSize: 16.5,
       lineHeight: 1.5,
       color: "#555",
       marginBottom: 6
@@ -13024,7 +13502,7 @@ function GCard({
     }
   }, "· ", t.sig)), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 13,
+      fontSize: 15,
       lineHeight: 1.5,
       color: "#444",
       margin: "0 0 10px"
@@ -13133,7 +13611,12 @@ function GCard({
     onClick: () => next && goSeq(next.id)
   }, next ? (F ? "Luku " : "Ch ") + (idx + 2) + " →" : F ? "—" : "—")), (prev || next) && /*#__PURE__*/React.createElement("div", {
     className: "chnavlabel"
-  }, next ? F ? "Seuraava: " + next.tf : "Next: " + next.te : F ? "Viimeinen luku" : "Last chapter"));
+  }, next ? F ? "Seuraava: " + next.tf : "Next: " + next.te : F ? "Viimeinen luku" : "Last chapter"), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    back: back,
+    backLabel: L(lang, "chapters"),
+    home: () => go && go("home")
+  }));
 }
 
 // ---------- VOCABULARY ----------
@@ -13249,8 +13732,8 @@ const VGUIDE = {
     g: ["passive", "nominalization"]
   },
   fin: {
-    f: "Rahoitus ja kauppa — oman alasi sanastoa. Asiakielessä nominaalistus ja rektio korostuvat.",
-    e: "Finance and trade — your own field's vocabulary. In business language nominalization and government stand out.",
+    f: "Rahoitus ja kauppa — työelämän sanastoa. Asiakielessä nominaalistus ja rektio korostuvat.",
+    e: "Finance and trade — working-life vocabulary. In business language nominalization and government stand out.",
     g: ["nominalization", "rection", "elative"]
   },
   abst: {
@@ -13300,12 +13783,11 @@ function VocabHome({
   setLang,
   go,
   start,
-  openGrammar
+  openGrammar,
+  initialField
 }) {
   const F = lang === "fi";
-  const [field, setField] = useState("all");
-  const [lvl, setLvl] = useState("all");
-  const modes = [["flash", C.vocab], ["mcq", C.vocab], ["typed", C.vocab]];
+  const [field, setField] = useState(initialField || "all");
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "topbar"
   }, /*#__PURE__*/React.createElement("button", {
@@ -13383,38 +13865,23 @@ function VocabHome({
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, L(lang, "level")), /*#__PURE__*/React.createElement("div", {
-    className: "row wrap"
-  }, ["all", "A1", "A2", "B1"].map(x => /*#__PURE__*/React.createElement("button", {
-    key: x,
-    className: "chip " + (lvl === x ? "on" : ""),
-    style: lvl === x ? {
-      background: C.vocab,
-      borderColor: C.vocab
-    } : {},
-    onClick: () => setLvl(x)
-  }, x === "all" ? L(lang, "allLevels") : x)))), /*#__PURE__*/React.createElement("div", {
-    className: "kv"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "lab"
-  }, F ? "Harjoitustapa" : "Practice mode"), /*#__PURE__*/React.createElement("div", {
-    className: "btnrow"
-  }, modes.map(([m]) => /*#__PURE__*/React.createElement("button", {
-    key: m,
+  }, F ? "Harjoittelu" : "Practice"), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C.vocab
     },
-    onClick: () => start(m, field, lvl)
-  }, L(lang, m))), /*#__PURE__*/React.createElement("button", {
-    className: "btn block ghost",
-    onClick: () => start("mcq", "all", "all", true)
-  }, "🔀 ", L(lang, "rnd30"), " · ", L(lang, "mcq")))));
+    onClick: () => start("mix", field)
+  }, "🎲 ", F ? "Sekaharjoitus · 50 satunnaista sanaa" : "Mixed session · 50 random words"), /*#__PURE__*/React.createElement("div", {
+    className: "note"
+  }, F ? "Muistikortit, monivalinta ja kirjoitus samassa istunnossa. Aihepiirin valinta rajaa sanat." : "Flashcards, multiple choice and typed recall in one session. Picking a topic field narrows the words.")), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    home: () => go("home")
+  }));
 }
 function deckOf(field, lvl, rnd) {
-  let d = VOCAB.filter(v => (field === "all" || v.t === field) && (lvl === "all" || v.lvl === lvl));
+  let d = VOCAB.filter(v => (field === "all" || v.t === field) && (!lvl || lvl === "all" || v.lvl === lvl));
   d = shuffle(d);
-  if (rnd) d = d.slice(0, 30);
+  if (rnd) d = d.slice(0, rnd === true ? 30 : rnd);
   return d;
 }
 function FlashRun({
@@ -13535,13 +14002,7 @@ function TypedRun({
     className: "counter"
   }, i + 1, " / ", deck.length)), /*#__PURE__*/React.createElement("div", {
     className: "q"
-  }, c.en, " ", /*#__PURE__*/React.createElement("span", {
-    className: "dim",
-    style: {
-      fontWeight: 600,
-      fontSize: 13
-    }
-  }, "· ", c.lvl)), /*#__PURE__*/React.createElement("input", {
+  }, c.en), /*#__PURE__*/React.createElement("input", {
     className: "inp",
     value: val,
     autoFocus: true,
@@ -13575,10 +14036,11 @@ function SentHome({
   setLang,
   go,
   start,
-  openGrammar
+  openGrammar,
+  initialStruct
 }) {
   const F = lang === "fi";
-  const [st, setSt] = useState("any");
+  const [st, setSt] = useState(initialStruct || "any");
   const [ty, setTy] = useState("any");
   const C2 = C.sent;
   const guideChips = ids => /*#__PURE__*/React.createElement("div", {
@@ -13681,35 +14143,23 @@ function SentHome({
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Harjoitustapa" : "Practice mode"), /*#__PURE__*/React.createElement("div", {
-    className: "btnrow"
-  }, /*#__PURE__*/React.createElement("button", {
+  }, F ? "Harjoittelu" : "Practice"), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C2
     },
-    onClick: () => start("order", st, ty)
-  }, L(lang, "order")), /*#__PURE__*/React.createElement("button", {
-    className: "btn block",
-    style: {
-      background: C2
-    },
-    onClick: () => start("fill", st, ty)
-  }, L(lang, "fill")), /*#__PURE__*/React.createElement("button", {
-    className: "btn block",
-    style: {
-      background: C2
-    },
-    onClick: () => start("translate", st, ty)
-  }, L(lang, "translate")), /*#__PURE__*/React.createElement("button", {
-    className: "btn block ghost",
-    onClick: () => start("fill", "any", "any", true)
-  }, "🔀 ", L(lang, "rnd30"), " · ", L(lang, "fill")))));
+    onClick: () => start("mix", st, ty)
+  }, "🎲 ", F ? "Sekaharjoitus · 50 satunnaista lausetta" : "Mixed session · 50 random sentences"), /*#__PURE__*/React.createElement("div", {
+    className: "note"
+  }, F ? "Sanajärjestys, aukkotehtävä ja käännös samassa istunnossa. Valinnat rajaavat lauseet." : "Word order, fill-the-blank and translation in one session. Your selections narrow the sentences.")), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    home: () => go("home")
+  }));
 }
 function sentDeck(st, ty, rnd) {
   let d = SENTENCES.filter(s => (st === "any" || s.struct === st) && (ty === "any" || s.type === ty));
   d = shuffle(d);
-  if (rnd) d = d.slice(0, 30);
+  if (rnd) d = d.slice(0, rnd === true ? 30 : rnd);
   return d;
 }
 function OrderRun({
@@ -13788,7 +14238,7 @@ function OrderRun({
   }, i + 1, " / ", deck.length)), /*#__PURE__*/React.createElement("div", {
     className: "q",
     style: {
-      fontSize: 15
+      fontSize: 16.5
     }
   }, s.en), /*#__PURE__*/React.createElement("div", {
     className: "built"
@@ -13799,7 +14249,7 @@ function OrderRun({
   }, o.w)) : /*#__PURE__*/React.createElement("span", {
     className: "dim",
     style: {
-      fontSize: 13
+      fontSize: 15
     }
   }, F ? "Napauta sanoja järjestykseen" : "Tap words into order")), /*#__PURE__*/React.createElement("div", {
     className: "tokens"
@@ -14127,15 +14577,15 @@ function ExamHome({
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Pikaharjoitus" : "Quick practice"), /*#__PURE__*/React.createElement("div", {
-    className: "btnrow"
-  }, [["A1", F ? "Alkeet" : "Beginner"], ["A2", F ? "Perustaso" : "Elementary"], ["B1", F ? "Keskitaso" : "Intermediate"]].map(([lv, t]) => /*#__PURE__*/React.createElement("button", {
-    key: lv,
+  }, F ? "Pikaharjoitus" : "Quick practice"), /*#__PURE__*/React.createElement("button", {
     className: "btn block eghost",
-    onClick: () => start(lv)
-  }, t, " · ", lv))), /*#__PURE__*/React.createElement("div", {
+    onClick: () => start("B1")
+  }, "⚡ ", F ? "25 sekakysymystä · ilman ajastusta" : "25 mixed questions · untimed"), /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "25 sekakysymystä ilman ajastusta. Läpäisyraja 60 %." : "25 mixed questions, untimed. Pass line 60%.")));
+  }, F ? "Sanastoa ja lauseita koko pankista. Läpäisyraja 60 %." : "Vocabulary and sentences from the whole bank. Pass line 60%.")), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    home: () => go("home")
+  }));
 }
 
 // ---------- APP ----------
@@ -14144,7 +14594,8 @@ function DeclensionTable({
   setLang,
   back,
   openGrammar,
-  initialQuery
+  initialQuery,
+  goHome
 }) {
   const F = lang === "fi";
   const [tab, setTab] = useState("nom");
@@ -14336,7 +14787,127 @@ function DeclensionTable({
     className: "note"
   }, F ? "Ei osumia." : "No matches."), /*#__PURE__*/React.createElement("div", {
     className: "dtcount"
-  }, rows.length, " ", F ? "sanaa" : "words"));
+  }, rows.length, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    back: back,
+    backLabel: L(lang, "grammar"),
+    home: goHome
+  }));
+}
+// ===== Page-end navigation + mixed practice sessions =====
+function PageEnd({
+  lang,
+  back,
+  backLabel,
+  home
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "pageend"
+  }, back && /*#__PURE__*/React.createElement("button", {
+    className: "pebtn",
+    onClick: back
+  }, "← ", backLabel || L(lang, "back")), home && /*#__PURE__*/React.createElement("button", {
+    className: "pebtn ph",
+    onClick: home
+  }, "🏠 ", L(lang, "home")));
+}
+function VocabMix({
+  lang,
+  deck,
+  onDone,
+  rec
+}) {
+  const F = lang === "fi";
+  const parts = useMemo(() => {
+    const d = [...deck];
+    const n = Math.ceil(d.length / 3);
+    return [d.slice(0, n), d.slice(n, 2 * n), d.slice(2 * n)];
+  }, []);
+  const [ph, setPh] = useState(0);
+  const adv = () => {
+    if (ph < 2) setPh(ph + 1);else onDone();
+  };
+  const labels = [[F ? "Muistikortit" : "Flashcards"], [F ? "Monivalinta" : "Multiple choice"], [F ? "Kirjoita vastaus" : "Typed recall"]];
+  const head = /*#__PURE__*/React.createElement("div", {
+    className: "chlabel",
+    style: {
+      color: C.vocab
+    }
+  }, F ? "Sekaharjoitus" : "Mixed session", " · ", F ? "osa" : "part", " ", ph + 1, "/3 · ", labels[ph][0]);
+  if (ph === 0) return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(FlashRun, {
+    lang: lang,
+    deck: parts[0],
+    onHome: adv,
+    rec: rec
+  }));
+  if (ph === 1) {
+    const items = parts[1].map(w => {
+      const opts = distract(VOCAB, w.en, "en", 3);
+      return {
+        q: w.fi,
+        options: opts,
+        a: opts.indexOf(w.en),
+        _fi: w.fi
+      };
+    });
+    return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(Quiz, {
+      lang: lang,
+      items: items,
+      accent: C.vocab,
+      passPct: null,
+      onHome: adv,
+      title: F ? "Monivalinta" : "Multiple choice",
+      rec: (q, ok) => rec(q._fi || q.q, ok)
+    }));
+  }
+  return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(TypedRun, {
+    lang: lang,
+    deck: parts[2],
+    onHome: adv,
+    rec: rec
+  }));
+}
+function SentMix({
+  lang,
+  deck,
+  onDone,
+  rec
+}) {
+  const F = lang === "fi";
+  const parts = useMemo(() => {
+    const d = [...deck];
+    const n = Math.ceil(d.length / 3);
+    return [d.slice(0, n), d.slice(n, 2 * n), d.slice(2 * n)];
+  }, []);
+  const [ph, setPh] = useState(0);
+  const adv = () => {
+    if (ph < 2) setPh(ph + 1);else onDone();
+  };
+  const labels = [[F ? "Sanajärjestys" : "Word order"], [F ? "Täydennä aukko" : "Fill the blank"], [F ? "Käännä" : "Translate"]];
+  const head = /*#__PURE__*/React.createElement("div", {
+    className: "chlabel",
+    style: {
+      color: C.sent
+    }
+  }, F ? "Sekaharjoitus" : "Mixed session", " · ", F ? "osa" : "part", " ", ph + 1, "/3 · ", labels[ph][0]);
+  if (ph === 0) return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(OrderRun, {
+    lang: lang,
+    deck: parts[0],
+    onHome: adv,
+    rec: rec
+  }));
+  if (ph === 1) return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(FillRun, {
+    lang: lang,
+    deck: parts[1],
+    onHome: adv,
+    rec: rec
+  }));
+  return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(TransRun, {
+    lang: lang,
+    deck: parts[2],
+    onHome: adv,
+    rec: rec
+  }));
 }
 // ===== YKI mock exam =====
 function Timer({
@@ -14381,7 +14952,8 @@ function YkiRun({
   lang,
   setLang,
   onHome,
-  onFinish
+  onFinish,
+  goHome
 }) {
   const F = lang === "fi";
   const A = C.exam;
@@ -14486,7 +15058,7 @@ function YkiRun({
     }, /*#__PURE__*/React.createElement("div", {
       className: "q",
       style: {
-        fontSize: 15
+        fontSize: 16.5
       }
     }, F ? q.qf : q.qe), (F ? q.of : q.oe).map((o, oi) => {
       const k = rIdx + "-" + qi;
@@ -14536,7 +15108,7 @@ function YkiRun({
     }, q.fi), /*#__PURE__*/React.createElement("div", {
       className: "dim",
       style: {
-        fontSize: 13,
+        fontSize: 15,
         marginBottom: 8
       }
     }, q.en), q.opts.map((o, oi) => {
@@ -14586,13 +15158,13 @@ function YkiRun({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 14.5,
+      fontSize: 17,
       lineHeight: 1.55
     }
   }, F ? task.taskF : task.taskE), /*#__PURE__*/React.createElement("div", {
     className: "dim",
     style: {
-      fontSize: 12.5,
+      fontSize: 16,
       marginTop: 6
     }
   }, F ? "Vähintään" : "At least", " ", task.min, " ", F ? "sanaa" : "words")), /*#__PURE__*/React.createElement("textarea", {
@@ -14604,7 +15176,7 @@ function YkiRun({
     className: "dim",
     style: {
       textAlign: "right",
-      fontSize: 12.5
+      fontSize: 16
     }
   }, words, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
@@ -14635,7 +15207,7 @@ function YkiRun({
   }, F ? "Oma tekstisi" : "Your text", " · ", words, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement("div", {
     style: {
       whiteSpace: "pre-wrap",
-      fontSize: 14
+      fontSize: 16
     }
   }, txt)), /*#__PURE__*/React.createElement("div", {
     className: "card",
@@ -14649,7 +15221,7 @@ function YkiRun({
     }
   }, F ? "Mallivastaus" : "Model answer"), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 14,
+      fontSize: 16,
       lineHeight: 1.55,
       fontStyle: "italic"
     }
@@ -14713,7 +15285,7 @@ function YkiRun({
   }, pass ? F ? "Hyväksytty ✓" : "Pass ✓" : F ? "Hylätty ✗" : "Fail ✗", " ", /*#__PURE__*/React.createElement("span", {
     className: "dim",
     style: {
-      fontSize: 13,
+      fontSize: 15,
       fontWeight: 600
     }
   }, "(", F ? "raja" : "line", " 60 %)")), /*#__PURE__*/React.createElement("div", {
@@ -14727,9 +15299,96 @@ function YkiRun({
       background: A
     },
     onClick: onHome
-  }, "🏠 ", L(lang, "exam")));
+  }, "🏠 ", L(lang, "exam")), goHome && /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    back: onHome,
+    backLabel: L(lang, "exam"),
+    home: goHome
+  }));
+}
+function Sidebar({
+  lang,
+  sect,
+  activeChapter,
+  selectSection,
+  openChapter,
+  go,
+  openTable,
+  pickField,
+  pickStruct,
+  startYki,
+  startQuick,
+  close
+}) {
+  const F = lang === "fi";
+  const chapters = orderedChapters();
+  const secs = [{
+    k: "grammar",
+    ic: "📖"
+  }, {
+    k: "vocab",
+    ic: "🗂️"
+  }, {
+    k: "sent",
+    ic: "✍️"
+  }, {
+    k: "exam",
+    ic: "🎯"
+  }];
+  const tap = fn => {
+    fn();
+    close && close();
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "sbinner"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sbrand",
+    onClick: () => tap(() => go("home"))
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dot"
+  }), " Suomi-polku"), secs.map(s => /*#__PURE__*/React.createElement("div", {
+    key: s.k,
+    className: "sbsec"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "sbhead" + (sect === s.k ? " on" : ""),
+    onClick: () => tap(() => selectSection(s.k))
+  }, s.ic, " ", L(lang, s.k)), sect === s.k && /*#__PURE__*/React.createElement("div", {
+    className: "sbsub"
+  }, s.k === "grammar" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    className: "sbitem",
+    onClick: () => tap(() => go("grammar"))
+  }, "🔍 ", F ? "Haku" : "Search"), /*#__PURE__*/React.createElement("button", {
+    className: "sbitem",
+    onClick: () => tap(() => openTable(""))
+  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table"), chapters.map((c, i) => /*#__PURE__*/React.createElement("button", {
+    key: c.id,
+    className: "sbitem chap" + (activeChapter === c.id ? " cur" : ""),
+    onClick: () => tap(() => openChapter(c.id))
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sbn"
+  }, i + 1), /*#__PURE__*/React.createElement("span", {
+    className: "sbt"
+  }, F ? c.tf : c.te)))), s.k === "vocab" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    className: "sbitem",
+    onClick: () => tap(() => pickField("all"))
+  }, "🎲 ", F ? "Kaikki aiheet" : "All topics"), Object.keys(VFIELDS).map(k => /*#__PURE__*/React.createElement("button", {
+    key: k,
+    className: "sbitem",
+    onClick: () => tap(() => pickField(k))
+  }, VFIELDS[k].split(" · ")[F ? 0 : 1]))), s.k === "sent" && /*#__PURE__*/React.createElement(React.Fragment, null, [["any", F ? "Kaikki" : "All"], ["simple", L(lang, "simple")], ["compound", L(lang, "compound")], ["complex", L(lang, "complex")]].map(([v, t]) => /*#__PURE__*/React.createElement("button", {
+    key: v,
+    className: "sbitem",
+    onClick: () => tap(() => pickStruct(v))
+  }, t))), s.k === "exam" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    className: "sbitem",
+    onClick: () => tap(() => startYki())
+  }, "🕒 ", F ? "YKI-harjoituskoe" : "YKI mock"), /*#__PURE__*/React.createElement("button", {
+    className: "sbitem",
+    onClick: () => tap(() => startQuick())
+  }, "⚡ ", F ? "Pikaharjoitus" : "Quick practice"))))));
 }
 function App() {
+  var _run$card;
   const [lang, setLang] = usePersist("suomi_lang", "fi");
   const [prog, setProg] = usePersist("suomi_prog", {
     v: {},
@@ -14739,7 +15398,10 @@ function App() {
   const [view, setView] = useState("home");
   const [trail, setTrail] = useState([]);
   const [declQ, setDeclQ] = useState("");
-  const [run, setRun] = useState(null); // {kind, ...}
+  const [run, setRun] = useState(null);
+  const [sbOpen, setSbOpen] = useState(false);
+  const [navField, setNavField] = useState("all");
+  const [navStruct, setNavStruct] = useState("any");
   const F = lang === "fi";
   function recVocab(fi, ok) {
     setProg(p => {
@@ -14784,27 +15446,49 @@ function App() {
   function go(v) {
     setView(v);
   }
-  // grammar
-  if (view === "grammar") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(GrammarHome, {
+  const openChapter = id => {
+    setTrail([]);
+    setRun({
+      card: GRAMMAR.find(g => g.id === id)
+    });
+    setView("gcard");
+  };
+  const openTable = q => {
+    setDeclQ(q || "");
+    setView("declension");
+  };
+  const pickField = k => {
+    setNavField(k);
+    setView("vocab");
+  };
+  const pickStruct = v => {
+    setNavStruct(v);
+    setView("sent");
+  };
+  const startYki = () => setView("yki");
+  const startQuick = () => {
+    setRun({
+      kind: "e",
+      lv: "B1",
+      items: buildExam("B1")
+    });
+    setView("erun");
+  };
+  const selectSection = k => {
+    if (k === "grammar") openChapter(orderedChapters()[0].id);else if (k === "vocab") pickField("all");else if (k === "sent") pickStruct("any");else if (k === "exam") setView("exam");
+  };
+  let content;
+  if (view === "grammar") content = /*#__PURE__*/React.createElement(GrammarHome, {
     lang: lang,
     setLang: setLang,
     go: go,
-    openCard: id => {
-      setTrail([]);
-      setRun({
-        card: GRAMMAR.find(g => g.id === id)
-      });
-      setView("gcard");
-    },
-    openTable: q => {
-      setDeclQ(q || "");
-      setView("declension");
-    }
-  }));
-  if (view === "gcard" && run !== null && run !== void 0 && run.card) return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(GCard, {
+    openCard: openChapter,
+    openTable: openTable
+  });else if (view === "gcard" && run !== null && run !== void 0 && run.card) content = /*#__PURE__*/React.createElement(GCard, {
     lang: lang,
     setLang: setLang,
     card: run.card,
+    go: go,
     back: () => {
       setTrail([]);
       setView("grammar");
@@ -14843,11 +15527,11 @@ function App() {
         card: GRAMMAR.find(g => g.id === last)
       });
     }
-  }));
-  if (view === "declension") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(DeclensionTable, {
+  });else if (view === "declension") content = /*#__PURE__*/React.createElement(DeclensionTable, {
     lang: lang,
     setLang: setLang,
     back: () => setView("grammar"),
+    goHome: () => setView("home"),
     initialQuery: declQ,
     openGrammar: id => {
       setTrail(["__declension"]);
@@ -14856,12 +15540,12 @@ function App() {
       });
       setView("gcard");
     }
-  }));
-  // vocab
-  if (view === "vocab") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(VocabHome, {
+  });else if (view === "vocab") content = /*#__PURE__*/React.createElement(VocabHome, {
+    key: navField,
     lang: lang,
     setLang: setLang,
     go: go,
+    initialField: navField,
     openGrammar: id => {
       setTrail(["__vocab"]);
       setRun({
@@ -14869,61 +15553,36 @@ function App() {
       });
       setView("gcard");
     },
-    start: (mode, field, lvl, rnd) => {
+    start: (mode, field) => {
       setRun({
         kind: "v",
         mode,
-        deck: deckOf(field, lvl, rnd)
+        deck: deckOf(field, "all", 50)
       });
       setView("vrun");
     }
-  }));
-  if (view === "vrun" && run) {
+  });else if (view === "vrun" && run) {
     const d = run.deck;
-    if (!d.length) return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement("div", {
-      className: "note"
-    }, "No items. ", /*#__PURE__*/React.createElement("button", {
-      className: "linkback",
-      onClick: () => setView("vocab")
-    }, "← back")));
     const onHome = () => setView("vocab");
-    if (run.mode === "flash") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(FlashRun, {
+    content = d.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(VocabMix, {
       lang: lang,
       deck: d,
-      onHome: onHome,
+      onDone: onHome,
       rec: recVocab
-    }));
-    if (run.mode === "typed") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(TypedRun, {
+    }), /*#__PURE__*/React.createElement(PageEnd, {
       lang: lang,
-      deck: d,
-      onHome: onHome,
-      rec: recVocab
-    }));
-    // mcq
-    const items = d.map(w => {
-      const opts = distract(VOCAB, w.en, "en", 3);
-      return {
-        q: w.fi,
-        sub: w.lvl,
-        options: opts,
-        a: opts.indexOf(w.en),
-        _fi: w.fi
-      };
-    });
-    return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(Quiz, {
-      lang: lang,
-      items: items,
-      accent: C.vocab,
-      passPct: null,
-      onHome: onHome,
-      title: L(lang, "vocab")
-    }));
-  }
-  // sentences
-  if (view === "sent") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(SentHome, {
+      back: onHome,
+      backLabel: L(lang, "vocab"),
+      home: () => setView("home")
+    })) : /*#__PURE__*/React.createElement("div", {
+      className: "note"
+    }, "No items.");
+  } else if (view === "sent") content = /*#__PURE__*/React.createElement(SentHome, {
+    key: navStruct,
     lang: lang,
     setLang: setLang,
     go: go,
+    initialStruct: navStruct,
     openGrammar: id => {
       setTrail(["__sent"]);
       setRun({
@@ -14931,45 +15590,31 @@ function App() {
       });
       setView("gcard");
     },
-    start: (mode, st, ty, rnd) => {
+    start: (mode, st, ty) => {
       setRun({
         kind: "s",
         mode,
-        deck: sentDeck(st, ty, rnd)
+        deck: sentDeck(st, ty, 50)
       });
       setView("srun");
     }
-  }));
-  if (view === "srun" && run) {
+  });else if (view === "srun" && run) {
     const d = run.deck;
-    if (!d.length) return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement("div", {
-      className: "note"
-    }, F ? "Ei lauseita tällä valinnalla." : "No sentences for that selection.", " ", /*#__PURE__*/React.createElement("button", {
-      className: "linkback",
-      onClick: () => setView("sent")
-    }, "← ", L(lang, "back"))));
     const onHome = () => setView("sent");
-    if (run.mode === "order") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(OrderRun, {
+    content = d.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SentMix, {
       lang: lang,
       deck: d,
-      onHome: onHome,
+      onDone: onHome,
       rec: recSent
-    }));
-    if (run.mode === "translate") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(TransRun, {
+    }), /*#__PURE__*/React.createElement(PageEnd, {
       lang: lang,
-      deck: d,
-      onHome: onHome,
-      rec: recSent
-    }));
-    return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(FillRun, {
-      lang: lang,
-      deck: d,
-      onHome: onHome,
-      rec: recSent
-    }));
-  }
-  // exams
-  if (view === "exam") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(ExamHome, {
+      back: onHome,
+      backLabel: L(lang, "sent"),
+      home: () => setView("home")
+    })) : /*#__PURE__*/React.createElement("div", {
+      className: "note"
+    }, F ? "Ei lauseita tällä valinnalla." : "No sentences for that selection.");
+  } else if (view === "exam") content = /*#__PURE__*/React.createElement(ExamHome, {
     lang: lang,
     setLang: setLang,
     go: go,
@@ -14983,28 +15628,61 @@ function App() {
       });
       setView("erun");
     }
-  }));
-  if (view === "yki") return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(YkiRun, {
+  });else if (view === "yki") content = /*#__PURE__*/React.createElement(YkiRun, {
     lang: lang,
     setLang: setLang,
     onHome: () => setView("exam"),
+    goHome: () => setView("home"),
     onFinish: recYki
-  }));
-  if (view === "erun" && run) return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(Quiz, {
+  });else if (view === "erun" && run) content = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Quiz, {
     lang: lang,
     items: run.items,
     accent: C.exam,
     passPct: 60,
     onHome: () => setView("exam"),
-    title: L(lang, "exam") + " · " + run.lv
-  }));
-  // home
-  return /*#__PURE__*/React.createElement(Shell, null, /*#__PURE__*/React.createElement(Home, {
+    title: L(lang, "exam")
+  }), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    back: () => setView("exam"),
+    backLabel: L(lang, "exam"),
+    home: () => setView("home")
+  }));else content = /*#__PURE__*/React.createElement(Home, {
     lang: lang,
     setLang: setLang,
     go: go,
     prog: prog
-  }));
+  });
+  const sect = ["gcard", "grammar", "declension"].includes(view) ? "grammar" : ["vocab", "vrun"].includes(view) ? "vocab" : ["sent", "srun"].includes(view) ? "sent" : ["exam", "yki", "erun"].includes(view) ? "exam" : "home";
+  const activeChapter = view === "gcard" ? run === null || run === void 0 || (_run$card = run.card) === null || _run$card === void 0 ? void 0 : _run$card.id : null;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "layout"
+  }, /*#__PURE__*/React.createElement(Styles, null), /*#__PURE__*/React.createElement("button", {
+    className: "sbtoggle",
+    onClick: () => setSbOpen(true),
+    "aria-label": "menu"
+  }, "☰"), /*#__PURE__*/React.createElement("aside", {
+    className: "sidebar" + (sbOpen ? " open" : "")
+  }, /*#__PURE__*/React.createElement(Sidebar, {
+    lang: lang,
+    sect: sect,
+    activeChapter: activeChapter,
+    selectSection: selectSection,
+    openChapter: openChapter,
+    go: go,
+    openTable: openTable,
+    pickField: pickField,
+    pickStruct: pickStruct,
+    startYki: startYki,
+    startQuick: startQuick,
+    close: () => setSbOpen(false)
+  })), sbOpen && /*#__PURE__*/React.createElement("div", {
+    className: "sbscrim",
+    onClick: () => setSbOpen(false)
+  }), /*#__PURE__*/React.createElement("main", {
+    className: "content"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, content)));
 }
 function Shell({
   children
