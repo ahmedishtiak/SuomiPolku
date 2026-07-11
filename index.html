@@ -14801,6 +14801,87 @@ function analyze(raw) {
 }
 
 // ===== shared atoms =====
+// --- Text-to-speech (Web Speech API): read Finnish aloud, no backend/audio files ---
+function pickFiVoice() {
+  try {
+    const vs = typeof window !== "undefined" && window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    return vs.find(v => /^fi([-_]|$)/i.test(v.lang)) || vs.find(v => /finnish|suomi/i.test(v.name)) || null;
+  } catch (e) {
+    return null;
+  }
+}
+function speakFi(text) {
+  try {
+    if (typeof window === "undefined" || !window.speechSynthesis || !text) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(String(text));
+    const v = pickFiVoice();
+    if (v) {
+      u.voice = v;
+      u.lang = v.lang;
+    } else {
+      u.lang = "fi-FI";
+    }
+    u.rate = 0.94;
+    u.pitch = 1;
+    window.speechSynthesis.speak(u);
+  } catch (e) {}
+}
+let _voiceInit = false,
+  _voicesReady = false;
+const _voiceSubs = new Set();
+function _ensureVoiceInit() {
+  if (_voiceInit || typeof window === "undefined" || !window.speechSynthesis) return;
+  _voiceInit = true;
+  const mark = () => {
+    const r = !!pickFiVoice();
+    if (r !== _voicesReady) {
+      _voicesReady = r;
+      _voiceSubs.forEach(fn => fn());
+    }
+  };
+  mark();
+  try {
+    window.speechSynthesis.addEventListener("voiceschanged", mark);
+  } catch (e) {
+    try {
+      window.speechSynthesis.onvoiceschanged = mark;
+    } catch (_) {}
+  }
+  try {
+    setTimeout(mark, 500);
+  } catch (e) {}
+}
+function useFiVoice() {
+  const [, force] = useState(0);
+  useEffect(() => {
+    _ensureVoiceInit();
+    const fn = () => force(x => x + 1);
+    _voiceSubs.add(fn);
+    return () => {
+      _voiceSubs.delete(fn);
+    };
+  }, []);
+  return _voicesReady;
+}
+function SpeakBtn({
+  text,
+  size,
+  stop
+}) {
+  const ok = useFiVoice();
+  if (!ok || !text) return null;
+  return /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "spk" + (size === "sm" ? " sm" : ""),
+    "aria-label": "Listen",
+    title: "Kuuntele / Listen",
+    onClick: e => {
+      if (stop !== false && e && e.stopPropagation) e.stopPropagation();
+      speakFi(text);
+    }
+  }, "🔊");
+}
 function LangToggle({
   lang,
   setLang
@@ -15084,6 +15165,10 @@ body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-famil
 .sitphrase{padding:5px 0;font-size:15px;color:${C.ink}}
 .sbmod{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:${C.grammar};margin:10px 0 3px 8px;opacity:.85}
 .sbsaved{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid ${C.line};margin-top:10px;padding:12px 4px 4px;font-size:15px;font-weight:700;color:${C.ink};cursor:pointer}
+.spk{background:${C.vocab}15;border:0;border-radius:50%;width:34px;height:34px;min-width:34px;font-size:16px;line-height:1;cursor:pointer;color:${C.vocab};vertical-align:middle;padding:0}
+.spk:hover{background:${C.vocab}28}
+.spk.sm{width:26px;height:26px;min-width:26px;font-size:13px}
+.spkrow{display:inline-flex;align-items:center;gap:8px}
 .opt:disabled{cursor:default}
 .flash{border:1px solid ${C.line};border-radius:16px;background:#fff;padding:34px 18px;text-align:center;cursor:pointer;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
 .flash .big{font-size:30px;font-weight:800}
@@ -15694,11 +15779,14 @@ function GCard({
       color: C.grammar
     }
   }, /*#__PURE__*/React.createElement("div", {
-    className: "f",
+    className: "f spkrow",
     style: {
       color: C.ink
     }
-  }, e.f), /*#__PURE__*/React.createElement("div", {
+  }, e.f, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: e.f,
+    size: "sm"
+  })), /*#__PURE__*/React.createElement("div", {
     className: "e"
   }, e.e)))), /*#__PURE__*/React.createElement("div", {
     className: "mn"
@@ -16267,8 +16355,10 @@ function FlashRun({
     className: "flash",
     onClick: () => setFlip(!flip)
   }, !flip ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    className: "big"
-  }, c.fi), /*#__PURE__*/React.createElement("div", {
+    className: "big spkrow"
+  }, c.fi, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: c.fi
+  })), /*#__PURE__*/React.createElement("div", {
     className: "small"
   }, L(lang, "flip"), " ↻")) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "big",
@@ -16276,10 +16366,18 @@ function FlashRun({
       color: C.vocab
     }
   }, c.en), /*#__PURE__*/React.createElement("div", {
-    className: "small"
-  }, c.fi))), flip && c.exf && /*#__PURE__*/React.createElement("div", {
+    className: "small spkrow"
+  }, c.fi, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: c.fi,
+    size: "sm"
+  })))), flip && c.exf && /*#__PURE__*/React.createElement("div", {
     className: "vexample"
-  }, /*#__PURE__*/React.createElement("b", null, c.exf), /*#__PURE__*/React.createElement("span", null, c.exe)), flip && toggleWord && /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("b", {
+    className: "spkrow"
+  }, c.exf, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: c.exf,
+    size: "sm"
+  })), /*#__PURE__*/React.createElement("span", null, c.exe)), flip && toggleWord && /*#__PURE__*/React.createElement("button", {
     className: "bmstar sm" + ((bmWords || []).includes(c.fi) ? " on" : ""),
     onClick: () => toggleWord(c.fi)
   }, (bmWords || []).includes(c.fi) ? "★ " : "☆ ", F ? "tallenna sana" : "save word"), /*#__PURE__*/React.createElement("div", {
@@ -16773,8 +16871,11 @@ function TransRun({
       color: C.sent
     }
   }, L(lang, "model"), /*#__PURE__*/React.createElement("span", {
-    className: "model"
-  }, s.fi)), /*#__PURE__*/React.createElement("div", {
+    className: "model spkrow"
+  }, s.fi, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: s.fi,
+    size: "sm"
+  }))), /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("button", {
     className: "btn ghost block",
@@ -17173,6 +17274,15 @@ function VocabMix({
     const n = Math.ceil(d.length / 3);
     return [d.slice(0, n), d.slice(n, 2 * n), d.slice(2 * n)];
   }, []);
+  const mcqItems = useMemo(() => parts[1].map(w => {
+    const opts = distract(VOCAB, w.en, "en", 3);
+    return {
+      q: w.fi,
+      options: opts,
+      a: opts.indexOf(w.en),
+      _fi: w.fi
+    };
+  }), [parts]);
   const [ph, setPh] = useState(0);
   const adv = () => {
     if (ph < 2) setPh(ph + 1);else onDone();
@@ -17193,18 +17303,9 @@ function VocabMix({
     toggleWord: toggleWord
   }));
   if (ph === 1) {
-    const items = parts[1].map(w => {
-      const opts = distract(VOCAB, w.en, "en", 3);
-      return {
-        q: w.fi,
-        options: opts,
-        a: opts.indexOf(w.en),
-        _fi: w.fi
-      };
-    });
     return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(Quiz, {
       lang: lang,
-      items: items,
+      items: mcqItems,
       accent: C.vocab,
       passPct: null,
       onHome: adv,
@@ -17926,7 +18027,12 @@ function Situations({
   }, s.dialogue.map((d, di) => /*#__PURE__*/React.createElement("div", {
     key: di,
     className: "sitline"
-  }, /*#__PURE__*/React.createElement("b", null, d.who, ":"), " ", F ? d.f : d.e, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "spkrow"
+  }, /*#__PURE__*/React.createElement("b", null, d.who, ":"), " ", F ? d.f : d.e, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: d.f,
+    size: "sm"
+  })), /*#__PURE__*/React.createElement("div", {
     className: "dim",
     style: {
       fontSize: 13
@@ -17939,8 +18045,11 @@ function Situations({
     }
   }, F ? "Avainlauseet" : "Key phrases"), s.phrases.map((p, pi) => /*#__PURE__*/React.createElement("div", {
     key: pi,
-    className: "sitphrase"
-  }, /*#__PURE__*/React.createElement("b", null, p.f), " — ", p.e))))), /*#__PURE__*/React.createElement(PageEnd, {
+    className: "sitphrase spkrow"
+  }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, p.f), " — ", p.e), " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: p.f,
+    size: "sm"
+  })))))), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     home: onHome
   }));
