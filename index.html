@@ -314,11 +314,6 @@ function(a,b,c){if(!Vd(b))throw Error(n(200));return Wd(null,a,b,!1,c)};Q.unmoun
 (function(){
   try{
     var useState=React.useState, useEffect=React.useEffect, useRef=React.useRef, useMemo=React.useMemo;
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 const VOCAB = [{
   "fi": "hei",
   "en": "hi / hello",
@@ -14858,6 +14853,7 @@ function useFiVoice() {
     _ensureVoiceInit();
     const fn = () => force(x => x + 1);
     _voiceSubs.add(fn);
+    fn();
     return () => {
       _voiceSubs.delete(fn);
     };
@@ -15164,6 +15160,8 @@ body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-famil
 .sitline .dim{margin-top:2px}
 .sitphrase{padding:5px 0;font-size:15px;color:${C.ink}}
 .sbmod{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:${C.grammar};margin:10px 0 3px 8px;opacity:.85}
+.sbsearch{display:block;width:100%;text-align:left;background:${C.grammar}0f;border:1px solid ${C.grammar}44;color:${C.grammar};border-radius:10px;padding:10px 12px;font-size:14.5px;font-weight:700;cursor:pointer;margin:2px 0 12px}
+.sbsearch:hover{background:${C.grammar}1c}
 .sbsaved{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid ${C.line};margin-top:10px;padding:12px 4px 4px;font-size:15px;font-weight:700;color:${C.ink};cursor:pointer}
 .spk{background:${C.vocab}15;border:0;border-radius:50%;width:34px;height:34px;min-width:34px;font-size:16px;line-height:1;cursor:pointer;color:${C.vocab};vertical-align:middle;padding:0}
 .spk:hover{background:${C.vocab}28}
@@ -15506,14 +15504,7 @@ function GrammarHome({
       background: C.grammar
     },
     onClick: run
-  }, F ? "Hae" : "Search")), /*#__PURE__*/React.createElement("button", {
-    className: "btn block",
-    style: {
-      background: C.grammar,
-      marginTop: 2
-    },
-    onClick: () => openTable("")
-  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table"), res !== undefined && (empty ? /*#__PURE__*/React.createElement("div", {
+  }, F ? "Hae" : "Search")), res !== undefined && (empty ? /*#__PURE__*/React.createElement("div", {
     className: "note"
   }, L(lang, "noMatch")) : /*#__PURE__*/React.createElement("div", {
     className: "analy",
@@ -15610,7 +15601,14 @@ function GrammarHome({
     className: "chttl"
   }, /*#__PURE__*/React.createElement("div", {
     className: "ttl"
-  }, F ? c.tf : c.te))))), /*#__PURE__*/React.createElement(PageEnd, {
+  }, F ? c.tf : c.te))))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C.grammar,
+      marginTop: 14
+    },
+    onClick: () => openTable("")
+  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table"), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     home: () => go("home")
   }));
@@ -16464,10 +16462,7 @@ function TypedRun({
     className: "model"
   }, c.fi)), c.exf && /*#__PURE__*/React.createElement("div", {
     className: "vexample"
-  }, /*#__PURE__*/React.createElement("b", null, c.exf), /*#__PURE__*/React.createElement("span", null, c.exe)), toggleWord && /*#__PURE__*/React.createElement("button", {
-    className: "bmstar sm" + ((bmWords || []).includes(c.fi) ? " on" : ""),
-    onClick: () => toggleWord(c.fi)
-  }, (bmWords || []).includes(c.fi) ? "★ " : "☆ ", F ? "tallenna sana" : "save word"), /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("b", null, c.exf), /*#__PURE__*/React.createElement("span", null, c.exe)), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C.vocab
@@ -16650,16 +16645,18 @@ function OrderRun({
   function add(t) {
     if (fb != null) return;
     setOrder([...order, t]);
-    setPool(pool.map(p => p.ix === t.ix ? _objectSpread(_objectSpread({}, p), {}, {
+    setPool(pool.map(p => p.ix === t.ix ? {
+      ...p,
       used: true
-    }) : p));
+    } : p));
   }
   function undo(ix) {
     if (fb != null) return;
     setOrder(order.filter(o => o.ix !== ix));
-    setPool(pool.map(p => p.ix === ix ? _objectSpread(_objectSpread({}, p), {}, {
+    setPool(pool.map(p => p.ix === ix ? {
+      ...p,
       used: false
-    }) : p));
+    } : p));
   }
   function check() {
     const built = order.map(o => o.w).join(" ");
@@ -17521,9 +17518,10 @@ function YkiRun({
         key: oi,
         className: cls,
         onClick: () => {
-          if (rAns[k] == null) setRAns(_objectSpread(_objectSpread({}, rAns), {}, {
+          if (rAns[k] == null) setRAns({
+            ...rAns,
             [k]: oi
-          }));
+          });
         }
       }, o);
     }))), /*#__PURE__*/React.createElement("button", {
@@ -17571,9 +17569,10 @@ function YkiRun({
         key: oi,
         className: cls,
         onClick: () => {
-          if (sAns[sIdx] == null) setSAns(_objectSpread(_objectSpread({}, sAns), {}, {
+          if (sAns[sIdx] == null) setSAns({
+            ...sAns,
             [sIdx]: oi
-          }));
+          });
         }
       }, o);
     })), /*#__PURE__*/React.createElement("button", {
@@ -17809,7 +17808,10 @@ function Sidebar({
     onClick: () => tap(() => go("home"))
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
-  }), " Suomi-polku"), secs.map(s => /*#__PURE__*/React.createElement("div", {
+  }), " Suomi-polku"), /*#__PURE__*/React.createElement("button", {
+    className: "sbsearch",
+    onClick: () => tap(() => go("grammar"))
+  }, "🔍 ", F ? "Hae sivustolta" : "Search the site"), secs.map(s => /*#__PURE__*/React.createElement("div", {
     key: s.k,
     className: "sbsec"
   }, /*#__PURE__*/React.createElement("button", {
@@ -17817,13 +17819,7 @@ function Sidebar({
     onClick: () => tap(() => selectSection(s.k))
   }, s.ic, " ", L(lang, s.k)), sect === s.k && /*#__PURE__*/React.createElement("div", {
     className: "sbsub"
-  }, s.k === "grammar" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
-    className: "sbitem",
-    onClick: () => tap(() => go("grammar"))
-  }, "🔍 ", F ? "Haku" : "Search"), /*#__PURE__*/React.createElement("button", {
-    className: "sbitem",
-    onClick: () => tap(() => openTable(""))
-  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table"), chapters.map((c, i) => /*#__PURE__*/React.createElement(React.Fragment, {
+  }, s.k === "grammar" && /*#__PURE__*/React.createElement(React.Fragment, null, chapters.map((c, i) => /*#__PURE__*/React.createElement(React.Fragment, {
     key: c.id
   }, PATH_MODULES[i] && /*#__PURE__*/React.createElement("div", {
     className: "sbmod"
@@ -17834,7 +17830,14 @@ function Sidebar({
     className: "sbn"
   }, i + 1), /*#__PURE__*/React.createElement("span", {
     className: "sbt"
-  }, F ? c.tf : c.te))))), s.k === "vocab" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+  }, F ? c.tf : c.te)))), /*#__PURE__*/React.createElement("button", {
+    className: "sbitem",
+    style: {
+      marginTop: 8,
+      fontWeight: 700
+    },
+    onClick: () => tap(() => openTable(""))
+  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table")), s.k === "vocab" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     onClick: () => tap(() => pickField("all"))
   }, "🎲 ", F ? "Kaikki aiheet" : "All topics"), Object.keys(VFIELDS).map(k => /*#__PURE__*/React.createElement("button", {
@@ -18108,7 +18111,6 @@ function SavedView({
   }));
 }
 function App() {
-  var _run$card;
   const [lang, setLang] = usePersist("suomi_lang", "fi");
   const [prog, setProg] = usePersist("suomi_prog", {
     v: {},
@@ -18136,11 +18138,13 @@ function App() {
         streak: ok ? cur.streak + 1 : 0,
         last: Date.now()
       };
-      return _objectSpread(_objectSpread({}, p), {}, {
-        v: _objectSpread(_objectSpread({}, p.v), {}, {
+      return {
+        ...p,
+        v: {
+          ...p.v,
           [fi]: nx
-        })
-      });
+        }
+      };
     });
   }
   function recSent(id, ok) {
@@ -18149,19 +18153,22 @@ function App() {
         seen: 0,
         c: 0
       };
-      return _objectSpread(_objectSpread({}, p), {}, {
-        s: _objectSpread(_objectSpread({}, p.s), {}, {
+      return {
+        ...p,
+        s: {
+          ...p.s,
           [id]: {
             seen: cur.seen + 1,
             c: cur.c + (ok ? 1 : 0),
             last: Date.now()
           }
-        })
-      });
+        }
+      };
     });
   }
   function recYki(entry) {
-    setProg(p => _objectSpread(_objectSpread({}, p), {}, {
+    setProg(p => ({
+      ...p,
       yki: [...(p.yki || []), entry].slice(-30)
     }));
   }
@@ -18206,11 +18213,13 @@ function App() {
       w: []
     };
     const ch = b.ch.includes(id) ? b.ch.filter(x => x !== id) : [...b.ch, id];
-    return _objectSpread(_objectSpread({}, p), {}, {
-      bm: _objectSpread(_objectSpread({}, b), {}, {
+    return {
+      ...p,
+      bm: {
+        ...b,
         ch
-      })
-    });
+      }
+    };
   });
   const toggleBmW = fi => setProg(p => {
     const b = p.bm || {
@@ -18218,11 +18227,13 @@ function App() {
       w: []
     };
     const w = b.w.includes(fi) ? b.w.filter(x => x !== fi) : [...b.w, fi];
-    return _objectSpread(_objectSpread({}, p), {}, {
-      bm: _objectSpread(_objectSpread({}, b), {}, {
+    return {
+      ...p,
+      bm: {
+        ...b,
         w
-      })
-    });
+      }
+    };
   });
   const openSentenceMix = gid => {
     const deck = SENTENCES.filter(x => x.g === gid);
@@ -18237,7 +18248,7 @@ function App() {
     }
   };
   const selectSection = k => {
-    if (k === "grammar") openChapter(orderedChapters()[0].id);else if (k === "vocab") pickField("all");else if (k === "sent") pickStruct("any");else if (k === "exam") setView("exam");
+    if (k === "grammar") setView("grammar");else if (k === "vocab") pickField("all");else if (k === "sent") pickStruct("any");else if (k === "exam") setView("exam");
   };
   let content;
   if (view === "grammar") content = /*#__PURE__*/React.createElement(GrammarHome, {
@@ -18246,7 +18257,7 @@ function App() {
     go: go,
     openCard: openChapter,
     openTable: openTable
-  });else if (view === "gcard" && run !== null && run !== void 0 && run.card) content = /*#__PURE__*/React.createElement(GCard, {
+  });else if (view === "gcard" && run?.card) content = /*#__PURE__*/React.createElement(GCard, {
     lang: lang,
     setLang: setLang,
     card: run.card,
@@ -18436,7 +18447,7 @@ function App() {
     prog: prog
   });
   const sect = ["gcard", "grammar", "declension"].includes(view) ? "grammar" : ["vocab", "vrun"].includes(view) ? "vocab" : ["sent", "srun"].includes(view) ? "sent" : ["exam", "yki", "erun"].includes(view) ? "exam" : ["puhekieli", "situations"].includes(view) ? "speak" : "home";
-  const activeChapter = view === "gcard" ? run === null || run === void 0 || (_run$card = run.card) === null || _run$card === void 0 ? void 0 : _run$card.id : null;
+  const activeChapter = view === "gcard" ? run?.card?.id : null;
   return /*#__PURE__*/React.createElement("div", {
     className: "layout"
   }, /*#__PURE__*/React.createElement(Styles, null), /*#__PURE__*/React.createElement("button", {
