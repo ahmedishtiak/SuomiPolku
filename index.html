@@ -15042,6 +15042,8 @@ body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-famil
 .list .it:hover{border-color:${C.sub}}
 .it .ttl{font-weight:700;font-size:17px}
 .it .meta{font-size:13.5px;color:${C.sub}}
+.usearch{margin:6px 0 18px}
+.usearch .searchbox{margin-top:0}
 .searchbox{display:flex;gap:8px;margin:10px 0}
 .searchbox input{flex:1;border:1px solid ${C.line};border-radius:11px;padding:11px 12px;font-size:16px}
 .pill{font-size:13px;font-weight:700;border-radius:999px;padding:2px 8px;display:inline-block}
@@ -15295,11 +15297,152 @@ function Quiz({
 }
 
 // ---------- HOME ----------
+// ===== Universal (site-wide) search — lives on the home page =====
+function UniversalSearch({
+  lang,
+  openCard,
+  openTable,
+  focusKey
+}) {
+  const F = lang === "fi";
+  const [qy, setQy] = useState("");
+  const [res, setRes] = useState(undefined);
+  const inpRef = useRef(null);
+  useEffect(() => {
+    if (focusKey && inpRef.current) try {
+      inpRef.current.focus();
+    } catch (e) {}
+  }, [focusKey]);
+  function run() {
+    const q = qy.trim();
+    if (!q) {
+      setRes(undefined);
+      return;
+    }
+    const ql = q.toLowerCase();
+    const ana = analyze(q);
+    const chaps = GRAMMAR.filter(c => JSON.stringify(c).toLowerCase().includes(ql)).slice(0, 10);
+    const noms = NOMINALS.filter(r => (r.w + " " + r.en + " " + r.gen + " " + r.part + " " + r.iness + " " + r.elat + " " + r.illat + " " + r.plur).toLowerCase().includes(ql)).slice(0, 5);
+    const vbs = VERBS.filter(r => (r.w + " " + r.en + " " + r.mina + " " + r.han + " " + r.past + " " + r.cond).toLowerCase().includes(ql)).slice(0, 5);
+    const voc = VOCAB.filter(v => (v.fi + " " + v.en).toLowerCase().includes(ql)).slice(0, 8);
+    const sents = SENTENCES.filter(x => (x.fi + " " + x.en).toLowerCase().includes(ql)).slice(0, 4);
+    setRes({
+      ana,
+      chaps,
+      noms,
+      vbs,
+      voc,
+      sents,
+      q
+    });
+  }
+  const empty = res && !res.ana && !res.chaps.length && !res.noms.length && !res.vbs.length && !res.voc.length && !res.sents.length;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "usearch"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "searchbox"
+  }, /*#__PURE__*/React.createElement("input", {
+    ref: inpRef,
+    value: qy,
+    onChange: e => setQy(e.target.value),
+    placeholder: F ? "Hae mitä tahansa: sana, muoto, sääntö…" : "Search anything: a word, a form, a rule…",
+    onKeyDown: e => {
+      if (e.key === "Enter") run();
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    className: "btn",
+    style: {
+      background: C.grammar
+    },
+    onClick: run
+  }, F ? "Hae" : "Search")), res !== undefined && (empty ? /*#__PURE__*/React.createElement("div", {
+    className: "note"
+  }, L(lang, "noMatch")) : /*#__PURE__*/React.createElement("div", {
+    className: "analy",
+    style: {
+      color: C.grammar
+    }
+  }, res.ana && /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 6
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ttl"
+  }, F ? res.ana.caseFi : res.ana.caseEn, " ", /*#__PURE__*/React.createElement("span", {
+    className: "dim",
+    style: {
+      fontWeight: 600
+    }
+  }, "· ", res.ana.q)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: C.ink,
+      margin: "6px 0",
+      fontSize: 16
+    }
+  }, F ? res.ana.whyFi : res.ana.whyEn), /*#__PURE__*/React.createElement("button", {
+    className: "btn",
+    style: {
+      background: C.grammar
+    },
+    onClick: () => openCard(res.ana.cardId)
+  }, L(lang, "openCard"), " →")), res.chaps.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Kielioppiluvut" : "Grammar chapters"), /*#__PURE__*/React.createElement("div", {
+    className: "row wrap",
+    style: {
+      gap: 6
+    }
+  }, res.chaps.map(c => /*#__PURE__*/React.createElement("span", {
+    key: c.id,
+    className: "seechip",
+    onClick: () => openCard(c.id)
+  }, F ? c.tf : c.te, " →")))), (res.noms.length > 0 || res.vbs.length > 0) && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Taivutustaulukko" : "Inflection table"), [...res.noms, ...res.vbs].slice(0, 6).map((r, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "srrow"
+  }, /*#__PURE__*/React.createElement("b", null, r.w), " · ", r.en)), /*#__PURE__*/React.createElement("button", {
+    className: "btn",
+    style: {
+      background: C.grammar,
+      marginTop: 6
+    },
+    onClick: () => openTable(res.q)
+  }, F ? "Avaa taulukossa" : "Open in table", " →")), res.voc.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Sanasto" : "Vocabulary"), res.voc.map((v, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "srrow"
+  }, /*#__PURE__*/React.createElement("b", null, v.fi), " — ", v.en, VGUIDE[v.t] && VGUIDE[v.t].g.slice(0, 2).map(gid => {
+    const gc = GRAMMAR.find(x => x.id === gid);
+    return gc ? /*#__PURE__*/React.createElement("span", {
+      key: gid,
+      className: "seechip srchip",
+      onClick: () => openCard(gid)
+    }, F ? gc.tf : gc.te, " →") : null;
+  })))), res.sents.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "srgroup"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab"
+  }, F ? "Lausepankki" : "Sentence bank"), res.sents.map((x, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "srrow"
+  }, /*#__PURE__*/React.createElement("i", null, x.fi), " — ", x.en))))));
+}
 function Home({
   lang,
   setLang,
   go,
-  prog
+  prog,
+  openCard,
+  openTable,
+  focusKey
 }) {
   const F = lang === "fi";
   const vMast = Object.values(prog.v || {}).filter(x => x.streak >= 2).length;
@@ -15332,7 +15475,12 @@ function Home({
     setLang: setLang
   })), /*#__PURE__*/React.createElement("div", {
     className: "tag"
-  }, L(lang, "tagline")), /*#__PURE__*/React.createElement("div", {
+  }, L(lang, "tagline")), /*#__PURE__*/React.createElement(UniversalSearch, {
+    lang: lang,
+    openCard: openCard,
+    openTable: openTable,
+    focusKey: focusKey
+  }), /*#__PURE__*/React.createElement("div", {
     className: "grid"
   }, secs.map(s => /*#__PURE__*/React.createElement("button", {
     key: s.k,
@@ -15447,33 +15595,7 @@ function GrammarHome({
   openTable
 }) {
   const F = lang === "fi";
-  const [qy, setQy] = useState("");
-  const [res, setRes] = useState(undefined);
-  function run() {
-    const q = qy.trim();
-    if (!q) {
-      setRes(undefined);
-      return;
-    }
-    const ql = q.toLowerCase();
-    const ana = analyze(q);
-    const chaps = GRAMMAR.filter(c => JSON.stringify(c).toLowerCase().includes(ql)).slice(0, 10);
-    const noms = NOMINALS.filter(r => (r.w + " " + r.en + " " + r.gen + " " + r.part + " " + r.iness + " " + r.elat + " " + r.illat + " " + r.plur).toLowerCase().includes(ql)).slice(0, 5);
-    const vbs = VERBS.filter(r => (r.w + " " + r.en + " " + r.mina + " " + r.han + " " + r.past + " " + r.cond).toLowerCase().includes(ql)).slice(0, 5);
-    const voc = VOCAB.filter(v => (v.fi + " " + v.en).toLowerCase().includes(ql)).slice(0, 8);
-    const sents = SENTENCES.filter(x => (x.fi + " " + x.en).toLowerCase().includes(ql)).slice(0, 4);
-    setRes({
-      ana,
-      chaps,
-      noms,
-      vbs,
-      voc,
-      sents,
-      q
-    });
-  }
   const chapters = orderedChapters();
-  const empty = res && !res.ana && !res.chaps.length && !res.noms.length && !res.vbs.length && !res.voc.length && !res.sents.length;
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "topbar"
   }, /*#__PURE__*/React.createElement("button", {
@@ -15490,99 +15612,6 @@ function GrammarHome({
   }, L(lang, "grammar")), /*#__PURE__*/React.createElement("div", {
     className: "sub"
   }, L(lang, "grammarSub")), /*#__PURE__*/React.createElement("div", {
-    className: "searchbox"
-  }, /*#__PURE__*/React.createElement("input", {
-    value: qy,
-    onChange: e => setQy(e.target.value),
-    placeholder: F ? "Hae mitä tahansa: sana, muoto, sääntö…" : "Search anything: a word, a form, a rule…",
-    onKeyDown: e => {
-      if (e.key === "Enter") run();
-    }
-  }), /*#__PURE__*/React.createElement("button", {
-    className: "btn",
-    style: {
-      background: C.grammar
-    },
-    onClick: run
-  }, F ? "Hae" : "Search")), res !== undefined && (empty ? /*#__PURE__*/React.createElement("div", {
-    className: "note"
-  }, L(lang, "noMatch")) : /*#__PURE__*/React.createElement("div", {
-    className: "analy",
-    style: {
-      color: C.grammar
-    }
-  }, res.ana && /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 6
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "ttl"
-  }, F ? res.ana.caseFi : res.ana.caseEn, " ", /*#__PURE__*/React.createElement("span", {
-    className: "dim",
-    style: {
-      fontWeight: 600
-    }
-  }, "· ", res.ana.q)), /*#__PURE__*/React.createElement("div", {
-    style: {
-      color: C.ink,
-      margin: "6px 0",
-      fontSize: 16
-    }
-  }, F ? res.ana.whyFi : res.ana.whyEn), /*#__PURE__*/React.createElement("button", {
-    className: "btn",
-    style: {
-      background: C.grammar
-    },
-    onClick: () => openCard(res.ana.cardId)
-  }, L(lang, "openCard"), " →")), res.chaps.length > 0 && /*#__PURE__*/React.createElement("div", {
-    className: "srgroup"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "lab"
-  }, F ? "Kielioppiluvut" : "Grammar chapters"), /*#__PURE__*/React.createElement("div", {
-    className: "row wrap",
-    style: {
-      gap: 6
-    }
-  }, res.chaps.map(c => /*#__PURE__*/React.createElement("span", {
-    key: c.id,
-    className: "seechip",
-    onClick: () => openCard(c.id)
-  }, F ? c.tf : c.te, " →")))), (res.noms.length > 0 || res.vbs.length > 0) && /*#__PURE__*/React.createElement("div", {
-    className: "srgroup"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "lab"
-  }, F ? "Taivutustaulukko" : "Inflection table"), [...res.noms, ...res.vbs].slice(0, 6).map((r, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    className: "srrow"
-  }, /*#__PURE__*/React.createElement("b", null, r.w), " · ", r.en)), /*#__PURE__*/React.createElement("button", {
-    className: "btn",
-    style: {
-      background: C.grammar,
-      marginTop: 6
-    },
-    onClick: () => openTable(res.q)
-  }, F ? "Avaa taulukossa" : "Open in table", " →")), res.voc.length > 0 && /*#__PURE__*/React.createElement("div", {
-    className: "srgroup"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "lab"
-  }, F ? "Sanasto" : "Vocabulary"), res.voc.map((v, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    className: "srrow"
-  }, /*#__PURE__*/React.createElement("b", null, v.fi), " — ", v.en, VGUIDE[v.t] && VGUIDE[v.t].g.slice(0, 2).map(gid => {
-    const gc = GRAMMAR.find(x => x.id === gid);
-    return gc ? /*#__PURE__*/React.createElement("span", {
-      key: gid,
-      className: "seechip srchip",
-      onClick: () => openCard(gid)
-    }, F ? gc.tf : gc.te, " →") : null;
-  })))), res.sents.length > 0 && /*#__PURE__*/React.createElement("div", {
-    className: "srgroup"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "lab"
-  }, F ? "Lausepankki" : "Sentence bank"), res.sents.map((x, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    className: "srrow"
-  }, /*#__PURE__*/React.createElement("i", null, x.fi), " — ", x.en))))), /*#__PURE__*/React.createElement("div", {
     className: "kv",
     style: {
       marginTop: 14
@@ -17780,6 +17809,7 @@ function Sidebar({
   startQuick,
   goView,
   savedCount,
+  openSearch,
   close
 }) {
   const F = lang === "fi";
@@ -17810,7 +17840,7 @@ function Sidebar({
     className: "dot"
   }), " Suomi-polku"), /*#__PURE__*/React.createElement("button", {
     className: "sbsearch",
-    onClick: () => tap(() => go("grammar"))
+    onClick: () => tap(() => openSearch())
   }, "🔍 ", F ? "Hae sivustolta" : "Search the site"), secs.map(s => /*#__PURE__*/React.createElement("div", {
     key: s.k,
     className: "sbsec"
@@ -18120,6 +18150,11 @@ function App() {
   const [view, setView] = useState("home");
   const [trail, setTrail] = useState([]);
   const [declQ, setDeclQ] = useState("");
+  const [searchNonce, setSearchNonce] = useState(0);
+  const openSearch = () => {
+    setView("home");
+    setSearchNonce(n => n + 1);
+  };
   const [run, setRun] = useState(null);
   const [sbOpen, setSbOpen] = useState(false);
   const [navField, setNavField] = useState("all");
@@ -18444,7 +18479,10 @@ function App() {
     lang: lang,
     setLang: setLang,
     go: go,
-    prog: prog
+    prog: prog,
+    openCard: openChapter,
+    openTable: openTable,
+    focusKey: searchNonce
   });
   const sect = ["gcard", "grammar", "declension"].includes(view) ? "grammar" : ["vocab", "vrun"].includes(view) ? "vocab" : ["sent", "srun"].includes(view) ? "sent" : ["exam", "yki", "erun"].includes(view) ? "exam" : ["puhekieli", "situations"].includes(view) ? "speak" : "home";
   const activeChapter = view === "gcard" ? run?.card?.id : null;
@@ -18470,6 +18508,7 @@ function App() {
     startQuick: startQuick,
     goView: setView,
     savedCount: (bm.ch || []).length + (bm.w || []).length,
+    openSearch: openSearch,
     close: () => setSbOpen(false)
   })), sbOpen && /*#__PURE__*/React.createElement("div", {
     className: "sbscrim",
