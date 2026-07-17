@@ -4,8 +4,8 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="theme-color" content="#0b4ea2"/>
-<title>Suomi-polku — Learn & practise Finnish</title>
-<meta name="description" content="Suomi-polku: a bilingual Finnish-learning app — grammar reference with a form analyzer, vocabulary bank, sentence builder, and levelled mock exams."/>
+<title>SuomiPolku — Learn & practise Finnish</title>
+<meta name="description" content="SuomiPolku: a bilingual Finnish-learning app — grammar reference with a form analyzer, vocabulary bank, sentence builder, and levelled mock exams."/>
 </head>
 <body>
 <div id="root"></div>
@@ -4261,6 +4261,54 @@ const GRAMMAR = [{
     df: "Kuusi isoa asiaa, jotka kannattaa ymmärtää heti alussa. Jokaiseen on oma lukunsa myöhemmin. Ajattele suomen sanaa LEGO-alustana: vartalo on alusta (se voi muuttaa muotoaan — KPT), päätteet ovat palikoita, ja niiden \"värin\" on sovittava alustaan (vokaalisointu).",
     de: "Six big ideas worth grasping right at the start. Each one has its own chapter later. Picture a Finnish word as a LEGO baseplate: the stem is the plate (it can change shape — KPT), the endings are bricks, and their \"colour\" must match the plate (vowel harmony).",
     sections: [{
+      hf: "Kielisukulaisuus: mihin suomi kuuluu",
+      he: "Language family: where Finnish belongs",
+      items: [{
+        w: "suomi",
+        tf: "uralilainen kielikunta → itämerensuomalainen haara",
+        te: "Uralic family → the Finnic branch",
+        rows: [{
+          l: "viro",
+          ff: "eesti — lähin sukukieli; Viron kansalliskieli",
+          form: "Estonian — the closest major relative; Estonia's national language",
+          s: true
+        }, {
+          l: "karjala",
+          ff: "karjala — Karjalan tasavalta, Venäjä",
+          form: "Karelian — Republic of Karelia, Russia",
+          s: false
+        }, {
+          l: "vepsä",
+          ff: "vepsä — Luoteis-Venäjä",
+          form: "Veps — north-western Russia",
+          s: false
+        }, {
+          l: "inkeroinen",
+          ff: "inkeroinen — Luoteis-Venäjä",
+          form: "Ingrian — north-western Russia",
+          s: false
+        }],
+        exf: "Viro on ainoa muu maa, jonka kansalliskieli kuuluu samaan itämerensuomalaiseen ryhmään.",
+        exe: "Estonia is the only other country whose national language belongs to this same Finnic group."
+      }, {
+        w: "unkari, saame",
+        tf: "sama kielikunta, eri haara — ei itämerensuomalainen",
+        te: "same family, different branch — not Finnic",
+        rows: [{
+          l: "unkari",
+          ff: "unkari — uralilainen, mutta eri haara; ei ymmärrettävissä ilman opiskelua",
+          form: "Hungarian — Uralic, but a different branch; not mutually intelligible",
+          s: false
+        }, {
+          l: "saame",
+          ff: "saamen kielet — uralilaisia, oma haaransa",
+          form: "Sámi languages — Uralic, their own branch",
+          s: false
+        }],
+        exf: "Unkari on sukukieli, mutta kaukainen: se ei kuulu itämerensuomalaiseen ryhmään.",
+        exe: "Hungarian is a relative, but a distant one: it does not belong to the Finnic group."
+      }]
+    }, {
       hf: "Persoonat ja \"olla\" (to be)",
       he: "Personal pronouns & \"olla\" (to be)",
       items: [{
@@ -14430,318 +14478,1007 @@ function usePersist(key, initial) {
   }, [key, v]);
   return [v, setV];
 }
-
+const BN = {
+  "Search anything: a word, a form, a rule…": "যেকোনো কিছু খুঁজুন: শব্দ, রূপ বা নিয়ম…",
+  "Search": "খুঁজুন",
+  "Search the site": "সাইটে খুঁজুন",
+  "Grammar chapters": "ব্যাকরণ অধ্যায়",
+  "Inflection table": "শব্দরূপ তালিকা",
+  "Open in table": "তালিকায় দেখুন",
+  "Vocabulary": "শব্দভাণ্ডার",
+  "Sentence bank": "বাক্যভাণ্ডার",
+  "Chapters": "অধ্যায়সমূহ",
+  "Chapter": "অধ্যায়",
+  "Ch ": "অধ্যায় ",
+  "Sentences": "বাক্য",
+  "Words": "শব্দসমূহ",
+  "Saved": "সংরক্ষিত",
+  "Save": "সংরক্ষণ",
+  "save word": "শব্দ সংরক্ষণ",
+  "All": "সব",
+  "All topics": "সব বিষয়",
+  "Topic field": "বিষয়",
+  "words": "শব্দ",
+  "Related grammar": "সম্পর্কিত ব্যাকরণ",
+  "Exercise": "অনুশীলন",
+  "Exercise done": "অনুশীলন শেষ",
+  "Again": "আবার",
+  "Finish": "শেষ করুন",
+  "Next": "পরবর্তী",
+  "Practice": "অনুশীলন",
+  "Practise this with sentences": "বাক্য দিয়ে অনুশীলন করুন",
+  "Flashcards": "ফ্ল্যাশকার্ড",
+  "Multiple choice": "বহুনির্বাচনি",
+  "Typed recall": "টাইপ করে অনুশীলন",
+  "Mixed session": "মিশ্র অনুশীলন",
+  "part": "অংশ",
+  "Word order": "শব্দক্রম",
+  "Fill the blank": "শূন্যস্থান পূরণ",
+  "Translate": "অনুবাদ",
+  "Tap words into order": "শব্দগুলো ক্রম অনুযায়ী চাপুন",
+  "Mixed session · 50 random words": "মিশ্র অনুশীলন · ৫০টি এলোমেলো শব্দ",
+  "Mixed session · 50 random sentences": "মিশ্র অনুশীলন · ৫০টি এলোমেলো বাক্য",
+  "Flashcards, multiple choice and typed recall in one session. Picking a topic field narrows the words.": "এক সেশনে ফ্ল্যাশকার্ড, বহুনির্বাচনি ও টাইপিং। বিষয় বেছে নিলে শব্দ সীমিত হয়।",
+  "Word order, fill-the-blank and translation in one session. Your selections narrow the sentences.": "এক সেশনে শব্দক্রম, শূন্যস্থান পূরণ ও অনুবাদ। আপনার বাছাই বাক্য সীমিত করে।",
+  "No words for that selection.": "এই বাছাইয়ে কোনো শব্দ নেই।",
+  "No sentences for that selection.": "এই বাছাইয়ে কোনো বাক্য নেই।",
+  "Open the consonant-gradation card": "ব্যঞ্জন পরিবর্তনের কার্ডটি খুলুন",
+  "This involves consonant gradation — open the KPT card": "এখানে ব্যঞ্জন পরিবর্তন (KPT) ঘটে — KPT কার্ডটি খুলুন",
+  "Consonant gradation — see KPT card": "ব্যঞ্জন পরিবর্তন — KPT কার্ড দেখুন",
+  "Back to:": "ফিরে যান:",
+  "Deep dive": "গভীরে জানুন",
+  "Deep dive · verb types": "গভীরে জানুন · ক্রিয়ার ধরন",
+  "Strong": "সবল",
+  "Weak": "দুর্বল",
+  "Same word, every form": "একই শব্দ, সব রূপ",
+  "this case": "এই কারক",
+  "open card": "কার্ড খুলুন",
+  "Remember": "মনে রাখুন",
+  "Common mistake": "সাধারণ ভুল",
+  "Exceptions": "ব্যতিক্রম",
+  "Words that break the rule — learn them by heart.": "নিয়ম ভাঙা শব্দ — মুখস্থ করে নিন।",
+  "See also": "আরও দেখুন",
+  "Last chapter": "শেষ অধ্যায়",
+  "Word, type, stem and case forms in one place. Tap a column header to open the grammar.": "শব্দ, ধরন, মূল ও কারকরূপ এক জায়গায়। কলামের শিরোনামে চাপ দিলে ব্যাকরণ খুলবে।",
+  "Nominals": "নামপদ",
+  "Verbs": "ক্রিয়া",
+  "Find a word…": "শব্দ খুঁজুন…",
+  "Word": "শব্দ",
+  "Type": "ধরন",
+  "Stem": "মূল",
+  "Notes": "নোট",
+  "No matches.": "কিছু পাওয়া যায়নি।",
+  "YKI simulation": "YKI অনুশীলন",
+  "YKI mock": "YKI মক পরীক্ষা",
+  "mock exam": "মক পরীক্ষা",
+  "YKI mock exam · 3 parts · timed": "YKI মক পরীক্ষা · ৩ অংশ · সময়সীমাসহ",
+  "Like the real intermediate test: reading, structures and writing — each part on its own clock.": "আসল মধ্যম স্তরের পরীক্ষার মতো: পঠন, কাঠামো ও লিখন — প্রতিটি অংশের আলাদা সময়।",
+  "Your mocks": "আপনার মক পরীক্ষা",
+  "Best score": "সেরা ফল",
+  "Trend": "ধারা",
+  "read": "পঠন",
+  "struct": "কাঠামো",
+  "Quick practice": "দ্রুত অনুশীলন",
+  "25 mixed questions · untimed": "২৫টি মিশ্র প্রশ্ন · সময়সীমা ছাড়া",
+  "Vocabulary and sentences from the whole bank. Pass line 60%.": "পুরো ভাণ্ডার থেকে শব্দ ও বাক্য। পাসের সীমা ৬০%।",
+  "Exam structure": "পরীক্ষার কাঠামো",
+  "Reading comprehension": "পঠন বোধ",
+  "texts": "পাঠ",
+  "questions": "প্রশ্ন",
+  "Structures & vocabulary": "কাঠামো ও শব্দভাণ্ডার",
+  "Writing": "লিখন",
+  "task": "কাজ",
+  "self-assessed with a model answer": "মডেল উত্তরের সঙ্গে নিজে মূল্যায়ন",
+  "Parts 1–2 are auto-scored (pass line 60%). Listening can't be simulated without audio. When time runs out, the section closes automatically.": "১–২ অংশ স্বয়ংক্রিয়ভাবে মূল্যায়িত (পাসের সীমা ৬০%)। অডিও ছাড়া শ্রবণ অংশ অনুশীলন করা যায় না। সময় শেষ হলে অংশটি নিজে থেকেই বন্ধ হয়।",
+  "Start the exam": "পরীক্ষা শুরু করুন",
+  "Part 1 · Reading": "অংশ ১ · পঠন",
+  "Next text": "পরবর্তী পাঠ",
+  "To Part 2": "অংশ ২-এ যান",
+  "Part 2 · Structures & vocabulary": "অংশ ২ · কাঠামো ও শব্দভাণ্ডার",
+  "To Part 3": "অংশ ৩-এ যান",
+  "Part 3 · Writing": "অংশ ৩ · লিখন",
+  "At least": "কমপক্ষে",
+  "Write here in Finnish…": "এখানে ফিনিশে লিখুন…",
+  "Done — show model answer": "শেষ — মডেল উত্তর দেখুন",
+  "Writing · self-assessment": "লিখন · স্ব-মূল্যায়ন",
+  "Your text": "আপনার লেখা",
+  "Model answer": "মডেল উত্তর",
+  "Check that your text has:": "দেখে নিন আপনার লেখায় আছে কি না:",
+  "Show result": "ফল দেখুন",
+  "Result": "ফল",
+  "Reading": "পঠন",
+  "Structures": "কাঠামো",
+  "Total": "মোট",
+  "Pass ✓": "উত্তীর্ণ ✓",
+  "Fail ✗": "অনুত্তীর্ণ ✗",
+  "line": "সীমা",
+  "Correct": "সঠিক",
+  "Writing is self-assessed against the model — in the real YKI a human grades it.": "লিখন মডেলের সঙ্গে মিলিয়ে নিজে মূল্যায়ন করুন — আসল YKI-তে একজন মানুষ মূল্যায়ন করেন।",
+  "Spoken-Finnish drill": "কথ্য ফিনিশ অনুশীলন",
+  "Speak & situations": "কথা ও পরিস্থিতি",
+  "Situations": "পরিস্থিতি",
+  "Pick the spoken form for the written-standard phrase.": "লেখ্য রূপের কথ্য প্রতিরূপটি বেছে নিন।",
+  "Everyday conversations and key phrases — errands, health, work.": "দৈনন্দিন কথোপকথন ও গুরুত্বপূর্ণ বাক্য — কাজকর্ম, স্বাস্থ্য, চাকরি।",
+  "Key phrases": "গুরুত্বপূর্ণ বাক্য",
+  "Nothing saved yet. Tap ☆ on a chapter or a word.": "এখনো কিছু সংরক্ষণ করা হয়নি। কোনো অধ্যায় বা শব্দে ☆ চাপুন।",
+  "Words mastered": "আয়ত্তে থাকা শব্দ",
+  "Sentences practised": "অনুশীলন করা বাক্য",
+  "Foundations": "ভিত্তি",
+  "Cases": "কারক",
+  "Object & partitive": "কর্ম ও পার্টিটিভ",
+  "Modifiers": "বিশেষণ ও নির্ধারক",
+  "Sentences & advanced": "বাক্য ও উচ্চতর",
+  "Greetings": "সম্ভাষণ",
+  "People & family": "মানুষ ও পরিবার",
+  "Numbers": "সংখ্যা",
+  "Time & days": "সময় ও দিন",
+  "Food & drink": "খাবার ও পানীয়",
+  "Home": "বাড়ি",
+  "Clothing": "পোশাক",
+  "Body & health": "শরীর ও স্বাস্থ্য",
+  "Work & study": "কাজ ও পড়াশোনা",
+  "Travel": "ভ্রমণ",
+  "Nature & weather": "প্রকৃতি ও আবহাওয়া",
+  "City & places": "শহর ও স্থান",
+  "Adjectives": "বিশেষণ",
+  "Question words": "প্রশ্নবাচক শব্দ",
+  "Colours": "রং",
+  "Shopping & money": "কেনাকাটা ও টাকা",
+  "Free time & hobbies": "অবসর ও শখ",
+  "Services & errands": "সেবা ও কাজকর্ম",
+  "Feelings & opinions": "অনুভূতি ও মতামত",
+  "Society & media": "সমাজ ও গণমাধ্যম",
+  "Finance & trade": "অর্থ ও বাণিজ্য",
+  "Abstract & thinking": "বিমূর্ত ও চিন্তা",
+  // ===== grammar section (50 chapters) =====
+  "Introduction to Finnish": "ফিনিশ ভাষার পরিচয়",
+  "Finnish is not an Indo-European language. It has no articles ('the/a') and no grammatical gender. Meaning is packed onto the END of a word with endings, not with prepositions: 'talossa' = 'in the house'. Endings attach to the stem one at a time.": "ফিনিশ ইন্দো-ইউরোপীয় ভাষা নয়। এতে আর্টিকেল ('the/a') নেই, ব্যাকরণগত লিঙ্গও নেই। অর্থ বোঝাতে পূর্বসর্গ নয়, শব্দের শেষে প্রত্যয় যোগ হয়: 'talossa' = 'বাড়িতে'। প্রত্যয়গুলো একটির পর একটি শব্দমূলের সঙ্গে যুক্ত হয়।",
+  "house → in the house → in my house": "বাড়ি → বাড়িতে → আমার বাড়িতে",
+  "from Espoo (no word for 'from')": "এস্পো থেকে ('থেকে'-র জন্য আলাদা শব্দ নেই)",
+  "I speak Finnish (no 'am', no 'the')": "আমি ফিনিশ বলি ('am' নেই, 'the' নেই)",
+  "No articles, no gender — it's all in the endings.": "আর্টিকেল নেই, লিঙ্গ নেই — সবই প্রত্যয়ে।",
+  "Finnish builds meaning with endings. When you learn a new word, learn its stem too (talo → talo-, vesi → vete-), because endings attach to the stem.": "ফিনিশ প্রত্যয় দিয়ে অর্থ গড়ে। নতুন শব্দ শেখার সময় তার শব্দমূলও শিখুন (talo → talo-, vesi → vete-), কারণ প্রত্যয় শব্দমূলের সঙ্গেই যুক্ত হয়।",
+  "Don't look for words for 'the', 'a', or a separate 'is/are' in every spot — they aren't there. Bangla- and English-speakers often add them by habit.": "'the', 'a' বা আলাদা 'is/are'-এর সমতুল্য শব্দ খুঁজবেন না — ফিনিশে সেগুলো নেই। বাংলা ও ইংরেজিভাষীরা অভ্যাসবশত এগুলো যোগ করে ফেলেন।",
+  "'hän' = he AND she; hän for people, se for things": "'hän' = সে — পুরুষ ও নারী দুয়ের জন্যই; মানুষের বেলায় hän, বস্তুর বেলায় se",
+  "'olla' is irregular: minä olen, hän on, he ovat": "'olla' অনিয়মিত: minä olen, hän on, he ovat",
+  "Vowel harmony": "স্বরসঙ্গতি",
+  "A word's vowels are either back (a, o, u) or front (ä, ö, y) — they never mix inside one word. That is why most endings come in two shapes: -ssa / -ssä. The vowels e and i are neutral and fit either group.": "একটি শব্দের স্বরবর্ণ হয় পশ্চাৎ-স্বর (a, o, u), নয়তো সম্মুখ-স্বর (ä, ö, y) — একই শব্দের ভিতরে এরা কখনো মেশে না। এ কারণেই বেশির ভাগ প্রত্যয়ের দুটি রূপ থাকে: -ssa / -ssä। e ও i স্বর দুটি নিরপেক্ষ, উভয় দলের সঙ্গেই খাপ খায়।",
+  "house → in the house (back vowels → -ssa)": "বাড়ি → বাড়িতে (পশ্চাৎ-স্বর → -ssa)",
+  "kitchen → in the kitchen (front vowels → -ssä)": "রান্নাঘর → রান্নাঘরে (সম্মুখ-স্বর → -ssä)",
+  "lake → in the lake (ä rules → -ssä even with neutral e)": "হ্রদ → হ্রদে (ä নিয়ন্ত্রণ করে → নিরপেক্ষ e থাকা সত্ত্বেও -ssä)",
+  "Back vowels pull -a; front vowels pull -ä.": "পশ্চাৎ-স্বর টানে -a; সম্মুখ-স্বর টানে -ä।",
+  "A word's vowels are either back (a, o, u) or front (ä, ö, y). e and i are neutral and fit both.": "শব্দের স্বর হয় পশ্চাৎ (a, o, u), নয় সম্মুখ (ä, ö, y)। e ও i নিরপেক্ষ, দুই দলেই চলে।",
+  "Wrong ending: 'kylässa' should be kylässä. Check the word's vowels BEFORE adding the ending.": "ভুল প্রত্যয়: 'kylässa' নয়, হবে kylässä। প্রত্যয় যোগ করার আগেই শব্দের স্বরগুলো দেখে নিন।",
+  "only e/i in the word → front endings": "শব্দে কেবল e/i থাকলে → সম্মুখ-স্বরের প্রত্যয়",
+  "loanwords can break harmony": "বিদেশি ঋণশব্দ সঙ্গতি ভাঙতে পারে",
+  "in a compound, the last part decides": "সমাসবদ্ধ শব্দে শেষ অংশই নির্ধারণ করে",
+  "Consonant gradation (k, p, t)": "ব্যঞ্জন পরিবর্তন (k, p, t)",
+  "k, p and t alternate between a strong and a weak grade when an ending closes the syllable. Common pairs: kk→k, pp→p, tt→t, t→d, p→v, k→(disappears), nk→ng, nt→nn, mp→mm, lt→ll, rt→rr.": "প্রত্যয় যোগ হয়ে সিলেবল বন্ধ হলে k, p ও t সবল ও দুর্বল রূপের মধ্যে বদলায়। প্রচলিত জোড়া: kk→k, pp→p, tt→t, t→d, p→v, k→(লোপ পায়), nk→ng, nt→nn, mp→mm, lt→ll, rt→rr।",
+  "shop → in the shop (pp→p)": "দোকান → দোকানে (pp→p)",
+  "table → on the table (t→d)": "টেবিল → টেবিলের উপর (t→d)",
+  "Helsinki → in Helsinki (nk→ng)": "হেলসিঙ্কি → হেলসিঙ্কিতে (nk→ng)",
+  "An ending closes the syllable → weak grade.": "প্রত্যয় সিলেবল বন্ধ করলে → দুর্বল রূপ।",
+  "When an ending closes the syllable, k/p/t weakens (pankki → pankissa). The strong grade returns in an open syllable.": "প্রত্যয় সিলেবল বন্ধ করলে k/p/t দুর্বল হয় (pankki → pankissa)। সিলেবল খোলা থাকলে সবল রূপ ফিরে আসে।",
+  "Forgetting gradation: it's 'pankissa' not 'pankkissa', 'tutkinnon' not 'tutkinton'.": "পরিবর্তন ভুলে যাওয়া: 'pankkissa' নয়, 'pankissa'; 'tutkinton' নয়, 'tutkinnon'।",
+  "k → j, not the usual disappearance": "k → j, স্বাভাবিক লোপ নয়",
+  "k → j, same as aika": "k → j, aika-র মতোই",
+  "nt → nn (not just t → d)": "nt → nn (শুধু t → d নয়)",
+  "no k/p/t → no gradation": "k/p/t নেই → পরিবর্তনও নেই",
+  "Verb types 1–6": "ক্রিয়ার ধরন ১–৬",
+  "Verbs fall into six types by how the infinitive ends: 1 -a/-ä (puhua), 2 -da/-dä (juoda), 3 -la/-na/-ra/-ta (tulla, mennä), 4 -ata (haluta), 5 -ita (tarvita), 6 -eta (vanheta). The type tells you which stem to use before the person ending.": "ইনফিনিটিভ (অভিধান-রূপ) কীভাবে শেষ হয়, তার ভিত্তিতে ক্রিয়া ছয় ধরনের: ১ -a/-ä (puhua), ২ -da/-dä (juoda), ৩ -la/-na/-ra/-ta (tulla, mennä), ৪ -ata (haluta), ৫ -ita (tarvita), ৬ -eta (vanheta)। ধরন থেকেই বোঝা যায় পুরুষ-প্রত্যয়ের আগে কোন শব্দমূল বসবে।",
+  "Type 1: to say → I say": "ধরন ১: বলা → আমি বলি",
+  "Type 2: to eat → I eat": "ধরন ২: খাওয়া → আমি খাই",
+  "Type 3: to come → I come (type 3 adds -e-)": "ধরন ৩: আসা → আমি আসি (ধরন ৩-এ -e- যুক্ত হয়)",
+  "Read the infinitive ending → name the type → take the right stem.": "ইনফিনিটিভের শেষ দেখুন → ধরন চিনুন → সঠিক শব্দমূল নিন।",
+  "The infinitive ending tells you the type AND the stem. Always learn a verb together with its type.": "ইনফিনিটিভের শেষাংশই ধরন ও শব্দমূল — দুটোই জানিয়ে দেয়। ক্রিয়া শেখার সময় সবসময় তার ধরনসহ শিখুন।",
+  "Using the dictionary form as the stem: haluta → NOT 'halutan', but halua- → haluan.": "অভিধান-রূপকেই শব্দমূল ধরে নেওয়া: haluta → 'halutan' নয়, বরং halua- → haluan।",
+  "type 3 but irregular": "ধরন ৩, তবে অনিয়মিত",
+  "the d disappears (teke- → tee-)": "d লোপ পায় (teke- → tee-)",
+  "like tehdä": "tehdä-র মতো",
+  "s → kse in the stem": "শব্দমূলে s → kse",
+  "Present tense & person endings": "বর্তমান কাল ও পুরুষ-প্রত্যয়",
+  "A Finnish verb changes for six persons. Endings: minä -n, sinä -t, hän - (lengthened vowel), me -mme, te -tte, he -vat/-vät. Take the stem and add the ending.": "ফিনিশ ক্রিয়া ছয়টি পুরুষে বদলায়। প্রত্যয়: minä -n, sinä -t, hän – (শেষ স্বর দীর্ঘ হয়), me -mme, te -tte, he -vat/-vät। শব্দমূল নিন, তার সঙ্গে প্রত্যয় যোগ করুন।",
+  "to speak: I speak, you speak": "বলা: আমি বলি, তুমি বলো",
+  "he/she speaks (final vowel doubles)": "সে বলে (শেষ স্বর দ্বিগুণ হয়)",
+  "we speak, they speak": "আমরা বলি, তারা বলে",
+  "hän = lengthen the final vowel; he = -vat/-vät.": "hän = শেষ স্বর দীর্ঘ করুন; he = -vat/-vät।",
+  "The personal ending shows who: -n, -t, -Ø/-ee, -mme, -tte, -vat. The hän form lengthens the vowel (asuu).": "পুরুষ-প্রত্যয়ই বলে দেয় কে করছে: -n, -t, -Ø/-ee, -mme, -tte, -vat। hän-রূপে শেষ স্বর দীর্ঘ হয় (asuu)।",
+  "Dropping the ending because the pronoun is there: say 'puhun', not 'minä puhu'.": "সর্বনাম আছে বলে প্রত্যয় বাদ দেওয়া: 'minä puhu' নয়, বলুন 'puhun'।",
+  "not 'olee' but on": "'olee' নয়, বরং on",
+  "the teke- stem returns": "teke- শব্দমূল ফিরে আসে",
+  "the näke- stem": "näke- শব্দমূল",
+  "The negative verb": "না-বাচক ক্রিয়া",
+  "Negation uses a separate negative verb that conjugates: en, et, ei, emme, ette, eivät. The main verb stays as the bare short stem with no person ending.": "নেতিবাচক করতে আলাদা একটি না-বাচক ক্রিয়া ব্যবহৃত হয়, যা পুরুষ অনুযায়ী বদলায়: en, et, ei, emme, ette, eivät। মূল ক্রিয়াটি পুরুষ-প্রত্যয় ছাড়া খালি সংক্ষিপ্ত শব্দমূল হিসেবেই থাকে।",
+  "I speak → I don't speak": "আমি বলি → আমি বলি না",
+  "he comes → he doesn't come": "সে আসে → সে আসে না",
+  "they eat → they don't eat": "তারা খায় → তারা খায় না",
+  "The negative verb carries the person; the main verb drops its ending.": "না-বাচক ক্রিয়া পুরুষ বহন করে; মূল ক্রিয়া তার প্রত্যয় ছেড়ে দেয়।",
+  "The negative verb (en, et, ei…) conjugates; the main verb stays as a stem. A negative object is partitive.": "না-বাচক ক্রিয়া (en, et, ei…) পুরুষ অনুযায়ী বদলায়; মূল ক্রিয়া শব্দমূল হয়েই থাকে। নেতিবাচক বাক্যের কর্ম পার্টিটিভে বসে।",
+  "'minä ei' is wrong → minä en. And the object: 'en osta auton' → en osta autoa.": "'minä ei' ভুল → minä en। আর কর্ম: 'en osta auton' → en osta autoa।",
+  "'olla' negated = ei ole": "'olla'-র নেতিবাচক = ei ole",
+  "the imperative negative is its own verb": "অনুজ্ঞার নেতিবাচক রূপের নিজস্ব ক্রিয়া আছে",
+  "Past tense (imperfect)": "অতীত কাল (ইমপারফেক্ট)",
+  "The past is formed with the marker -i- between the stem and the person ending: puhu-i-n (I spoke). Sometimes -i- changes the stem vowel (osta → ostin; saada → sain). Negative: en puhunut (the NUT-participle).": "শব্দমূল ও পুরুষ-প্রত্যয়ের মাঝে -i- চিহ্ন বসিয়ে অতীত কাল গঠিত হয়: puhu-i-n (আমি বলেছিলাম)। কখনো -i- শব্দমূলের স্বর বদলে দেয় (osta → ostin; saada → sain)। নেতিবাচক: en puhunut (NUT-কৃদন্ত)।",
+  "I speak → I spoke": "আমি বলি → আমি বলেছিলাম",
+  "I go → I went": "আমি যাই → আমি গিয়েছিলাম",
+  "I didn't speak": "আমি বলিনি",
+  "-i- = past; negative + -nut/-nyt.": "-i- = অতীত; নেতিবাচকে -nut/-nyt।",
+  "-i- is the past-tense marker. The negative uses the NUT-participle (en puhunut), not -i-.": "-i- অতীত কালের চিহ্ন। নেতিবাচকে -i- নয়, NUT-কৃদন্ত ব্যবহৃত হয় (en puhunut)।",
+  "-i- in the negative: 'en puhuin' → en puhunut. Plural: emme puhuneet.": "নেতিবাচকে -i- বসানো: 'en puhuin' → en puhunut। বহুবচনে: emme puhuneet।",
+  "-tää → -si- (t → s)": "-tää → -si- (t → s)",
+  "y → v irregularly": "y → v, অনিয়মিতভাবে",
+  "Perfect & pluperfect": "পুরাঘটিত বর্তমান ও পুরাঘটিত অতীত",
+  "Perfect: olla (present) + NUT-participle — 'olen tehnyt' (it has happened, still relevant now). Pluperfect: olla (past) + NUT — 'olin tehnyt' (a past before another past). Negative: en ole tehnyt / en ollut tehnyt.": "পুরাঘটিত বর্তমান: olla (বর্তমান) + NUT-কৃদন্ত — 'olen tehnyt' (ঘটে গেছে, কিন্তু এখনো প্রাসঙ্গিক)। পুরাঘটিত অতীত: olla (অতীত) + NUT — 'olin tehnyt' (আরেক অতীতের আগের অতীত)। নেতিবাচক: en ole tehnyt / en ollut tehnyt।",
+  "I have lived in Finland since 2024": "আমি ২০২৪ সাল থেকে ফিনল্যান্ডে বাস করছি",
+  "I have already completed the degree": "আমি ডিগ্রিটি ইতিমধ্যেই শেষ করেছি",
+  "I had studied Finnish before moving": "স্থানান্তরের আগেই আমি ফিনিশ পড়েছিলাম",
+  "olla + -nut/-nyt (sing.), -neet (plural).": "olla + -nut/-nyt (একবচন), -neet (বহুবচন)।",
+  "The perfect ties the past to now: 'olen tehnyt' = an experience or an ongoing situation. In the plural the participle is -neet.": "পুরাঘটিত বর্তমান অতীতকে এখনের সঙ্গে যুক্ত করে: 'olen tehnyt' = অভিজ্ঞতা বা চলমান অবস্থা। বহুবচনে কৃদন্তটি হয় -neet।",
+  "Forgetting the plural participle: 'me olemme tehnyt' → me olemme tehneet.": "বহুবচনের কৃদন্ত ভুলে যাওয়া: 'me olemme tehnyt' → me olemme tehneet।",
+  "irregular NUT": "অনিয়মিত NUT",
+  "Conditional (-isi-)": "শর্তবাচক রূপ (-isi-)",
+  "The conditional expresses a condition, a wish, or politeness. The marker -isi- goes between the stem and the person ending: puhu-isi-n = I would speak. Often with a jos- (if) clause.": "শর্তবাচক রূপ শর্ত, ইচ্ছা বা ভদ্রতা প্রকাশ করে। -isi- চিহ্নটি শব্দমূল ও পুরুষ-প্রত্যয়ের মাঝে বসে: puhu-isi-n = আমি বলতাম। প্রায়ই jos- (যদি) খণ্ডবাক্যের সঙ্গে ব্যবহৃত হয়।",
+  "I would like coffee (polite).": "আমি কফি চাইতাম (ভদ্রভাবে)।",
+  "If I had time…": "যদি আমার সময় থাকত…",
+  "Would you go with me?": "তুমি কি আমার সঙ্গে যেতে?",
+  "-isi- = 'would'.": "-isi- = 'would' (…তাম / …তে)।",
+  "-isi- = 'would'. Use it for polite requests (saisinko?) and conditions (jos olisi…).": "-isi- = 'would'। ভদ্র অনুরোধ (saisinko?) ও শর্ত (jos olisi…) বোঝাতে এটি ব্যবহার করুন।",
+  "Present tense in a polite request can sound blunt: 'saanko' → saisinko, 'voitko' → voisitko.": "ভদ্র অনুরোধে বর্তমান কাল রূঢ় শোনাতে পারে: 'saanko' → saisinko, 'voitko' → voisitko।",
+  "the teke- stem": "teke- শব্দমূল",
+  "the kävi- stem": "kävi- শব্দমূল",
+  "Imperative (commands)": "অনুজ্ঞা (আদেশ)",
+  "Singular command = the present-tense 'minä' stem minus -n: puhun → Puhu! Plural/polite: -kaa/-kää — Puhukaa! Negative: Älä puhu! / Älkää puhuko!": "একবচনে আদেশ = বর্তমান কালের 'minä'-রূপ থেকে -n বাদ: puhun → Puhu! বহুবচন/ভদ্র রূপ: -kaa/-kää — Puhukaa! নেতিবাচক: Älä puhu! / Älkää puhuko!",
+  "Speak Finnish!": "ফিনিশ বলো!",
+  "Don't be afraid!": "ভয় পেয়ো না!",
+  "Come in! (pl./polite)": "ভিতরে আসুন! (বহুবচন/ভদ্র)",
+  "Singular = 'minä' stem − n; negative = älä + stem.": "একবচন = 'minä'-রূপ − n; নেতিবাচক = älä + শব্দমূল।",
+  "Get the singular command from the 'minä' form: puhun→puhu, tulen→tule. The negative uses the älä/älkää verb.": "একবচনের আদেশ 'minä'-রূপ থেকেই নিন: puhun→puhu, tulen→tule। নেতিবাচকে älä/älkää ক্রিয়া ব্যবহৃত হয়।",
+  "Infinitive as a command: 'Puhua!' → Puhu! And 'Ei puhu!' → Älä puhu!": "ইনফিনিটিভকে আদেশ হিসেবে ব্যবহার: 'Puhua!' → Puhu! আর 'Ei puhu!' → Älä puhu!",
+  "stem mene-": "শব্দমূল mene-",
+  "irregular": "অনিয়মিত",
+  "-tää → -si-": "-tää → -si-",
+  "The passive": "কর্মবাচ্য (passive)",
+  "The passive names no doer: 'Suomessa puhutaan suomea' (Finnish is spoken in Finland). Present: stem + -taan/-tään. Past: -ttiin. Negative: ei puhuta / ei puhuttu. In speech the passive doubles as 'we': 'me mennään' = we go.": "কর্মবাচ্যে কর্তার নাম থাকে না: 'Suomessa puhutaan suomea' (ফিনল্যান্ডে ফিনিশ বলা হয়)। বর্তমান: শব্দমূল + -taan/-tään। অতীত: -ttiin। নাবাচক: ei puhuta / ei puhuttu। কথ্য ভাষায় passive 'আমরা' অর্থেও চলে: 'me mennään' = আমরা যাই।",
+  "Finnish is spoken here": "এখানে ফিনিশ বলা হয়",
+  "the book was written in 2025": "বইটি ২০২৫ সালে লেখা হয়েছিল",
+  "in Finland people sauna often": "ফিনল্যান্ডে প্রায়ই সাউনা করা হয়",
+  "-taan/-tään = is done; -ttiin = was done.": "-taan/-tään = করা হয়; -ttiin = করা হয়েছিল।",
+  "The passive = 'one does / it is done', with no subject. It's also the colloquial 'we' form (me tehdään).": "Passive = 'কেউ করে / করা হয়', কোনো কর্তা ছাড়াই। কথ্য ভাষায় এটি 'আমরা' রূপও (me tehdään)।",
+  "Adding a subject: 'se puhutaan' → just puhutaan.": "কর্তা যোগ করা: 'se puhutaan' → শুধু puhutaan।",
+  "a → e before -taan": "-taan-এর আগে a → e",
+  "Potential mood (-ne-)": "সম্ভাবনাসূচক ভাব (-ne-)",
+  "The potential expresses probability ('probably'): the marker -ne- goes between stem and ending. 'Tullee' = probably comes. The most common form is 'lienee' (= probably is). Rare, mostly written/news Finnish.": "Potential সম্ভাবনা বোঝায় ('সম্ভবত'): শব্দমূল ও প্রত্যয়ের মাঝে -ne- চিহ্ন বসে। 'Tullee' = সম্ভবত আসবে। সবচেয়ে প্রচলিত রূপ 'lienee' (= সম্ভবত আছে/হবে)। এটি বিরল, মূলত লেখ্য ও সংবাদের ফিনিশে।",
+  "he'll probably come tomorrow": "সে সম্ভবত কাল আসবে",
+  "that is probably true": "সেটা সম্ভবত সত্যি",
+  "the matter will probably clear up soon": "বিষয়টি সম্ভবত শিগগিরই পরিষ্কার হবে",
+  "-ne- = 'probably'.": "-ne- = 'সম্ভবত'।",
+  "Rare and formal. At least recognise 'lienee'. In speech use 'varmaan/luultavasti' + present.": "বিরল ও আনুষ্ঠানিক। অন্তত 'lienee' চিনে রাখুন। কথায় 'varmaan/luultavasti' + বর্তমান কাল ব্যবহার করুন।",
+  "Overusing it in speech: say 'hän varmaan tulee' rather than 'hän tullee'.": "কথায় এটি বেশি ব্যবহার করা: 'hän tullee'-র বদলে বলুন 'hän varmaan tulee'।",
+  "lne → lle (not 'tulnee')": "lne → lle ('tulnee' নয়)",
+  "suppletive": "সম্পূর্ণ ভিন্ন মূল থেকে আসা রূপ",
+  "Participles": "Participle (ক্রিয়াজাত বিশেষণ)",
+  "Participles are adjectives made from verbs and decline like adjectives. Active: VA (-va/-vä = 'doing') and NUT (-nut/-nyt = 'having done'). Passive: TU (-ttu/-tty = 'done') and TAVA (-ttava/-ttävä = 'to be done').": "Participle হলো ক্রিয়া থেকে তৈরি বিশেষণ, আর বিশেষণের মতোই কারকে রূপ বদলায়। কর্তৃবাচ্য: VA (-va/-vä = 'যে করছে') ও NUT (-nut/-nyt = 'যে করেছে')। কর্মবাচ্য: TU (-ttu/-tty = 'যা করা হয়েছে') ও TAVA (-ttava/-ttävä = 'যা করতে হবে')।",
+  "a speaking man": "কথা-বলা লোকটি",
+  "a completed degree": "সম্পন্ন করা ডিগ্রি",
+  "a book to be written": "যে বইটি লিখতে হবে",
+  "-va (doing), -nut (done, active), -tu (done, passive), -ttava (to be done).": "-va (করছে), -nut (করেছে, কর্তৃ), -tu (করা হয়েছে, কর্ম), -ttava (করতে হবে)।",
+  "A participle agrees with its noun (suoritettu tutkinto → suoritetun tutkinnon). At higher levels they replace että-clauses.": "Participle তার বিশেষ্যের সঙ্গে মিলে যায় (suoritettu tutkinto → suoritetun tutkinnon)। উঁচু স্তরে এগুলো että-বাক্যাংশের বদলে বসে।",
+  "Leaving it uninflected: 'suoritettu tutkinnon' → suoritetun tutkinnon.": "রূপ না বদলানো: 'suoritettu tutkinnon' → suoritetun tutkinnon।",
+  "Infinitives": "Infinitive সমূহ",
+  "The 1st infinitive = the dictionary form (puhua). The 3rd infinitive shows activity in cases: -maan (menen syömään = to), -massa (olen syömässä = in the middle of), -masta (tulen syömästä = from), -malla (by doing), -matta (without doing). The 2nd infinitive: -essa (tehdessä = while doing).": "১ম infinitive = অভিধানের রূপ (puhua)। ৩য় infinitive কাজটিকে কারকে বসায়: -maan (menen syömään = -তে), -massa (olen syömässä = -র মাঝখানে), -masta (tulen syömästä = থেকে), -malla (করে/দিয়ে), -matta (না করে)। ২য় infinitive: -essa (tehdessä = করার সময়)।",
+  "I go to study": "আমি পড়তে যাচ্ছি",
+  "I'm out at work": "আমি কাজে গিয়ে আছি",
+  "I learn Finnish by doing": "আমি করতে করতে ফিনিশ শিখি",
+  "-maan (to), -massa (in), -masta (from), -malla (by).": "-maan (-তে), -massa (-এ), -masta (থেকে), -malla (দিয়ে)।",
+  "The 3rd infinitive uses the same case logic as nouns: -maan = illative, -massa = inessive, -masta = elative.": "৩য় infinitive বিশেষ্যের মতোই কারক-যুক্তি মেনে চলে: -maan = illative, -massa = inessive, -masta = elative।",
+  "1st infinitive after a motion verb: 'menen syödä' → menen syömään.": "গতিবাচক ক্রিয়ার পরে ১ম infinitive: 'menen syödä' → menen syömään।",
+  "type-3 stem": "ধরন-৩ শব্দমূল",
+  "type-4 stem": "ধরন-৪ শব্দমূল",
+  "irregular stem": "অনিয়মিত শব্দমূল",
+  "Modal construction (-en: juosten)": "প্রকার-গঠন (-en: juosten)",
+  "The modal construction says HOW the main action happens. It's the 2nd infinitive instructive -en: \"Hän tuli juosten\" (he came running, = juoksemalla). Others: nauraen (laughing), itkien (crying), laulaen (singing). It answers \"how?\". The tone is literary; speech often uses the -malla form instead.": "এই গঠনটি বলে, মূল কাজটি কীভাবে ঘটছে। এটি ২য় infinitive-এর instructive -en: \"Hän tuli juosten\" (সে দৌড়াতে দৌড়াতে এলো, = juoksemalla)। আরও: nauraen (হাসতে হাসতে), itkien (কাঁদতে কাঁদতে), laulaen (গাইতে গাইতে)। এটি \"কীভাবে?\" প্রশ্নের উত্তর দেয়। সুরটি সাহিত্যিক; কথ্য ভাষায় প্রায়ই এর বদলে -malla রূপ ব্যবহৃত হয়।",
+  "the child came running": "শিশুটি দৌড়াতে দৌড়াতে এলো",
+  "she answered smiling": "সে হাসতে হাসতে উত্তর দিলো",
+  "they walked along singing": "তারা গাইতে গাইতে হাঁটল",
+  "-en = 'how' (2nd infinitive instructive).": "-en = 'কীভাবে' (২য় infinitive instructive)।",
+  "-en describes the manner accompanying the main action, and can often be replaced with -malla (juosten ≈ juoksemalla).": "-en মূল কাজের সঙ্গী ভঙ্গিটি বোঝায়, আর প্রায়ই -malla দিয়ে বদলে দেওয়া যায় (juosten ≈ juoksemalla)।",
+  "Confusing it with -essa: \"tehden\" (how) vs. \"tehdessä\" (while). -en is manner, -essa is time.": "-essa-র সঙ্গে গুলিয়ে ফেলা: \"tehden\" (কীভাবে) বনাম \"tehdessä\" (করার সময়)। -en ভঙ্গি বোঝায়, -essa সময়।",
+  "2nd-infinitive stem": "২য়-infinitive শব্দমূল",
+  "lexicalized manner expressions": "স্থির হয়ে যাওয়া ভঙ্গি-প্রকাশ",
+  "The six local cases: a 3 × 2 grid": "ছয় স্থানকারক: ৩ × ২ ছক",
+  "The six local cases form a grid. The columns are direction (where / from where / to where). The rows are inside vs. outside. Inside set: -ssa, -sta, -Vn. Outside set: -lla, -lta, -lle.": "ছয়টি স্থানকারক মিলে একটি ছক গড়ে তোলে। কলাম হলো দিক (কোথায় / কোথা থেকে / কোথায় যাচ্ছে)। সারি হলো ভিতরে বনাম উপরিতলে। ভিতরের সেট: -ssa, -sta, -Vn। উপরিতলের সেট: -lla, -lta, -lle।",
+  "Where? in the house / on the table": "কোথায়? বাড়ির ভিতরে / টেবিলের উপরে",
+  "From where? out of / off": "কোথা থেকে? ভিতর থেকে / উপর থেকে",
+  "To where? into / onto": "কোথায় (যাচ্ছে)? ভিতরে / উপরে",
+  "S-row = inside; L-row = on a surface. -ssa/-sta/-Vn vs. -lla/-lta/-lle.": "S-সারি = ভিতরে; L-সারি = উপরিতলে। -ssa/-sta/-Vn বনাম -lla/-lta/-lle।",
+  "Inside series -ssa/-sta/-Vn (within) vs. surface series -lla/-lta/-lle (on a surface). Three questions: missä? mistä? mihin?": "ভিতরের সেট -ssa/-sta/-Vn (ভিতরে) বনাম উপরিতলের সেট -lla/-lta/-lle (উপরে)। তিনটি প্রশ্ন: missä? mistä? mihin?",
+  "Mixing the two series: for places say 'Espoossa', not 'Espoolla'.": "দুই সেট মিশিয়ে ফেলা: স্থানের জন্য বলুন 'Espoossa', 'Espoolla' নয়।",
+  "old locative, not 'kodissa'": "পুরোনো locative রূপ, 'kodissa' নয়",
+  "some places take the surface series": "কিছু জায়গা উপরিতলের সেট নেয়",
+  "frozen -na forms": "স্থির হয়ে যাওয়া -na রূপ",
+  "Inessive -ssa/-ssä (where, inside?)": "Inessive -ssa/-ssä (কোথায়, ভিতরে?)",
+  "The inessive answers missä? (where?) and means 'inside something'. The ending is -ssa or -ssä by vowel harmony, added to the stem.": "Inessive missä? (কোথায়?) প্রশ্নের উত্তর দেয় এবং 'কোনো কিছুর ভিতরে' বোঝায়। প্রত্যয় -ssa বা -ssä — স্বরসঙ্গতি অনুযায়ী — শব্দমূলের সঙ্গে যুক্ত হয়।",
+  "house → in the house": "বাড়ি → বাড়ির ভিতরে",
+  "Finland → in Finland": "ফিনল্যান্ড → ফিনল্যান্ডে",
+  "shop → in the shop (kpt: pp→p)": "দোকান → দোকানে (kpt: pp→p)",
+  "-ssa = inSSAide — within.": "-ssa = inSSAide — ভিতরে।",
+  "-ssa/-ssä = missä? (inside). The ending is chosen by vowel harmony.": "-ssa/-ssä = missä? (ভিতরে)। প্রত্যয়টি বেছে নেওয়া হয় স্বরসঙ্গতি অনুযায়ী।",
+  "A front-vowel word takes -ssä: 'kylässa' → kylässä.": "সম্মুখ-স্বরের শব্দে -ssä বসে: 'kylässa' → kylässä।",
+  "'kotona' = at home, not kodissa": "'kotona' = বাড়িতে, kodissa নয়",
+  "'outside', a frozen form": "'বাইরে' — একটি স্থির রূপ",
+  "countries usually -ssa, but a few -lla": "দেশ সাধারণত -ssa নেয়, তবে কয়েকটি -lla",
+  "Elative -sta/-stä (from inside?)": "Elative -sta/-stä (ভিতর থেকে?)",
+  "The elative answers mistä? and means motion out of the inside of something. Ending -sta/-stä. It is also used for 'about a topic': to talk about something.": "Elative mistä? প্রশ্নের উত্তর দেয় এবং কোনো কিছুর ভিতর থেকে বেরিয়ে আসা বোঝায়। প্রত্যয় -sta/-stä। 'কোনো বিষয়ে' অর্থেও এটি ব্যবহৃত হয়: কোনো কিছু নিয়ে কথা বলা।",
+  "house → out of the house": "বাড়ি → বাড়ির ভিতর থেকে",
+  "Helsinki → from Helsinki (kpt: nk→ng)": "Helsinki → Helsinki থেকে (kpt: nk→ng)",
+  "I'm talking about the weather.": "আমি আবহাওয়া নিয়ে কথা বলছি।",
+  "-sta = out of the inSTAide.": "-sta = ভিতর (inSTAide) থেকে বাইরে।",
+  "-sta/-stä = mistä? Also topic (puhua jostakin) and liking (pitää jostakin).": "-sta/-stä = mistä? এছাড়া বিষয় (puhua jostakin) এবং পছন্দ (pitää jostakin)।",
+  "pitää + partitive is wrong: 'pidän suomea' → pidän suomesta / suomen kielestä.": "pitää + পার্টিটিভ ভুল: 'pidän suomea' → pidän suomesta / suomen kielestä।",
+  "'from home', not 'kodista'": "'বাড়ি থেকে', 'kodista' নয়",
+  "'from outside / by heart'": "'বাইরে থেকে' / 'মুখস্থ'",
+  "Illative -Vn / -hVn / -seen (into?)": "Illative -Vn / -hVn / -seen (ভিতরে?)",
+  "The illative answers mihin? (into). Three endings: 1) short vowel + n: double the vowel and add n (talo → taloon). 2) -hVn for one-syllable long-vowel words (maa → maahan). 3) -seen for two-or-more-syllable words ending in a long vowel (Espoo → Espooseen).": "Illative mihin? (কীসের ভিতরে) প্রশ্নের উত্তর দেয়। তিনটি প্রত্যয়: ১) হ্রস্ব স্বর + n: স্বরটি দ্বিগুণ করে n যোগ করুন (talo → taloon)। ২) -hVn — এক-সিলেবলের দীর্ঘ-স্বরযুক্ত শব্দে (maa → maahan)। ৩) -seen — দুই বা তার বেশি সিলেবলের দীর্ঘ-স্বরান্ত শব্দে (Espoo → Espooseen)।",
+  "house → into the house": "বাড়ি → বাড়ির ভিতরে",
+  "land → into the land (one syllable, long vowel)": "ভূমি → ভূমির ভিতরে (এক সিলেবল, দীর্ঘ স্বর)",
+  "Espoo → to Espoo (2 syllables, long -oo → -seen)": "Espoo → Espoo-তে (২ সিলেবল, দীর্ঘ -oo → -seen)",
+  "Long vowel + long word → -seen.": "দীর্ঘ স্বর + দীর্ঘ শব্দ → -seen।",
+  "-Vn (short vowel), -hVn (one syllable), -seen (two+ syllables, long vowel). The illative keeps the strong grade.": "-Vn (হ্রস্ব স্বর), -hVn (এক সিলেবল), -seen (দুই বা তার বেশি সিলেবল, দীর্ঘ স্বর)। Illative সবল রূপ ধরে রাখে।",
+  "-seen on a short word: 'taloseen' → taloon. Use -seen only on longer words (Espooseen).": "ছোট শব্দে -seen: 'taloseen' → taloon। -seen কেবল লম্বা শব্দে ব্যবহার করুন (Espooseen)।",
+  "regular but very common": "নিয়মিত, তবে খুবই প্রচলিত",
+  "surface-series places take -lle": "উপরিতল-সেটের জায়গাগুলো -lle নেয়",
+  "maalle = to the countryside": "maalle = গ্রামাঞ্চলে",
+  "Adessive -lla/-llä (on / by / have)": "Adessive -lla/-llä (উপরে / দিয়ে / আছে)",
+  "The adessive means 'on/at the surface of something', the instrument ('by what?'), and possession (minulla on = I have). Ending -lla/-llä.": "Adessive বোঝায় 'কোনো কিছুর উপরিতলে', উপকরণ ('কী দিয়ে?'), এবং অধিকার (minulla on = আমার আছে)। প্রত্যয় -lla/-llä।",
+  "table → on the table (kpt: t→d)": "টেবিল → টেবিলের উপরে (kpt: t→d)",
+  "I go by bus.": "আমি বাসে করে যাই।",
+  "I have a car (lit. on me is a car).": "আমার একটি গাড়ি আছে (আক্ষরিক অর্থে: আমার উপরে আছে একটি গাড়ি)।",
+  "-lla = on a surface, by a means, and 'have'.": "-lla = উপরিতলে, উপকরণে, আর 'আছে'।",
+  "-lla/-llä = on a surface, by a means, and possession (minulla on).": "-lla/-llä = উপরিতলে, কোনো উপকরণে, আর অধিকারে (minulla on)।",
+  "For 'have' don't use a verb 'own' — use adessive + on: 'minä omistan auto' → minulla on auto.": "'আছে' বোঝাতে 'own' ধরনের ক্রিয়া নয় — adessive + on ব্যবহার করুন: 'minä omistan auto' → minulla on auto।",
+  "surface-series cities": "উপরিতল-সেটের শহর",
+  "koti doesn't use the surface series": "koti উপরিতলের সেট নেয় না",
+  "Ablative -lta/-ltä (from a surface / person)": "Ablative -lta/-ltä (উপরিতল / ব্যক্তির কাছ থেকে)",
+  "The ablative answers mistä? / keneltä? and means motion off a surface or away from a person. Ending -lta/-ltä.": "Ablative mistä? / keneltä? প্রশ্নের উত্তর দেয়, আর উপরিতল থেকে সরে যাওয়া বা কোনো ব্যক্তির কাছ থেকে আসা বোঝায়। প্রত্যয় -lta/-ltä।",
+  "table → off the table": "টেবিল → টেবিলের উপর থেকে",
+  "I got a letter from a friend.": "আমি এক বন্ধুর কাছ থেকে একটি চিঠি পেয়েছি।",
+  "from the train station": "রেলস্টেশন থেকে",
+  "-lta = off a surface, or from a person.": "-lta = উপরিতল থেকে, বা ব্যক্তির কাছ থেকে।",
+  "-lta/-ltä = off a surface or from a person. Also feeling: tuntuu/näyttää/kuulostaa hyvältä.": "-lta/-ltä = উপরিতল থেকে বা ব্যক্তির কাছ থেকে। অনুভূতিতেও: tuntuu/näyttää/kuulostaa hyvältä।",
+  "Don't use the elative for people: 'sain palautetta opettajasta' → opettajalta.": "ব্যক্তির ক্ষেত্রে elative নয়: 'sain palautetta opettajasta' → opettajalta।",
+  "'from home' replaces 'kodilta'": "'বাড়ি থেকে' — 'kodilta'-র বদলে এটি বসে",
+  "Allative -lle (onto / to a person)": "Allative -lle (উপরে / ব্যক্তির কাছে)",
+  "The allative answers mihin? / kenelle? and means motion onto a surface or to a person. The ending is always -lle (no harmony variant).": "Allative mihin? / kenelle? প্রশ্নের উত্তর দেয়, আর উপরিতলের উপরে বা কোনো ব্যক্তির কাছে যাওয়া বোঝায়। প্রত্যয় সবসময় -lle (স্বরসঙ্গতির আলাদা রূপ নেই)।",
+  "table → onto the table": "টেবিল → টেবিলের উপরে",
+  "I give the book to you.": "আমি তোমাকে বইটি দিচ্ছি।",
+  "I go to the market square.": "আমি বাজারে যাচ্ছি।",
+  "-lle = always -lle, onto a surface or to a person.": "-lle = সবসময় -lle; উপরিতলে বা ব্যক্তির কাছে।",
+  "-lle = mihin? / kenelle? The ending is ALWAYS -lle, no harmony variant.": "-lle = mihin? / kenelle? প্রত্যয় সবসময় -lle, স্বরসঙ্গতির আলাদা রূপ নেই।",
+  "There is no '-llä' form: 'työnantajallä' → työnantajalle.": "'-llä' বলে কোনো রূপ নেই: 'työnantajallä' → työnantajalle।",
+  "koti uses the inside series": "koti ভিতরের সেট নেয়",
+  "Essive (-na/-nä)": "Essive কারক (-na/-nä)",
+  "The essive answers 'as what? in what state?' and marks a role or state ('as a') and weekdays. 'Työskentelen ohjaajana' (I work as an instructor), 'maanantaina' (on Monday), 'lapsena' (as a child).": "Essive 'কী হিসেবে? কোন অবস্থায়?' প্রশ্নের উত্তর দেয়, আর ভূমিকা বা অবস্থা ('হিসেবে') এবং বারের নাম বোঝায়। 'Työskentelen ohjaajana' (আমি প্রশিক্ষক হিসেবে কাজ করি), 'maanantaina' (সোমবারে), 'lapsena' (শিশু অবস্থায়)।",
+  "I work as an instructor": "আমি প্রশিক্ষক হিসেবে কাজ করি",
+  "on Monday I have a course": "সোমবারে আমার একটি কোর্স আছে",
+  "as a child I lived in Spain": "শিশু অবস্থায় আমি স্পেনে থাকতাম",
+  "-na/-nä = 'as' (role, day, state).": "-na/-nä = 'হিসেবে' (ভূমিকা, বার, অবস্থা)।",
+  "Essive = a temporary role/state AND weekdays. Compare: essive = state (as a teacher), translative = change (into a teacher).": "Essive = সাময়িক ভূমিকা/অবস্থা এবং বারের নাম। তুলনা করুন: essive = অবস্থা (শিক্ষক হিসেবে), translative = পরিবর্তন (শিক্ষক হয়ে ওঠা)।",
+  "Nominative for a role: 'työskentelen kokki' → työskentelen kokkina.": "ভূমিকা বোঝাতে nominative: 'työskentelen kokki' → työskentelen kokkina।",
+  "'tänä' only in the essive": "'tänä' কেবল essive-এ",
+  "don't take the essive": "essive নেয় না",
+  "Translative (-ksi)": "Translative কারক (-ksi)",
+  "The translative answers 'into what? becoming what?' and marks change ('become'), purpose, and a set period. 'Opiskelen kääntäjäksi' (studying to become a translator), 'sää muuttui kylmäksi' (turned cold), 'kahdeksi viikoksi' (for two weeks).": "Translative 'কীসে? কী হয়ে উঠছে?' প্রশ্নের উত্তর দেয়, আর পরিবর্তন ('হয়ে ওঠা'), উদ্দেশ্য ও নির্দিষ্ট সময়সীমা বোঝায়। 'Opiskelen kääntäjäksi' (অনুবাদক হওয়ার জন্য পড়ছি), 'sää muuttui kylmäksi' (আবহাওয়া ঠান্ডা হয়ে গেল), 'kahdeksi viikoksi' (দুই সপ্তাহের জন্য)।",
+  "I'm studying to become a translator": "আমি অনুবাদক হওয়ার জন্য পড়ছি",
+  "the weather turned cold": "আবহাওয়া ঠান্ডা হয়ে গেল",
+  "I came to Finland for two years": "আমি দুই বছরের জন্য ফিনল্যান্ডে এসেছি",
+  "-ksi = 'into/for' (change, purpose, period).": "-ksi = 'হয়ে / জন্য' (পরিবর্তন, উদ্দেশ্য, সময়সীমা)।",
+  "Translative = change into a state. The pair: essive (being) vs. translative (becoming). 'miksi?' is the translative of 'mikä'.": "Translative = কোনো অবস্থায় পরিবর্তিত হওয়া। জোড়াটি: essive (থাকা) বনাম translative (হয়ে ওঠা)। 'miksi?' হলো 'mikä'-র translative।",
+  "Essive for a change: 'tulen iloisena' → tulen iloiseksi (= I become happy).": "পরিবর্তন বোঝাতে essive: 'tulen iloisena' → tulen iloiseksi (= আমি খুশি হয়ে উঠি)।",
+  "with a possessive suffix: -kseni": "অধিকার-প্রত্যয়সহ: -kseni",
+  "= translative of 'mikä'": "= 'mikä'-র translative",
+  "Rare cases (abessive, comitative, instructive)": "বিরল কারক (abessive, comitative, instructive)",
+  "Three rare cases: abessive -tta/-ttä ('without': rahatta), comitative -ine- ('with': perheineen = with one's family), instructive -in ('by means of': omin käsin = with one's own hands, jalan = on foot). Mostly in fixed expressions.": "তিনটি বিরল কারক: abessive -tta/-ttä ('ছাড়া': rahatta), comitative -ine- ('সঙ্গে': perheineen = পরিবারসহ), instructive -in ('দিয়ে': omin käsin = নিজের হাতে, jalan = পায়ে হেঁটে)। বেশির ভাগই স্থির বাগ্‌ধারায় টিকে আছে।",
+  "I left without money": "আমি টাকা ছাড়াই রওনা দিলাম",
+  "he came with his family": "সে পরিবারসহ এসেছিল",
+  "I came on foot": "আমি পায়ে হেঁটে এসেছি",
+  "-tta = without; -ine- = with; -in = by means of.": "-tta = ছাড়া; -ine- = সঙ্গে; -in = দিয়ে।",
+  "These are C-level / frozen. In everyday Finnish 'ilman + partitive' and 'kanssa' are more common than the abessive and comitative.": "এগুলো C-স্তরের বা স্থির রূপ। দৈনন্দিন ফিনিশে abessive ও comitative-এর চেয়ে 'ilman + পার্টিটিভ' এবং 'kanssa' অনেক বেশি প্রচলিত।",
+  "'rahatta' is formal; everyday Finnish says 'ilman rahaa'.": "'rahatta' আনুষ্ঠানিক; দৈনন্দিন ফিনিশে বলা হয় 'ilman rahaa'।",
+  "the instructive survives in idioms": "বাগ্‌ধারায় instructive এখনো টিকে আছে",
+  "the comitative requires a possessive suffix": "comitative-এ অধিকার-প্রত্যয় লাগে",
+  "Partitive -a/-ä, -ta/-tä, -tta/-ttä": "পার্টিটিভ -a/-ä, -ta/-tä, -tta/-ttä",
+  "The partitive marks a part, an unspecified amount, or an unfinished action. It is also the object in negative sentences, after numbers, and with many verbs. Endings: -a/-ä (talo→taloa), -ta/-tä (maa→maata), -tta/-ttä (some words, vesi→vettä).": "পার্টিটিভ বোঝায় অংশ, অনির্দিষ্ট পরিমাণ, বা অসমাপ্ত কাজ। নাবাচক বাক্যে, সংখ্যার পরে এবং অনেক ক্রিয়ার সঙ্গে কর্মও পার্টিটিভে বসে। প্রত্যয়: -a/-ä (talo→taloa), -ta/-tä (maa→maata), -tta/-ttä (কিছু শব্দে, vesi→vettä)।",
+  "I drink (some) coffee.": "আমি (কিছুটা) কফি পান করি।",
+  "I'm not buying a car (negative → partitive).": "আমি গাড়ি কিনছি না (নাবাচক → পার্টিটিভ)।",
+  "three apples (after a number → partitive)": "তিনটি আপেল (সংখ্যার পরে → পার্টিটিভ)",
+  "Part, negation, number, amount → partitive.": "অংশ, নাবাচকতা, সংখ্যা, পরিমাণ → পার্টিটিভ।",
+  "Partitive: negation, ongoing action, indefinite amount, after a number. Endings -a/-ä, -ta/-tä, -tta/-ttä.": "পার্টিটিভ: নাবাচকতা, চলমান কাজ, অনির্দিষ্ট পরিমাণ, সংখ্যার পরে। প্রত্যয় -a/-ä, -ta/-tä, -tta/-ttä।",
+  "Partitive after a number: 'kaksi euro' → kaksi euroa; 'kolme lapset' → kolme lasta.": "সংখ্যার পরে পার্টিটিভ: 'kaksi euro' → kaksi euroa; 'kolme lapset' → kolme lasta।",
+  "old -i word: i → e, tt": "পুরোনো -i শব্দ: i → e, tt",
+  "irregular stem miehe-": "অনিয়মিত শব্দমূল miehe-",
+  "psi → s": "psi → s",
+  "exceptional short partitive": "ব্যতিক্রমী সংক্ষিপ্ত পার্টিটিভ",
+  "Genitive -n (possession)": "Genitive -n (অধিকার)",
+  "The genitive ends in -n and shows possession ('of something / -'s'). It also precedes many postpositions: talon edessä = in front of the house. The genitive stem is often the stem other cases build on.": "Genitive -n দিয়ে শেষ হয় এবং অধিকার বোঝায় ('কোনো কিছুর / -র')। অনেক পরসর্গের আগেও এটি বসে: talon edessä = বাড়ির সামনে। Genitive-এর শব্দমূলের উপরেই প্রায়ই অন্য কারকগুলো গড়ে ওঠে।",
+  "Liisa's = of Liisa → Liisan (the genitive stem)": "Liisa-র = Liisa → Liisan (genitive শব্দমূল)",
+  "Liisa's book": "Liisa-র বই",
+  "in front of the house": "বাড়ির সামনে",
+  "-n at the end = 'whose?' possession.": "শেষে -n = 'কার?' অর্থাৎ অধিকার।",
+  "-n = possession ('whose?') and the stem for many cases. Gradation often lands on the genitive.": "-n = অধিকার ('কার?') এবং বহু কারকের ভিত্তি-মূল। ব্যঞ্জন পরিবর্তন প্রায়ই genitive-এই ঘটে।",
+  "Forgetting gradation: 'tutkinton' → tutkinnon; it's 'pankin' not 'pankkin'.": "ব্যঞ্জন পরিবর্তন ভুলে যাওয়া: 'tutkinton' → tutkinnon; হয় 'pankin', 'pankkin' নয়।",
+  "stem vete-": "শব্দমূল vete-",
+  "stem miehe-": "শব্দমূল miehe-",
+  "-nen → -sen": "-nen → -sen",
+  "number is irregular": "সংখ্যাটি অনিয়মিত",
+  "Accusative object -n (whole/complete)": "Accusative কর্ম -n (সম্পূর্ণ/গোটা)",
+  "When the action is complete and the object is whole, the singular object takes -n (it looks like the genitive). In the plural the object ending is -t, and personal pronouns take -t (minut, sinut, hänet).": "কাজ যখন সম্পূর্ণ এবং কর্মটি গোটা, তখন একবচনের কর্ম -n নেয় (দেখতে genitive-এর মতোই)। বহুবচনে কর্মের প্রত্যয় -t, আর পুরুষবাচক সর্বনাম নেয় -t (minut, sinut, hänet)।",
+  "I'll buy the (whole) car → -n": "আমি (গোটা) গাড়িটি কিনব → -n",
+  "We open the window.": "আমরা জানালাটি খুলি।",
+  "Do you know him/her? (pronoun → -t)": "তুমি কি তাকে চেনো? (সর্বনাম → -t)",
+  "Complete + whole → -n.": "সম্পূর্ণ + গোটা → -n।",
+  "Whole object: singular -n, plural -t, pronouns their own -t form (minut, hänet).": "গোটা কর্ম: একবচনে -n, বহুবচনে -t, সর্বনামের নিজস্ব -t রূপ (minut, hänet)।",
+  "-n for a pronoun is wrong: 'näen hänen' → näen hänet; 'hän tapasi minun' → minut.": "সর্বনামে -n ভুল: 'näen hänen' → näen hänet; 'hän tapasi minun' → minut।",
+  "personal pronoun takes -t": "পুরুষবাচক সর্বনাম -t নেয়",
+  "not 'hänen' as an object": "কর্ম হিসেবে 'hänen' নয়",
+  "object of the question word": "প্রশ্নবাচক শব্দের কর্মরূপ",
+  "Choosing the object: partitive vs. accusative": "কর্ম বাছাই: পার্টিটিভ বনাম accusative",
+  "Decision tree: 1) Is the sentence negative? → partitive. 2) Is the action ongoing/incomplete? → partitive. 3) Is the amount indefinite / a mass noun? → partitive. Otherwise, when the result is complete and whole → accusative (-n / -t).": "সিদ্ধান্ত-ছক: ১) বাক্যটি কি নাবাচক? → পার্টিটিভ। ২) কাজটি কি চলমান/অসমাপ্ত? → পার্টিটিভ। ৩) পরিমাণ কি অনির্দিষ্ট বা বস্তুবাচক? → পার্টিটিভ। অন্যথায়, ফল যখন সম্পূর্ণ ও গোটা → accusative (-n / -t)।",
+  "I'm reading the book (in progress, partitive) / I'll read the book (to the end, accusative).": "আমি বইটি পড়ছি (চলমান, পার্টিটিভ) / আমি বইটি পড়ে ফেলব (শেষ পর্যন্ত, accusative)।",
+  "I'm not reading the book (negative → partitive).": "আমি বইটি পড়ছি না (নাবাচক → পার্টিটিভ)।",
+  "I'm eating an apple (some of it) / I eat the (whole) apple.": "আমি আপেল খাচ্ছি (কিছুটা) / আমি (গোটা) আপেলটি খাই।",
+  "Negative–ongoing–indefinite → P. Otherwise → -n.": "নাবাচক–চলমান–অনির্দিষ্ট → পার্টিটিভ। অন্যথায় → -n।",
+  "Negative / ongoing / indefinite → partitive. Complete + whole → accusative.": "নাবাচক / চলমান / অনির্দিষ্ট → পার্টিটিভ। সম্পূর্ণ + গোটা → accusative।",
+  "Always partitive in the negative: 'en osta auton' → en osta autoa.": "নাবাচকে সবসময় পার্টিটিভ: 'en osta auton' → en osta autoa।",
+  "always partitive: rakastan sinua": "সবসময় পার্টিটিভ: rakastan sinua",
+  "odotan bussia (not bussin)": "odotan bussia (bussin নয়)",
+  "autan sinua": "autan sinua",
+  "Verb government (verb + case)": "ক্রিয়ার কারক-শাসন (ক্রিয়া + কারক)",
+  "Many verbs require a specific case that must be learned with the verb. E.g. pitää + elative (pidän kahvista = I like coffee), rakastua + illative (rakastuin Suomeen = I fell for Finland), osallistua + illative/allative, keskustella + elative (talk about), odottaa + partitive.": "অনেক ক্রিয়া একটি নির্দিষ্ট কারক দাবি করে, যা ক্রিয়ার সঙ্গেই শিখতে হয়। যেমন pitää + elative (pidän kahvista = আমি কফি পছন্দ করি), rakastua + illative (rakastuin Suomeen = আমি ফিনল্যান্ডের প্রেমে পড়েছি), osallistua + illative/allative, keskustella + elative (কোনো বিষয়ে আলোচনা করা), odottaa + পার্টিটিভ।",
+  "I like the Finnish language (elative)": "আমি ফিনিশ ভাষা পছন্দ করি (elative)",
+  "I take part in the course (allative)": "আমি কোর্সটিতে অংশ নিই (allative)",
+  "I got to know the neighbour (illative)": "আমি প্রতিবেশীর সঙ্গে পরিচিত হলাম (illative)",
+  "Learn a verb together with the case it takes.": "ক্রিয়াটি যে কারক নেয়, তার সঙ্গেই ক্রিয়াটি শিখুন।",
+  "Government is learned verb by verb — the case doesn't always follow from meaning. Always note a new verb with an example sentence.": "কারক-শাসন ক্রিয়া ধরে ধরে শিখতে হয় — অর্থ দেখে কারক সবসময় বোঝা যায় না। নতুন ক্রিয়া সবসময় একটি উদাহরণ-বাক্যসহ টুকে রাখুন।",
+  "English logic: 'odotan sinulle' → odotan sinua; 'pidän suomea' → pidän suomesta.": "ইংরেজির যুক্তি প্রয়োগ: 'odotan sinulle' → odotan sinua; 'pidän suomea' → pidän suomesta।",
+  "'like' → elative": "'পছন্দ করা' → elative",
+  "illative": "illative কারক",
+  "always partitive": "সবসময় পার্টিটিভ",
+  "The plural (plural cases)": "বহুবচন (বহুবচনের কারক)",
+  "Basic plural -t (talot) only in the nominative. In other cases the plural marker is -i-/-j-: partitive -ja/-ia/-ita (taloja, maita), genitive -jen/-ien (talojen), inessive -issa (taloissa). The plural stem is built from the genitive.": "সাধারণ বহুবচন -t (talot) কেবল nominative-এ। অন্য কারকে বহুবচনের চিহ্ন -i-/-j-: পার্টিটিভ -ja/-ia/-ita (taloja, maita), genitive -jen/-ien (talojen), inessive -issa (taloissa)। বহুবচনের শব্দমূল গড়ে ওঠে genitive থেকে।",
+  "two children → the children": "দুটি শিশু → শিশুরা",
+  "I talk about many countries": "আমি অনেক দেশ নিয়ে কথা বলি",
+  "I worked in many banks": "আমি অনেক ব্যাংকে কাজ করেছি",
+  "-t only in the nominative; elsewhere -i-/-j-.": "-t কেবল nominative-এ; অন্য সব জায়গায় -i-/-j-।",
+  "Only the nominative plural uses -t. Every other plural case is built with the -i-/-j- marker on the genitive stem.": "কেবল nominative বহুবচনে -t বসে। বাকি সব বহুবচন-কারক গড়ে ওঠে genitive শব্দমূলের উপর -i-/-j- চিহ্ন দিয়ে।",
+  "-t as object/location: 'näen talot' (whole) vs. 'näen taloja' (partitive).": "কর্ম বা স্থানে -t: 'näen talot' (গোটা) বনাম 'näen taloja' (পার্টিটিভ)।",
+  "yö → öi in the plural": "বহুবচনে yö → öi",
+  "long vowel": "দীর্ঘ স্বর",
+  "Adjective agreement": "বিশেষণের অন্বয়",
+  "The adjective takes the same case and number as its noun. 'Isossa talossa' (in a big house) — both the adjective and the noun take -ssa. This holds in every case.": "বিশেষণ তার বিশেষ্যের মতোই একই কারক ও বচন নেয়। 'Isossa talossa' (বড় বাড়ির ভিতরে) — বিশেষণ ও বিশেষ্য দুটোতেই -ssa। এটি সব কারকেই প্রযোজ্য।",
+  "a big house → in a big house": "একটি বড় বাড়ি → একটি বড় বাড়ির ভিতরে",
+  "a beautiful flower → of a beautiful flower": "একটি সুন্দর ফুল → একটি সুন্দর ফুলের",
+  "new shoes (plural agrees too)": "নতুন জুতো (বহুবচনেও অন্বয় ঘটে)",
+  "The adjective copies the noun's ending.": "বিশেষণ বিশেষ্যের প্রত্যয়টিই নকল করে।",
+  "The adjective takes the same case and number as its noun. The same ending on both.": "বিশেষণ তার বিশেষ্যের মতোই একই কারক ও বচন নেয়। দুটোতেই একই প্রত্যয়।",
+  "Leaving the adjective in the base form: 'isossa talo' → isossa talossa; 'pitkä kokemuksen' → pitkän kokemuksen.": "বিশেষণকে মূল রূপে রেখে দেওয়া: 'isossa talo' → isossa talossa; 'pitkä kokemuksen' → pitkän kokemuksen।",
+  "indeclinable adjectives": "রূপ-অপরিবর্তনীয় বিশেষণ",
+  "don't decline: koko päivän, pikku juttu": "রূপ বদলায় না: koko päivän, pikku juttu",
+  "Comparative & superlative": "তুলনাবাচক ও সর্বোচ্চবাচক",
+  "Comparison: comparative -mpi (bigger), superlative -in (biggest). 'Kuin' links the things compared: isompi kuin = bigger than. The form still declines in cases: suuremmassa.": "তুলনা: comparative -mpi (আরও বড়), superlative -in (সবচেয়ে বড়)। 'Kuin' তুলনার দুই দিককে জোড়ে: isompi kuin = -র চেয়ে বড়। রূপটি কারকেও বদলায়: suuremmassa।",
+  "big → bigger → biggest": "বড় → আরও বড় → সবচেয়ে বড়",
+  "Helsinki is bigger than Espoo.": "Helsinki, Espoo-র চেয়ে বড়।",
+  "best / better / good (irregular)": "সেরা / আরও ভালো / ভালো (অনিয়মিত)",
+  "-mpi = more; -in = most.": "-mpi = আরও; -in = সবচেয়ে।",
+  "-mpi = comparative, -in = superlative. 'kuin' = than. A few are irregular (hyvä→parempi→paras).": "-mpi = comparative, -in = superlative। 'kuin' = -র চেয়ে। কয়েকটি অনিয়মিত (hyvä→parempi→paras)।",
+  "Double comparison: 'enemmän parempi' → just parempi. And 'hyvempi' → parempi.": "দ্বিগুণ তুলনা: 'enemmän parempi' → শুধু parempi। আর 'hyvempi' → parempi।",
+  "fully irregular": "সম্পূর্ণ অনিয়মিত",
+  "k → d / k → ∅": "k → d / k → ∅",
+  "stem uude-": "শব্দমূল uude-",
+  "Possessive suffix (-ni, -si, -nsa…)": "অধিকার-প্রত্যয় (-ni, -si, -nsa…)",
+  "Possession can be shown by a suffix at the end of the word: -ni (my), -si (your), -nsa/-nsä (his/her), -mme (our), -nne (your pl.), -nsa (their). The genitive pronoun often accompanies it: minun autoni.": "শব্দের শেষে একটি প্রত্যয় দিয়ে অধিকার বোঝানো যায়: -ni (আমার), -si (তোমার), -nsa/-nsä (তার), -mme (আমাদের), -nne (তোমাদের), -nsa (তাদের)। সঙ্গে প্রায়ই genitive সর্বনামও থাকে: minun autoni।",
+  "car → my car": "গাড়ি → আমার গাড়ি",
+  "home → your home": "বাড়ি → তোমার বাড়ি",
+  "my name is…": "আমার নাম…",
+  "The suffix names the owner with no separate word.": "প্রত্যয়টিই মালিককে বুঝিয়ে দেয়, আলাদা কোনো শব্দ লাগে না।",
+  "The possessive suffix comes AFTER the case ending, last (työssäni). The genitive pronoun is optional.": "অধিকার-প্রত্যয় বসে কারক-প্রত্যয়ের পরে, একদম শেষে (työssäni)। Genitive সর্বনামটি ঐচ্ছিক।",
+  "Just the pronoun with no suffix is spoken-style: in written Finnish 'minun nimi' → minun nimeni.": "প্রত্যয় ছাড়া কেবল সর্বনাম — এটি কথ্য রীতি: লেখ্য ফিনিশে 'minun nimi' → minun nimeni।",
+  "3rd person -nsa OR -Vn": "তৃতীয় পুরুষে -nsa অথবা -Vn",
+  "-Vn after a vowel": "স্বরের পরে -Vn",
+  "Predicative (olla + what kind)": "বিধেয়-বিশেষণ (olla + কেমন)",
+  "The predicative is the complement after \"olla\". It's usually NOMINATIVE: \"Talo on iso\" (the house is big). But for a mass noun or an uncountable quality it's PARTITIVE: \"Vesi on kylmää\" (water is cold), \"Kahvi on hyvää.\" Plural kinds are often partitive: \"He ovat opiskelijoita.\"": "বিধেয়-বিশেষণ হলো \"olla\"-র পরের অংশ। সাধারণত এটি NOMINATIVE: \"Talo on iso\" (বাড়িটি বড়)। কিন্তু বস্তুবাচক বা অগণনীয় গুণের বেলায় এটি পার্টিটিভ: \"Vesi on kylmää\" (পানি ঠান্ডা), \"Kahvi on hyvää.\" বহুবচনে শ্রেণি বোঝালে প্রায়ই পার্টিটিভ: \"He ovat opiskelijoita.\"",
+  "the house is big (nominative)": "বাড়িটি বড় (nominative)",
+  "the water is cold (partitive — mass noun)": "পানি ঠান্ডা (পার্টিটিভ — বস্তুবাচক)",
+  "they are students (plural partitive)": "তারা শিক্ষার্থী (বহুবচন পার্টিটিভ)",
+  "Countable → nominative; mass/abstract → partitive.": "গণনীয় → nominative; বস্তুবাচক/বিমূর্ত → পার্টিটিভ।",
+  "Mass nouns and abstract qualities take a partitive predicative (maito on hyvää, sää on kaunista). A single countable thing → nominative (auto on uusi).": "বস্তুবাচক ও বিমূর্ত গুণ পার্টিটিভ বিধেয় নেয় (maito on hyvää, sää on kaunista)। একটি গণনীয় বস্তু → nominative (auto on uusi)।",
+  "\"Vesi on kylmä\" → kylmää; \"kahvi on hyvä\" (the coffee-item) vs. \"hyvää\" (the quality).": "\"Vesi on kylmä\" → kylmää; \"kahvi on hyvä\" (কফি-বস্তুটি) বনাম \"hyvää\" (গুণটি)।",
+  "fixed partitive predicatives": "স্থির পার্টিটিভ বিধেয়",
+  "plural kind → partitive": "বহুবচনে শ্রেণি → পার্টিটিভ",
+  "Numbers & partitive": "সংখ্যা ও পার্টিটিভ",
+  "Learn 0–10 by heart. After a number (except 'one') the noun is in the singular partitive: kaksi euroa, kolme lasta. Ordinals: ensimmäinen, toinen, kolmas…": "০–১০ মুখস্থ করে নিন। সংখ্যার পরে ('এক' ছাড়া) বিশেষ্য বসে একবচন পার্টিটিভে: kaksi euroa, kolme lasta। ক্রমবাচক: ensimmäinen, toinen, kolmas…",
+  "two coffees": "দুই কাপ কফি",
+  "three children": "তিনটি শিশু",
+  "it's five o'clock": "এখন পাঁচটা বাজে",
+  "A number (except one) → partitive.": "সংখ্যা (এক ছাড়া) → পার্টিটিভ।",
+  "A number (except 1) → singular partitive. Big numbers are built from parts. Ordinals decline.": "সংখ্যা (১ ছাড়া) → একবচন পার্টিটিভ। বড় সংখ্যা অংশ জুড়ে গড়া হয়। ক্রমবাচক শব্দ কারকে রূপ বদলায়।",
+  "Plural after a number: 'kaksi autot' → kaksi autoa; 'viisi vuotta', not 'viisi vuodet'.": "সংখ্যার পরে বহুবচন: 'kaksi autot' → kaksi autoa; হয় 'viisi vuotta', 'viisi vuodet' নয়।",
+  "irregular genitive": "অনিয়মিত genitive",
+  "ordinals 1st–2nd don't follow the -s pattern": "১ম–২য় ক্রমবাচক শব্দ -s ছাঁদ মানে না",
+  "each part declines separately": "প্রতিটি অংশ আলাদাভাবে রূপ বদলায়",
+  "Time expressions": "সময়-প্রকাশ",
+  "Clock: 'kello on…'. Weekdays in the essive (maanantaina = on Monday). Months and years in the inessive (tammikuussa, vuonna 2024). Duration in the partitive (kaksi tuntia).": "ঘড়ি: 'kello on…'। বারের নাম essive-এ (maanantaina = সোমবারে)। মাস ও বছর inessive-এ (tammikuussa, vuonna 2024)। স্থিতিকাল পার্টিটিভে (kaksi tuntia)।",
+  "it's three o'clock": "এখন তিনটা বাজে",
+  "on Monday": "সোমবারে",
+  "in 2024": "২০২৪ সালে",
+  "When? day → -na; month → -ssa.": "কখন? বার → -na; মাস → -ssa।",
+  "Day → essive (maanantaina). Month/year → inessive (elokuussa). Part of day → adessive (aamulla). Duration → partitive.": "বার → essive (maanantaina)। মাস/বছর → inessive (elokuussa)। দিনের ভাগ → adessive (aamulla)। স্থিতিকাল → পার্টিটিভ।",
+  "Day in the wrong case: 'maanantaissa' → maanantaina; 'aamussa' → aamulla.": "বার ভুল কারকে: 'maanantaissa' → maanantaina; 'aamussa' → aamulla।",
+  "frozen adverbs, no case": "স্থির ক্রিয়াবিশেষণ, কোনো কারক নেই",
+  "adessive, but 'öisin' = plural habit": "adessive, তবে 'öisin' = বহুবচনে অভ্যাস",
+  "recurring time: plural instructive": "পুনরাবৃত্ত সময়: বহুবচন instructive",
+  "Clitic particles (-kin, -kaan, -han…)": "ক্লিটিক অনুসর্গ (-kin, -kaan, -han…)",
+  "Small clitics at the end of a word shift the tone: -kin ('too': minäkin = me too), -kaan/-kään ('not either': en minäkään), -han/-hän (softening/'you know'), -pa/-pä (emphasis: onpa kaunis = how beautiful), -kO (question: tuletko).": "শব্দের শেষে ছোট ছোট ক্লিটিক সুর বদলে দেয়: -kin ('ও/-ও': minäkin = আমিও), -kaan/-kään ('-ও না': en minäkään), -han/-hän (নরম করা / 'জানোই তো'), -pa/-pä (জোর: onpa kaunis = কী সুন্দর!), -kO (প্রশ্ন: tuletko)।",
+  "I speak Finnish too": "আমিও ফিনিশ বলি",
+  "I don't know either": "আমিও জানি না",
+  "how cold it is today": "আজ কী ঠান্ডা!",
+  "-kin = also; -kaan = not either; -kO = question.": "-kin = -ও; -kaan = -ও না; -kO = প্রশ্ন।",
+  "Clitics always come LAST, after the case and possessive endings (talossanikin). -kin turns into -kaan in the negative.": "ক্লিটিক সবসময় সবার শেষে বসে — কারক ও অধিকার-প্রত্যয়েরও পরে (talossanikin)। নাবাচকে -kin হয়ে যায় -kaan।",
+  "-kin in a negative: 'en minäkin' → en minäkään.": "নাবাচকে -kin: 'en minäkin' → en minäkään।",
+  "clitic comes last, after everything": "ক্লিটিক সবার শেষে, সবকিছুর পরে",
+  "chosen by vowel harmony": "স্বরসঙ্গতি অনুযায়ী বেছে নেওয়া হয়",
+  "Questions: -ko/-kö and question words": "প্রশ্ন: -ko/-kö এবং প্রশ্নবাচক শব্দ",
+  "A yes/no question is made with the suffix -ko/-kö on the questioned word, moved to the front: Puhutko suomea? = Do you speak Finnish? A wh-question begins with a question word: mikä, kuka, missä, milloin, miksi, miten.": "হ্যাঁ/না প্রশ্ন গঠিত হয় যে শব্দটি নিয়ে প্রশ্ন, তার সঙ্গে -ko/-kö প্রত্যয় যোগ করে এবং শব্দটিকে সামনে এনে: Puhutko suomea? = তুমি কি ফিনিশ বলো? প্রশ্নবাচক প্রশ্ন শুরু হয় প্রশ্নবাচক শব্দ দিয়ে: mikä, kuka, missä, milloin, miksi, miten।",
+  "Do you speak Finnish?": "তুমি কি ফিনিশ বলো?",
+  "Where do you live?": "তুমি কোথায় থাকো?",
+  "Why isn't he coming?": "সে আসছে না কেন?",
+  "-ko/-kö on the verb → yes/no. Question word → information.": "ক্রিয়ায় -ko/-kö → হ্যাঁ/না। প্রশ্নবাচক শব্দ → তথ্য।",
+  "Yes/no question: attach -ko/-kö to the verb and move it first (Puhutko…?). A question word comes first.": "হ্যাঁ/না প্রশ্ন: ক্রিয়ার সঙ্গে -ko/-kö যোগ করে সেটিকে প্রথমে আনুন (Puhutko…?)। প্রশ্নবাচক শব্দ সবার আগে বসে।",
+  "Forgetting -ko: 'Sinä puhut suomea?' → Puhutko sinä suomea? Choose -ko/-kö by vowel harmony.": "-ko ভুলে যাওয়া: 'Sinä puhut suomea?' → Puhutko sinä suomea? -ko/-kö বেছে নিন স্বরসঙ্গতি অনুযায়ী।",
+  "irregular declension": "অনিয়মিত রূপ-পরিবর্তন",
+  "Sentence types: simple, compound, complex": "বাক্যের ধরন: সরল, যৌগিক, জটিল",
+  "A simple sentence has one predicate. A compound sentence joins two main clauses with a coordinating conjunction: ja, mutta, tai, vai, vaan. A complex sentence attaches a subordinate clause to a main clause with a subordinating conjunction or pronoun: että, koska, jos, kun, joka.": "সরল বাক্যে একটিই বিধেয় থাকে। যৌগিক বাক্য দুটি প্রধান খণ্ডবাক্যকে জোড়ে সমুচ্চয়ী অব্যয় দিয়ে: ja, mutta, tai, vai, vaan। জটিল বাক্যে প্রধান খণ্ডবাক্যের সঙ্গে একটি অধীন খণ্ডবাক্য যুক্ত হয় অধীনতাসূচক অব্যয় বা সর্বনাম দিয়ে: että, koska, jos, kun, joka।",
+  "Simple: Liisa is reading a book.": "সরল: Liisa একটি বই পড়ছে।",
+  "Compound: Liisa reads, and Pertti watches TV.": "যৌগিক: Liisa পড়ে, আর Pertti টিভি দেখে।",
+  "Complex: They are home because it's raining.": "জটিল: তারা বাড়িতে আছে, কারণ বৃষ্টি হচ্ছে।",
+  "Simple = 1 verb. Compound = main+main. Complex = main+subordinate.": "সরল = ১টি ক্রিয়া। যৌগিক = প্রধান+প্রধান। জটিল = প্রধান+অধীন।",
+  "Compound = two main clauses (ja, mutta…). Complex = main + subordinate (koska, että, jos, kun, joka). Comma before the subordinate clause.": "যৌগিক = দুটি প্রধান খণ্ডবাক্য (ja, mutta…)। জটিল = প্রধান + অধীন (koska, että, jos, kun, joka)। অধীন খণ্ডবাক্যের আগে কমা বসে।",
+  "Missing comma or wrong connector: 'Opiskelen suomea koska…' needs a comma: 'Opiskelen suomea, koska…'.": "কমা বাদ পড়া বা ভুল সংযোজক: 'Opiskelen suomea koska…'-তে কমা দরকার: 'Opiskelen suomea, koska…'।",
+  "the relative pronoun declines": "সম্বন্ধবাচক সর্বনামটি রূপ বদলায়",
+  "refers to a whole clause or a word": "একটি গোটা খণ্ডবাক্য বা একটি শব্দকে নির্দেশ করে",
+  "in a conditional 'niin' is optional": "শর্তবাক্যে 'niin' ঐচ্ছিক",
+  "The neutral order is SVO: \"Minä luen kirjan\" (I read the book). But Finnish is flexible, because case endings mark the roles — you can move words for emphasis. The known thing (topic) comes first, the new/most important info last. When the clause starts with something other than the subject, the verb comes second: \"Eilen kävin kaupassa.\"": "নিরপেক্ষ ক্রম হলো SVO: \"Minä luen kirjan\" (আমি বইটি পড়ি)। তবে ফিনিশ নমনীয়, কারণ কারক-প্রত্যয়ই ভূমিকা ঠিক করে দেয় — জোর দিতে শব্দ সরানো যায়। পরিচিত বিষয়টি আগে বসে, নতুন/সবচেয়ে গুরুত্বপূর্ণ তথ্য শেষে। খণ্ডবাক্য যদি কর্তা ছাড়া অন্য কিছু দিয়ে শুরু হয়, ক্রিয়া বসে দ্বিতীয় স্থানে: \"Eilen kävin kaupassa.\"",
+  "I read the book (neutral SVO)": "আমি বইটি পড়ি (নিরপেক্ষ SVO)",
+  "the book I'll read, not the paper (fronted object)": "বইটিই আমি পড়ব, পত্রিকা নয় (কর্ম সামনে আনা)",
+  "yesterday I went to the shop (verb second)": "গতকাল আমি দোকানে গিয়েছিলাম (ক্রিয়া দ্বিতীয় স্থানে)",
+  "SVO is neutral; the cases allow other orders.": "SVO নিরপেক্ষ; কারকগুলোই অন্য ক্রম সম্ভব করে।",
+  "Because cases mark subject and object, word order changes emphasis, not the basic meaning. The end of the clause is the \"weighty\" new-information slot.": "যেহেতু কারকই কর্তা ও কর্ম চিহ্নিত করে, শব্দক্রম বদলালে জোর বদলায়, মূল অর্থ নয়। খণ্ডবাক্যের শেষটাই নতুন তথ্যের \"ভারী\" জায়গা।",
+  "English rigidity: when a clause starts with a time or place, the verb comes right after (Eilen kävin…).": "ইংরেজির কড়া ক্রম প্রয়োগ: খণ্ডবাক্য সময় বা স্থান দিয়ে শুরু হলে ক্রিয়া ঠিক তার পরেই বসে (Eilen kävin…)।",
+  "yes/no question: verb + -ko first": "হ্যাঁ/না প্রশ্ন: ক্রিয়া + -ko আগে",
+  "existential: place first": "অস্তিত্ববাচক বাক্য: স্থান আগে",
+  "question word first": "প্রশ্নবাচক শব্দ আগে",
+  "Existential clause (there is/are)": "অস্তিত্ববাচক বাক্য (there is/are)",
+  "An existential clause says something exists somewhere. The place comes first, the verb is always singular (on), and the subject comes last: \"Pöydällä on kirja\" (there's a book on the table). With a negative or a quantity the subject is in the PARTITIVE: \"Kahvia ei ole\" (there's no coffee), \"Pöydällä on kirjoja.\"": "অস্তিত্ববাচক বাক্য বলে যে কোথাও কিছু আছে। স্থান আগে বসে, ক্রিয়া সবসময় একবচন (on), আর কর্তা বসে শেষে: \"Pöydällä on kirja\" (টেবিলের উপরে একটি বই আছে)। নাবাচক বা পরিমাণ থাকলে কর্তা পার্টিটিভে বসে: \"Kahvia ei ole\" (কফি নেই), \"Pöydällä on kirjoja.\"",
+  "there is a book on the table": "টেবিলের উপরে একটি বই আছে",
+  "there are many people in Helsinki": "Helsinki-তে অনেক মানুষ আছে",
+  "there's no milk in the fridge": "ফ্রিজে কোনো দুধ নেই",
+  "Place + on + subject (last).": "স্থান + on + কর্তা (শেষে)।",
+  "The verb stays 3rd person singular even with a plural/partitive subject: \"Pöydällä ON kirjoja\" (not ovat). Compare: \"Kirja on pöydällä\" (a specific book) vs. \"Pöydällä on kirja\" (there exists).": "কর্তা বহুবচন বা পার্টিটিভ হলেও ক্রিয়া তৃতীয় পুরুষ একবচনেই থাকে: \"Pöydällä ON kirjoja\" (ovat নয়)। তুলনা করুন: \"Kirja on pöydällä\" (একটি নির্দিষ্ট বই) বনাম \"Pöydällä on kirja\" (কিছু একটা আছে)।",
+  "Plural verb: \"Pöydällä ovat kirjoja\" → on kirjoja.": "বহুবচন ক্রিয়া: \"Pöydällä ovat kirjoja\" → on kirjoja।",
+  "negative → subject to partitive": "নাবাচক → কর্তা পার্টিটিভে",
+  "quantity → partitive": "পরিমাণ → পার্টিটিভ",
+  "definite subject → normal order": "নির্দিষ্ট কর্তা → স্বাভাবিক ক্রম",
+  "Possessive clause (I have)": "অধিকারবাচক বাক্য (আমার আছে)",
+  "Finnish has no everyday verb \"to have\"; possession uses the adessive (-lla/-llä) + olla: \"Minulla on auto\" (I have a car). In the negative the thing owned goes to the PARTITIVE: \"Minulla ei ole autoa.\" Quantity/plural: \"Minulla on kirjoja.\"": "ফিনিশে দৈনন্দিন \"to have\" ক্রিয়া নেই; অধিকার বোঝাতে adessive (-lla/-llä) + olla ব্যবহৃত হয়: \"Minulla on auto\" (আমার একটি গাড়ি আছে)। নাবাচকে অধিকৃত জিনিসটি পার্টিটিভে যায়: \"Minulla ei ole autoa.\" পরিমাণ/বহুবচন: \"Minulla on kirjoja.\"",
+  "I have a dog": "আমার একটি কুকুর আছে",
+  "he doesn't have time": "তার সময় নেই",
+  "we have two children": "আমাদের দুটি সন্তান আছে",
+  "Owner in the adessive (-lla) + on.": "মালিক adessive-এ (-lla) + on।",
+  "The owner takes -lla/-llä and the verb is always \"on\". In the negative the owned thing goes to the partitive (ei ole autoa). Abstract nouns are often partitive even in the affirmative: minulla on aikaa.": "মালিক নেয় -lla/-llä, আর ক্রিয়া সবসময় \"on\"। নাবাচকে অধিকৃত জিনিসটি পার্টিটিভে যায় (ei ole autoa)। বিমূর্ত বিশেষ্য হ্যাঁ-বাচক বাক্যেও প্রায়ই পার্টিটিভে বসে: minulla on aikaa।",
+  "Nominative in the negative: \"minulla ei ole auto\" → autoa.": "নাবাচকে nominative: \"minulla ei ole auto\" → autoa।",
+  "abstract/mass → partitive": "বিমূর্ত/বস্তুবাচক → পার্টিটিভ",
+  "pronouns in the adessive": "সর্বনাম adessive-এ",
+  "Generic clause & the zero person": "সাধারণীকৃত বাক্য ও শূন্য-পুরুষ",
+  "A generic clause states a general truth with no specific doer. Two devices: (1) the PASSIVE — \"Suomessa syödään paljon kalaa\" (in Finland people eat a lot of fish). (2) the ZERO PERSON — a 3rd-person singular verb with no subject; it means \"anyone / people in general\": \"Täällä ei saa tupakoida\" (one may not smoke here), \"Ikkunasta näkee merelle\" (from the window you can see the sea), \"Jos tekee töitä, oppii\" (if one works, one learns).": "সাধারণীকৃত বাক্য কোনো নির্দিষ্ট কর্তা ছাড়াই একটি সাধারণ সত্য বলে। দুটি উপায়: (১) কর্মবাচ্য — \"Suomessa syödään paljon kalaa\" (ফিনল্যান্ডে অনেক মাছ খাওয়া হয়)। (২) শূন্য-পুরুষ — কর্তা ছাড়া তৃতীয় পুরুষ একবচনের ক্রিয়া; এর অর্থ \"যে কেউ / সাধারণভাবে মানুষ\": \"Täällä ei saa tupakoida\" (এখানে ধূমপান করা যাবে না), \"Ikkunasta näkee merelle\" (জানালা দিয়ে সমুদ্র দেখা যায়), \"Jos tekee töitä, oppii\" (পরিশ্রম করলে শেখা যায়)।",
+  "in Finland people eat rye bread (passive)": "ফিনল্যান্ডে রাই-রুটি খাওয়া হয় (কর্মবাচ্য)",
+  "one may not park here (zero person)": "এখানে গাড়ি রাখা যাবে না (শূন্য-পুরুষ)",
+  "in a café you can read newspapers (zero person)": "ক্যাফেতে পত্রিকা পড়া যায় (শূন্য-পুরুষ)",
+  "Passive = 'one does'; zero person = 3rd person, no subject.": "কর্মবাচ্য = 'কেউ করে'; শূন্য-পুরুষ = তৃতীয় পুরুষ, কর্তা নেই।",
+  "The zero person uses a hän-form verb WITHOUT a pronoun and means anyone. Common with modals: voi, saa, pitää, täytyy, and perception verbs (näkee, kuulee).": "শূন্য-পুরুষে hän-রূপের ক্রিয়া বসে সর্বনাম ছাড়া, আর অর্থ হয় 'যে কেউ'। প্রায়ই modal ক্রিয়ার সঙ্গে: voi, saa, pitää, täytyy, এবং ইন্দ্রিয়বাচক ক্রিয়ায় (näkee, kuulee)।",
+  "Adding a pronoun: \"sinä voit lukea\" is a specific 'you'; the zero person drops it for the general sense.": "সর্বনাম যোগ করা: \"sinä voit lukea\" মানে নির্দিষ্ট 'তুমি'; সাধারণ অর্থের জন্য শূন্য-পুরুষে সর্বনামটি বাদ যায়।",
+  "conditional in the zero person": "শূন্য-পুরুষে শর্তবাক্য",
+  "most common with modals": "modal ক্রিয়ার সঙ্গেই সবচেয়ে বেশি",
+  "Nominalization (-minen and action nouns)": "বিশেষ্যায়ন (-minen ও কর্মবাচক বিশেষ্য)",
+  "Nominalization turns a verb into a noun. The most productive is -minen: opiskella → opiskeleminen ('the studying'). It declines in every case (opiskelemista, opiskelemisesta). There are also fixed action nouns: -us/-ys (harjoitella → harjoitus), -o/-ö (muuttaa → muutto), -nti (tuoda → tuonti). Formal style favours nominalization.": "বিশেষ্যায়ন ক্রিয়াকে বিশেষ্যে পরিণত করে। সবচেয়ে ব্যবহারযোগ্য হলো -minen: opiskella → opiskeleminen ('পড়াশোনা করাটা')। এটি সব কারকে রূপ বদলায় (opiskelemista, opiskelemisesta)। এছাড়া স্থির কর্মবাচক বিশেষ্যও আছে: -us/-ys (harjoitella → harjoitus), -o/-ö (muuttaa → muutto), -nti (tuoda → tuonti)। আনুষ্ঠানিক রীতিতে বিশেষ্যায়ন বেশি চলে।",
+  "studying Finnish is fun": "ফিনিশ শেখাটা মজার",
+  "I like writing": "আমি লিখতে ভালোবাসি",
+  "completing the degree took a year": "ডিগ্রিটি শেষ করতে এক বছর লেগেছিল",
+  "-minen turns any verb into a noun.": "-minen যেকোনো ক্রিয়াকে বিশেষ্যে বদলে দেয়।",
+  "-minen is fully productive and declines like a noun. It's an essential tool in formal text and YKI writing.": "-minen যেকোনো ক্রিয়ার সঙ্গেই খাটে, আর বিশেষ্যের মতোই রূপ বদলায়। আনুষ্ঠানিক লেখায় ও YKI-র লিখন অংশে এটি অপরিহার্য।",
+  "A bare verb after a governing verb: 'pidän opiskella' → pidän opiskelemisesta.": "কারক-শাসক ক্রিয়ার পরে খালি ক্রিয়া: 'pidän opiskella' → pidän opiskelemisesta।",
+  "fixed action noun": "স্থির কর্মবাচক বিশেষ্য",
+  "fixed": "স্থির রূপ",
+  "different nuance from kysyminen": "kysyminen-এর চেয়ে অর্থের সূক্ষ্ম পার্থক্য",
+  "Referative construction (replacing että)": "Referative গঠন (että-র বদলে)",
+  "After a verb of saying or thinking, an että-clause can be compressed with a participle. Simultaneous: -van/-vän (väitän ymmärtäväni = I claim that I understand). Prior: -neen (luulin nähneeni = I thought I had seen). Subject: same → possessive suffix; different → genitive + -van.": "বলা বা ভাবা-জাতীয় ক্রিয়ার পরে että-বাক্যাংশকে participle দিয়ে সংক্ষিপ্ত করা যায়। সমকালীন: -van/-vän (väitän ymmärtäväni = আমি দাবি করি যে আমি বুঝি)। পূর্বকালীন: -neen (luulin nähneeni = আমি ভেবেছিলাম আমি দেখেছি)। কর্তা: একই → অধিকার-প্রত্যয়; ভিন্ন → genitive + -van।",
+  "I claim to understand Finnish": "আমি দাবি করি যে আমি ফিনিশ বুঝি",
+  "I thought I had seen you": "আমি ভেবেছিলাম আমি তোমাকে দেখেছি",
+  "I know that he is coming tomorrow": "আমি জানি যে সে কাল আসছে",
+  "että + verb → -van/-neen + possessive suffix.": "että + ক্রিয়া → -van/-neen + অধিকার-প্রত্যয়।",
+  "Use after verbs of saying/thinking (sanoa, väittää, luulla, tietää, huomata). Same subject → possessive suffix (-ni); different subject → genitive (hänen tulevan).": "বলা/ভাবা-জাতীয় ক্রিয়ার পরে ব্যবহার করুন (sanoa, väittää, luulla, tietää, huomata)। একই কর্তা → অধিকার-প্রত্যয় (-ni); ভিন্ন কর্তা → genitive (hänen tulevan)।",
+  "Forgetting the possessive suffix: 'väitän ymmärtävä' → ymmärtäväni.": "অধিকার-প্রত্যয় ভুলে যাওয়া: 'väitän ymmärtävä' → ymmärtäväni।",
+  "different subject = genitive": "ভিন্ন কর্তা = genitive",
+  "Temporal construction (replacing kun)": "Temporal গঠন (kun-এর বদলে)",
+  "A kun-clause is compressed: simultaneous -essa (tullessani = when/while I came), prior -tua/-tyä (tultuani = after I had come). The subject is shown with a possessive suffix or the genitive.": "kun-বাক্যাংশকে সংক্ষিপ্ত করা হয়: সমকালীন -essa (tullessani = আমি যখন আসছিলাম), পূর্বকালীন -tua/-tyä (tultuani = আমি আসার পরে)। কর্তা বোঝানো হয় অধিকার-প্রত্যয় বা genitive দিয়ে।",
+  "when I came to Finland I knew a little Finnish": "ফিনল্যান্ডে আসার সময় আমি অল্প ফিনিশ জানতাম",
+  "after coming to Finland I began to study": "ফিনল্যান্ডে আসার পরে আমি পড়াশোনা শুরু করলাম",
+  "after completing the degree I applied for jobs": "ডিগ্রি শেষ করার পরে আমি চাকরির আবেদন করলাম",
+  "-essa = when (at the same time); -tua = after.": "-essa = যখন (একই সময়ে); -tua = পরে।",
+  "-essa = simultaneous, -tua/-tyä = 'after'. Both take a possessive suffix for the subject (tullessani, tultuani).": "-essa = সমকালীন, -tua/-tyä = 'পরে'। দুটোতেই কর্তা বোঝাতে অধিকার-প্রত্যয় বসে (tullessani, tultuani)।",
+  "Mix-up: 'tultuani' is NOT 'while' but 'after'.": "গুলিয়ে ফেলা: 'tultuani' মানে 'যখন' নয়, 'পরে'।",
+  "Final construction (replacing jotta)": "Final গঠন (jotta-র বদলে)",
+  "A purpose clause ('jotta' = in order to) is compressed with the long 1st infinitive -akseni/-äkseni + possessive suffix. Oppiakseni suomea = in order to learn Finnish. The subject must match the main clause.": "উদ্দেশ্যবাচক বাক্যাংশ ('jotta' = যাতে) সংক্ষিপ্ত করা হয় দীর্ঘ ১ম infinitive -akseni/-äkseni + অধিকার-প্রত্যয় দিয়ে। Oppiakseni suomea = ফিনিশ শেখার জন্য। কর্তা অবশ্যই প্রধান খণ্ডবাক্যের কর্তার সঙ্গে মিলতে হবে।",
+  "I study hard in order to learn Finnish": "ফিনিশ শেখার জন্য আমি কঠোর পরিশ্রম করে পড়ি",
+  "I came to Finland to complete a degree": "একটি ডিগ্রি শেষ করার জন্য আমি ফিনল্যান্ডে এসেছি",
+  "I practise in order to pass the YKI test": "YKI পরীক্ষায় পাস করার জন্য আমি অনুশীলন করি",
+  "-akseni = 'so that I…' (same subject).": "-akseni = 'যাতে আমি…' (একই কর্তা)।",
+  "The final construction expresses purpose when the subject matches the main clause. The possessive suffix agrees with the subject (-kseni, -ksesi, -kseen).": "কর্তা প্রধান খণ্ডবাক্যের সঙ্গে মিললে final গঠন উদ্দেশ্য প্রকাশ করে। অধিকার-প্রত্যয়টি কর্তার সঙ্গে মেলে (-kseni, -ksesi, -kseen)।",
+  "A different subject needs jotta: 'selitän ymmärtääksesi' → selitän, jotta (sinä) ymmärrät.": "কর্তা ভিন্ন হলে jotta লাগে: 'selitän ymmärtääksesi' → selitän, jotta (sinä) ymmärrät।",
+  "the suffix agrees with the subject": "প্রত্যয়টি কর্তার সঙ্গে মেলে",
+  "Necessive construction (necessity)": "Necessive গঠন (আবশ্যকতা)",
+  "Necessity uses a special construction: the subject is in the GENITIVE and the verb is 3rd person singular. Minun täytyy opiskella (I must study). Minun pitää mennä. Minun on tehtävä se (I have to do it). Negative: minun ei tarvitse (I don't have to).": "আবশ্যকতা বোঝাতে একটি বিশেষ গঠন ব্যবহৃত হয়: কর্তা বসে GENITIVE-এ, আর ক্রিয়া থাকে তৃতীয় পুরুষ একবচনে। Minun täytyy opiskella (আমাকে পড়তে হবে)। Minun pitää mennä। Minun on tehtävä se (আমাকে এটি করতে হবে)। নাবাচক: minun ei tarvitse (আমাকে করতে হবে না)।",
+  "I must study Finnish": "আমাকে ফিনিশ পড়তে হবে",
+  "I have to find a job": "আমাকে একটি চাকরি খুঁজে বের করতে হবে",
+  "you don't have to pay": "তোমাকে টাকা দিতে হবে না",
+  "Subject in the genitive + verb in 3rd person singular.": "কর্তা genitive-এ + ক্রিয়া তৃতীয় পুরুষ একবচনে।",
+  "The one who must goes in the GENITIVE (minun, sinun, hänen) — never nominative. The modal verb stays 3rd person singular.": "যার করতে হবে, সে বসে GENITIVE-এ (minun, sinun, hänen) — কখনোই nominative-এ নয়। Modal ক্রিয়াটি তৃতীয় পুরুষ একবচনেই থাকে।",
+  "Nominative: 'minä täytyy' → minun täytyy; 'me pitää' → meidän pitää.": "Nominative ব্যবহার: 'minä täytyy' → minun täytyy; 'me pitää' → meidän pitää।",
+  "necessity VS pitää + elative = to like": "আবশ্যকতা বনাম pitää + elative = পছন্দ করা",
+  "on + -tava = the necessive participle": "on + -tava = আবশ্যকতাবাচক participle",
+  "Register and style": "রেজিস্টার ও রীতি",
+  "Finnish has clear registers. Written standard (YKI, writing): minä olen, me olemme, he menivät. Spoken (everyday): mä oon, me ollaan, ne meni, en tiiä. Officialese (authorities): heavy nominalization and passive. Recognize all three; produce the one the situation needs.": "ফিনিশে রেজিস্টারের ভাগ স্পষ্ট। লেখ্য মান (YKI, লিখন): minä olen, me olemme, he menivät। কথ্য (দৈনন্দিন): mä oon, me ollaan, ne meni, en tiiä। দাপ্তরিক (কর্তৃপক্ষের ভাষা): ভারী বিশেষ্যায়ন ও কর্মবাচ্য। তিনটিই চিনুন; পরিস্থিতি যেটি চায়, সেটিই ব্যবহার করুন।",
+  "standard: I don't know": "লেখ্য মান: আমি জানি না",
+  "spoken: I dunno": "কথ্য: জানি না",
+  "officialese: the matter cannot be resolved": "দাপ্তরিক: বিষয়টি নিষ্পত্তি করা সম্ভব নয়",
+  "YKI = written; street = spoken; office = officialese.": "YKI = লেখ্য; রাস্তা = কথ্য; অফিস = দাপ্তরিক।",
+  "YKI writing and speaking are graded on the written standard. Learn standard forms actively, recognize spoken forms passively. Many languages have the same formal-vs-everyday split.": "YKI-র লিখন ও কথন মূল্যায়ন করা হয় লেখ্য মান অনুযায়ী। মান রূপগুলো সক্রিয়ভাবে শিখুন, কথ্য রূপগুলো অন্তত চিনে রাখুন। বহু ভাষাতেই আনুষ্ঠানিক বনাম দৈনন্দিন — এই একই ভাগ আছে।",
+  "Spoken forms in the YKI exam: 'mä oon' → minä olen; 'ne meni' → he menivät; 'tuu' → tule.": "YKI পরীক্ষায় কথ্য রূপ: 'mä oon' → minä olen; 'ne meni' → he menivät; 'tuu' → tule।",
+  "spoken reductions": "কথ্য সংক্ষেপ",
+  "spoken uses 'it/they-things' for people": "কথ্য ভাষায় মানুষের জন্যও se/ne ব্যবহৃত হয়",
+  "passive = 'we' in speech": "কথ্য ভাষায় কর্মবাচ্য = 'আমরা'",
+  // ===== language family (intro deep dive) =====
+  "Language family: where Finnish belongs": "ভাষা-পরিবার: ফিনিশ কোথায় পড়ে",
+  "Uralic family → the Finnic branch": "ইউরালীয় ভাষা-পরিবার → ফিনিক (Finnic) শাখা",
+  "Estonian — the closest major relative; Estonia's national language": "এস্তোনীয় — সবচেয়ে কাছের বড় জ্ঞাতি ভাষা; এস্তোনিয়ার জাতীয় ভাষা",
+  "Karelian — Republic of Karelia, Russia": "কারেলীয় — রাশিয়ার কারেলিয়া প্রজাতন্ত্র",
+  "Veps — north-western Russia": "ভেপ্স — রাশিয়ার উত্তর-পশ্চিমাঞ্চল",
+  "Ingrian — north-western Russia": "ইংরীয় — রাশিয়ার উত্তর-পশ্চিমাঞ্চল",
+  "Estonia is the only other country whose national language belongs to this same Finnic group.": "এস্তোনিয়াই একমাত্র অন্য দেশ, যার জাতীয় ভাষা এই একই ফিনিক গোষ্ঠীর অন্তর্ভুক্ত।",
+  "same family, different branch — not Finnic": "একই পরিবার, ভিন্ন শাখা — ফিনিক নয়",
+  "Hungarian — Uralic, but a different branch; not mutually intelligible": "হাঙ্গেরীয় — ইউরালীয়, তবে ভিন্ন শাখার; পরস্পর বোধগম্য নয়",
+  "Sámi languages — Uralic, their own branch": "সামি ভাষাগুলো — ইউরালীয়, নিজস্ব শাখা",
+  "Hungarian is a relative, but a distant one: it does not belong to the Finnic group.": "হাঙ্গেরীয় জ্ঞাতি ভাষা বটে, তবে দূরের: এটি ফিনিক গোষ্ঠীর অন্তর্ভুক্ত নয়।"
+};
+function P(lang, fi, en) {
+  return lang === "fi" ? fi : lang === "bn" ? BN[en] || en : en;
+}
+function TR(lang, en) {
+  return lang === "bn" && en && BN[en] ? BN[en] : en;
+}
+function fieldLabel(lang, k) {
+  const p = (VFIELDS[k] || "").split(" · ");
+  return lang === "fi" ? p[0] : lang === "bn" ? BN[p[1]] || p[1] : p[1];
+}
 // ---- i18n: every UI string keyed; bn left null, ready for the third language later
 const UI = {
   app: {
-    fi: "Suomi-polku",
-    en: "Suomi-polku",
-    bn: null
+    fi: "SuomiPolku",
+    en: "SuomiPolku",
+    bn: "SuomiPolku"
   },
   tagline: {
     fi: "Opi ja harjoittele suomea — alkeista ylöspäin",
     en: "Learn & practise Finnish — from the basics upward",
-    bn: null
+    bn: "ফিনিশ শিখুন ও অনুশীলন করুন — একেবারে গোড়া থেকে"
   },
   grammar: {
     fi: "Kielioppi",
     en: "Grammar",
-    bn: null
+    bn: "ব্যাকরণ"
   },
   grammarSub: {
     fi: "Säännöt, esimerkit, muistisäännöt + hakutyökalu",
     en: "Rules, examples, mnemonics + a lookup tool",
-    bn: null
+    bn: "নিয়ম, উদাহরণ, মনে রাখার কৌশল ও খোঁজার সুবিধা"
   },
   vocab: {
     fi: "Sanasto",
     en: "Vocabulary",
-    bn: null
+    bn: "শব্দভাণ্ডার"
   },
   vocabSub: {
     fi: "Muistele sanoja — kortit, monivalinta, kirjoitus",
     en: "Memorise words — cards, multiple choice, typing",
-    bn: null
+    bn: "শব্দ মুখস্থ করুন — কার্ড, বহুনির্বাচনি, টাইপিং"
   },
   sent: {
     fi: "Lauseet",
     en: "Sentences",
-    bn: null
+    bn: "বাক্য"
   },
   sentSub: {
     fi: "Rakenna lauseita — yksinkertaiset, rinnasteiset, alisteiset",
     en: "Build sentences — simple, compound, complex",
-    bn: null
+    bn: "বাক্য গড়ুন — সরল, যৌগিক, জটিল"
   },
   exam: {
     fi: "Koe",
     en: "Test exams",
-    bn: null
+    bn: "পরীক্ষা"
   },
   examSub: {
     fi: "Tasokokeet pisteytyksellä",
     en: "Levelled mock exams with a pass line",
-    bn: null
+    bn: "পাস-সীমাসহ স্তরভিত্তিক মক পরীক্ষা"
   },
   back: {
     fi: "Takaisin",
     en: "Back",
-    bn: null
+    bn: "ফিরে যান"
   },
   home: {
     fi: "Koti",
     en: "Home",
-    bn: null
+    bn: "হোম"
   },
   chapters: {
     fi: "Luvut",
     en: "Chapters",
-    bn: null
+    bn: "অধ্যায়সমূহ"
   },
   next: {
     fi: "Seuraava",
     en: "Next",
-    bn: null
+    bn: "পরবর্তী"
   },
   prev: {
     fi: "Edellinen",
     en: "Previous",
-    bn: null
+    bn: "পূর্ববর্তী"
   },
   search: {
     fi: "Hae sääntöä tai kirjoita sana (esim. Espooseen)",
     en: "Search a rule, or type a word (e.g. Espooseen)",
-    bn: null
+    bn: "নিয়ম খুঁজুন বা একটি শব্দ লিখুন (যেমন Espooseen)"
   },
   rule: {
     fi: "Sääntö",
     en: "Rule",
-    bn: null
+    bn: "নিয়ম"
   },
   examples: {
     fi: "Esimerkit",
     en: "Examples",
-    bn: null
+    bn: "উদাহরণ"
   },
   mnemonic: {
     fi: "Muistisääntö",
     en: "Mnemonic",
-    bn: null
+    bn: "মনে রাখার কৌশল"
   },
   openCard: {
     fi: "Avaa kortti",
     en: "Open card",
-    bn: null
+    bn: "কার্ড খুলুন"
   },
   flash: {
     fi: "Muistikortit",
     en: "Flashcards",
-    bn: null
+    bn: "ফ্ল্যাশকার্ড"
   },
   mcq: {
     fi: "Monivalinta",
     en: "Multiple choice",
-    bn: null
+    bn: "বহুনির্বাচনি"
   },
   typed: {
     fi: "Kirjoita sana",
     en: "Typed recall",
-    bn: null
+    bn: "টাইপ করে অনুশীলন"
   },
   rnd30: {
     fi: "30 satunnaista",
     en: "30 random",
-    bn: null
+    bn: "৩০টি এলোমেলো"
   },
   flip: {
     fi: "Käännä",
     en: "Flip",
-    bn: null
+    bn: "উল্টান"
   },
   knew: {
     fi: "Osasin",
     en: "I knew it",
-    bn: null
+    bn: "পারতাম"
   },
   missed: {
     fi: "En osannut",
     en: "Missed it",
-    bn: null
+    bn: "পারিনি"
   },
   check: {
     fi: "Tarkista",
     en: "Check",
-    bn: null
+    bn: "মিলিয়ে দেখুন"
   },
   reveal: {
     fi: "Näytä vastaus",
     en: "Show answer",
-    bn: null
+    bn: "উত্তর দেখুন"
   },
   order: {
     fi: "Järjestä",
     en: "Word order",
-    bn: null
+    bn: "শব্দক্রম"
   },
   fill: {
     fi: "Täydennä",
     en: "Fill the blank",
-    bn: null
+    bn: "শূন্যস্থান পূরণ"
   },
   translate: {
     fi: "Käännä",
     en: "Translate",
-    bn: null
+    bn: "অনুবাদ"
   },
   typeHere: {
     fi: "Kirjoita tähän…",
     en: "Type here…",
-    bn: null
+    bn: "এখানে লিখুন…"
   },
   correct: {
     fi: "Oikein!",
     en: "Correct!",
-    bn: null
+    bn: "সঠিক!"
   },
   wrong: {
     fi: "Ei aivan",
     en: "Not quite",
-    bn: null
+    bn: "ঠিক হয়নি"
   },
   yourAns: {
     fi: "Sinun vastauksesi",
     en: "Your answer",
-    bn: null
+    bn: "আপনার উত্তর"
   },
   model: {
     fi: "Mallivastaus",
     en: "Model answer",
-    bn: null
+    bn: "মডেল উত্তর"
   },
   score: {
     fi: "Tulos",
     en: "Score",
-    bn: null
+    bn: "ফল"
   },
   pass: {
     fi: "Läpäisit!",
     en: "Passed!",
-    bn: null
+    bn: "উত্তীর্ণ!"
   },
   fail: {
     fi: "Et vielä läpäissyt",
     en: "Not passed yet",
-    bn: null
+    bn: "এখনো উত্তীর্ণ হননি"
   },
   retry: {
     fi: "Yritä uudelleen",
     en: "Try again",
-    bn: null
+    bn: "আবার চেষ্টা করুন"
   },
   done: {
     fi: "Valmis",
     en: "Done",
-    bn: null
+    bn: "শেষ"
   },
   level: {
     fi: "Taso",
     en: "Level",
-    bn: null
+    bn: "স্তর"
   },
   allLevels: {
     fi: "Kaikki tasot",
     en: "All levels",
-    bn: null
+    bn: "সব স্তর"
   },
   mastered: {
     fi: "hallussa",
     en: "mastered",
-    bn: null
+    bn: "আয়ত্তে"
   },
   studied: {
     fi: "opiskeltu",
     en: "studied",
-    bn: null
+    bn: "অনুশীলন করা"
   },
   progress: {
     fi: "Edistyminen",
     en: "Progress",
-    bn: null
+    bn: "অগ্রগতি"
   },
   reset: {
     fi: "Nollaa edistyminen",
     en: "Reset progress",
-    bn: null
+    bn: "অগ্রগতি মুছুন"
   },
   noPersist: {
     fi: "Esikatselu ei tallenna edistymistä — julkaistu sivu tallentaa.",
     en: "Preview won't save progress — the published site does.",
-    bn: null
+    bn: "প্রিভিউতে অগ্রগতি সংরক্ষিত হয় না — প্রকাশিত সাইটে হয়।"
   },
   pickStruct: {
     fi: "Valitse rakenne",
     en: "Choose a structure",
-    bn: null
+    bn: "গঠন বেছে নিন"
   },
   pickType: {
     fi: "Valitse lausetyyppi",
     en: "Choose a sentence type",
-    bn: null
+    bn: "বাক্যের ধরন বেছে নিন"
   },
   simple: {
     fi: "Yksinkertainen",
     en: "Simple",
-    bn: null
+    bn: "সরল"
   },
   compound: {
     fi: "Rinnasteinen",
     en: "Compound",
-    bn: null
+    bn: "যৌগিক"
   },
   complex: {
     fi: "Alisteinen",
     en: "Complex",
-    bn: null
+    bn: "জটিল"
   },
   aff: {
     fi: "Myönteinen",
     en: "Affirmative",
-    bn: null
+    bn: "হ্যাঁ-বাচক"
   },
   neg: {
     fi: "Kielteinen",
     en: "Negative",
-    bn: null
+    bn: "না-বাচক"
   },
   q: {
     fi: "Kysymys",
     en: "Question",
-    bn: null
+    bn: "প্রশ্ন"
   },
   start: {
     fi: "Aloita",
     en: "Start",
-    bn: null
+    bn: "শুরু"
   },
   question: {
     fi: "Kysymys",
     en: "Question",
-    bn: null
+    bn: "প্রশ্ন"
   },
   of: {
     fi: "/",
     en: "/",
-    bn: null
+    bn: "/"
   },
   whatCase: {
     fi: "Mikä sija?",
     en: "What case?",
-    bn: null
+    bn: "কোন কারক?"
   },
   noMatch: {
     fi: "En tunnistanut selvää sijapäätettä. Selaa kortteja alta.",
     en: "No clear case ending recognised. Browse the cards below.",
-    bn: null
+    bn: "স্পষ্ট কোনো কারক-প্রত্যয় শনাক্ত হয়নি। নিচের কার্ডগুলো দেখুন।"
   }
 };
 function L(lang, key) {
@@ -14891,9 +15628,8 @@ function LangToggle({
     className: "lt " + (lang === "en" ? "on" : ""),
     onClick: () => setLang("en")
   }, "🇬🇧 English"), /*#__PURE__*/React.createElement("button", {
-    className: "lt dim",
-    disabled: true,
-    title: "Coming later"
+    className: "lt " + (lang === "bn" ? "on" : ""),
+    onClick: () => setLang("bn")
   }, "🇧🇩 বাংলা"));
 }
 function Bar({
@@ -14973,7 +15709,7 @@ function Styles() {
   return /*#__PURE__*/React.createElement("style", null, `
 *{box-sizing:border-box} 
 html,body,#root{margin:0;height:100%}
-body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans Bengali","Nirmala UI","Shonar Bangla","Bangla MN",sans-serif;-webkit-font-smoothing:antialiased}
 .layout{display:flex;align-items:flex-start;min-height:100vh}
 .sidebar{width:280px;flex-shrink:0;background:#fff;border-right:1px solid ${C.line};height:100vh;position:sticky;top:0;overflow-y:auto;z-index:50}
 .sbinner{padding:14px 10px 40px}
@@ -15042,6 +15778,10 @@ body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-famil
 .list .it:hover{border-color:${C.sub}}
 .it .ttl{font-weight:700;font-size:17px}
 .it .meta{font-size:13.5px;color:${C.sub}}
+.pracgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.btn.prac{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;line-height:1.25}
+.pracn{font-size:11px;font-weight:600;opacity:.85}
+@media(max-width:520px){.pracgrid{grid-template-columns:1fr}.btn.prac{flex-direction:row;gap:8px;justify-content:center}}
 .usearch{margin:6px 0 18px}
 .usearch .searchbox{margin-top:0}
 .searchbox{display:flex;gap:8px;margin:10px 0}
@@ -15161,6 +15901,7 @@ body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-famil
 .sitline{padding:6px 0;border-bottom:1px solid ${C.line};font-size:15.5px;color:${C.ink}}
 .sitline .dim{margin-top:2px}
 .sitphrase{padding:5px 0;font-size:15px;color:${C.ink}}
+.sbchev{display:inline-block;width:14px;font-size:10px;opacity:.75;margin-right:2px}
 .sbmod{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:${C.grammar};margin:10px 0 3px 8px;opacity:.85}
 .sbsearch{display:block;width:100%;text-align:left;background:${C.grammar}0f;border:1px solid ${C.grammar}44;color:${C.grammar};border-radius:10px;padding:10px 12px;font-size:14.5px;font-weight:700;cursor:pointer;margin:2px 0 12px}
 .sbsearch:hover{background:${C.grammar}1c}
@@ -15345,7 +16086,7 @@ function UniversalSearch({
     ref: inpRef,
     value: qy,
     onChange: e => setQy(e.target.value),
-    placeholder: F ? "Hae mitä tahansa: sana, muoto, sääntö…" : "Search anything: a word, a form, a rule…",
+    placeholder: P(lang, "Hae mitä tahansa: sana, muoto, sääntö…", "Search anything: a word, a form, a rule…"),
     onKeyDown: e => {
       if (e.key === "Enter") run();
     }
@@ -15355,7 +16096,7 @@ function UniversalSearch({
       background: C.grammar
     },
     onClick: run
-  }, F ? "Hae" : "Search")), res !== undefined && (empty ? /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Hae", "Search"))), res !== undefined && (empty ? /*#__PURE__*/React.createElement("div", {
     className: "note"
   }, L(lang, "noMatch")) : /*#__PURE__*/React.createElement("div", {
     className: "analy",
@@ -15389,7 +16130,7 @@ function UniversalSearch({
     className: "srgroup"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Kielioppiluvut" : "Grammar chapters"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Kielioppiluvut", "Grammar chapters")), /*#__PURE__*/React.createElement("div", {
     className: "row wrap",
     style: {
       gap: 6
@@ -15398,11 +16139,11 @@ function UniversalSearch({
     key: c.id,
     className: "seechip",
     onClick: () => openCard(c.id)
-  }, F ? c.tf : c.te, " →")))), (res.noms.length > 0 || res.vbs.length > 0) && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, c.tf, c.te), " →")))), (res.noms.length > 0 || res.vbs.length > 0) && /*#__PURE__*/React.createElement("div", {
     className: "srgroup"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Taivutustaulukko" : "Inflection table"), [...res.noms, ...res.vbs].slice(0, 6).map((r, i) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Taivutustaulukko", "Inflection table")), [...res.noms, ...res.vbs].slice(0, 6).map((r, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     className: "srrow"
   }, /*#__PURE__*/React.createElement("b", null, r.w), " · ", r.en)), /*#__PURE__*/React.createElement("button", {
@@ -15412,11 +16153,11 @@ function UniversalSearch({
       marginTop: 6
     },
     onClick: () => openTable(res.q)
-  }, F ? "Avaa taulukossa" : "Open in table", " →")), res.voc.length > 0 && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Avaa taulukossa", "Open in table"), " →")), res.voc.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "srgroup"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Sanasto" : "Vocabulary"), res.voc.map((v, i) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Sanasto", "Vocabulary")), res.voc.map((v, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     className: "srrow"
   }, /*#__PURE__*/React.createElement("b", null, v.fi), " — ", v.en, VGUIDE[v.t] && VGUIDE[v.t].g.slice(0, 2).map(gid => {
@@ -15425,12 +16166,12 @@ function UniversalSearch({
       key: gid,
       className: "seechip srchip",
       onClick: () => openCard(gid)
-    }, F ? gc.tf : gc.te, " →") : null;
+    }, P(lang, gc.tf, gc.te), " →") : null;
   })))), res.sents.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "srgroup"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Lausepankki" : "Sentence bank"), res.sents.map((x, i) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Lausepankki", "Sentence bank")), res.sents.map((x, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     className: "srrow"
   }, /*#__PURE__*/React.createElement("i", null, x.fi), " — ", x.en))))));
@@ -15502,7 +16243,7 @@ function Home({
     style: {
       marginBottom: 6
     }
-  }, pick(F, "Sanoja hallussa", "Words mastered"), ": ", /*#__PURE__*/React.createElement("b", null, vMast), " / ", VOCAB.length, " · ", pick(F, "Lauseita harjoiteltu", "Sentences practised"), ": ", /*#__PURE__*/React.createElement("b", null, sDone), " / ", SENTENCES.length), /*#__PURE__*/React.createElement(Bar, {
+  }, P(lang, "Sanoja hallussa", "Words mastered"), ": ", /*#__PURE__*/React.createElement("b", null, vMast), " / ", VOCAB.length, " · ", P(lang, "Lauseita harjoiteltu", "Sentences practised"), ": ", /*#__PURE__*/React.createElement("b", null, sDone), " / ", SENTENCES.length), /*#__PURE__*/React.createElement(Bar, {
     pct: 100 * vMast / VOCAB.length
   })), !PERSISTS && /*#__PURE__*/React.createElement("div", {
     className: "note"
@@ -15618,7 +16359,7 @@ function GrammarHome({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Luvut" : "Chapters")), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Luvut", "Chapters"))), /*#__PURE__*/React.createElement("div", {
     className: "list grid2"
   }, chapters.map((c, i) => /*#__PURE__*/React.createElement("div", {
     key: c.id,
@@ -15630,14 +16371,14 @@ function GrammarHome({
     className: "chttl"
   }, /*#__PURE__*/React.createElement("div", {
     className: "ttl"
-  }, F ? c.tf : c.te))))), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, c.tf, c.te)))))), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C.grammar,
       marginTop: 14
     },
     onClick: () => openTable("")
-  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table"), /*#__PURE__*/React.createElement(PageEnd, {
+  }, "📋 ", P(lang, "Taivutustaulukko", "Inflection table")), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     home: () => go("home")
   }));
@@ -15660,7 +16401,7 @@ function ChapterExercise({
     style: {
       color: C.grammar
     }
-  }, "✅ ", F ? "Harjoitus tehty" : "Exercise done", " · ", score, "/", items.length), /*#__PURE__*/React.createElement("button", {
+  }, "✅ ", P(lang, "Harjoitus tehty", "Exercise done"), " · ", score, "/", items.length), /*#__PURE__*/React.createElement("button", {
     className: "btn",
     style: {
       background: C.grammar
@@ -15671,7 +16412,7 @@ function ChapterExercise({
       setScore(0);
       setDone(false);
     }
-  }, F ? "Uudestaan" : "Again"));
+  }, P(lang, "Uudestaan", "Again")));
   const q = items[i];
   const answered = sel != null;
   return /*#__PURE__*/React.createElement("div", {
@@ -15681,7 +16422,7 @@ function ChapterExercise({
     style: {
       color: C.grammar
     }
-  }, "✍️ ", F ? "Harjoitus" : "Exercise", " ", i + 1, "/", items.length), /*#__PURE__*/React.createElement("div", {
+  }, "✍️ ", P(lang, "Harjoitus", "Exercise"), " ", i + 1, "/", items.length), /*#__PURE__*/React.createElement("div", {
     className: "exqq"
   }, q.q), q.opts.map((o, oi) => {
     const cls = "opt" + (answered ? oi === q.a ? " good" : oi === sel ? " bad" : "" : "");
@@ -15695,9 +16436,9 @@ function ChapterExercise({
         }
       }
     }, o);
-  }), answered && sel !== q.a && (F ? card.mf : card.me) && /*#__PURE__*/React.createElement("div", {
+  }), answered && sel !== q.a && P(lang, card.mf, card.me) && /*#__PURE__*/React.createElement("div", {
     className: "exqwhy"
-  }, "💡 ", F ? card.mf : card.me), answered && /*#__PURE__*/React.createElement("button", {
+  }, "💡 ", P(lang, card.mf, card.me)), answered && /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C.grammar,
@@ -15709,7 +16450,7 @@ function ChapterExercise({
         setSel(null);
       }
     }
-  }, i + 1 >= items.length ? F ? "Valmis" : "Finish" : F ? "Seuraava" : "Next"));
+  }, i + 1 >= items.length ? P(lang, "Valmis", "Finish") : P(lang, "Seuraava", "Next")));
 }
 function GCard({
   lang,
@@ -15735,17 +16476,17 @@ function GCard({
   const goSeq = openSeq || openCard;
   let trailLabel = null;
   if (trailTop && backTrail) {
-    if (trailTop === "__vocab") trailLabel = F ? "Sanasto" : "Vocabulary";else if (trailTop === "__sent") trailLabel = F ? "Lauseet" : "Sentences";else if (trailTop === "__declension") trailLabel = F ? "Taivutustaulukko" : "Inflection table";else {
+    if (trailTop === "__vocab") trailLabel = P(lang, "Sanasto", "Vocabulary");else if (trailTop === "__sent") trailLabel = P(lang, "Lauseet", "Sentences");else if (trailTop === "__declension") trailLabel = P(lang, "Taivutustaulukko", "Inflection table");else {
       const ti = seq.findIndex(x => x.id === trailTop);
-      if (ti >= 0) trailLabel = (F ? "Luku " : "Ch ") + (ti + 1) + " · " + (F ? seq[ti].tf : seq[ti].te);
+      if (ti >= 0) trailLabel = P(lang, "Luku ", "Ch ") + (ti + 1) + " · " + P(lang, seq[ti].tf, seq[ti].te);
     }
   }
   const mentionsKpt = card.id !== "kpt" && /kpt|astevaihtelu|gradation|→d\b|→v\b|k→|p→|t→|nk→|nt→|mp→|ll→l|ks→hd/i.test(JSON.stringify(card));
   const kptChip = openCard && mentionsKpt ? /*#__PURE__*/React.createElement("div", {
     className: "kptbanner",
     onClick: () => openCard("kpt"),
-    title: F ? "Avaa astevaihtelu-kortti" : "Open the consonant-gradation card"
-  }, "🔁 ", F ? "Tässä on astevaihtelua — avaa KPT-kortti" : "This involves consonant gradation — open the KPT card", " →") : null;
+    title: P(lang, "Avaa astevaihtelu-kortti", "Open the consonant-gradation card")
+  }, "🔁 ", P(lang, "Tässä on astevaihtelua — avaa KPT-kortti", "This involves consonant gradation — open the KPT card"), " →") : null;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       color: C.grammar
@@ -15761,9 +16502,9 @@ function GCard({
   })), trailLabel && /*#__PURE__*/React.createElement("button", {
     className: "trailbtn",
     onClick: backTrail
-  }, "↩ ", F ? "Takaisin:" : "Back to:", " ", trailLabel), /*#__PURE__*/React.createElement("div", {
+  }, "↩ ", P(lang, "Takaisin:", "Back to:"), " ", trailLabel), /*#__PURE__*/React.createElement("div", {
     className: "chlabel"
-  }, F ? "Luku" : "Chapter", " ", chNo), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Luku", "Chapter"), " ", chNo), /*#__PURE__*/React.createElement("div", {
     className: "htitle"
   }, /*#__PURE__*/React.createElement("div", {
     className: "h",
@@ -15771,10 +16512,10 @@ function GCard({
       color: C.grammar,
       margin: 0
     }
-  }, F ? c.tf : c.te), toggleBookmark && /*#__PURE__*/React.createElement("button", {
+  }, P(lang, c.tf, c.te)), toggleBookmark && /*#__PURE__*/React.createElement("button", {
     className: "bmstar" + (bookmarked ? " on" : ""),
     onClick: () => toggleBookmark(c.id),
-    title: F ? "Tallenna" : "Save"
+    title: P(lang, "Tallenna", "Save")
   }, bookmarked ? "★" : "☆")), /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
@@ -15792,7 +16533,7 @@ function GCard({
       fontSize: 17,
       lineHeight: 1.5
     }
-  }, F ? c.rf : c.re)), kptChip, /*#__PURE__*/React.createElement("div", {
+  }, P(lang, c.rf, c.re))), kptChip, /*#__PURE__*/React.createElement("div", {
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab",
@@ -15815,9 +16556,9 @@ function GCard({
     size: "sm"
   })), /*#__PURE__*/React.createElement("div", {
     className: "e"
-  }, e.e)))), /*#__PURE__*/React.createElement("div", {
+  }, TR(lang, e.e))))), /*#__PURE__*/React.createElement("div", {
     className: "mn"
-  }, "💡 ", F ? c.mf : c.me)), c.rich && c.rich.sections && /*#__PURE__*/React.createElement("div", {
+  }, "💡 ", P(lang, c.mf, c.me))), c.rich && c.rich.sections && /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
       color: C.ink,
@@ -15828,14 +16569,14 @@ function GCard({
     style: {
       color: C.grammar
     }
-  }, F ? "Syvennys" : "Deep dive"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Syvennys", "Deep dive")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 16.5,
       lineHeight: 1.5,
       color: "#555",
       marginBottom: 6
     }
-  }, F ? c.rich.df : c.rich.de), c.rich.sections.map((sec, si) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, c.rich.df, c.rich.de)), c.rich.sections.map((sec, si) => /*#__PURE__*/React.createElement("div", {
     key: si,
     style: {
       marginTop: 14
@@ -15846,7 +16587,7 @@ function GCard({
       color: C.grammar,
       borderColor: C.grammar
     }
-  }, F ? sec.hf : sec.he), sec.items.map((it, ii) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, sec.hf, sec.he)), sec.items.map((it, ii) => /*#__PURE__*/React.createElement("div", {
     key: ii,
     className: "gword"
   }, /*#__PURE__*/React.createElement("div", {
@@ -15855,26 +16596,26 @@ function GCard({
     className: "gw"
   }, it.w), /*#__PURE__*/React.createElement("span", {
     className: "gtype"
-  }, F ? it.tf : it.te)), (it.strong || it.weak) && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, it.tf, it.te))), (it.strong || it.weak) && /*#__PURE__*/React.createElement("div", {
     className: "gstems"
-  }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, F ? "Vahva" : "Strong", ":"), " ", it.strong), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, F ? "Heikko" : "Weak", ":"), " ", it.weak)), /*#__PURE__*/React.createElement("table", {
+  }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, P(lang, "Vahva", "Strong"), ":"), " ", it.strong), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, P(lang, "Heikko", "Weak"), ":"), " ", it.weak)), /*#__PURE__*/React.createElement("table", {
     className: "gtab"
   }, /*#__PURE__*/React.createElement("tbody", null, it.rows.map((r, ri) => /*#__PURE__*/React.createElement("tr", {
     key: ri
   }, /*#__PURE__*/React.createElement("td", {
     className: "gtl"
-  }, r.l), /*#__PURE__*/React.createElement("td", {
+  }, TR(lang, r.l)), /*#__PURE__*/React.createElement("td", {
     className: r.s ? "gts" : "",
     style: r.s ? {
       color: C.grammar,
       fontWeight: 600
     } : {}
-  }, r.form))))), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, r.ff || r.form, r.form)))))), /*#__PURE__*/React.createElement("div", {
     className: "gex",
     style: {
       borderColor: C.grammar
     }
-  }, /*#__PURE__*/React.createElement("i", null, it.exf), " — ", it.exe))))), c.rich.crosscase && /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("i", null, it.exf), " — ", TR(lang, it.exe)))))), c.rich.crosscase && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 16
     }
@@ -15884,7 +16625,7 @@ function GCard({
       color: C.grammar,
       borderColor: C.grammar
     }
-  }, F ? "Sama sana, kaikki muodot" : "Same word, every form"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Sama sana, kaikki muodot", "Same word, every form")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 15,
       color: "#444",
@@ -15898,7 +16639,7 @@ function GCard({
       key: fi,
       className: "ccchip" + (here ? " cchere" : ""),
       onClick: () => !here && openCard && openCard(fm.id),
-      title: here ? F ? "tämä sija" : "this case" : F ? "avaa kortti" : "open card"
+      title: here ? P(lang, "tämä sija", "this case") : P(lang, "avaa kortti", "open card")
     }, /*#__PURE__*/React.createElement("div", {
       className: "ccq"
     }, fm.q), /*#__PURE__*/React.createElement("div", {
@@ -15917,14 +16658,14 @@ function GCard({
     style: {
       color: C.grammar
     }
-  }, F ? "Syvennys · verbityypit" : "Deep dive · verb types"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Syvennys · verbityypit", "Deep dive · verb types")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 16.5,
       lineHeight: 1.5,
       color: "#555",
       marginBottom: 6
     }
-  }, F ? c.rich.df : c.rich.de), c.rich.types.map((t, ti) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, c.rich.df, c.rich.de)), c.rich.types.map((t, ti) => /*#__PURE__*/React.createElement("div", {
     key: ti,
     style: {
       marginTop: 16
@@ -15948,7 +16689,7 @@ function GCard({
       color: "#444",
       margin: "0 0 10px"
     }
-  }, F ? t.rf : t.re), t.verbs.map((v, vi) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, t.rf, t.re)), t.verbs.map((v, vi) => /*#__PURE__*/React.createElement("div", {
     key: vi,
     className: "gword"
   }, /*#__PURE__*/React.createElement("div", {
@@ -15963,7 +16704,7 @@ function GCard({
       e.stopPropagation();
       openCard && openCard("kpt");
     },
-    title: F ? "Astevaihtelu — katso KPT-kortti" : "Consonant gradation — see KPT card"
+    title: P(lang, "Astevaihtelu — katso KPT-kortti", "Consonant gradation — see KPT card")
   }, " · ", v.note, " ↗") : "")), /*#__PURE__*/React.createElement("div", {
     className: "gconj"
   }, ["minä", "sinä", "hän", "me", "te", "he"].map((p, pi) => /*#__PURE__*/React.createElement("span", {
@@ -15985,29 +16726,29 @@ function GCard({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "notehd"
-  }, "📌 ", F ? "Muista" : "Remember"), /*#__PURE__*/React.createElement("div", {
+  }, "📌 ", P(lang, "Muista", "Remember")), /*#__PURE__*/React.createElement("div", {
     className: "notebody"
-  }, F ? c.note.remF : c.note.remE), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, c.note.remF, c.note.remE)), /*#__PURE__*/React.createElement("div", {
     className: "notehd warn"
-  }, "⚠️ ", F ? "Yleinen virhe" : "Common mistake"), /*#__PURE__*/React.createElement("div", {
+  }, "⚠️ ", P(lang, "Yleinen virhe", "Common mistake")), /*#__PURE__*/React.createElement("div", {
     className: "notebody"
-  }, F ? c.note.misF : c.note.misE)), c.exc && c.exc.length > 0 && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, c.note.misF, c.note.misE))), c.exc && c.exc.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "card exccard",
     style: {
       marginTop: 12
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "exchd"
-  }, "⭐ ", F ? "Poikkeukset" : "Exceptions"), /*#__PURE__*/React.createElement("div", {
+  }, "⭐ ", P(lang, "Poikkeukset", "Exceptions")), /*#__PURE__*/React.createElement("div", {
     className: "excsub"
-  }, F ? "Sanat, jotka eivät noudata sääntöä — opettele ulkoa." : "Words that break the rule — learn them by heart."), c.exc.map((x, xi) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Sanat, jotka eivät noudata sääntöä — opettele ulkoa.", "Words that break the rule — learn them by heart.")), c.exc.map((x, xi) => /*#__PURE__*/React.createElement("div", {
     key: xi,
     className: "excrow"
   }, /*#__PURE__*/React.createElement("span", {
     className: "excex"
   }, x.ex), /*#__PURE__*/React.createElement("span", {
     className: "excgl"
-  }, F ? x.f : x.e)))), (() => {
+  }, P(lang, x.f, x.e))))), (() => {
     const seeIds = card.seealso || card.rich && card.rich.seealso;
     if (!seeIds || !openCard) return null;
     return /*#__PURE__*/React.createElement("div", {
@@ -16023,7 +16764,7 @@ function GCard({
         color: C.grammar,
         marginBottom: 8
       }
-    }, F ? "Katso myös" : "See also"), /*#__PURE__*/React.createElement("div", {
+    }, P(lang, "Katso myös", "See also")), /*#__PURE__*/React.createElement("div", {
       className: "row wrap",
       style: {
         gap: 6
@@ -16035,7 +16776,7 @@ function GCard({
         key: xi,
         className: "seechip",
         onClick: () => openCard(sid)
-      }, F ? sc.tf : sc.te, " →");
+      }, P(lang, sc.tf, sc.te), " →");
     })));
   })(), /*#__PURE__*/React.createElement("div", {
     className: "chnav"
@@ -16043,16 +16784,16 @@ function GCard({
     className: "chbtn",
     disabled: !prev,
     onClick: () => prev && goSeq(prev.id)
-  }, prev ? "← " + (F ? "Luku " : "Ch ") + idx : F ? "—" : "—"), /*#__PURE__*/React.createElement("button", {
+  }, prev ? "← " + P(lang, "Luku ", "Ch ") + idx : P(lang, "—", "—")), /*#__PURE__*/React.createElement("button", {
     className: "chbtn home",
     onClick: back
-  }, "🏠 ", F ? "Luvut" : "Chapters"), /*#__PURE__*/React.createElement("button", {
+  }, "🏠 ", P(lang, "Luvut", "Chapters")), /*#__PURE__*/React.createElement("button", {
     className: "chbtn",
     disabled: !next,
     onClick: () => next && goSeq(next.id)
-  }, next ? (F ? "Luku " : "Ch ") + (idx + 2) + " →" : F ? "—" : "—")), (prev || next) && /*#__PURE__*/React.createElement("div", {
+  }, next ? P(lang, "Luku ", "Ch ") + (idx + 2) + " →" : P(lang, "—", "—"))), (prev || next) && /*#__PURE__*/React.createElement("div", {
     className: "chnavlabel"
-  }, next ? F ? "Seuraava: " + next.tf : "Next: " + next.te : F ? "Viimeinen luku" : "Last chapter"), /*#__PURE__*/React.createElement(ChapterExercise, {
+  }, next ? F ? "Seuraava: " + next.tf : "Next: " + next.te : P(lang, "Viimeinen luku", "Last chapter")), /*#__PURE__*/React.createElement(ChapterExercise, {
     lang: lang,
     card: c
   }), chapterSentences(c.id).length > 0 && openSentenceMix && /*#__PURE__*/React.createElement("button", {
@@ -16062,7 +16803,7 @@ function GCard({
       marginTop: 8
     },
     onClick: () => openSentenceMix(c.id)
-  }, "🎯 ", F ? "Harjoittele tätä lauseilla" : "Practise this with sentences", " (", chapterSentences(c.id).length, ")"), /*#__PURE__*/React.createElement(PageEnd, {
+  }, "🎯 ", P(lang, "Harjoittele tätä lauseilla", "Practise this with sentences"), " (", chapterSentences(c.id).length, ")"), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     back: back,
     backLabel: L(lang, "chapters"),
@@ -16261,7 +17002,7 @@ function VocabHome({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Aihepiiri" : "Topic field"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Aihepiiri", "Topic field")), /*#__PURE__*/React.createElement("div", {
     className: "row wrap"
   }, /*#__PURE__*/React.createElement("button", {
     className: "chip " + (field === "all" ? "on" : ""),
@@ -16270,7 +17011,7 @@ function VocabHome({
       borderColor: C.vocab
     } : {},
     onClick: () => setField("all")
-  }, F ? "Kaikki" : "All"), Object.keys(VFIELDS).map(k => /*#__PURE__*/React.createElement("button", {
+  }, P(lang, "Kaikki", "All")), Object.keys(VFIELDS).map(k => /*#__PURE__*/React.createElement("button", {
     key: k,
     className: "chip " + (field === k ? "on" : ""),
     style: field === k ? {
@@ -16278,7 +17019,7 @@ function VocabHome({
       borderColor: C.vocab
     } : {},
     onClick: () => setField(k)
-  }, VFIELDS[k].split(" · ")[F ? 0 : 1])))), field !== "all" && VGUIDE[field] && /*#__PURE__*/React.createElement("div", {
+  }, fieldLabel(lang, k))))), field !== "all" && VGUIDE[field] && /*#__PURE__*/React.createElement("div", {
     className: "card guidecard",
     style: {
       marginTop: 2
@@ -16288,7 +17029,7 @@ function VocabHome({
     style: {
       color: C.vocab
     }
-  }, "💡 ", VFIELDS[field].split(" · ")[F ? 0 : 1], " · ", VOCAB.filter(v => v.t === field).length, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement("div", {
+  }, "💡 ", fieldLabel(lang, field), " · ", VOCAB.filter(v => v.t === field).length, " ", P(lang, "sanaa", "words")), /*#__PURE__*/React.createElement("div", {
     className: "notebody",
     style: {
       marginBottom: 8
@@ -16299,7 +17040,7 @@ function VocabHome({
       color: C.vocab,
       marginBottom: 6
     }
-  }, F ? "Liittyvä kielioppi" : "Related grammar"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Liittyvä kielioppi", "Related grammar")), /*#__PURE__*/React.createElement("div", {
     className: "row wrap",
     style: {
       gap: 6
@@ -16311,20 +17052,47 @@ function VocabHome({
       key: gid,
       className: "seechip vseechip",
       onClick: () => openGrammar(gid)
-    }, F ? gc.tf : gc.te, " →");
+    }, P(lang, gc.tf, gc.te), " →");
   }))), /*#__PURE__*/React.createElement("div", {
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Harjoittelu" : "Practice"), /*#__PURE__*/React.createElement("button", {
-    className: "btn block",
+  }, P(lang, "Harjoittelu", "Practice")), /*#__PURE__*/React.createElement("div", {
+    className: "pracgrid"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn block prac",
     style: {
       background: C.vocab
     },
+    onClick: () => start("flash", field)
+  }, "🎴 ", L(lang, "flash"), /*#__PURE__*/React.createElement("span", {
+    className: "pracn"
+  }, L(lang, "rnd30"))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block prac",
+    style: {
+      background: C.vocab
+    },
+    onClick: () => start("mcq", field)
+  }, "◉ ", L(lang, "mcq"), /*#__PURE__*/React.createElement("span", {
+    className: "pracn"
+  }, L(lang, "rnd30"))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block prac",
+    style: {
+      background: C.vocab
+    },
+    onClick: () => start("typed", field)
+  }, "⌨ ", L(lang, "typed"), /*#__PURE__*/React.createElement("span", {
+    className: "pracn"
+  }, L(lang, "rnd30")))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C.vocab,
+      marginTop: 8
+    },
     onClick: () => start("mix", field)
-  }, "🎲 ", F ? "Sekaharjoitus · 50 satunnaista sanaa" : "Mixed session · 50 random words"), /*#__PURE__*/React.createElement("div", {
+  }, "🎲 ", P(lang, "Sekaharjoitus · 50 satunnaista sanaa", "Mixed session · 50 random words")), /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "Muistikortit, monivalinta ja kirjoitus samassa istunnossa. Aihepiirin valinta rajaa sanat." : "Flashcards, multiple choice and typed recall in one session. Picking a topic field narrows the words.")), /*#__PURE__*/React.createElement(PageEnd, {
+  }, P(lang, "Muistikortit, monivalinta ja kirjoitus samassa istunnossa. Aihepiirin valinta rajaa sanat.", "Flashcards, multiple choice and typed recall in one session. Picking a topic field narrows the words."))), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     home: () => go("home")
   }));
@@ -16407,7 +17175,7 @@ function FlashRun({
   })), /*#__PURE__*/React.createElement("span", null, c.exe)), flip && toggleWord && /*#__PURE__*/React.createElement("button", {
     className: "bmstar sm" + ((bmWords || []).includes(c.fi) ? " on" : ""),
     onClick: () => toggleWord(c.fi)
-  }, (bmWords || []).includes(c.fi) ? "★ " : "☆ ", F ? "tallenna sana" : "save word"), /*#__PURE__*/React.createElement("div", {
+  }, (bmWords || []).includes(c.fi) ? "★ " : "☆ ", P(lang, "tallenna sana", "save word")), /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("button", {
     className: "btn ghost block",
@@ -16525,7 +17293,7 @@ function SentHome({
       key: gid,
       className: "seechip sseechip",
       onClick: () => openGrammar(gid)
-    }, F ? gc.tf : gc.te, " →");
+    }, P(lang, gc.tf, gc.te), " →");
   }));
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "topbar"
@@ -16551,7 +17319,7 @@ function SentHome({
     className: "lab"
   }, L(lang, "pickStruct")), /*#__PURE__*/React.createElement("div", {
     className: "row wrap"
-  }, [["any", F ? "Kaikki" : "All"], ["simple", L(lang, "simple")], ["compound", L(lang, "compound")], ["complex", L(lang, "complex")]].map(([v, t]) => /*#__PURE__*/React.createElement("button", {
+  }, [["any", P(lang, "Kaikki", "All")], ["simple", L(lang, "simple")], ["compound", L(lang, "compound")], ["complex", L(lang, "complex")]].map(([v, t]) => /*#__PURE__*/React.createElement("button", {
     key: v,
     className: "chip " + (st === v ? "on" : ""),
     style: st === v ? {
@@ -16577,13 +17345,13 @@ function SentHome({
       color: C2,
       marginBottom: 6
     }
-  }, F ? "Liittyvä kielioppi" : "Related grammar"), guideChips(SGUIDE.struct[st].g)), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Liittyvä kielioppi", "Related grammar")), guideChips(SGUIDE.struct[st].g)), /*#__PURE__*/React.createElement("div", {
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
   }, L(lang, "pickType")), /*#__PURE__*/React.createElement("div", {
     className: "row wrap"
-  }, [["any", F ? "Kaikki" : "All"], ["aff", L(lang, "aff")], ["neg", L(lang, "neg")], ["q", L(lang, "q")]].map(([v, t]) => /*#__PURE__*/React.createElement("button", {
+  }, [["any", P(lang, "Kaikki", "All")], ["aff", L(lang, "aff")], ["neg", L(lang, "neg")], ["q", L(lang, "q")]].map(([v, t]) => /*#__PURE__*/React.createElement("button", {
     key: v,
     className: "chip " + (ty === v ? "on" : ""),
     style: ty === v ? {
@@ -16609,19 +17377,46 @@ function SentHome({
       color: C2,
       marginBottom: 6
     }
-  }, F ? "Liittyvä kielioppi" : "Related grammar"), guideChips(SGUIDE.type[ty].g)), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Liittyvä kielioppi", "Related grammar")), guideChips(SGUIDE.type[ty].g)), /*#__PURE__*/React.createElement("div", {
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Harjoittelu" : "Practice"), /*#__PURE__*/React.createElement("button", {
-    className: "btn block",
+  }, P(lang, "Harjoittelu", "Practice")), /*#__PURE__*/React.createElement("div", {
+    className: "pracgrid"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn block prac",
     style: {
       background: C2
     },
+    onClick: () => start("cards", st, ty)
+  }, "🎴 ", L(lang, "flash"), /*#__PURE__*/React.createElement("span", {
+    className: "pracn"
+  }, L(lang, "rnd30"))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block prac",
+    style: {
+      background: C2
+    },
+    onClick: () => start("mcq", st, ty)
+  }, "◉ ", L(lang, "mcq"), /*#__PURE__*/React.createElement("span", {
+    className: "pracn"
+  }, L(lang, "rnd30"))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block prac",
+    style: {
+      background: C2
+    },
+    onClick: () => start("typed", st, ty)
+  }, "⌨ ", L(lang, "typed"), /*#__PURE__*/React.createElement("span", {
+    className: "pracn"
+  }, L(lang, "rnd30")))), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C2,
+      marginTop: 8
+    },
     onClick: () => start("mix", st, ty)
-  }, "🎲 ", F ? "Sekaharjoitus · 50 satunnaista lausetta" : "Mixed session · 50 random sentences"), /*#__PURE__*/React.createElement("div", {
+  }, "🎲 ", P(lang, "Sekaharjoitus · 50 satunnaista lausetta", "Mixed session · 50 random sentences")), /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "Sanajärjestys, aukkotehtävä ja käännös samassa istunnossa. Valinnat rajaavat lauseet." : "Word order, fill-the-blank and translation in one session. Your selections narrow the sentences.")), /*#__PURE__*/React.createElement(PageEnd, {
+  }, P(lang, "Sanajärjestys, aukkotehtävä ja käännös samassa istunnossa. Valinnat rajaavat lauseet.", "Word order, fill-the-blank and translation in one session. Your selections narrow the sentences."))), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     home: () => go("home")
   }));
@@ -16723,7 +17518,7 @@ function OrderRun({
     style: {
       fontSize: 15
     }
-  }, F ? "Napauta sanoja järjestykseen" : "Tap words into order")), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Napauta sanoja järjestykseen", "Tap words into order"))), /*#__PURE__*/React.createElement("div", {
     className: "tokens"
   }, pool.map(p => /*#__PURE__*/React.createElement("span", {
     key: p.ix,
@@ -17007,15 +17802,15 @@ function ExamHome({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "YKI-simulaatio" : "YKI simulation"), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, "YKI-simulaatio", "YKI simulation")), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: C.exam
     },
     onClick: startYki
-  }, "🕒 ", F ? "YKI-harjoituskoe · 3 osaa · ajastettu" : "YKI mock exam · 3 parts · timed"), /*#__PURE__*/React.createElement("div", {
+  }, "🕒 ", P(lang, "YKI-harjoituskoe · 3 osaa · ajastettu", "YKI mock exam · 3 parts · timed")), /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "Kuten oikea keskitason koe: luetun ymmärtäminen, rakenteet ja kirjoittaminen — jokaisella osalla oma aika." : "Like the real intermediate test: reading, structures and writing — each part on its own clock.")), hist.length > 0 && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Kuten oikea keskitason koe: luetun ymmärtäminen, rakenteet ja kirjoittaminen — jokaisella osalla oma aika.", "Like the real intermediate test: reading, structures and writing — each part on its own clock."))), hist.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
       color: C.ink
@@ -17027,16 +17822,16 @@ function ExamHome({
     style: {
       color: C.exam
     }
-  }, F ? "Kokeesi" : "Your mocks", " · ", hist.length)), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Kokeesi", "Your mocks"), " · ", hist.length)), /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, F ? "Paras tulos" : "Best score"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("b", null, P(lang, "Paras tulos", "Best score")), /*#__PURE__*/React.createElement("span", {
     style: {
       color: best >= 60 ? C.good : C.bad,
       fontWeight: 800
     }
   }, best, " %")), trend != null && /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, F ? "Kehitys" : "Trend"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("b", null, P(lang, "Kehitys", "Trend")), /*#__PURE__*/React.createElement("span", {
     style: {
       color: trend >= 0 ? C.good : C.bad,
       fontWeight: 800
@@ -17044,7 +17839,7 @@ function ExamHome({
   }, trend >= 0 ? "+" : "", trend, " %")), hist.slice(0, 8).map((h, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("span", null, h.d, " · ", F ? "luku" : "read", " ", h.r, "/", h.rm, " · ", F ? "rakenteet" : "struct", " ", h.s, "/", h.sm), /*#__PURE__*/React.createElement("b", {
+  }, /*#__PURE__*/React.createElement("span", null, h.d, " · ", P(lang, "luku", "read"), " ", h.r, "/", h.rm, " · ", P(lang, "rakenteet", "struct"), " ", h.s, "/", h.sm), /*#__PURE__*/React.createElement("b", {
     style: {
       color: h.pass ? C.good : C.bad
     }
@@ -17052,12 +17847,12 @@ function ExamHome({
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
-  }, F ? "Pikaharjoitus" : "Quick practice"), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, "Pikaharjoitus", "Quick practice")), /*#__PURE__*/React.createElement("button", {
     className: "btn block eghost",
     onClick: () => start("B1")
-  }, "⚡ ", F ? "25 sekakysymystä · ilman ajastusta" : "25 mixed questions · untimed"), /*#__PURE__*/React.createElement("div", {
+  }, "⚡ ", P(lang, "25 sekakysymystä · ilman ajastusta", "25 mixed questions · untimed")), /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "Sanastoa ja lauseita koko pankista. Läpäisyraja 60 %." : "Vocabulary and sentences from the whole bank. Pass line 60%.")), /*#__PURE__*/React.createElement(PageEnd, {
+  }, P(lang, "Sanastoa ja lauseita koko pankista. Läpäisyraja 60 %.", "Vocabulary and sentences from the whole bank. Pass line 60%."))), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     home: () => go("home")
   }));
@@ -17197,9 +17992,9 @@ function DeclensionTable({
     style: {
       color: C.grammar
     }
-  }, F ? "Taivutustaulukko" : "Inflection table"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Taivutustaulukko", "Inflection table")), /*#__PURE__*/React.createElement("div", {
     className: "sub"
-  }, F ? "Sana, tyyppi, vartalo ja sijamuodot yhdessä. Napauta sarakeotsikkoa avataksesi kieliopin." : "Word, type, stem and case forms in one place. Tap a column header to open the grammar."), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Sana, tyyppi, vartalo ja sijamuodot yhdessä. Napauta sarakeotsikkoa avataksesi kieliopin.", "Word, type, stem and case forms in one place. Tap a column header to open the grammar.")), /*#__PURE__*/React.createElement("div", {
     className: "row",
     style: {
       marginTop: 10,
@@ -17212,18 +18007,18 @@ function DeclensionTable({
       borderColor: C.grammar
     } : {},
     onClick: () => setTab("nom")
-  }, F ? "Nominit" : "Nominals"), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, "Nominit", "Nominals")), /*#__PURE__*/React.createElement("button", {
     className: "chip " + (tab === "verb" ? "on" : ""),
     style: tab === "verb" ? {
       background: C.grammar,
       borderColor: C.grammar
     } : {},
     onClick: () => setTab("verb")
-  }, F ? "Verbit" : "Verbs")), /*#__PURE__*/React.createElement("input", {
+  }, P(lang, "Verbit", "Verbs"))), /*#__PURE__*/React.createElement("input", {
     className: "inp",
     value: qy,
     onChange: e => setQy(e.target.value),
-    placeholder: F ? "Etsi sana…" : "Find a word…",
+    placeholder: P(lang, "Etsi sana…", "Find a word…"),
     style: {
       marginTop: 8
     }
@@ -17233,17 +18028,17 @@ function DeclensionTable({
     className: "dtab"
   }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
     className: "dsticky dth"
-  }, F ? "Sana" : "Word"), /*#__PURE__*/React.createElement("th", {
+  }, P(lang, "Sana", "Word")), /*#__PURE__*/React.createElement("th", {
     className: "dth"
-  }, F ? "Tyyppi" : "Type"), /*#__PURE__*/React.createElement("th", {
+  }, P(lang, "Tyyppi", "Type")), /*#__PURE__*/React.createElement("th", {
     className: "dth"
-  }, F ? "Vartalo" : "Stem"), cols.map(c => /*#__PURE__*/React.createElement("th", {
+  }, P(lang, "Vartalo", "Stem")), cols.map(c => /*#__PURE__*/React.createElement("th", {
     key: c.k,
     className: "dth dthlink",
     onClick: () => c.g && openGrammar && openGrammar(c.g)
   }, F ? c.fi : c.en, c.g ? " ↗" : "")), /*#__PURE__*/React.createElement("th", {
     className: "dth"
-  }, F ? "Huom." : "Notes"))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, ri) => /*#__PURE__*/React.createElement("tr", {
+  }, P(lang, "Huom.", "Notes")))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, ri) => /*#__PURE__*/React.createElement("tr", {
     key: ri
   }, /*#__PURE__*/React.createElement("td", {
     className: "dsticky dword"
@@ -17260,9 +18055,9 @@ function DeclensionTable({
     className: "dnote"
   }, r.note)))))), rows.length === 0 && /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "Ei osumia." : "No matches."), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Ei osumia.", "No matches.")), /*#__PURE__*/React.createElement("div", {
     className: "dtcount"
-  }, rows.length, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement(PageEnd, {
+  }, rows.length, " ", P(lang, "sanaa", "words")), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     back: back,
     backLabel: L(lang, "grammar"),
@@ -17285,6 +18080,144 @@ function PageEnd({
     className: "pebtn ph",
     onClick: home
   }, "🏠 ", L(lang, "home")));
+}
+// ===== Standalone practice runs (30-item sessions) =====
+// Vocabulary multiple choice — items memoised so options never reshuffle mid-answer.
+function VocabQuiz({
+  lang,
+  deck,
+  onHome,
+  rec
+}) {
+  const items = useMemo(() => deck.map(w => {
+    const opts = distract(VOCAB, w.en, "en", 3);
+    return {
+      q: w.fi,
+      options: opts,
+      a: opts.indexOf(w.en),
+      _fi: w.fi
+    };
+  }), [deck]);
+  return /*#__PURE__*/React.createElement(Quiz, {
+    lang: lang,
+    items: items,
+    accent: C.vocab,
+    passPct: null,
+    onHome: onHome,
+    title: L(lang, "mcq"),
+    rec: (q, ok) => rec(q._fi || q.q, ok)
+  });
+}
+// Sentence flashcards — Finnish shown, flip for the English.
+function SentCards({
+  lang,
+  deck,
+  onHome,
+  rec
+}) {
+  const F = lang === "fi";
+  const [i, setI] = useState(0);
+  const [flip, setFlip] = useState(false);
+  const [done, setDone] = useState(false);
+  const [k, setK] = useState(0);
+  if (done) return /*#__PURE__*/React.createElement(Score, {
+    lang: lang,
+    n: k,
+    total: deck.length,
+    passPct: null,
+    accent: C.sent,
+    onHome: onHome,
+    onRetry: () => {
+      setI(0);
+      setFlip(false);
+      setDone(false);
+      setK(0);
+    }
+  });
+  const s = deck[i];
+  function ans(ok) {
+    rec(s.id, ok);
+    if (ok) setK(k + 1);
+    if (i + 1 >= deck.length) setDone(true);else {
+      setI(i + 1);
+      setFlip(false);
+    }
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "topbar"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "linkback",
+    onClick: onHome
+  }, "← ", L(lang, "back")), /*#__PURE__*/React.createElement("span", {
+    className: "counter"
+  }, i + 1, " / ", deck.length)), /*#__PURE__*/React.createElement("div", {
+    className: "flash",
+    onClick: () => setFlip(!flip)
+  }, !flip ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "big spkrow",
+    style: {
+      fontSize: 22
+    }
+  }, s.fi, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: s.fi,
+    size: "sm"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "small"
+  }, L(lang, "flip"), " ↻")) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "big",
+    style: {
+      color: C.sent,
+      fontSize: 20
+    }
+  }, s.en), /*#__PURE__*/React.createElement("div", {
+    className: "small spkrow"
+  }, s.fi, " ", /*#__PURE__*/React.createElement(SpeakBtn, {
+    text: s.fi,
+    size: "sm"
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn ghost block",
+    onClick: () => ans(false)
+  }, L(lang, "missed")), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C.sent
+    },
+    onClick: () => ans(true)
+  }, L(lang, "knew"))));
+}
+// Sentence multiple choice — pick the missing word from four options.
+function SentMcq({
+  lang,
+  deck,
+  onHome,
+  rec
+}) {
+  const items = useMemo(() => {
+    const pool = SENTENCES.map(x => x.words && x.words[x.blank]).filter(Boolean);
+    return deck.map(s => {
+      const correct = s.words[s.blank];
+      const others = shuffle(pool.filter(w => norm(w) !== norm(correct))).slice(0, 3);
+      const options = shuffle([correct, ...others]);
+      return {
+        q: s.words.map((w, ix) => ix === s.blank ? "_____" : w).join(" "),
+        sub: s.en,
+        options,
+        a: options.indexOf(correct),
+        _id: s.id
+      };
+    });
+  }, [deck]);
+  return /*#__PURE__*/React.createElement(Quiz, {
+    lang: lang,
+    items: items,
+    accent: C.sent,
+    passPct: null,
+    onHome: onHome,
+    title: L(lang, "fill"),
+    rec: (q, ok) => rec(q._id, ok)
+  });
 }
 function VocabMix({
   lang,
@@ -17313,13 +18246,13 @@ function VocabMix({
   const adv = () => {
     if (ph < 2) setPh(ph + 1);else onDone();
   };
-  const labels = [[F ? "Muistikortit" : "Flashcards"], [F ? "Monivalinta" : "Multiple choice"], [F ? "Kirjoita vastaus" : "Typed recall"]];
+  const labels = [[P(lang, "Muistikortit", "Flashcards")], [P(lang, "Monivalinta", "Multiple choice")], [P(lang, "Kirjoita vastaus", "Typed recall")]];
   const head = /*#__PURE__*/React.createElement("div", {
     className: "chlabel",
     style: {
       color: C.vocab
     }
-  }, F ? "Sekaharjoitus" : "Mixed session", " · ", F ? "osa" : "part", " ", ph + 1, "/3 · ", labels[ph][0]);
+  }, P(lang, "Sekaharjoitus", "Mixed session"), " · ", P(lang, "osa", "part"), " ", ph + 1, "/3 · ", labels[ph][0]);
   if (ph === 0) return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(FlashRun, {
     lang: lang,
     deck: parts[0],
@@ -17335,7 +18268,7 @@ function VocabMix({
       accent: C.vocab,
       passPct: null,
       onHome: adv,
-      title: F ? "Monivalinta" : "Multiple choice",
+      title: P(lang, "Monivalinta", "Multiple choice"),
       rec: (q, ok) => rec(q._fi || q.q, ok)
     }));
   }
@@ -17362,13 +18295,13 @@ function SentMix({
   const adv = () => {
     if (ph < 2) setPh(ph + 1);else onDone();
   };
-  const labels = [[F ? "Sanajärjestys" : "Word order"], [F ? "Täydennä aukko" : "Fill the blank"], [F ? "Käännä" : "Translate"]];
+  const labels = [[P(lang, "Sanajärjestys", "Word order")], [P(lang, "Täydennä aukko", "Fill the blank")], [P(lang, "Käännä", "Translate")]];
   const head = /*#__PURE__*/React.createElement("div", {
     className: "chlabel",
     style: {
       color: C.sent
     }
-  }, F ? "Sekaharjoitus" : "Mixed session", " · ", F ? "osa" : "part", " ", ph + 1, "/3 · ", labels[ph][0]);
+  }, P(lang, "Sekaharjoitus", "Mixed session"), " · ", P(lang, "osa", "part"), " ", ph + 1, "/3 · ", labels[ph][0]);
   if (ph === 0) return /*#__PURE__*/React.createElement("div", null, head, /*#__PURE__*/React.createElement(OrderRun, {
     lang: lang,
     deck: parts[0],
@@ -17473,7 +18406,7 @@ function YkiRun({
     style: {
       color: A
     }
-  }, "YKI · ", F ? "harjoituskoe" : "mock exam"), /*#__PURE__*/React.createElement("div", {
+  }, "YKI · ", P(lang, "harjoituskoe", "mock exam")), /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
       color: C.ink
@@ -17485,24 +18418,24 @@ function YkiRun({
     style: {
       color: A
     }
-  }, F ? "Kokeen rakenne" : "Exam structure")), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Kokeen rakenne", "Exam structure"))), /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, "1 · ", F ? "Luetun ymmärtäminen" : "Reading comprehension"), /*#__PURE__*/React.createElement("span", null, passages.length, " ", F ? "tekstiä" : "texts", " · ", rTotal, " ", F ? "kysymystä" : "questions", " · 10 min")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("b", null, "1 · ", P(lang, "Luetun ymmärtäminen", "Reading comprehension")), /*#__PURE__*/React.createElement("span", null, passages.length, " ", P(lang, "tekstiä", "texts"), " · ", rTotal, " ", P(lang, "kysymystä", "questions"), " · 10 min")), /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, "2 · ", F ? "Rakenteet ja sanasto" : "Structures & vocabulary"), /*#__PURE__*/React.createElement("span", null, structs.length, " ", F ? "kysymystä" : "questions", " · 8 min")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("b", null, "2 · ", P(lang, "Rakenteet ja sanasto", "Structures & vocabulary")), /*#__PURE__*/React.createElement("span", null, structs.length, " ", P(lang, "kysymystä", "questions"), " · 8 min")), /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, "3 · ", F ? "Kirjoittaminen" : "Writing"), /*#__PURE__*/React.createElement("span", null, "1 ", F ? "tehtävä" : "task", " · 15 min · ", F ? "itsearviointi mallivastauksella" : "self-assessed with a model answer")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("b", null, "3 · ", P(lang, "Kirjoittaminen", "Writing")), /*#__PURE__*/React.createElement("span", null, "1 ", P(lang, "tehtävä", "task"), " · 15 min · ", P(lang, "itsearviointi mallivastauksella", "self-assessed with a model answer"))), /*#__PURE__*/React.createElement("div", {
     className: "note",
     style: {
       marginTop: 10
     }
-  }, F ? "Osat 1–2 pisteytetään automaattisesti (läpäisyraja 60 %). Kuullun ymmärtämistä ei voi harjoitella ilman ääntä. Aika loppuu → osa sulkeutuu automaattisesti." : "Parts 1–2 are auto-scored (pass line 60%). Listening can't be simulated without audio. When time runs out, the section closes automatically.")), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, "Osat 1–2 pisteytetään automaattisesti (läpäisyraja 60 %). Kuullun ymmärtämistä ei voi harjoitella ilman ääntä. Aika loppuu → osa sulkeutuu automaattisesti.", "Parts 1–2 are auto-scored (pass line 60%). Listening can't be simulated without audio. When time runs out, the section closes automatically."))), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: A
     },
     onClick: () => setStage("read")
-  }, F ? "Aloita koe" : "Start the exam", " →"));
+  }, P(lang, "Aloita koe", "Start the exam"), " →"));
   if (stage === "read") {
     const p = passages[rIdx];
     return /*#__PURE__*/React.createElement("div", {
@@ -17518,7 +18451,7 @@ function YkiRun({
       style: {
         color: A
       }
-    }, F ? "Osa 1 · Luetun ymmärtäminen" : "Part 1 · Reading", " · ", rIdx + 1, "/", passages.length), /*#__PURE__*/React.createElement("div", {
+    }, P(lang, "Osa 1 · Luetun ymmärtäminen", "Part 1 · Reading"), " · ", rIdx + 1, "/", passages.length), /*#__PURE__*/React.createElement("div", {
       className: "h",
       style: {
         color: A
@@ -17561,7 +18494,7 @@ function YkiRun({
       onClick: () => {
         rIdx < passages.length - 1 ? setRIdx(rIdx + 1) : setStage("struct");
       }
-    }, rIdx < passages.length - 1 ? (F ? "Seuraava teksti" : "Next text") + " →" : (F ? "Osaan 2" : "To Part 2") + " →"));
+    }, rIdx < passages.length - 1 ? P(lang, "Seuraava teksti", "Next text") + " →" : P(lang, "Osaan 2", "To Part 2") + " →"));
   }
   if (stage === "struct") {
     const q = structs[sIdx];
@@ -17578,7 +18511,7 @@ function YkiRun({
       style: {
         color: A
       }
-    }, F ? "Osa 2 · Rakenteet ja sanasto" : "Part 2 · Structures & vocabulary", " · ", sIdx + 1, "/", structs.length), /*#__PURE__*/React.createElement("div", {
+    }, P(lang, "Osa 2 · Rakenteet ja sanasto", "Part 2 · Structures & vocabulary"), " · ", sIdx + 1, "/", structs.length), /*#__PURE__*/React.createElement("div", {
       className: "card",
       style: {
         color: C.ink
@@ -17612,7 +18545,7 @@ function YkiRun({
       onClick: () => {
         sIdx < structs.length - 1 ? setSIdx(sIdx + 1) : setStage("write");
       }
-    }, sIdx < structs.length - 1 ? (F ? "Seuraava" : "Next") + " →" : (F ? "Osaan 3" : "To Part 3") + " →"));
+    }, sIdx < structs.length - 1 ? P(lang, "Seuraava", "Next") + " →" : P(lang, "Osaan 3", "To Part 3") + " →"));
   }
   if (stage === "write") return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -17627,7 +18560,7 @@ function YkiRun({
     style: {
       color: A
     }
-  }, F ? "Osa 3 · Kirjoittaminen" : "Part 3 · Writing"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Osa 3 · Kirjoittaminen", "Part 3 · Writing")), /*#__PURE__*/React.createElement("div", {
     className: "h",
     style: {
       color: A
@@ -17648,24 +18581,24 @@ function YkiRun({
       fontSize: 16,
       marginTop: 6
     }
-  }, F ? "Vähintään" : "At least", " ", task.min, " ", F ? "sanaa" : "words")), /*#__PURE__*/React.createElement("textarea", {
+  }, P(lang, "Vähintään", "At least"), " ", task.min, " ", P(lang, "sanaa", "words"))), /*#__PURE__*/React.createElement("textarea", {
     className: "ykita",
     value: txt,
     onChange: e => setTxt(e.target.value),
-    placeholder: F ? "Kirjoita tähän suomeksi…" : "Write here in Finnish…"
+    placeholder: P(lang, "Kirjoita tähän suomeksi…", "Write here in Finnish…")
   }), /*#__PURE__*/React.createElement("div", {
     className: "dim",
     style: {
       textAlign: "right",
       fontSize: 16
     }
-  }, words, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement("button", {
+  }, words, " ", P(lang, "sanaa", "words")), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: A
     },
     onClick: () => setStage("model")
-  }, F ? "Valmis — näytä mallivastaus" : "Done — show model answer", " →"));
+  }, P(lang, "Valmis — näytä mallivastaus", "Done — show model answer"), " →"));
   if (stage === "model") return /*#__PURE__*/React.createElement("div", {
     style: {
       color: A
@@ -17675,7 +18608,7 @@ function YkiRun({
     style: {
       color: A
     }
-  }, F ? "Kirjoittaminen · itsearviointi" : "Writing · self-assessment"), txt.trim() && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Kirjoittaminen · itsearviointi", "Writing · self-assessment")), txt.trim() && /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
       color: C.ink
@@ -17685,7 +18618,7 @@ function YkiRun({
     style: {
       color: A
     }
-  }, F ? "Oma tekstisi" : "Your text", " · ", words, " ", F ? "sanaa" : "words"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Oma tekstisi", "Your text"), " · ", words, " ", P(lang, "sanaa", "words")), /*#__PURE__*/React.createElement("div", {
     style: {
       whiteSpace: "pre-wrap",
       fontSize: 16
@@ -17700,7 +18633,7 @@ function YkiRun({
     style: {
       color: A
     }
-  }, F ? "Mallivastaus" : "Model answer"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Mallivastaus", "Model answer")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 16,
       lineHeight: 1.55,
@@ -17716,10 +18649,10 @@ function YkiRun({
     style: {
       color: A
     }
-  }, F ? "Tarkista, että tekstissäsi on:" : "Check that your text has:"), task.tips.map((t, i) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Tarkista, että tekstissäsi on:", "Check that your text has:")), task.tips.map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     className: "ykitip"
-  }, "☐ ", F ? t[0] : t[1]))), /*#__PURE__*/React.createElement("button", {
+  }, "☐ ", P(lang, t[0], t[1])))), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: A
@@ -17736,7 +18669,7 @@ function YkiRun({
       });
       setStage("done");
     }
-  }, F ? "Näytä tulos" : "Show result", " →"));
+  }, P(lang, "Näytä tulos", "Show result"), " →"));
   return /*#__PURE__*/React.createElement("div", {
     style: {
       color: A
@@ -17746,35 +18679,35 @@ function YkiRun({
     style: {
       color: A
     }
-  }, F ? "Tulos" : "Result"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Tulos", "Result")), /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
       color: C.ink
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, F ? "Luetun ymmärtäminen" : "Reading"), /*#__PURE__*/React.createElement("span", null, rScore, " / ", rTotal)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("b", null, P(lang, "Luetun ymmärtäminen", "Reading")), /*#__PURE__*/React.createElement("span", null, rScore, " / ", rTotal)), /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, F ? "Rakenteet ja sanasto" : "Structures"), /*#__PURE__*/React.createElement("span", null, sScore, " / ", structs.length)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("b", null, P(lang, "Rakenteet ja sanasto", "Structures")), /*#__PURE__*/React.createElement("span", null, sScore, " / ", structs.length)), /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, F ? "Yhteensä" : "Total"), /*#__PURE__*/React.createElement("span", null, total, " / ", max, " · ", pct, " %")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("b", null, P(lang, "Yhteensä", "Total")), /*#__PURE__*/React.createElement("span", null, total, " / ", max, " · ", pct, " %")), /*#__PURE__*/React.createElement("div", {
     className: "h",
     style: {
       color: pass ? C.good : C.bad,
       marginTop: 8
     }
-  }, pass ? F ? "Hyväksytty ✓" : "Pass ✓" : F ? "Hylätty ✗" : "Fail ✗", " ", /*#__PURE__*/React.createElement("span", {
+  }, pass ? P(lang, "Hyväksytty ✓", "Pass ✓") : P(lang, "Hylätty ✗", "Fail ✗"), " ", /*#__PURE__*/React.createElement("span", {
     className: "dim",
     style: {
       fontSize: 15,
       fontWeight: 600
     }
-  }, "(", F ? "raja" : "line", " 60 %)")), /*#__PURE__*/React.createElement("div", {
+  }, "(", P(lang, "raja", "line"), " 60 %)")), /*#__PURE__*/React.createElement("div", {
     className: "note",
     style: {
       marginTop: 8
     }
-  }, F ? "Kirjoittaminen arvioidaan itse mallivastauksen avulla — oikeassa YKI-kokeessa sen arvioi ihminen." : "Writing is self-assessed against the model — in the real YKI a human grades it.")), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, "Kirjoittaminen arvioidaan itse mallivastauksen avulla — oikeassa YKI-kokeessa sen arvioi ihminen.", "Writing is self-assessed against the model — in the real YKI a human grades it."))), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: A
@@ -17831,6 +18764,19 @@ function Sidebar({
     fn();
     close && close();
   };
+  // one click opens (and navigates); clicking the same head again collapses/hides its items
+  const [openSec, setOpenSec] = useState(sect);
+  useEffect(() => {
+    setOpenSec(sect);
+  }, [sect]);
+  const headClick = (k, navFn) => {
+    if (openSec === k) {
+      setOpenSec(null);
+    } else {
+      setOpenSec(k);
+      tap(navFn);
+    }
+  };
   return /*#__PURE__*/React.createElement("div", {
     className: "sbinner"
   }, /*#__PURE__*/React.createElement("div", {
@@ -17838,72 +18784,78 @@ function Sidebar({
     onClick: () => tap(() => go("home"))
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
-  }), " Suomi-polku"), /*#__PURE__*/React.createElement("button", {
+  }), " SuomiPolku"), /*#__PURE__*/React.createElement("button", {
     className: "sbsearch",
     onClick: () => tap(() => openSearch())
-  }, "🔍 ", F ? "Hae sivustolta" : "Search the site"), secs.map(s => /*#__PURE__*/React.createElement("div", {
+  }, "🔍 ", P(lang, "Hae sivustolta", "Search the site")), secs.map(s => /*#__PURE__*/React.createElement("div", {
     key: s.k,
     className: "sbsec"
   }, /*#__PURE__*/React.createElement("button", {
-    className: "sbhead" + (sect === s.k ? " on" : ""),
-    onClick: () => tap(() => selectSection(s.k))
-  }, s.ic, " ", L(lang, s.k)), sect === s.k && /*#__PURE__*/React.createElement("div", {
+    className: "sbhead" + (sect === s.k ? " on" : "") + (openSec === s.k ? " open" : ""),
+    "aria-expanded": openSec === s.k,
+    onClick: () => headClick(s.k, () => selectSection(s.k))
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sbchev"
+  }, openSec === s.k ? "▾" : "▸"), s.ic, " ", L(lang, s.k)), openSec === s.k && /*#__PURE__*/React.createElement("div", {
     className: "sbsub"
   }, s.k === "grammar" && /*#__PURE__*/React.createElement(React.Fragment, null, chapters.map((c, i) => /*#__PURE__*/React.createElement(React.Fragment, {
     key: c.id
   }, PATH_MODULES[i] && /*#__PURE__*/React.createElement("div", {
     className: "sbmod"
-  }, F ? PATH_MODULES[i][0] : PATH_MODULES[i][1]), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, PATH_MODULES[i][0], PATH_MODULES[i][1])), /*#__PURE__*/React.createElement("button", {
     className: "sbitem chap" + (activeChapter === c.id ? " cur" : ""),
     onClick: () => tap(() => openChapter(c.id))
   }, /*#__PURE__*/React.createElement("span", {
     className: "sbn"
   }, i + 1), /*#__PURE__*/React.createElement("span", {
     className: "sbt"
-  }, F ? c.tf : c.te)))), /*#__PURE__*/React.createElement("button", {
+  }, P(lang, c.tf, c.te))))), /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     style: {
       marginTop: 8,
       fontWeight: 700
     },
     onClick: () => tap(() => openTable(""))
-  }, "📋 ", F ? "Taivutustaulukko" : "Inflection table")), s.k === "vocab" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+  }, "📋 ", P(lang, "Taivutustaulukko", "Inflection table"))), s.k === "vocab" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     onClick: () => tap(() => pickField("all"))
-  }, "🎲 ", F ? "Kaikki aiheet" : "All topics"), Object.keys(VFIELDS).map(k => /*#__PURE__*/React.createElement("button", {
+  }, "🎲 ", P(lang, "Kaikki aiheet", "All topics")), Object.keys(VFIELDS).map(k => /*#__PURE__*/React.createElement("button", {
     key: k,
     className: "sbitem",
     onClick: () => tap(() => pickField(k))
-  }, VFIELDS[k].split(" · ")[F ? 0 : 1]))), s.k === "sent" && /*#__PURE__*/React.createElement(React.Fragment, null, [["any", F ? "Kaikki" : "All"], ["simple", L(lang, "simple")], ["compound", L(lang, "compound")], ["complex", L(lang, "complex")]].map(([v, t]) => /*#__PURE__*/React.createElement("button", {
+  }, fieldLabel(lang, k)))), s.k === "sent" && /*#__PURE__*/React.createElement(React.Fragment, null, [["any", P(lang, "Kaikki", "All")], ["simple", L(lang, "simple")], ["compound", L(lang, "compound")], ["complex", L(lang, "complex")]].map(([v, t]) => /*#__PURE__*/React.createElement("button", {
     key: v,
     className: "sbitem",
     onClick: () => tap(() => pickStruct(v))
   }, t)), /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     onClick: () => tap(() => goView("puhekieli"))
-  }, "🗣️ ", F ? "Puhekieli-harjoitus" : "Spoken-Finnish drill")), s.k === "exam" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+  }, "🗣️ ", P(lang, "Puhekieli-harjoitus", "Spoken-Finnish drill"))), s.k === "exam" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     onClick: () => tap(() => startYki())
-  }, "🕒 ", F ? "YKI-harjoituskoe" : "YKI mock"), /*#__PURE__*/React.createElement("button", {
+  }, "🕒 ", P(lang, "YKI-harjoituskoe", "YKI mock")), /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     onClick: () => tap(() => startQuick())
-  }, "⚡ ", F ? "Pikaharjoitus" : "Quick practice"))))), /*#__PURE__*/React.createElement("div", {
+  }, "⚡ ", P(lang, "Pikaharjoitus", "Quick practice")))))), /*#__PURE__*/React.createElement("div", {
     className: "sbsec"
   }, /*#__PURE__*/React.createElement("button", {
-    className: "sbhead" + (sect === "speak" ? " on" : ""),
-    onClick: () => tap(() => goView("situations"))
-  }, "🗣️ ", F ? "Puhe & tilanteet" : "Speak & situations"), sect === "speak" && /*#__PURE__*/React.createElement("div", {
+    className: "sbhead" + (sect === "speak" ? " on" : "") + (openSec === "speak" ? " open" : ""),
+    "aria-expanded": openSec === "speak",
+    onClick: () => headClick("speak", () => goView("situations"))
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sbchev"
+  }, openSec === "speak" ? "▾" : "▸"), "🗣️ ", P(lang, "Puhe & tilanteet", "Speak & situations")), openSec === "speak" && /*#__PURE__*/React.createElement("div", {
     className: "sbsub"
   }, /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     onClick: () => tap(() => goView("situations"))
-  }, "💬 ", F ? "Tilanteet" : "Situations"), /*#__PURE__*/React.createElement("button", {
+  }, "💬 ", P(lang, "Tilanteet", "Situations")), /*#__PURE__*/React.createElement("button", {
     className: "sbitem",
     onClick: () => tap(() => goView("puhekieli"))
-  }, "🗣️ ", F ? "Puhekieli-harjoitus" : "Spoken-Finnish drill"))), /*#__PURE__*/React.createElement("button", {
+  }, "🗣️ ", P(lang, "Puhekieli-harjoitus", "Spoken-Finnish drill")))), /*#__PURE__*/React.createElement("button", {
     className: "sbsaved",
     onClick: () => tap(() => goView("saved"))
-  }, "⭐ ", F ? "Tallennetut" : "Saved", savedCount ? " (" + savedCount + ")" : ""));
+  }, "⭐ ", P(lang, "Tallennetut", "Saved"), savedCount ? " (" + savedCount + ")" : ""));
 }
 // ===== #7 Spoken-Finnish drill =====
 function PuhekieliRun({
@@ -17942,14 +18894,14 @@ function PuhekieliRun({
     style: {
       color: A
     }
-  }, F ? "Tulos" : "Result"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Tulos", "Result")), /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
       color: C.ink
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "ykirow"
-  }, /*#__PURE__*/React.createElement("b", null, F ? "Oikein" : "Correct"), /*#__PURE__*/React.createElement("span", null, score, " / ", deck.length))), /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("b", null, P(lang, "Oikein", "Correct")), /*#__PURE__*/React.createElement("span", null, score, " / ", deck.length))), /*#__PURE__*/React.createElement("button", {
     className: "btn block",
     style: {
       background: A
@@ -17960,7 +18912,7 @@ function PuhekieliRun({
       setScore(0);
       setDone(false);
     }
-  }, F ? "Uudestaan" : "Again"), /*#__PURE__*/React.createElement(PageEnd, {
+  }, P(lang, "Uudestaan", "Again")), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     back: onHome,
     backLabel: L(lang, "sent"),
@@ -17976,9 +18928,9 @@ function PuhekieliRun({
     style: {
       color: A
     }
-  }, F ? "Puhekieli-harjoitus" : "Spoken-Finnish drill"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Puhekieli-harjoitus", "Spoken-Finnish drill")), /*#__PURE__*/React.createElement("div", {
     className: "sub"
-  }, F ? "Valitse puhekielinen vastine kirjakielelle." : "Pick the spoken form for the written-standard phrase.", " · ", i + 1, "/", deck.length), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Valitse puhekielinen vastine kirjakielelle.", "Pick the spoken form for the written-standard phrase."), " · ", i + 1, "/", deck.length), /*#__PURE__*/React.createElement("div", {
     className: "card",
     style: {
       color: C.ink
@@ -18011,7 +18963,7 @@ function PuhekieliRun({
     onClick: () => {
       i + 1 >= deck.length ? setDone(true) : (setI(i + 1), setSel(null));
     }
-  }, i + 1 >= deck.length ? F ? "Valmis" : "Finish" : F ? "Seuraava" : "Next")), /*#__PURE__*/React.createElement(PageEnd, {
+  }, i + 1 >= deck.length ? P(lang, "Valmis", "Finish") : P(lang, "Seuraava", "Next"))), /*#__PURE__*/React.createElement(PageEnd, {
     lang: lang,
     back: onHome,
     backLabel: L(lang, "sent"),
@@ -18039,9 +18991,9 @@ function Situations({
     style: {
       color: C.sent
     }
-  }, F ? "Tilanteet" : "Situations"), /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Tilanteet", "Situations")), /*#__PURE__*/React.createElement("div", {
     className: "sub"
-  }, F ? "Arjen keskustelut ja avainlauseet — asiointi, terveys, työ." : "Everyday conversations and key phrases — errands, health, work."), SITUATIONS.map(s => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Arjen keskustelut ja avainlauseet — asiointi, terveys, työ.", "Everyday conversations and key phrases — errands, health, work.")), SITUATIONS.map(s => /*#__PURE__*/React.createElement("div", {
     key: s.id,
     className: "card",
     style: {
@@ -18053,7 +19005,7 @@ function Situations({
       color: C.sent
     },
     onClick: () => setOpen(open === s.id ? null : s.id)
-  }, open === s.id ? "▾" : "▸", " ", F ? s.tf : s.te), open === s.id && /*#__PURE__*/React.createElement("div", {
+  }, open === s.id ? "▾" : "▸", " ", P(lang, s.tf, s.te)), open === s.id && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 8
     }
@@ -18076,7 +19028,7 @@ function Situations({
       color: C.sent,
       marginTop: 10
     }
-  }, F ? "Avainlauseet" : "Key phrases"), s.phrases.map((p, pi) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Avainlauseet", "Key phrases")), s.phrases.map((p, pi) => /*#__PURE__*/React.createElement("div", {
     key: pi,
     className: "sitphrase spkrow"
   }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, p.f), " — ", p.e), " ", /*#__PURE__*/React.createElement(SpeakBtn, {
@@ -18108,16 +19060,16 @@ function SavedView({
     setLang: setLang
   })), /*#__PURE__*/React.createElement("div", {
     className: "h"
-  }, F ? "Tallennetut" : "Saved"), chaps.length === 0 && words.length === 0 && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Tallennetut", "Saved")), chaps.length === 0 && words.length === 0 && /*#__PURE__*/React.createElement("div", {
     className: "note"
-  }, F ? "Ei vielä tallennettuja. Napauta ☆ luvussa tai sanan kohdalla." : "Nothing saved yet. Tap ☆ on a chapter or a word."), chaps.length > 0 && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Ei vielä tallennettuja. Napauta ☆ luvussa tai sanan kohdalla.", "Nothing saved yet. Tap ☆ on a chapter or a word.")), chaps.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab",
     style: {
       color: C.grammar
     }
-  }, F ? "Luvut" : "Chapters"), chaps.map(c => /*#__PURE__*/React.createElement("button", {
+  }, P(lang, "Luvut", "Chapters")), chaps.map(c => /*#__PURE__*/React.createElement("button", {
     key: c.id,
     className: "btn block",
     style: {
@@ -18125,14 +19077,14 @@ function SavedView({
       marginBottom: 6
     },
     onClick: () => openChapter(c.id)
-  }, F ? c.tf : c.te))), words.length > 0 && /*#__PURE__*/React.createElement("div", {
+  }, P(lang, c.tf, c.te)))), words.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab",
     style: {
       color: C.vocab
     }
-  }, F ? "Sanat" : "Words"), words.map((v, i) => /*#__PURE__*/React.createElement("div", {
+  }, P(lang, "Sanat", "Words")), words.map((v, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     className: "srrow"
   }, /*#__PURE__*/React.createElement("b", null, v.fi), " — ", v.en))), /*#__PURE__*/React.createElement(PageEnd, {
@@ -18366,31 +19318,51 @@ function App() {
     },
     start: (mode, field) => {
       const pool = VOCAB.filter(v => field === "all" || v.t === field);
+      const n = mode === "mix" ? 50 : 30;
       setRun({
         kind: "v",
         mode,
-        deck: srsDeck(pool, prog.v, x => x.fi, 50)
+        deck: srsDeck(pool, prog.v, x => x.fi, n)
       });
       setView("vrun");
     }
   });else if (view === "vrun" && run) {
     const d = run.deck;
     const onHome = () => setView("vocab");
-    content = d.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(VocabMix, {
+    let body = null;
+    if (!d.length) body = /*#__PURE__*/React.createElement("div", {
+      className: "note"
+    }, P(lang, "Ei sanoja tällä valinnalla.", "No words for that selection."));else if (run.mode === "flash") body = /*#__PURE__*/React.createElement(FlashRun, {
+      lang: lang,
+      deck: d,
+      onHome: onHome,
+      rec: recVocab,
+      bmWords: bm.w,
+      toggleWord: toggleBmW
+    });else if (run.mode === "mcq") body = /*#__PURE__*/React.createElement(VocabQuiz, {
+      lang: lang,
+      deck: d,
+      onHome: onHome,
+      rec: recVocab
+    });else if (run.mode === "typed") body = /*#__PURE__*/React.createElement(TypedRun, {
+      lang: lang,
+      deck: d,
+      onHome: onHome,
+      rec: recVocab
+    });else body = /*#__PURE__*/React.createElement(VocabMix, {
       lang: lang,
       deck: d,
       onDone: onHome,
       rec: recVocab,
       bmWords: bm.w,
       toggleWord: toggleBmW
-    }), /*#__PURE__*/React.createElement(PageEnd, {
+    });
+    content = /*#__PURE__*/React.createElement("div", null, body, /*#__PURE__*/React.createElement(PageEnd, {
       lang: lang,
       back: onHome,
       backLabel: L(lang, "vocab"),
       home: () => setView("home")
-    })) : /*#__PURE__*/React.createElement("div", {
-      className: "note"
-    }, "No items.");
+    }));
   } else if (view === "sent") content = /*#__PURE__*/React.createElement(SentHome, {
     key: navStruct,
     lang: lang,
@@ -18406,29 +19378,47 @@ function App() {
     },
     start: (mode, st, ty) => {
       const pool = SENTENCES.filter(x => (st === "any" || x.struct === st) && (ty === "any" || x.type === ty));
+      const n = mode === "mix" ? 50 : 30;
       setRun({
         kind: "s",
         mode,
-        deck: srsDeck(pool, prog.s, x => x.id, 50)
+        deck: srsDeck(pool, prog.s, x => x.id, n)
       });
       setView("srun");
     }
   });else if (view === "srun" && run) {
     const d = run.deck;
     const onHome = () => setView("sent");
-    content = d.length ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SentMix, {
+    let body = null;
+    if (!d.length) body = /*#__PURE__*/React.createElement("div", {
+      className: "note"
+    }, P(lang, "Ei lauseita tällä valinnalla.", "No sentences for that selection."));else if (run.mode === "cards") body = /*#__PURE__*/React.createElement(SentCards, {
+      lang: lang,
+      deck: d,
+      onHome: onHome,
+      rec: recSent
+    });else if (run.mode === "mcq") body = /*#__PURE__*/React.createElement(SentMcq, {
+      lang: lang,
+      deck: d,
+      onHome: onHome,
+      rec: recSent
+    });else if (run.mode === "typed") body = /*#__PURE__*/React.createElement(TransRun, {
+      lang: lang,
+      deck: d,
+      onHome: onHome,
+      rec: recSent
+    });else body = /*#__PURE__*/React.createElement(SentMix, {
       lang: lang,
       deck: d,
       onDone: onHome,
       rec: recSent
-    }), /*#__PURE__*/React.createElement(PageEnd, {
+    });
+    content = /*#__PURE__*/React.createElement("div", null, body, /*#__PURE__*/React.createElement(PageEnd, {
       lang: lang,
       back: onHome,
       backLabel: L(lang, "sent"),
       home: () => setView("home")
-    })) : /*#__PURE__*/React.createElement("div", {
-      className: "note"
-    }, F ? "Ei lauseita tällä valinnalla." : "No sentences for that selection.");
+    }));
   } else if (view === "exam") content = /*#__PURE__*/React.createElement(ExamHome, {
     lang: lang,
     setLang: setLang,
