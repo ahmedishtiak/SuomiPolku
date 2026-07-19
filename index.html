@@ -14495,10 +14495,8 @@ function guessDevice() {
 function fmtDate(iso) {
   try {
     const d = new Date(iso);
-    return d.toLocaleDateString() + " " + d.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
+    const pad = n => String(n).padStart(2, "0");
+    return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
   } catch (e) {
     return iso || "";
   }
@@ -15235,7 +15233,22 @@ const BN = {
   "Invalid file": "ফাইলটি সঠিক নয়",
   "Browsers don't reveal a device's real name — this is a guess you can rename. Export the file and import it on another device.": "ব্রাউজার ডিভাইসের আসল নাম দেখায় না — এটি একটি অনুমান, আপনি নিজে নাম দিতে পারেন। ফাইলটি এক্সপোর্ট করে অন্য ডিভাইসে ইমপোর্ট করুন।",
   "Add “": "যোগ করুন “",
-  "” to your words": "” — আপনার শব্দে"
+  "” to your words": "” — আপনার শব্দে",
+  // ===== settings =====
+  "Settings": "সেটিংস",
+  "Your words and backup across devices.": "আপনার শব্দ এবং ডিভাইসের মধ্যে ব্যাকআপ।",
+  "No words of your own yet. Search a word on the home page and add it.": "এখনো নিজের কোনো শব্দ নেই। হোম পেজে একটি শব্দ খুঁজে যোগ করুন।",
+  "Backup & sync": "ব্যাকআপ ও সিঙ্ক",
+  "The export covers the whole vocabulary": "এক্সপোর্টে পুরো শব্দভাণ্ডার থাকে",
+  "built-in": "অন্তর্নির্মিত",
+  " new words": "টি নতুন শব্দ",
+  "new words": "নতুন শব্দ",
+  "Last export": "সর্বশেষ এক্সপোর্ট",
+  "Last import": "সর্বশেষ ইমপোর্ট",
+  "No export yet": "এখনো কোনো এক্সপোর্ট হয়নি",
+  "No import yet": "এখনো কোনো ইমপোর্ট হয়নি",
+  "file date": "ফাইলের তারিখ",
+  "Browsers don't reveal a device's real name — this is a guess you can rename. Import only adds new words; the built-in vocabulary is never duplicated.": "ব্রাউজার ডিভাইসের আসল নাম দেখায় না — এটি একটি অনুমান, আপনি নিজে নাম দিতে পারেন। ইমপোর্ট কেবল নতুন শব্দ যোগ করে; অন্তর্নির্মিত শব্দভাণ্ডার কখনো দ্বিগুণ হয় না।"
 };
 function P(lang, fi, en) {
   return lang === "fi" ? fi : lang === "bn" ? BN[en] || en : en;
@@ -16147,28 +16160,17 @@ function UniversalSearch({
   openTable,
   focusKey,
   custom,
-  addCustom,
-  delCustom,
-  sync,
-  onExport,
-  onImport,
-  setDevice
+  addCustom
 }) {
   const F = lang === "fi";
   const [qy, setQy] = useState("");
   const [res, setRes] = useState(undefined);
   const inpRef = useRef(null);
-  const fileRef = useRef(null);
   const [showAdd, setShowAdd] = useState(false);
   const [nf, setNf] = useState("");
   const [ne, setNe] = useState("");
   const [nb, setNb] = useState("");
   const [msg, setMsg] = useState(null);
-  const [panel, setPanel] = useState(false);
-  const [devName, setDevName] = useState(sync && sync.device || "");
-  useEffect(() => {
-    setDevName(sync && sync.device || "");
-  }, [sync && sync.device]);
   useEffect(() => {
     if (focusKey && inpRef.current) try {
       inpRef.current.focus();
@@ -16250,31 +16252,6 @@ function UniversalSearch({
       ...res,
       hasExactWord: true
     });
-  }
-  function onFile(e) {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      try {
-        const data = JSON.parse(reader.result);
-        const r = onImport(data);
-        setMsg(r.ok ? {
-          bad: false,
-          t: P(lang, "Tuotu ", "Imported ") + r.added + P(lang, " sanaa", " words")
-        } : {
-          bad: true,
-          t: P(lang, "Virheellinen tiedosto", "Invalid file")
-        });
-      } catch (err) {
-        setMsg({
-          bad: true,
-          t: P(lang, "Virheellinen tiedosto", "Invalid file")
-        });
-      }
-    };
-    reader.readAsText(file);
-    e.target.value = "";
   }
   const meaningSenses = en => (en || "").split(",").map(x => x.trim()).filter(Boolean);
   return /*#__PURE__*/React.createElement("div", {
@@ -16448,99 +16425,7 @@ function UniversalSearch({
     onClick: saveNew
   }, P(lang, "Tallenna", "Save"))))), msg && /*#__PURE__*/React.createElement("div", {
     className: "savemsg" + (msg.bad ? " bad" : "")
-  }, msg.t)), /*#__PURE__*/React.createElement("div", {
-    className: "mywrap"
-  }, /*#__PURE__*/React.createElement("button", {
-    className: "myhead",
-    onClick: () => setPanel(!panel)
-  }, panel ? "▾" : "▸", " 🗂️ ", P(lang, "Omat sanat", "My words"), " (", cust.length, ") · ", P(lang, "varmuuskopio", "backup")), panel && /*#__PURE__*/React.createElement("div", {
-    className: "mypanel"
-  }, cust.length === 0 && /*#__PURE__*/React.createElement("div", {
-    className: "note",
-    style: {
-      marginTop: 0
-    }
-  }, P(lang, "Ei omia sanoja vielä. Hae sana ja lisää se yllä.", "No words of your own yet. Search a word and add it above.")), cust.length > 0 && /*#__PURE__*/React.createElement("div", {
-    className: "mylist"
-  }, cust.slice(0, 40).map((w, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    className: "myrow"
-  }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, w.fi), " — ", w.en, w.bn ? /*#__PURE__*/React.createElement("span", {
-    className: "dim"
-  }, " · ", w.bn) : null), /*#__PURE__*/React.createElement("button", {
-    className: "del",
-    title: P(lang, "Poista", "Delete"),
-    onClick: () => delCustom(w.fi)
-  }, "✕"))), cust.length > 40 && /*#__PURE__*/React.createElement("div", {
-    className: "dim",
-    style: {
-      fontSize: 12,
-      padding: "4px 2px"
-    }
-  }, "+", cust.length - 40, "…")), /*#__PURE__*/React.createElement("div", {
-    className: "row",
-    style: {
-      gap: 8,
-      marginTop: 10
-    }
-  }, /*#__PURE__*/React.createElement("button", {
-    className: "btn block",
-    style: {
-      background: C.vocab
-    },
-    onClick: () => {
-      if (!cust.length) {
-        setMsg({
-          bad: true,
-          t: P(lang, "Ei vietävää", "Nothing to export")
-        });
-        return;
-      }
-      onExport();
-    }
-  }, "⬇ ", P(lang, "Vie tiedostoon", "Export")), /*#__PURE__*/React.createElement("button", {
-    className: "btn ghost block",
-    onClick: () => fileRef.current && fileRef.current.click()
-  }, "⬆ ", P(lang, "Tuo tiedostosta", "Import")), /*#__PURE__*/React.createElement("input", {
-    ref: fileRef,
-    type: "file",
-    accept: "application/json,.json",
-    style: {
-      display: "none"
-    },
-    onChange: onFile
-  })), /*#__PURE__*/React.createElement("label", {
-    className: "addlab",
-    style: {
-      marginTop: 10
-    }
-  }, P(lang, "Laitteen nimi", "Device name")), /*#__PURE__*/React.createElement("div", {
-    className: "row",
-    style: {
-      gap: 8
-    }
-  }, /*#__PURE__*/React.createElement("input", {
-    className: "inp",
-    value: devName,
-    onChange: e => setDevName(e.target.value),
-    onBlur: () => setDevice(devName),
-    placeholder: guessDevice()
-  }), /*#__PURE__*/React.createElement("button", {
-    className: "btn",
-    style: {
-      background: C.grammar
-    },
-    onClick: () => setDevice(devName)
-  }, P(lang, "OK", "OK"))), /*#__PURE__*/React.createElement("div", {
-    className: "dim synced"
-  }, sync && sync.lastExport && /*#__PURE__*/React.createElement("div", null, "⬇ ", P(lang, "Viety", "Exported"), ": ", fmtDate(sync.lastExport.at), " · ", sync.lastExport.device), sync && sync.lastImport && /*#__PURE__*/React.createElement("div", null, "⬆ ", P(lang, "Tuotu", "Imported"), ": ", fmtDate(sync.lastImport.at), " · ", sync.lastImport.added, " ", P(lang, "sanaa", "words"), sync.lastImport.from ? " · " + P(lang, "lähde", "from") + " " + sync.lastImport.from : "")), /*#__PURE__*/React.createElement("div", {
-    className: "dim",
-    style: {
-      fontSize: 11.5,
-      marginTop: 6,
-      lineHeight: 1.5
-    }
-  }, P(lang, "Selain ei paljasta laitteen oikeaa nimeä — tämä on arvaus, jonka voit nimetä itse. Vie tiedosto ja tuo se toisella laitteella.", "Browsers don't reveal a device's real name — this is a guess you can rename. Export the file and import it on another device.")))));
+  }, msg.t)));
 }
 function Home({
   lang,
@@ -16551,12 +16436,7 @@ function Home({
   openTable,
   focusKey,
   custom,
-  addCustom,
-  delCustom,
-  sync,
-  onExport,
-  onImport,
-  setDevice
+  addCustom
 }) {
   const F = lang === "fi";
   const vMast = Object.values(prog.v || {}).filter(x => x.streak >= 2).length;
@@ -16595,12 +16475,7 @@ function Home({
     openTable: openTable,
     focusKey: focusKey,
     custom: custom,
-    addCustom: addCustom,
-    delCustom: delCustom,
-    sync: sync,
-    onExport: onExport,
-    onImport: onImport,
-    setDevice: setDevice
+    addCustom: addCustom
   }), /*#__PURE__*/React.createElement("div", {
     className: "grid"
   }, secs.map(s => /*#__PURE__*/React.createElement("button", {
@@ -19235,7 +19110,10 @@ function Sidebar({
   }, "🗣️ ", P(lang, "Puhekieli-harjoitus", "Spoken-Finnish drill")))), /*#__PURE__*/React.createElement("button", {
     className: "sbsaved",
     onClick: () => tap(() => goView("saved"))
-  }, "⭐ ", P(lang, "Tallennetut", "Saved"), savedCount ? " (" + savedCount + ")" : ""));
+  }, "⭐ ", P(lang, "Tallennetut", "Saved"), savedCount ? " (" + savedCount + ")" : ""), /*#__PURE__*/React.createElement("button", {
+    className: "sbsaved",
+    onClick: () => tap(() => goView("settings"))
+  }, "⚙︎ ", P(lang, "Asetukset", "Settings")));
 }
 // ===== #7 Spoken-Finnish drill =====
 function PuhekieliRun({
@@ -19472,6 +19350,171 @@ function SavedView({
     home: onHome
   }));
 }
+// ===== Settings: custom words + full backup (export/import) =====
+function Settings({
+  lang,
+  setLang,
+  custom,
+  delCustom,
+  sync,
+  onExport,
+  onImport,
+  setDevice,
+  onHome
+}) {
+  const cust = custom || [];
+  const fileRef = useRef(null);
+  const [devName, setDevName] = useState(sync && sync.device || "");
+  const [msg, setMsg] = useState(null);
+  useEffect(() => {
+    setDevName(sync && sync.device || "");
+  }, [sync && sync.device]);
+  const totalWords = VOCAB.length + cust.length;
+  function onFile(e) {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(reader.result);
+        const r = onImport(data);
+        setMsg(r.ok ? {
+          bad: false,
+          t: P(lang, "Tuotu ", "Imported ") + r.added + P(lang, " uutta sanaa", " new words")
+        } : {
+          bad: true,
+          t: P(lang, "Virheellinen tiedosto", "Invalid file")
+        });
+      } catch (err) {
+        setMsg({
+          bad: true,
+          t: P(lang, "Virheellinen tiedosto", "Invalid file")
+        });
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "topbar"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "linkback",
+    onClick: onHome
+  }, "🏠 ", L(lang, "home")), /*#__PURE__*/React.createElement(LangToggle, {
+    lang: lang,
+    setLang: setLang
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "h",
+    style: {
+      color: C.grammar
+    }
+  }, "⚙︎ ", P(lang, "Asetukset", "Settings")), /*#__PURE__*/React.createElement("div", {
+    className: "sub"
+  }, P(lang, "Omat sanat ja varmuuskopiointi laitteiden välillä.", "Your words and backup across devices.")), /*#__PURE__*/React.createElement("div", {
+    className: "kv",
+    style: {
+      marginTop: 14
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: C.vocab
+    }
+  }, P(lang, "Omat sanat", "My words"), " (", cust.length, ")"), cust.length === 0 && /*#__PURE__*/React.createElement("div", {
+    className: "note",
+    style: {
+      marginTop: 0
+    }
+  }, P(lang, "Ei omia sanoja vielä. Hae sana etusivulla ja lisää se.", "No words of your own yet. Search a word on the home page and add it.")), cust.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "mylist"
+  }, cust.map((w, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "myrow"
+  }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("b", null, w.fi), " — ", w.en, w.bn ? /*#__PURE__*/React.createElement("span", {
+    className: "dim"
+  }, " · ", w.bn) : null), /*#__PURE__*/React.createElement("button", {
+    className: "del",
+    title: P(lang, "Poista", "Delete"),
+    onClick: () => delCustom(w.fi)
+  }, "✕"))))), /*#__PURE__*/React.createElement("div", {
+    className: "kv"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: C.grammar
+    }
+  }, P(lang, "Varmuuskopio & synkronointi", "Backup & sync")), /*#__PURE__*/React.createElement("div", {
+    className: "sub",
+    style: {
+      marginBottom: 8
+    }
+  }, P(lang, "Vienti sisältää koko sanaston", "The export covers the whole vocabulary"), ": ", /*#__PURE__*/React.createElement("b", null, VOCAB.length), " ", P(lang, "perussanaa", "built-in"), " + ", /*#__PURE__*/React.createElement("b", null, cust.length), " ", P(lang, "omaa", "yours"), " = ", /*#__PURE__*/React.createElement("b", null, totalWords), " ", P(lang, "sanaa", "words"), "."), /*#__PURE__*/React.createElement("div", {
+    className: "row",
+    style: {
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C.vocab
+    },
+    onClick: () => onExport()
+  }, "⬇ ", P(lang, "Vie tiedostoon", "Export")), /*#__PURE__*/React.createElement("button", {
+    className: "btn ghost block",
+    onClick: () => fileRef.current && fileRef.current.click()
+  }, "⬆ ", P(lang, "Tuo tiedostosta", "Import")), /*#__PURE__*/React.createElement("input", {
+    ref: fileRef,
+    type: "file",
+    accept: "application/json,.json",
+    style: {
+      display: "none"
+    },
+    onChange: onFile
+  })), msg && /*#__PURE__*/React.createElement("div", {
+    className: "savemsg" + (msg.bad ? " bad" : ""),
+    style: {
+      marginTop: 8
+    }
+  }, msg.t), /*#__PURE__*/React.createElement("label", {
+    className: "addlab",
+    style: {
+      marginTop: 12
+    }
+  }, P(lang, "Laitteen nimi", "Device name")), /*#__PURE__*/React.createElement("div", {
+    className: "row",
+    style: {
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    className: "inp",
+    value: devName,
+    onChange: e => setDevName(e.target.value),
+    onBlur: () => setDevice(devName),
+    placeholder: guessDevice()
+  }), /*#__PURE__*/React.createElement("button", {
+    className: "btn",
+    style: {
+      background: C.grammar
+    },
+    onClick: () => setDevice(devName)
+  }, P(lang, "OK", "OK"))), /*#__PURE__*/React.createElement("div", {
+    className: "synced"
+  }, sync && sync.lastExport ? /*#__PURE__*/React.createElement("div", null, "⬇ ", P(lang, "Viimeksi viety", "Last export"), ": ", /*#__PURE__*/React.createElement("b", null, fmtDate(sync.lastExport.at)), " · ", sync.lastExport.device, sync.lastExport.count != null ? " · " + sync.lastExport.count + " " + P(lang, "sanaa", "words") : "") : /*#__PURE__*/React.createElement("div", {
+    className: "dim"
+  }, "⬇ ", P(lang, "Ei vientejä vielä", "No export yet")), sync && sync.lastImport ? /*#__PURE__*/React.createElement("div", null, "⬆ ", P(lang, "Viimeksi tuotu", "Last import"), ": ", /*#__PURE__*/React.createElement("b", null, fmtDate(sync.lastImport.at)), " · ", sync.lastImport.added, " ", P(lang, "uutta sanaa", "new words"), sync.lastImport.from ? " · " + P(lang, "lähde", "from") + " " + sync.lastImport.from : "", sync.lastImport.fileDate ? " · " + P(lang, "tiedoston pvm", "file date") + " " + fmtDate(sync.lastImport.fileDate) : "") : /*#__PURE__*/React.createElement("div", {
+    className: "dim"
+  }, "⬆ ", P(lang, "Ei tuonteja vielä", "No import yet"))), /*#__PURE__*/React.createElement("div", {
+    className: "dim",
+    style: {
+      fontSize: 11.5,
+      marginTop: 8,
+      lineHeight: 1.5
+    }
+  }, P(lang, "Selain ei paljasta laitteen oikeaa nimeä — tämä on arvaus, jonka voit nimetä itse. Tuonti lisää vain uudet sanat; perussanasto ei kahdennu.", "Browsers don't reveal a device's real name — this is a guess you can rename. Import only adds new words; the built-in vocabulary is never duplicated."))), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    home: onHome
+  }));
+}
 function App() {
   const [lang, setLang] = usePersist("suomi_lang", "fi");
   const [prog, setProg] = usePersist("suomi_prog", {
@@ -19524,22 +19567,41 @@ function App() {
   }));
   const exportStock = () => {
     const now = new Date().toISOString();
+    // full snapshot: the whole built-in vocabulary + the user's own words
+    const builtin = VOCAB.map(v => ({
+      fi: v.fi,
+      en: v.en,
+      t: v.t,
+      builtin: true
+    }));
+    const mine = (custom || []).map(w => ({
+      fi: w.fi,
+      en: w.en,
+      bn: w.bn || "",
+      added: w.added,
+      device: w.device,
+      custom: true
+    }));
+    const words = [...mine, ...builtin];
     const payload = {
       app: "SuomiPolku",
       type: "vocab-stock",
-      version: 1,
+      version: 2,
       exportedAt: now,
       device: sync.device,
-      count: (custom || []).length,
-      words: custom || []
+      count: words.length,
+      builtinCount: builtin.length,
+      customCount: mine.length,
+      words
     };
-    const ok = downloadFile("suomipolku-words-" + now.slice(0, 10) + ".json", JSON.stringify(payload, null, 2));
+    const stamp = now.slice(0, 10) + "_" + now.slice(11, 16).replace(":", "");
+    const ok = downloadFile("suomipolku-words-" + stamp + ".json", JSON.stringify(payload, null, 2));
     if (ok) setSync(s => ({
       ...s,
       lastExport: {
         at: now,
         device: s.device,
-        count: (custom || []).length
+        count: words.length
       }
     }));
     return ok;
@@ -19548,6 +19610,7 @@ function App() {
     if (!data || data.type !== "vocab-stock" || !Array.isArray(data.words)) return {
       ok: false
     };
+    const builtinFi = new Set(VOCAB.map(v => v.fi.toLowerCase()));
     let added = 0;
     setCustom(list => {
       const map = {};
@@ -19555,6 +19618,9 @@ function App() {
       data.words.forEach(w => {
         if (!w || !w.fi) return;
         const key = w.fi.toLowerCase();
+        // skip built-in words (already in the app) and anything flagged builtin — only add genuinely new words
+        if (w.builtin || builtinFi.has(key)) return;
+        if (!map[key]) added++;
         map[key] = {
           fi: w.fi,
           en: normEn(w.en),
@@ -19562,7 +19628,6 @@ function App() {
           added: w.added || new Date().toISOString(),
           device: w.device || data.device || "import"
         };
-        added++;
       });
       return Object.values(map).sort((a, b) => (b.added || "").localeCompare(a.added || ""));
     });
@@ -19943,6 +20008,16 @@ function App() {
     bm: bm,
     openChapter: openChapter,
     onHome: () => setView("home")
+  });else if (view === "settings") content = /*#__PURE__*/React.createElement(Settings, {
+    lang: lang,
+    setLang: setLang,
+    custom: custom,
+    delCustom: delCustom,
+    sync: sync,
+    onExport: exportStock,
+    onImport: importStock,
+    setDevice: setDevice,
+    onHome: () => setView("home")
   });else content = /*#__PURE__*/React.createElement(Home, {
     lang: lang,
     setLang: setLang,
@@ -19952,12 +20027,7 @@ function App() {
     openTable: openTable,
     focusKey: searchNonce,
     custom: custom,
-    addCustom: addCustom,
-    delCustom: delCustom,
-    sync: sync,
-    onExport: exportStock,
-    onImport: importStock,
-    setDevice: setDevice
+    addCustom: addCustom
   });
   const sect = ["gcard", "grammar", "declension"].includes(view) ? "grammar" : ["vocab", "vrun"].includes(view) ? "vocab" : ["sent", "srun"].includes(view) ? "sent" : ["exam", "yki", "erun"].includes(view) ? "exam" : ["puhekieli", "situations"].includes(view) ? "speak" : "home";
   const activeChapter = view === "gcard" ? run?.card?.id : null;
