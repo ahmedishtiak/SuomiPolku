@@ -16706,7 +16706,19 @@ const BN = {
   "No export yet": "এখনো কোনো এক্সপোর্ট হয়নি",
   "No import yet": "এখনো কোনো ইমপোর্ট হয়নি",
   "file date": "ফাইলের তারিখ",
-  "Browsers don't reveal a device's real name — this is a guess you can rename. Import only adds new words; the built-in vocabulary is never duplicated.": "ব্রাউজার ডিভাইসের আসল নাম দেখায় না — এটি একটি অনুমান, আপনি নিজে নাম দিতে পারেন। ইমপোর্ট কেবল নতুন শব্দ যোগ করে; অন্তর্নির্মিত শব্দভাণ্ডার কখনো দ্বিগুণ হয় না।"
+  "Browsers don't reveal a device's real name — this is a guess you can rename. Import only adds new words; the built-in vocabulary is never duplicated.": "ব্রাউজার ডিভাইসের আসল নাম দেখায় না — এটি একটি অনুমান, আপনি নিজে নাম দিতে পারেন। ইমপোর্ট কেবল নতুন শব্দ যোগ করে; অন্তর্নির্মিত শব্দভাণ্ডার কখনো দ্বিগুণ হয় না।",
+  // ===== grammar exercises =====
+  "Grammar exercises": "ব্যাকরণ অনুশীলন",
+  "Exercises": "অনুশীলন",
+  "Tests": "পরীক্ষা",
+  "Review the rule": "নিয়মটি ঝালিয়ে নিন",
+  "Check": "মিলিয়ে দেখুন",
+  "correct": "সঠিক",
+  "Answer": "উত্তর",
+  "items": "টি",
+  "Produce the correct form · 52 exercises": "সঠিক রূপ লিখুন · ৫২টি অনুশীলন",
+  "Complete the sentence with the correct inflected form. Each exercise focuses on one rule.": "সঠিক রূপে বাক্যটি পূরণ করুন। প্রতিটি অনুশীলন একটি নিয়মের উপর কেন্দ্রীভূত।",
+  "Mock exams and grammar exercises": "মক পরীক্ষা ও ব্যাকরণ অনুশীলন"
 };
 function P(lang, fi, en) {
   return lang === "fi" ? fi : lang === "bn" ? BN[en] || en : en;
@@ -16761,14 +16773,14 @@ const UI = {
     bn: "বাক্য গড়ুন — সরল, যৌগিক, জটিল"
   },
   exam: {
-    fi: "Koe",
-    en: "Test exams",
-    bn: "পরীক্ষা"
+    fi: "Testit ja harjoitukset",
+    en: "Tests & Exercises",
+    bn: "পরীক্ষা ও অনুশীলন"
   },
   examSub: {
-    fi: "Tasokokeet pisteytyksellä",
-    en: "Levelled mock exams with a pass line",
-    bn: "পাস-সীমাসহ স্তরভিত্তিক মক পরীক্ষা"
+    fi: "Harjoituskokeet ja kielioppiharjoitukset",
+    en: "Mock exams and grammar exercises",
+    bn: "মক পরীক্ষা ও ব্যাকরণ অনুশীলন"
   },
   back: {
     fi: "Takaisin",
@@ -17511,6 +17523,27 @@ body{font-size:16px;line-height:1.5;background:${C.bg};color:${C.ink};font-famil
 .tokens{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;min-height:46px;border:1px dashed ${C.line};border-radius:12px;padding:9px}
 .tok{border:1px solid ${C.line};background:#fff;border-radius:10px;padding:8px 11px;font-size:17px;cursor:pointer;font-weight:600}
 .tok.tokpunct{min-width:26px;text-align:center;color:${C.sent};border-color:${C.sent}55;background:${C.sent}0c;font-weight:800}
+.exins{font-size:15.5px;color:${C.ink};line-height:1.6;margin:6px 0 10px}
+.rulelink{background:${C.exam}12;border:1px solid ${C.exam}44;color:${C.exam};border-radius:9px;padding:7px 11px;font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:12px}
+.exwrap{display:flex;flex-direction:column;gap:14px;margin:6px 0 14px}
+.exitem{border-bottom:1px dashed ${C.line};padding-bottom:12px}
+.exitem:last-child{border-bottom:none}
+.exsent{font-size:17px;line-height:2;color:${C.ink}}
+.exgap{white-space:nowrap;display:inline-flex;align-items:center;gap:5px;vertical-align:middle}
+.exinp{width:120px;border:none;border-bottom:2px solid ${C.exam}77;background:${C.exam}0a;border-radius:6px 6px 0 0;padding:4px 8px;font-size:16px;font-weight:700;color:${C.ink};text-align:center}
+.exinp:focus{outline:none;border-bottom-color:${C.exam}}
+.exinp.ok{border-bottom-color:${C.good};background:${C.good}12;color:${C.good}}
+.exinp.no{border-bottom-color:${C.bad};background:${C.bad}10;color:${C.bad}}
+.exbase{font-size:13px;color:${C.sub};font-style:italic}
+.exans{font-size:14px;margin-top:4px;color:${C.bad}}
+.exans.ok{color:${C.good}}
+.exscore{font-size:20px;font-weight:800;text-align:center;margin:10px 0}
+.exgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.exbtn{display:flex;flex-direction:column;gap:3px;text-align:left;background:#fff;border:1px solid ${C.line};border-radius:11px;padding:11px 12px;cursor:pointer}
+.exbtn:hover{border-color:${C.exam}77;background:${C.exam}08}
+.exbtnt{font-size:14.5px;font-weight:700;color:${C.ink};line-height:1.3}
+.exbtnm{font-size:12px;color:${C.sub}}
+.exlvl{font-weight:800;color:${C.exam}}
 .tok.used{opacity:.3;pointer-events:none}
 .built{display:flex;flex-wrap:wrap;gap:7px;min-height:46px;border:1px solid ${C.line};border-radius:12px;padding:9px;background:#fff;margin:6px 0}
 .built .tok{cursor:pointer}
@@ -19501,13 +19534,1557 @@ function buildExam(maxLvl) {
   });
   return shuffle(items);
 }
+const EXERCISES = [{
+  "id": "ex_present1",
+  "cat": "verbs",
+  "rule": "verb-present",
+  "lvl": "A1",
+  "tf": "Preesens 1",
+  "te": "Present tense 1",
+  "insF": "Kirjoita verbi preesensissä.",
+  "insE": "Write the verb in the present tense.",
+  "items": [{
+    "pre": "Minä ",
+    "base": "puhua",
+    "post": " suomea.",
+    "ans": "puhun"
+  }, {
+    "pre": "Sinä ",
+    "base": "asua",
+    "post": " Espoossa.",
+    "ans": "asut"
+  }, {
+    "pre": "Hän ",
+    "base": "opiskella",
+    "post": " suomea.",
+    "ans": "opiskelee"
+  }, {
+    "pre": "Me ",
+    "base": "tehdä",
+    "post": " töitä.",
+    "ans": "teemme"
+  }]
+}, {
+  "id": "ex_present2",
+  "cat": "verbs",
+  "rule": "verb-present",
+  "lvl": "A1",
+  "tf": "Preesens 2",
+  "te": "Present tense 2",
+  "insF": "Kirjoita verbi preesensissä.",
+  "insE": "Write the verb in the present tense.",
+  "items": [{
+    "pre": "Te ",
+    "base": "syödä",
+    "post": " lounasta.",
+    "ans": "syötte"
+  }, {
+    "pre": "He ",
+    "base": "juoda",
+    "post": " kahvia.",
+    "ans": "juovat"
+  }, {
+    "pre": "Minä ",
+    "base": "lukea",
+    "post": " kirjaa.",
+    "ans": "luen"
+  }, {
+    "pre": "Hän ",
+    "base": "tulla",
+    "post": " kotiin.",
+    "ans": "tulee"
+  }]
+}, {
+  "id": "ex_negative",
+  "cat": "verbs",
+  "rule": "negative",
+  "lvl": "A1",
+  "tf": "Kielto",
+  "te": "Negative",
+  "insF": "Kirjoita verbi kieltomuodossa (verbin perusosa).",
+  "insE": "Write the negative form (verb stem after en/et/ei).",
+  "items": [{
+    "pre": "Minä en ",
+    "base": "puhua",
+    "post": " ruotsia.",
+    "ans": "puhu"
+  }, {
+    "pre": "Hän ei ",
+    "base": "asua",
+    "post": " Helsingissä.",
+    "ans": "asu"
+  }, {
+    "pre": "Me emme ",
+    "base": "syödä",
+    "post": " lihaa.",
+    "ans": "syö"
+  }, {
+    "pre": "He eivät ",
+    "base": "tulla",
+    "post": " tänään.",
+    "ans": "tule"
+  }]
+}, {
+  "id": "ex_past1",
+  "cat": "verbs",
+  "rule": "past",
+  "lvl": "A2",
+  "tf": "Imperfekti 1",
+  "te": "Past tense 1",
+  "insF": "Kirjoita verbi imperfektissä.",
+  "insE": "Write the verb in the past tense.",
+  "items": [{
+    "pre": "Eilen minä ",
+    "base": "mennä",
+    "post": " kauppaan.",
+    "ans": "menin"
+  }, {
+    "pre": "Hän ",
+    "base": "ostaa",
+    "post": " uuden auton.",
+    "ans": "osti"
+  }, {
+    "pre": "Me ",
+    "base": "olla",
+    "post": " kotona.",
+    "ans": "olimme"
+  }, {
+    "pre": "Sinä ",
+    "base": "puhua",
+    "post": " hyvin.",
+    "ans": "puhuit"
+  }]
+}, {
+  "id": "ex_past2",
+  "cat": "verbs",
+  "rule": "past",
+  "lvl": "A2",
+  "tf": "Imperfekti 2",
+  "te": "Past tense 2",
+  "insF": "Kirjoita verbi imperfektissä.",
+  "insE": "Write the verb in the past tense.",
+  "items": [{
+    "pre": "He ",
+    "base": "nähdä",
+    "post": " elokuvan.",
+    "ans": "näkivät"
+  }, {
+    "pre": "Minä ",
+    "base": "lukea",
+    "post": " koko kirjan.",
+    "ans": "luin"
+  }, {
+    "pre": "Me ",
+    "base": "tehdä",
+    "post": " läksyt.",
+    "ans": "teimme"
+  }, {
+    "pre": "Hän ",
+    "base": "tietää",
+    "post": " vastauksen.",
+    "ans": "tiesi"
+  }]
+}, {
+  "id": "ex_perfect",
+  "cat": "verbs",
+  "rule": "perfect",
+  "lvl": "B1",
+  "tf": "Perfekti",
+  "te": "Perfect tense",
+  "insF": "Kirjoita verbi perfektissä (olla + partisiippi).",
+  "insE": "Write the verb in the perfect tense (olla + participle).",
+  "items": [{
+    "pre": "Minä ",
+    "base": "asua",
+    "post": " täällä kaksi vuotta.",
+    "ans": "olen asunut"
+  }, {
+    "pre": "Hän ",
+    "base": "käydä",
+    "post": " Suomessa ennenkin.",
+    "ans": "on käynyt"
+  }, {
+    "pre": "Me ",
+    "base": "nähdä",
+    "post": " tämän elokuvan jo.",
+    "ans": "olemme nähneet"
+  }]
+}, {
+  "id": "ex_conditional",
+  "cat": "verbs",
+  "rule": "conditional",
+  "lvl": "B1",
+  "tf": "Konditionaali",
+  "te": "Conditional",
+  "insF": "Kirjoita verbi konditionaalissa. Tunnus on -isi-.",
+  "insE": "Write the verb in the conditional. The marker is -isi-.",
+  "items": [{
+    "pre": "Minä ",
+    "base": "haluta",
+    "post": " kupin kahvia.",
+    "ans": "haluaisin"
+  }, {
+    "pre": "Sinä ",
+    "base": "voida",
+    "post": " auttaa minua.",
+    "ans": "voisit"
+  }, {
+    "pre": "Me ",
+    "base": "ottaa",
+    "post": " kaksi kahvia.",
+    "ans": "ottaisimme"
+  }, {
+    "pre": "Hän ",
+    "base": "tulla",
+    "post": " mielellään.",
+    "ans": "tulisi"
+  }]
+}, {
+  "id": "ex_imperative",
+  "cat": "verbs",
+  "rule": "imperative",
+  "lvl": "A2",
+  "tf": "Imperatiivi (käsky)",
+  "te": "Imperative (command)",
+  "insF": "Kirjoita yksikön käskymuoto (sinä).",
+  "insE": "Write the singular imperative (you).",
+  "items": [{
+    "pre": "",
+    "base": "puhua",
+    "post": " hitaammin!",
+    "ans": "Puhu"
+  }, {
+    "pre": "",
+    "base": "tulla",
+    "post": " sisään!",
+    "ans": "Tule"
+  }, {
+    "pre": "",
+    "base": "olla",
+    "post": " hiljaa!",
+    "ans": "Ole"
+  }, {
+    "pre": "Älä ",
+    "base": "mennä",
+    "post": " vielä!",
+    "ans": "mene"
+  }]
+}, {
+  "id": "ex_passive",
+  "cat": "verbs",
+  "rule": "passive",
+  "lvl": "B1",
+  "tf": "Passiivi",
+  "te": "Passive",
+  "insF": "Kirjoita verbi passiivissa (preesens).",
+  "insE": "Write the verb in the passive (present).",
+  "items": [{
+    "pre": "Suomessa ",
+    "base": "puhua",
+    "post": " suomea.",
+    "ans": "puhutaan"
+  }, {
+    "pre": "Kaupassa ",
+    "base": "myydä",
+    "post": " ruokaa.",
+    "ans": "myydään"
+  }, {
+    "pre": "Ravintolassa ",
+    "base": "syödä",
+    "post": " hyvin.",
+    "ans": "syödään"
+  }]
+}, {
+  "id": "ex_verbtypes",
+  "cat": "verbs",
+  "rule": "verbtypes",
+  "lvl": "A2",
+  "tf": "Verbityypit",
+  "te": "Verb types",
+  "insF": "Kirjoita verbi preesensissä. Huomaa verbityyppi.",
+  "insE": "Write the verb in the present. Mind the verb type.",
+  "items": [{
+    "pre": "Minä ",
+    "base": "haluta",
+    "post": " kahvia.",
+    "ans": "haluan"
+  }, {
+    "pre": "Hän ",
+    "base": "tarvita",
+    "post": " apua.",
+    "ans": "tarvitsee"
+  }, {
+    "pre": "Me ",
+    "base": "juosta",
+    "post": " puistossa.",
+    "ans": "juoksemme"
+  }, {
+    "pre": "Sinä ",
+    "base": "vanheta",
+    "post": " kauniisti.",
+    "ans": "vanhenet"
+  }]
+}, {
+  "id": "ex_infinitive",
+  "cat": "verbs",
+  "rule": "infinitives",
+  "lvl": "B1",
+  "tf": "3. infinitiivi",
+  "te": "3rd infinitive",
+  "insF": "Täydennä 3. infinitiivin muoto (-maan / -massa / -malla).",
+  "insE": "Complete the 3rd infinitive form (-maan / -massa / -malla).",
+  "items": [{
+    "pre": "Menen ",
+    "base": "syödä",
+    "post": " (-maan).",
+    "ans": "syömään"
+  }, {
+    "pre": "Olen töissä eli ",
+    "base": "tehdä",
+    "post": " töitä (-massa).",
+    "ans": "tekemässä"
+  }, {
+    "pre": "Opin suomea ",
+    "base": "puhua",
+    "post": " (-malla).",
+    "ans": "puhumalla"
+  }]
+}, {
+  "id": "ex_inessive",
+  "cat": "cases",
+  "rule": "inessive",
+  "lvl": "A1",
+  "tf": "Inessiivi -ssa",
+  "te": "Inessive -ssa (in)",
+  "insF": "Kirjoita sana inessiivissä (missä?).",
+  "insE": "Write the word in the inessive (where, inside?).",
+  "items": [{
+    "pre": "Minä asun ",
+    "base": "talo",
+    "post": ".",
+    "ans": "talossa"
+  }, {
+    "pre": "Ruoka on ",
+    "base": "jääkaappi",
+    "post": ".",
+    "ans": "jääkaapissa"
+  }, {
+    "pre": "Opiskelen ",
+    "base": "yliopisto",
+    "post": ".",
+    "ans": "yliopistossa"
+  }, {
+    "pre": "Olen nyt ",
+    "base": "kauppa",
+    "post": ".",
+    "ans": "kaupassa"
+  }]
+}, {
+  "id": "ex_elative",
+  "cat": "cases",
+  "rule": "elative",
+  "lvl": "A1",
+  "tf": "Elatiivi -sta",
+  "te": "Elative -sta (from inside)",
+  "insF": "Kirjoita sana elatiivissa (mistä?).",
+  "insE": "Write the word in the elative (from where, out of?).",
+  "items": [{
+    "pre": "Tulen ",
+    "base": "kauppa",
+    "post": ".",
+    "ans": "kaupasta"
+  }, {
+    "pre": "Olen kotoisin ",
+    "base": "Bangladesh",
+    "post": ".",
+    "ans": "Bangladeshista"
+  }, {
+    "pre": "Juna lähtee ",
+    "base": "Helsinki",
+    "post": ".",
+    "ans": "Helsingistä"
+  }, {
+    "pre": "Pidän ",
+    "base": "kahvi",
+    "post": ".",
+    "ans": "kahvista"
+  }]
+}, {
+  "id": "ex_illative",
+  "cat": "cases",
+  "rule": "illative",
+  "lvl": "A2",
+  "tf": "Illatiivi -Vn/-seen",
+  "te": "Illative (into)",
+  "insF": "Kirjoita sana illatiivissa (mihin?).",
+  "insE": "Write the word in the illative (into?).",
+  "items": [{
+    "pre": "Menen ",
+    "base": "kauppa",
+    "post": ".",
+    "ans": "kauppaan"
+  }, {
+    "pre": "Matkustan ",
+    "base": "Helsinki",
+    "post": ".",
+    "ans": "Helsinkiin"
+  }, {
+    "pre": "Muutin ",
+    "base": "Espoo",
+    "post": ".",
+    "ans": "Espooseen"
+  }, {
+    "pre": "Panen kirjan ",
+    "base": "laukku",
+    "post": ".",
+    "ans": "laukkuun"
+  }]
+}, {
+  "id": "ex_adessive",
+  "cat": "cases",
+  "rule": "adessive",
+  "lvl": "A1",
+  "tf": "Adessiivi -lla",
+  "te": "Adessive -lla (on/by)",
+  "insF": "Kirjoita sana adessiivissa (millä? / missä pinnalla?).",
+  "insE": "Write the word in the adessive (on / by means of?).",
+  "items": [{
+    "pre": "Kirja on ",
+    "base": "pöytä",
+    "post": ".",
+    "ans": "pöydällä"
+  }, {
+    "pre": "Menen töihin ",
+    "base": "bussi",
+    "post": ".",
+    "ans": "bussilla"
+  }, {
+    "pre": "Kuljen ",
+    "base": "juna",
+    "post": ".",
+    "ans": "junalla"
+  }]
+}, {
+  "id": "ex_ablative",
+  "cat": "cases",
+  "rule": "ablative",
+  "lvl": "A2",
+  "tf": "Ablatiivi -lta",
+  "te": "Ablative -lta (from)",
+  "insF": "Kirjoita sana ablatiivissa (mistä pinnalta? / keneltä?).",
+  "insE": "Write the word in the ablative (off / from a person?).",
+  "items": [{
+    "pre": "Sain kirjeen ",
+    "base": "ystävä",
+    "post": ".",
+    "ans": "ystävältä"
+  }, {
+    "pre": "Otan kirjan ",
+    "base": "pöytä",
+    "post": ".",
+    "ans": "pöydältä"
+  }, {
+    "pre": "Tulen ",
+    "base": "tori",
+    "post": ".",
+    "ans": "torilta"
+  }]
+}, {
+  "id": "ex_allative",
+  "cat": "cases",
+  "rule": "allative",
+  "lvl": "A2",
+  "tf": "Allatiivi -lle",
+  "te": "Allative -lle (onto/to)",
+  "insF": "Kirjoita sana allatiivissa (minne? / kenelle?).",
+  "insE": "Write the word in the allative (onto / to a person?).",
+  "items": [{
+    "pre": "Annan lahjan ",
+    "base": "äiti",
+    "post": ".",
+    "ans": "äidille"
+  }, {
+    "pre": "Menen ",
+    "base": "tori",
+    "post": ".",
+    "ans": "torille"
+  }, {
+    "pre": "Soitan ",
+    "base": "lääkäri",
+    "post": ".",
+    "ans": "lääkärille"
+  }]
+}, {
+  "id": "ex_essive",
+  "cat": "cases",
+  "rule": "essive",
+  "lvl": "B1",
+  "tf": "Essiivi -na",
+  "te": "Essive -na (as)",
+  "insF": "Kirjoita sana essiivissä (minä? roolina tai päivänä).",
+  "insE": "Write the word in the essive (as / on a day?).",
+  "items": [{
+    "pre": "Työskentelen ",
+    "base": "opettaja",
+    "post": ".",
+    "ans": "opettajana"
+  }, {
+    "pre": "",
+    "base": "maanantai",
+    "post": " minulla on kokous.",
+    "ans": "Maanantaina"
+  }, {
+    "pre": "",
+    "base": "lapsi",
+    "post": " asuin Espoossa.",
+    "ans": "Lapsena"
+  }]
+}, {
+  "id": "ex_translative",
+  "cat": "cases",
+  "rule": "translative",
+  "lvl": "B1",
+  "tf": "Translatiivi -ksi",
+  "te": "Translative -ksi (into/for)",
+  "insF": "Kirjoita sana translatiivissa (miksi? muutos).",
+  "insE": "Write the word in the translative (becoming / for?).",
+  "items": [{
+    "pre": "Opiskelen ",
+    "base": "lääkäri",
+    "post": ".",
+    "ans": "lääkäriksi"
+  }, {
+    "pre": "Sää muuttui ",
+    "base": "kylmä",
+    "post": ".",
+    "ans": "kylmäksi"
+  }, {
+    "pre": "Haluan tulla ",
+    "base": "opettaja",
+    "post": ".",
+    "ans": "opettajaksi"
+  }]
+}, {
+  "id": "ex_localgrid",
+  "cat": "cases",
+  "rule": "local-grid",
+  "lvl": "A2",
+  "tf": "Paikallissijat yhdessä",
+  "te": "Local cases together",
+  "insF": "Valitse oikea paikallissija (missä / mistä / mihin).",
+  "insE": "Choose the right local case (in / from / into).",
+  "items": [{
+    "pre": "Asun ",
+    "base": "Espoo",
+    "post": " (missä?).",
+    "ans": "Espoossa"
+  }, {
+    "pre": "Tulen ",
+    "base": "kauppa",
+    "post": " (mistä?).",
+    "ans": "kaupasta"
+  }, {
+    "pre": "Menen ",
+    "base": "koti",
+    "post": " (mihin?).",
+    "ans": "kotiin"
+  }]
+}, {
+  "id": "ex_partitive1",
+  "cat": "object",
+  "rule": "partitive",
+  "lvl": "A2",
+  "tf": "Partitiivi 1",
+  "te": "Partitive 1",
+  "insF": "Kirjoita sana partitiivissa.",
+  "insE": "Write the word in the partitive.",
+  "items": [{
+    "pre": "Juon ",
+    "base": "kahvi",
+    "post": ".",
+    "ans": "kahvia"
+  }, {
+    "pre": "Syön ",
+    "base": "leipä",
+    "post": ".",
+    "ans": "leipää"
+  }, {
+    "pre": "Luen ",
+    "base": "kirja",
+    "post": ".",
+    "ans": "kirjaa"
+  }, {
+    "pre": "Rakastan ",
+    "base": "sinä",
+    "post": ".",
+    "ans": "sinua"
+  }]
+}, {
+  "id": "ex_partitive2",
+  "cat": "object",
+  "rule": "partitive",
+  "lvl": "A2",
+  "tf": "Partitiivi 2 (kielto/määrä)",
+  "te": "Partitive 2 (negation/amount)",
+  "insF": "Kirjoita objekti partitiivissa (kielto tai määrä).",
+  "insE": "Write the object in the partitive (negation or amount).",
+  "items": [{
+    "pre": "En osta ",
+    "base": "auto",
+    "post": ".",
+    "ans": "autoa"
+  }, {
+    "pre": "Minulla on kolme ",
+    "base": "lapsi",
+    "post": ".",
+    "ans": "lasta"
+  }, {
+    "pre": "Ostan kaksi ",
+    "base": "kahvi",
+    "post": ".",
+    "ans": "kahvia"
+  }, {
+    "pre": "En juo ",
+    "base": "maito",
+    "post": ".",
+    "ans": "maitoa"
+  }]
+}, {
+  "id": "ex_accusative",
+  "cat": "object",
+  "rule": "accusative",
+  "lvl": "B1",
+  "tf": "Akkusatiivi -n",
+  "te": "Accusative object -n",
+  "insF": "Kirjoita kokonainen objekti (-n / -t / pronomini).",
+  "insE": "Write the whole object (-n / -t / pronoun).",
+  "items": [{
+    "pre": "Ostan ",
+    "base": "auto",
+    "post": " (kokonaan).",
+    "ans": "auton"
+  }, {
+    "pre": "Avaan ",
+    "base": "ikkuna",
+    "post": ".",
+    "ans": "ikkunan"
+  }, {
+    "pre": "Näen ",
+    "base": "sinä",
+    "post": " selvästi.",
+    "ans": "sinut"
+  }]
+}, {
+  "id": "ex_objectrule",
+  "cat": "object",
+  "rule": "object-rule",
+  "lvl": "B1",
+  "tf": "Partitiivi vai akkusatiivi",
+  "te": "Partitive or accusative",
+  "insF": "Valitse partitiivi tai akkusatiivi lauseen mukaan.",
+  "insE": "Choose partitive or accusative to fit the sentence.",
+  "items": [{
+    "pre": "Luen juuri nyt ",
+    "base": "kirja",
+    "post": " (kesken).",
+    "ans": "kirjaa"
+  }, {
+    "pre": "Luin eilen ",
+    "base": "kirja",
+    "post": " loppuun.",
+    "ans": "kirjan"
+  }, {
+    "pre": "En osta ",
+    "base": "auto",
+    "post": ".",
+    "ans": "autoa"
+  }]
+}, {
+  "id": "ex_numbers",
+  "cat": "object",
+  "rule": "numbers",
+  "lvl": "A1",
+  "tf": "Numeraali + partitiivi",
+  "te": "Number + partitive",
+  "insF": "Kirjoita sana oikeassa muodossa numeron jälkeen.",
+  "insE": "Write the word correctly after the number.",
+  "items": [{
+    "pre": "Ostan kaksi ",
+    "base": "kahvi",
+    "post": ".",
+    "ans": "kahvia"
+  }, {
+    "pre": "Minulla on kolme ",
+    "base": "lapsi",
+    "post": ".",
+    "ans": "lasta"
+  }, {
+    "pre": "Odotin viisi ",
+    "base": "minuutti",
+    "post": ".",
+    "ans": "minuuttia"
+  }]
+}, {
+  "id": "ex_adjagree",
+  "cat": "mod",
+  "rule": "adj-agree",
+  "lvl": "B1",
+  "tf": "Adjektiivin kongruenssi",
+  "te": "Adjective agreement",
+  "insF": "Taivuta adjektiivi samaan muotoon kuin substantiivi.",
+  "insE": "Inflect the adjective to match the noun.",
+  "items": [{
+    "pre": "Asun ",
+    "base": "iso",
+    "post": " talossa.",
+    "ans": "isossa"
+  }, {
+    "pre": "Ostin ",
+    "base": "uusi",
+    "post": " auton.",
+    "ans": "uuden"
+  }, {
+    "pre": "Pidän ",
+    "base": "kaunis",
+    "post": " kukista.",
+    "ans": "kauniista"
+  }]
+}, {
+  "id": "ex_comparison",
+  "cat": "mod",
+  "rule": "comparison",
+  "lvl": "B1",
+  "tf": "Vertailu",
+  "te": "Comparison",
+  "insF": "Kirjoita komparatiivi tai superlatiivi.",
+  "insE": "Write the comparative or superlative.",
+  "items": [{
+    "pre": "Helsinki on ",
+    "base": "iso",
+    "post": " kuin Espoo (isompi).",
+    "ans": "isompi"
+  }, {
+    "pre": "Juna on ",
+    "base": "nopea",
+    "post": " kuin bussi.",
+    "ans": "nopeampi"
+  }, {
+    "pre": "Tämä on paras eli kaikkein ",
+    "base": "hyvä",
+    "post": " ratkaisu.",
+    "ans": "paras"
+  }]
+}, {
+  "id": "ex_possessive",
+  "cat": "mod",
+  "rule": "possessive",
+  "lvl": "B1",
+  "tf": "Omistusliite",
+  "te": "Possessive suffix",
+  "insF": "Lisää omistusliite sanaan.",
+  "insE": "Add the possessive suffix to the word.",
+  "items": [{
+    "pre": "Tämä on minun ",
+    "base": "auto",
+    "post": ".",
+    "ans": "autoni"
+  }, {
+    "pre": "Missä on sinun ",
+    "base": "koti",
+    "post": "?",
+    "ans": "kotisi"
+  }, {
+    "pre": "Hänen ",
+    "base": "nimi",
+    "post": " on Anna.",
+    "ans": "nimensä"
+  }]
+}, {
+  "id": "ex_predicative",
+  "cat": "mod",
+  "rule": "predicative",
+  "lvl": "B1",
+  "tf": "Predikatiivi",
+  "te": "Predicative",
+  "insF": "Kirjoita adjektiivi oikeassa muodossa (nominatiivi tai partitiivi).",
+  "insE": "Write the adjective correctly (nominative or partitive).",
+  "items": [{
+    "pre": "Vesi on ",
+    "base": "kylmä",
+    "post": ".",
+    "ans": "kylmää"
+  }, {
+    "pre": "Auto on ",
+    "base": "uusi",
+    "post": ".",
+    "ans": "uusi"
+  }, {
+    "pre": "Kahvi on ",
+    "base": "hyvä",
+    "post": ".",
+    "ans": "hyvää"
+  }]
+}, {
+  "id": "ex_plural",
+  "cat": "mod",
+  "rule": "plural",
+  "lvl": "B1",
+  "tf": "Monikko",
+  "te": "Plural cases",
+  "insF": "Kirjoita sana monikossa oikeassa sijassa.",
+  "insE": "Write the word in the correct plural case.",
+  "items": [{
+    "pre": "Puhun monista ",
+    "base": "asia",
+    "post": " (mistä, monikko).",
+    "ans": "asioista"
+  }, {
+    "pre": "Pidän ",
+    "base": "koira",
+    "post": " (mistä, monikko).",
+    "ans": "koirista"
+  }, {
+    "pre": "Asuin monissa ",
+    "base": "maa",
+    "post": " (missä, monikko).",
+    "ans": "maissa"
+  }]
+}, {
+  "id": "ex_rection",
+  "cat": "adv",
+  "rule": "rection",
+  "lvl": "B1",
+  "tf": "Rektio (verbi + sija)",
+  "te": "Verb government",
+  "insF": "Kirjoita sana verbin vaatimassa sijassa.",
+  "insE": "Write the word in the case the verb requires.",
+  "items": [{
+    "pre": "Pidän ",
+    "base": "kahvi",
+    "post": " (pitää + sta).",
+    "ans": "kahvista"
+  }, {
+    "pre": "Osallistun ",
+    "base": "kurssi",
+    "post": " (osallistua + lle).",
+    "ans": "kurssille"
+  }, {
+    "pre": "Odotan ",
+    "base": "bussi",
+    "post": " (odottaa + partitiivi).",
+    "ans": "bussia"
+  }]
+}, {
+  "id": "ex_questions",
+  "cat": "adv",
+  "rule": "questions",
+  "lvl": "A2",
+  "tf": "Kysymys -ko/-kö",
+  "te": "Question with -ko/-kö",
+  "insF": "Tee verbistä kysymys (-ko/-kö).",
+  "insE": "Turn the verb into a yes/no question (-ko/-kö).",
+  "items": [{
+    "pre": "",
+    "base": "puhua",
+    "post": " sinä suomea? (sinä-muoto)",
+    "ans": "Puhutko"
+  }, {
+    "pre": "",
+    "base": "tulla",
+    "post": " hän huomenna? (hän-muoto)",
+    "ans": "Tuleeko"
+  }, {
+    "pre": "",
+    "base": "olla",
+    "post": " te valmiita? (te-muoto)",
+    "ans": "Oletteko"
+  }]
+}, {
+  "id": "ex_existential",
+  "cat": "adv",
+  "rule": "existential",
+  "lvl": "A2",
+  "tf": "Eksistentiaalilause",
+  "te": "Existential clause",
+  "insF": "Kirjoita verbi 'olla' oikeassa muodossa (aina yksikkö).",
+  "insE": "Write 'olla' in the right form (always singular).",
+  "items": [{
+    "pre": "Pöydällä ",
+    "base": "olla",
+    "post": " kirja.",
+    "ans": "on"
+  }, {
+    "pre": "Helsingissä ",
+    "base": "olla",
+    "post": " paljon ihmisiä.",
+    "ans": "on"
+  }, {
+    "pre": "Jääkaapissa ei ",
+    "base": "olla",
+    "post": " maitoa.",
+    "ans": "ole"
+  }]
+}, {
+  "id": "ex_possclause",
+  "cat": "adv",
+  "rule": "possessive-clause",
+  "lvl": "A2",
+  "tf": "Omistuslause (minulla on)",
+  "te": "Possessive clause (I have)",
+  "insF": "Kirjoita omistaja adessiivissa (-lla/-llä).",
+  "insE": "Write the owner in the adessive (-lla/-llä).",
+  "items": [{
+    "pre": "",
+    "base": "minä",
+    "post": " on auto.",
+    "ans": "Minulla"
+  }, {
+    "pre": "",
+    "base": "hän",
+    "post": " ei ole aikaa.",
+    "ans": "Hänellä"
+  }, {
+    "pre": "",
+    "base": "me",
+    "post": " on kaksi lasta.",
+    "ans": "Meillä"
+  }]
+}, {
+  "id": "ex_necessive",
+  "cat": "adv",
+  "rule": "necessive",
+  "lvl": "B1",
+  "tf": "Nesessiivi (täytyy)",
+  "te": "Necessive (must)",
+  "insF": "Kirjoita subjekti genetiivissä.",
+  "insE": "Write the subject in the genitive.",
+  "items": [{
+    "pre": "",
+    "base": "minä",
+    "post": " täytyy opiskella.",
+    "ans": "Minun"
+  }, {
+    "pre": "",
+    "base": "hän",
+    "post": " pitää mennä töihin.",
+    "ans": "Hänen"
+  }, {
+    "pre": "",
+    "base": "me",
+    "post": " täytyy lähteä nyt.",
+    "ans": "Meidän"
+  }]
+}, {
+  "id": "ex_genitive",
+  "cat": "adv",
+  "rule": "genitive",
+  "lvl": "A2",
+  "tf": "Genetiivi -n",
+  "te": "Genitive -n",
+  "insF": "Kirjoita sana genetiivissä (kenen?).",
+  "insE": "Write the word in the genitive (whose?).",
+  "items": [{
+    "pre": "Tämä on ",
+    "base": "Liisa",
+    "post": " kirja.",
+    "ans": "Liisan"
+  }, {
+    "pre": "Se on ",
+    "base": "opettaja",
+    "post": " kynä.",
+    "ans": "opettajan"
+  }, {
+    "pre": "Auton väri on ",
+    "base": "isä",
+    "post": " lempiväri.",
+    "ans": "isän"
+  }]
+}, {
+  "id": "ex_nominalization",
+  "cat": "adv",
+  "rule": "nominalization",
+  "lvl": "B2",
+  "tf": "-minen-substantiivi",
+  "te": "Nominalization -minen",
+  "insF": "Tee verbistä substantiivi (-minen) oikeassa muodossa.",
+  "insE": "Turn the verb into a noun (-minen) in the right form.",
+  "items": [{
+    "pre": "",
+    "base": "opiskella",
+    "post": " on hauskaa.",
+    "ans": "Opiskeleminen"
+  }, {
+    "pre": "Pidän ",
+    "base": "lukea",
+    "post": " (-misesta).",
+    "ans": "lukemisesta"
+  }, {
+    "pre": "",
+    "base": "uida",
+    "post": " on tervettä.",
+    "ans": "Uiminen"
+  }]
+}, {
+  "id": "ex_clitics",
+  "cat": "adv",
+  "rule": "clitics",
+  "lvl": "B1",
+  "tf": "Liitepartikkeli -kin/-kaan",
+  "te": "Clitic -kin/-kaan",
+  "insF": "Lisää liitepartikkeli -kin ('myös') tai -kaan (kiellossa).",
+  "insE": "Add the clitic -kin ('also') or -kaan (in negatives).",
+  "items": [{
+    "pre": "Sinä puhut suomea ja ",
+    "base": "minä",
+    "post": " puhun (myös).",
+    "ans": "minäkin"
+  }, {
+    "pre": "En minä ",
+    "base": "sinä",
+    "post": " tiedä (en kumpikaan).",
+    "ans": "sinäkään"
+  }]
+}, {
+  "id": "ex_timeexpr",
+  "cat": "adv",
+  "rule": "time-expr",
+  "lvl": "A2",
+  "tf": "Ajanilmaukset",
+  "te": "Time expressions",
+  "insF": "Kirjoita ajanilmaus oikeassa muodossa.",
+  "insE": "Write the time expression in the right form.",
+  "items": [{
+    "pre": "",
+    "base": "maanantai",
+    "post": " menen töihin.",
+    "ans": "Maanantaina"
+  }, {
+    "pre": "",
+    "base": "tammikuu",
+    "post": " on kylmä.",
+    "ans": "Tammikuussa"
+  }, {
+    "pre": "Odotin kaksi ",
+    "base": "tunti",
+    "post": ".",
+    "ans": "tuntia"
+  }]
+}, {
+  "id": "ex_register",
+  "cat": "adv",
+  "rule": "register",
+  "lvl": "B1",
+  "tf": "Puhekieli → yleiskieli",
+  "te": "Spoken → standard",
+  "insF": "Muuta puhekieli kirjakieleksi.",
+  "insE": "Change the spoken form into the written standard.",
+  "items": [{
+    "pre": "",
+    "base": "mä oon",
+    "post": " → ...",
+    "ans": "minä olen"
+  }, {
+    "pre": "",
+    "base": "ne meni",
+    "post": " → ...",
+    "ans": "he menivät"
+  }, {
+    "pre": "",
+    "base": "en tiiä",
+    "post": " → ...",
+    "ans": "en tiedä"
+  }]
+}, {
+  "id": "ex_temporal",
+  "cat": "adv",
+  "rule": "temporal",
+  "lvl": "C1",
+  "tf": "Temporaalirakenne",
+  "te": "Temporal construction",
+  "insF": "Täydennä temporaalirakenne (-essa / -tua).",
+  "insE": "Complete the temporal construction (-essa / -tua).",
+  "items": [{
+    "pre": "",
+    "base": "tulla",
+    "post": " Suomeen tunsin oloni kotoisaksi (kun tulin, -essa+ni).",
+    "ans": "tullessani"
+  }, {
+    "pre": "",
+    "base": "suorittaa",
+    "post": " tutkinnon hain töitä (kun olin suorittanut, -tua+ni).",
+    "ans": "suoritettuani"
+  }]
+}, {
+  "id": "ex_final",
+  "cat": "adv",
+  "rule": "final",
+  "lvl": "C1",
+  "tf": "Finaalirakenne",
+  "te": "Final construction",
+  "insF": "Täydennä finaalirakenne (-akseni / -äkseni).",
+  "insE": "Complete the final construction (-akseni / -äkseni).",
+  "items": [{
+    "pre": "Opiskelen kovasti ",
+    "base": "oppia",
+    "post": " suomea (jotta oppisin).",
+    "ans": "oppiakseni"
+  }, {
+    "pre": "Tulin Suomeen ",
+    "base": "suorittaa",
+    "post": " tutkinnon (jotta suorittaisin).",
+    "ans": "suorittaakseni"
+  }]
+}, {
+  "id": "ex_participle",
+  "cat": "adv",
+  "rule": "participles",
+  "lvl": "B2",
+  "tf": "Partisiippi",
+  "te": "Participle",
+  "insF": "Kirjoita VA-partisiippi ('joka tekee').",
+  "insE": "Write the VA-participle ('the one doing').",
+  "items": [{
+    "pre": "",
+    "base": "nukkua",
+    "post": " lapsi on söpö (joka nukkuu).",
+    "ans": "Nukkuva"
+  }, {
+    "pre": "Suomea ",
+    "base": "puhua",
+    "post": " mies on opettaja (joka puhuu).",
+    "ans": "puhuva"
+  }]
+}, {
+  "id": "ex_present3",
+  "cat": "verbs",
+  "rule": "verb-present",
+  "lvl": "A1",
+  "tf": "Preesens 3",
+  "te": "Present tense 3",
+  "insF": "Kirjoita verbi preesensissä.",
+  "insE": "Write the verb in the present tense.",
+  "items": [{
+    "pre": "Te ",
+    "base": "puhua",
+    "post": " hyvin.",
+    "ans": "puhutte"
+  }, {
+    "pre": "He ",
+    "base": "asua",
+    "post": " maalla.",
+    "ans": "asuvat"
+  }, {
+    "pre": "Minä ",
+    "base": "mennä",
+    "post": " kotiin.",
+    "ans": "menen"
+  }, {
+    "pre": "Sinä ",
+    "base": "nähdä",
+    "post": " meren.",
+    "ans": "näet"
+  }]
+}, {
+  "id": "ex_pastneg",
+  "cat": "verbs",
+  "rule": "past",
+  "lvl": "B1",
+  "tf": "Kielteinen imperfekti",
+  "te": "Negative past",
+  "insF": "Kirjoita kielteinen imperfekti (NUT-partisiippi).",
+  "insE": "Write the negative past (NUT-participle).",
+  "items": [{
+    "pre": "Eilen minä en ",
+    "base": "mennä",
+    "post": " töihin.",
+    "ans": "mennyt"
+  }, {
+    "pre": "Hän ei ",
+    "base": "nähdä",
+    "post": " elokuvaa.",
+    "ans": "nähnyt"
+  }, {
+    "pre": "Me emme ",
+    "base": "olla",
+    "post": " kotona.",
+    "ans": "olleet"
+  }]
+}, {
+  "id": "ex_conditional2",
+  "cat": "verbs",
+  "rule": "conditional",
+  "lvl": "B1",
+  "tf": "Konditionaali 2",
+  "te": "Conditional 2",
+  "insF": "Kirjoita verbi konditionaalissa.",
+  "insE": "Write the verb in the conditional.",
+  "items": [{
+    "pre": "",
+    "base": "voida",
+    "post": " sinä auttaa? (kysymys, sinä)",
+    "ans": "Voisitko"
+  }, {
+    "pre": "Jos minulla ",
+    "base": "olla",
+    "post": " aikaa...",
+    "ans": "olisi"
+  }, {
+    "pre": "Me ",
+    "base": "mennä",
+    "post": " mielellämme.",
+    "ans": "menisimme"
+  }]
+}, {
+  "id": "ex_kpt",
+  "cat": "cases",
+  "rule": "kpt",
+  "lvl": "A2",
+  "tf": "Astevaihtelu (genetiivi)",
+  "te": "Gradation (genitive)",
+  "insF": "Kirjoita genetiivi. Huomaa astevaihtelu (k, p, t).",
+  "insE": "Write the genitive. Mind the gradation (k, p, t).",
+  "items": [{
+    "pre": "",
+    "base": "pankki",
+    "post": " ovi on kiinni (kk→k).",
+    "ans": "pankin"
+  }, {
+    "pre": "",
+    "base": "kauppa",
+    "post": " hinnat nousivat (pp→p).",
+    "ans": "kaupan"
+  }, {
+    "pre": "Suoritin ",
+    "base": "tutkinto",
+    "post": " (nt→nn).",
+    "ans": "tutkinnon"
+  }, {
+    "pre": "",
+    "base": "silta",
+    "post": " alla virtaa joki (lt→ll).",
+    "ans": "sillan"
+  }]
+}, {
+  "id": "ex_illative2",
+  "cat": "cases",
+  "rule": "illative",
+  "lvl": "A2",
+  "tf": "Illatiivi 2",
+  "te": "Illative 2",
+  "insF": "Kirjoita sana illatiivissa (mihin?).",
+  "insE": "Write the word in the illative (into?).",
+  "items": [{
+    "pre": "Tulen ",
+    "base": "koti",
+    "post": ".",
+    "ans": "kotiin"
+  }, {
+    "pre": "Menemme ",
+    "base": "ravintola",
+    "post": ".",
+    "ans": "ravintolaan"
+  }, {
+    "pre": "Muutan ",
+    "base": "Turku",
+    "post": ".",
+    "ans": "Turkuun"
+  }]
+}, {
+  "id": "ex_genitivepost",
+  "cat": "cases",
+  "rule": "genitive",
+  "lvl": "B1",
+  "tf": "Genetiivi + postpositio",
+  "te": "Genitive + postposition",
+  "insF": "Kirjoita sana genetiivissä postposition edessä.",
+  "insE": "Write the word in the genitive before the postposition.",
+  "items": [{
+    "pre": "Auto on ",
+    "base": "talo",
+    "post": " edessä.",
+    "ans": "talon"
+  }, {
+    "pre": "Kissa on ",
+    "base": "pöytä",
+    "post": " alla.",
+    "ans": "pöydän"
+  }, {
+    "pre": "Kauppa on ",
+    "base": "asema",
+    "post": " vieressä.",
+    "ans": "aseman"
+  }]
+}, {
+  "id": "ex_partitiveverb",
+  "cat": "object",
+  "rule": "rection",
+  "lvl": "A2",
+  "tf": "Partitiiviverbit",
+  "te": "Partitive verbs",
+  "insF": "Kirjoita objekti partitiivissa (verbi vaatii sen).",
+  "insE": "Write the object in the partitive (the verb requires it).",
+  "items": [{
+    "pre": "Rakastan ",
+    "base": "musiikki",
+    "post": ".",
+    "ans": "musiikkia"
+  }, {
+    "pre": "Odotan ",
+    "base": "juna",
+    "post": ".",
+    "ans": "junaa"
+  }, {
+    "pre": "Autan ",
+    "base": "sinä",
+    "post": ".",
+    "ans": "sinua"
+  }]
+}, {
+  "id": "ex_adjagree2",
+  "cat": "mod",
+  "rule": "adj-agree",
+  "lvl": "B1",
+  "tf": "Kongruenssi 2",
+  "te": "Agreement 2",
+  "insF": "Taivuta adjektiivi substantiivin mukaan.",
+  "insE": "Inflect the adjective to match the noun.",
+  "items": [{
+    "pre": "Näen ",
+    "base": "punainen",
+    "post": " auton.",
+    "ans": "punaisen"
+  }, {
+    "pre": "Asun ",
+    "base": "pieni",
+    "post": " asunnossa.",
+    "ans": "pienessä"
+  }, {
+    "pre": "Puhun ",
+    "base": "mukava",
+    "post": " ihmisten kanssa.",
+    "ans": "mukavien"
+  }]
+}, {
+  "id": "ex_rection2",
+  "cat": "adv",
+  "rule": "rection",
+  "lvl": "B1",
+  "tf": "Rektio 2",
+  "te": "Verb government 2",
+  "insF": "Kirjoita sana verbin vaatimassa sijassa.",
+  "insE": "Write the word in the case the verb requires.",
+  "items": [{
+    "pre": "Tutustuin ",
+    "base": "naapuri",
+    "post": " (+ Vn).",
+    "ans": "naapuriin"
+  }, {
+    "pre": "Keskustelen ",
+    "base": "asia",
+    "post": " (+ sta).",
+    "ans": "asiasta"
+  }, {
+    "pre": "Uskon ",
+    "base": "sinä",
+    "post": " (+ Vn).",
+    "ans": "sinuun"
+  }]
+}];
+// ===== Grammar exercises: produce the correct form (fill-in) =====
+function exNorm(s) {
+  return (s || "").trim().toLowerCase().replace(/\s+/g, " ");
+}
+function ExerciseRun({
+  lang,
+  ex,
+  onHome,
+  openCard,
+  onNext,
+  hasNext
+}) {
+  const items = ex.items;
+  const [vals, setVals] = useState(() => items.map(() => ""));
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    setVals(items.map(() => ""));
+    setChecked(false);
+  }, [ex.id]);
+  const okAt = i => {
+    const a = items[i];
+    const g = exNorm(vals[i]);
+    return g === exNorm(a.ans) || (a.alt || []).some(x => exNorm(x) === g);
+  };
+  const score = items.reduce((n, _, i) => n + (okAt(i) ? 1 : 0), 0);
+  const set = (i, v) => setVals(vals.map((x, j) => j === i ? v : x));
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "topbar"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "linkback",
+    onClick: onHome
+  }, "← ", P(lang, "Harjoitukset", "Exercises")), /*#__PURE__*/React.createElement("span", {
+    className: "counter",
+    style: {
+      color: C.exam
+    }
+  }, ex.lvl)), /*#__PURE__*/React.createElement("div", {
+    className: "h",
+    style: {
+      color: C.exam,
+      fontSize: 22
+    }
+  }, P(lang, ex.tf, ex.te)), /*#__PURE__*/React.createElement("div", {
+    className: "exins"
+  }, P(lang, ex.insF, ex.insE)), openCard && ex.rule && /*#__PURE__*/React.createElement("button", {
+    className: "rulelink",
+    onClick: () => openCard(ex.rule)
+  }, "📖 ", P(lang, "Kertaa sääntö", "Review the rule"), " →"), /*#__PURE__*/React.createElement("div", {
+    className: "exwrap"
+  }, items.map((it, i) => {
+    const ok = okAt(i);
+    return /*#__PURE__*/React.createElement("div", {
+      key: i,
+      className: "exitem"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "exsent"
+    }, it.pre, /*#__PURE__*/React.createElement("span", {
+      className: "exgap"
+    }, /*#__PURE__*/React.createElement("input", {
+      className: "exinp" + (checked ? ok ? " ok" : " no" : ""),
+      value: vals[i],
+      onChange: e => set(i, e.target.value),
+      onKeyDown: e => {
+        if (e.key === "Enter" && !checked) setChecked(true);
+      },
+      disabled: checked,
+      placeholder: "…"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "exbase"
+    }, "(", it.base, ")")), it.post), checked && !ok && /*#__PURE__*/React.createElement("div", {
+      className: "exans"
+    }, "✗ ", P(lang, "Oikein", "Answer"), ": ", /*#__PURE__*/React.createElement("b", null, it.ans)), checked && ok && /*#__PURE__*/React.createElement("div", {
+      className: "exans ok"
+    }, "✓"));
+  })), !checked ? /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C.exam
+    },
+    onClick: () => setChecked(true)
+  }, P(lang, "Tarkista", "Check")) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "exscore",
+    style: {
+      color: score === items.length ? C.good : C.exam
+    }
+  }, score, " / ", items.length, " ", P(lang, "oikein", "correct")), /*#__PURE__*/React.createElement("div", {
+    className: "row",
+    style: {
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn ghost block",
+    onClick: () => {
+      setVals(items.map(() => ""));
+      setChecked(false);
+    }
+  }, "↻ ", P(lang, "Uudestaan", "Again")), hasNext && /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C.exam
+    },
+    onClick: onNext
+  }, P(lang, "Seuraava", "Next"), " →"))), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    home: onHome
+  }));
+}
+function ExerciseHome({
+  lang,
+  setLang,
+  go,
+  open
+}) {
+  const F = lang === "fi";
+  const cats = [{
+    k: "verbs",
+    f: "Verbit",
+    e: "Verbs",
+    c: C.vocab
+  }, {
+    k: "cases",
+    f: "Sijamuodot",
+    e: "Cases",
+    c: C.grammar
+  }, {
+    k: "object",
+    f: "Objekti & partitiivi",
+    e: "Object & partitive",
+    c: C.sent
+  }, {
+    k: "mod",
+    f: "Määritteet",
+    e: "Modifiers",
+    c: C.exam
+  }, {
+    k: "adv",
+    f: "Lauseet & edistynyt",
+    e: "Sentences & advanced",
+    c: C.ink
+  }];
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "topbar"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "linkback",
+    onClick: () => go("exam")
+  }, "← ", P(lang, "Testit", "Tests")), /*#__PURE__*/React.createElement(LangToggle, {
+    lang: lang,
+    setLang: setLang
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "h",
+    style: {
+      color: C.exam
+    }
+  }, "✍️ ", P(lang, "Kielioppiharjoitukset", "Grammar exercises")), /*#__PURE__*/React.createElement("div", {
+    className: "sub"
+  }, P(lang, "Tuota oikea muoto — näin näet, osaatko säännön käytännössä. " + EXERCISES.length + " harjoitusta.", "Produce the correct form — this shows whether you can really use the rule. " + EXERCISES.length + " exercises.")), cats.map(cat => {
+    const list = EXERCISES.filter(x => x.cat === cat.k);
+    if (!list.length) return null;
+    return /*#__PURE__*/React.createElement("div", {
+      key: cat.k,
+      className: "kv",
+      style: {
+        marginTop: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "lab",
+      style: {
+        color: cat.c
+      }
+    }, P(lang, cat.f, cat.e), " · ", list.length), /*#__PURE__*/React.createElement("div", {
+      className: "exgrid"
+    }, list.map(ex => /*#__PURE__*/React.createElement("button", {
+      key: ex.id,
+      className: "exbtn",
+      onClick: () => open(ex.id)
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "exbtnt"
+    }, P(lang, ex.tf, ex.te)), /*#__PURE__*/React.createElement("span", {
+      className: "exbtnm"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "exlvl"
+    }, ex.lvl), " · ", ex.items.length, " ", P(lang, "kohtaa", "items"))))));
+  }), /*#__PURE__*/React.createElement(PageEnd, {
+    lang: lang,
+    home: () => go("home")
+  }));
+}
 function ExamHome({
   lang,
   setLang,
   go,
   start,
   startYki,
-  history
+  history,
+  openExercises
 }) {
   const F = lang === "fi";
   const hist = (history || []).slice().reverse();
@@ -19535,6 +21112,21 @@ function ExamHome({
     style: {
       marginTop: 12
     }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lab",
+    style: {
+      color: C.exam
+    }
+  }, P(lang, "Kielioppiharjoitukset", "Grammar exercises")), /*#__PURE__*/React.createElement("button", {
+    className: "btn block",
+    style: {
+      background: C.exam
+    },
+    onClick: openExercises
+  }, "✍️ ", P(lang, "Tuota oikea muoto · " + EXERCISES.length + " harjoitusta", "Produce the correct form · " + EXERCISES.length + " exercises")), /*#__PURE__*/React.createElement("div", {
+    className: "note"
+  }, P(lang, "Täydennä lause oikealla taivutusmuodolla. Jokainen harjoitus keskittyy yhteen sääntöön.", "Complete the sentence with the correct inflected form. Each exercise focuses on one rule."))), /*#__PURE__*/React.createElement("div", {
+    className: "kv"
   }, /*#__PURE__*/React.createElement("div", {
     className: "lab"
   }, P(lang, "YKI-simulaatio", "YKI simulation")), /*#__PURE__*/React.createElement("button", {
@@ -21465,6 +23057,7 @@ function App() {
     go: go,
     history: prog.yki || [],
     startYki: () => setView("yki"),
+    openExercises: () => setView("exlist"),
     start: lv => {
       setRun({
         kind: "e",
@@ -21473,7 +23066,33 @@ function App() {
       });
       setView("erun");
     }
-  });else if (view === "yki") content = /*#__PURE__*/React.createElement(YkiRun, {
+  });else if (view === "exlist") content = /*#__PURE__*/React.createElement(ExerciseHome, {
+    lang: lang,
+    setLang: setLang,
+    go: go,
+    open: id => {
+      setRun({
+        ex: EXERCISES.find(x => x.id === id)
+      });
+      setView("exrun");
+    }
+  });else if (view === "exrun" && run && run.ex) {
+    const cat = EXERCISES.filter(x => x.cat === run.ex.cat);
+    const idx = cat.findIndex(x => x.id === run.ex.id);
+    const nxt = idx >= 0 && idx + 1 < cat.length ? cat[idx + 1] : null;
+    content = /*#__PURE__*/React.createElement(ExerciseRun, {
+      lang: lang,
+      ex: run.ex,
+      onHome: () => setView("exlist"),
+      openCard: openChapter,
+      hasNext: !!nxt,
+      onNext: () => {
+        setRun({
+          ex: nxt
+        });
+      }
+    });
+  } else if (view === "yki") content = /*#__PURE__*/React.createElement(YkiRun, {
     lang: lang,
     setLang: setLang,
     onHome: () => setView("exam"),
