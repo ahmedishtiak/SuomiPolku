@@ -18244,7 +18244,10 @@ function GCard({
   const goSeq = openSeq || openCard;
   let trailLabel = null;
   if (trailTop && backTrail) {
-    if (trailTop === "__vocab") trailLabel = P(lang, "Sanasto", "Vocabulary");else if (trailTop === "__sent") trailLabel = P(lang, "Lauseet", "Sentences");else if (trailTop === "__declension") trailLabel = P(lang, "Taivutustaulukko", "Inflection table");else {
+    if (trailTop === "__vocab") trailLabel = P(lang, "Sanasto", "Vocabulary");else if (trailTop === "__sent") trailLabel = P(lang, "Lauseet", "Sentences");else if (trailTop === "__declension") trailLabel = P(lang, "Taivutustaulukko", "Inflection table");else if (trailTop && trailTop.indexOf("__ex:") === 0) {
+      const ex = EXERCISES.find(e => e.id === trailTop.slice(5));
+      trailLabel = P(lang, "Harjoitus", "Exercise") + (ex ? " · " + P(lang, ex.tf, ex.te) : "");
+    } else {
       const ti = seq.findIndex(x => x.id === trailTop);
       if (ti >= 0) trailLabel = P(lang, "Luku ", "Ch ") + (ti + 1) + " · " + P(lang, seq[ti].tf, seq[ti].te);
     }
@@ -22910,6 +22913,16 @@ function App() {
         setView("declension");
         return;
       }
+      if (last.indexOf("__ex:") === 0) {
+        const ex = EXERCISES.find(e => e.id === last.slice(5));
+        if (ex) {
+          setRun({
+            ex
+          });
+          setView("exrun");
+        }
+        return;
+      }
       setRun({
         card: GRAMMAR.find(g => g.id === last)
       });
@@ -23084,7 +23097,13 @@ function App() {
       lang: lang,
       ex: run.ex,
       onHome: () => setView("exlist"),
-      openCard: openChapter,
+      openCard: id => {
+        setTrail(["__ex:" + run.ex.id]);
+        setRun({
+          card: GRAMMAR.find(g => g.id === id)
+        });
+        setView("gcard");
+      },
       hasNext: !!nxt,
       onNext: () => {
         setRun({
